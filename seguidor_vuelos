@@ -5,6 +5,9 @@ from ryanair import Ryanair
 from datetime import datetime, timedelta
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import os
+
+
 
 # Inicializa la clase Ryanair
 api = Ryanair(currency="EUR")  # Puedes especificar la moneda que prefieras
@@ -20,7 +23,7 @@ vuelos_ida = api.get_cheapest_flights("FMM", fecha_ida, fecha_ida + timedelta(da
 def enviar_correo():
     # Configuración del correo
     correo = 'impersonal4333@gmail.com'  # Tu correo de Gmail
-    contrasena_aplicacion = 'qpzk svas puoi etmp'  # Contraseña de aplicación generada
+    contrasena_aplicacion = os.getenv("GMAIL_PASSWORD")
     destinatario = 'impersonal4333@gmail.com'  # Correo del destinatario
 
     # Crear el objeto MIME
