@@ -1,0 +1,32 @@
+name: Verificar vuelos todos los días
+
+# Se ejecuta según el cronograma definido en 'on'
+on:
+  schedule:
+    - cron: '0 9 * * *'  # Se ejecuta todos los días a las 9:00 AM UTC
+
+# Los trabajos que realiza el flujo de trabajo
+jobs:
+  run:
+    runs-on: ubuntu-latest  # Utiliza un contenedor Ubuntu
+
+    steps:
+      # 1. Clonar el repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v2  # Clona tu código del repositorio
+
+      # 2. Configurar Python
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Establece la versión de Python
+
+      # 3. Instalar dependencias (si tienes un archivo 'requirements.txt')
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  # Instala las dependencias
+
+      # 4. Ejecutar tu script
+      - name: Run script
+        run: |
+          python verificador_vuelos.py  # Ejecuta el script
