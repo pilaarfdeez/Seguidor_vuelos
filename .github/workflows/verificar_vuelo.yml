@@ -3,7 +3,7 @@ name: Verificar vuelos todos los días
 # Se ejecuta según el cronograma definido en 'on'
 on:
   schedule:
-    - cron: '5 16 * * *'  # Se ejecuta todos los días a las 16:05 UTC
+    - cron: '10 17 * * *'  # Se ejecuta todos los días a las 16:05 UTC
 # Los trabajos que realiza el flujo de trabajo
 jobs:
   run:
