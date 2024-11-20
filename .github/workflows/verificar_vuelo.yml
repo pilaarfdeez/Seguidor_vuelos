@@ -3,7 +3,7 @@ name: Verificar vuelos todos los días
 # Se ejecuta según el cronograma definido en 'on'
 on:
   schedule:
-    - cron: '0 10 * * *'  # Se ejecuta todos los días a las 16:05 UTC
+    - cron: '25 10 * * *'  # Se ejecuta todos los días a las 16:05 UTC
 # Los trabajos que realiza el flujo de trabajo
 jobs:
   run:
@@ -28,4 +28,4 @@ jobs:
       # 4. Ejecutar tu script
       - name: Run script
         run: |
-          python Seguidor_vuelos/verificador_vuelos.py  # Ejecuta el script
+          python /home/runner/work/Seguidor_vuelos/seguidor_vuelos.py  # Ejecuta el script
