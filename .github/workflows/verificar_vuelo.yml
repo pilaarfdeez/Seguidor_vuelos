@@ -23,7 +23,7 @@ jobs:
       # 3. Instalar dependencias (si tienes un archivo 'requirements.txt')
       - name: Install dependencies
         run: |
-          pip install -r workflows/requirements.txt  # Instala las dependencias
+          pip install -r .github/workflows/requirements.txt  # Instala las dependencias
 
       # 4. Ejecutar tu script
       - name: Run script
