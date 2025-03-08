@@ -4,7 +4,7 @@
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException, WebDriverException
 from selenium.webdriver.common.by import By
 import chromedriver_autoinstaller
 from datetime import date, datetime, timedelta
@@ -393,14 +393,14 @@ class _Scrape:
 	@staticmethod
 	def _get_results(url, date, driver):
 		results = None
-		try:
-			results = _Scrape._make_url_request(url, driver)
-		except TimeoutException:
-			print(
-				'''TimeoutException, try again and check your internet connection!\n
-				Also possible that no flights exist for your query :('''.replace('\t','')
-			)
-			return -1
+		# try:
+		results = _Scrape._make_url_request(url, driver)
+		# except TimeoutException:
+		# 	print(
+		# 		'''TimeoutException, try again and check your internet connection!\n
+		# 		Also possible that no flights exist for your query :('''.replace('\t','')
+		# 	)
+		# 	return -1
 
 		flights = _Scrape._clean_results(results, date)
 		return Flight.dataframe(flights)
@@ -426,7 +426,11 @@ class _Scrape:
 
 	@staticmethod
 	def _make_url_request(url, driver):
+		print('Making url request')
 		driver.get(url)
+		print('Obtained url request')
+		
+		_Scrape._check_cookies(driver)
 
 		# Waiting and initial XPATH cleaning
 		WebDriverWait(driver, timeout = 10).until(lambda d: len(_Scrape._get_flight_elements(d)) > 100)
@@ -435,9 +439,41 @@ class _Scrape:
 		#driver.quit()
 
 		return results
+	
 
 	@staticmethod
 	def _get_flight_elements(driver):
 		return driver.find_element(by = By.XPATH, value = '//body[@id = "yDmH0d"]').text.split('\n')
+	
+	
+	@staticmethod
+	def _check_cookies(driver):
+		print('Checking cookies...')
+		try:
+			text = driver.find_element(by=By.XPATH, value='//div[@class="T4LgNb "]').text.split('\n')[2]
+		except WebDriverException:
+			driver.implicitly_wait(5)
+			try:
+				text = driver.find_element(by=By.XPATH, value='//div[@class="T4LgNb "]').text.split('\n')[2]
+			except NoSuchElementException:
+				return
+
+		if text == 'Before you continue to Google':
+			print('Rejecting cookies and proceeding to search page')
+			try:
+				reject_button = [button for button in _Scrape._get_buttons(driver) if button.text == 'Reject all'][0]
+				reject_button.click()
+			except IndexError:
+				print('Reject button not found')
+			return
+		else:
+			print('You dont seem to need to reject any cookies...')
+			return
+
+
+	@staticmethod
+	def _get_buttons(driver):
+		buttons = driver.find_elements(by=By.CSS_SELECTOR, value='button')
+		return buttons
 
 Scrape = _Scrape()
