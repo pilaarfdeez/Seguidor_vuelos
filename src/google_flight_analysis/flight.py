@@ -20,7 +20,8 @@ class Flight:
 		self._stops = None
 		self._co2 = None
 		self._emissions = None
-		self._price = None
+		self._price_eur = None
+		self._price_usd = None
 		self._times = []
 		self._time_leave = None
 		self._time_arrive = None
@@ -94,7 +95,11 @@ class Flight:
 
 	@property
 	def price(self):
-		return self._price
+		return self._price_eur
+	
+	@property
+	def price_usd(self):
+		return self._price_usd
 
 	@property
 	def time_leave(self):
@@ -122,16 +127,19 @@ class Flight:
 			# num stops
 			self._num_stops = 0 if arg == 'Nonstop' else int(arg.split()[0])
 
-		elif arg.endswith('CO2') and self._co2 is None:
+		elif arg.endswith('CO2e') and self._co2 is None:
 			# co2
 			self._co2 = int(arg.split()[0])
 		elif arg.endswith('emissions') and self._emissions is None:
 			# emmision
 			emission_val = arg.split()[0]
 			self._emissions = 0 if emission_val == 'Avg' else int(emission_val[:-1])
-		elif '$' in arg and self._price is None:
-			# price
-			self._price = int(arg[1:].replace(',',''))
+		elif '€' in arg and self._price_eur is None:
+			# price (€)
+			self._price_eur = int(arg[1:].replace(',',''))
+		elif '$' in arg and self._price_usd is None:
+			# price ($)
+			self._price_usd = int(arg[1:].replace(',',''))
 		elif len(arg) == 6 and arg.isupper() and self._origin is None and self._dest is None:
 			# origin/dest
 			self._origin = arg[:3]
@@ -165,7 +173,8 @@ class Flight:
 			'Destination' : [],
 			'Airline(s)' : [],
 			'Travel Time' : [],
-			'Price ($)' : [],
+			'Price (€)' : [],
+			'Price ($)': [],
 			'Num Stops' : [],
 			'Layover' : [],
 			'Access Date' : [],
@@ -188,7 +197,8 @@ class Flight:
 			#data['Stop Location'] += [flight.stops]
 			data['CO2 Emission (kg)'] += [flight.co2]
 			data['Emission Diff (%)'] += [flight.emissions]
-			data['Price ($)'] += [flight.price]
+			data['Price (€)'] += [flight.price]
+			data['Price ($)'] += [flight.price_usd]
 			data['Access Date'] += [datetime.today().replace(hour = 0, minute = 0, second = 0, microsecond = 0)]
 
 		return pd.DataFrame(data)
