@@ -50,9 +50,10 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
           google-chrome --version
-          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+' | head -1)
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+' | head -1)
           echo "CHROME_VERSION: $CHROME_VERSION"
           CHROMEDRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/latest-patch-versions-per-build.json" | jq -r ".builds[\"$CHROME_VERSION\"].version")
+          echo "CHROMEDRIVER_VERSION: $CHROMEDRIVER_VERSION"
           wget -q -O chromedriver.zip "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
           ls -l chromedriver.zip
           unzip chromedriver.zip
