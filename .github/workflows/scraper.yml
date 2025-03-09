@@ -54,7 +54,7 @@ jobs:
           echo "CHROME_VERSION: $CHROME_VERSION"
           CHROMEDRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/latest-patch-versions-per-build.json" | jq -r ".builds[\"$CHROME_VERSION\"].version")
           echo "CHROMEDRIVER_VERSION: $CHROMEDRIVER_VERSION"
-          wget -q -O chromedriver.zip "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
+          wget -q -O chromedriver.zip "https:/storage.googleapis.com/chrome-for-testing-public/$CHROMEDRIVER_VERSION/linux64/chromedriver-linux64.zip"
           ls -l chromedriver.zip
           unzip chromedriver.zip
           sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
