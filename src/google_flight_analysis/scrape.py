@@ -4,12 +4,18 @@
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, WebDriverException
 from selenium.webdriver.common.by import By
 import chromedriver_autoinstaller
 from datetime import date, datetime, timedelta
+import json
 import numpy as np
 import pandas as pd
+import random
+import time
 from tqdm import tqdm
 
 from src.google_flight_analysis.flight import *
@@ -26,13 +32,41 @@ date_format = "%Y-%m-%d"
 	Europe date display vs US date display!
 '''
 
-def ScrapeObjects(objs, deep_copy = False):
+# Loading some browser options to bypass anti-bot systems
+options = Options()
+options.add_argument("--disable-gpu")
+options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36")
+
+'''
+TODO:
+- Imitate realistic mouse and scroll movements (with pyautogui or ActionChains)
+- Proxies and Rotating IPs (BrightData, ScraperAPI, ProxyCrawl), or alternatively TOR or VPNs
+- Implement backoff strategy: wait longer if the request has been blocked
+'''
+
+
+def ScrapeObjects(objs, headless=False, add_cookies=False, deep_copy=False):
 	if type(objs) is _Scrape:
 		objs = [objs]
 
+	caps = DesiredCapabilities.CHROME.copy()
+	caps["goog:loggingPrefs"] = {"performance": "ALL"}
 
-	chromedriver_autoinstaller.install() # check if chromedriver is installed correctly and on path
-	driver = webdriver.Chrome()
+	if headless:	# Necessary for Github Actions
+		options.add_argument("--headless")
+		options.add_argument("--disable-blink-features=AutomationControlled") 
+
+	chromedriver_autoinstaller.install() # Check if chromedriver is installed correctly and on path
+	driver = webdriver.Chrome(options=options, desired_capabilities=caps)
+
+	if add_cookies:  # Load and add cookies to Selenium driver
+		with open('data/cookies.json', 'r') as f:
+			cookies = json.load(f)
+		for cookie in cookies:
+			driver.add_cookie(cookie)
+		driver.refresh()
+		time.sleep(random.uniform(2, 5))
+
 	driver.maximize_window()
 
 	# modifies the objects in-place
@@ -393,14 +427,14 @@ class _Scrape:
 	@staticmethod
 	def _get_results(url, date, driver):
 		results = None
-		# try:
-		results = _Scrape._make_url_request(url, driver)
-		# except TimeoutException:
-		# 	print(
-		# 		'''TimeoutException, try again and check your internet connection!\n
-		# 		Also possible that no flights exist for your query :('''.replace('\t','')
-		# 	)
-		# 	return -1
+		try:
+			results = _Scrape._make_url_request(url, driver)
+		except TimeoutException:
+			print(
+				'''TimeoutException, try again and check your internet connection!\n
+				Also possible that no flights exist for your query :('''.replace('\t','')
+			)
+			return -1
 
 		flights = _Scrape._clean_results(results, date)
 		return Flight.dataframe(flights)
@@ -413,8 +447,8 @@ class _Scrape:
 		mid_start = res2.index("Track prices")
 		try:
 			mid_end = res2.index("Other departing flights") + 1
-		except Exception:
-		    mid_end = res2.index("Other flights") + 1
+		except Exception as e:
+			mid_end = res2.index("Other flights") + 1
 		end = [i for i, x in enumerate(res2) if x.endswith('more flights')][0]
 
 		res3 = res2[start:mid_start] + res2[mid_end:end]
@@ -423,14 +457,29 @@ class _Scrape:
 		flights = [Flight(date, res3[matches[i]:matches[i+1]]) for i in range(len(matches)-1)]
 
 		return flights
+		
 
 	@staticmethod
 	def _make_url_request(url, driver):
-		print('Making url request')
 		driver.get(url)
-		print('Obtained url request')
 		
-		_Scrape._check_cookies(driver)
+		# Rejecting cookies
+		print('Checking cookies...')
+		try:
+			WebDriverWait(driver, 5).until(lambda d: len(d.find_elements(By.XPATH, value='//body/c-wiz/div')) > 0)
+			text = driver.find_element(by=By.XPATH, value='//body/c-wiz/div').text.split('\n')[2]
+
+			if text == 'Before you continue to Google':
+				print('Rejecting cookies and proceeding to search page')
+				buttons = driver.find_elements(by=By.CSS_SELECTOR, value='button')
+				reject_button = [button for button in buttons if button.text == 'Reject all'][0]
+				# reject_button = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, "//button[text()='Reject all']")))
+				reject_button.click()
+
+				WebDriverWait(driver, 10).until(lambda d: len(_Scrape._get_flight_elements(d)) > 0)
+		
+		except Exception as e:
+			print('Error with handling cookies: ', e)
 
 		# Waiting and initial XPATH cleaning
 		WebDriverWait(driver, timeout = 10).until(lambda d: len(_Scrape._get_flight_elements(d)) > 100)
@@ -445,35 +494,5 @@ class _Scrape:
 	def _get_flight_elements(driver):
 		return driver.find_element(by = By.XPATH, value = '//body[@id = "yDmH0d"]').text.split('\n')
 	
-	
-	@staticmethod
-	def _check_cookies(driver):
-		print('Checking cookies...')
-		try:
-			text = driver.find_element(by=By.XPATH, value='//div[@class="T4LgNb "]').text.split('\n')[2]
-		except WebDriverException:
-			driver.implicitly_wait(5)
-			try:
-				text = driver.find_element(by=By.XPATH, value='//div[@class="T4LgNb "]').text.split('\n')[2]
-			except NoSuchElementException:
-				return
-
-		if text == 'Before you continue to Google':
-			print('Rejecting cookies and proceeding to search page')
-			try:
-				reject_button = [button for button in _Scrape._get_buttons(driver) if button.text == 'Reject all'][0]
-				reject_button.click()
-			except IndexError:
-				print('Reject button not found')
-			return
-		else:
-			print('You dont seem to need to reject any cookies...')
-			return
-
-
-	@staticmethod
-	def _get_buttons(driver):
-		buttons = driver.find_elements(by=By.CSS_SELECTOR, value='button')
-		return buttons
 
 Scrape = _Scrape()
