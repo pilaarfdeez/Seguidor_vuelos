@@ -1,4 +1,4 @@
-name: Scraper Workflow
+name: Run Scraper
 
 on:
   push:
@@ -7,6 +7,8 @@ on:
   pull_request:
     branches:
       - main  # Workflow wird auch bei Pull Requests zum main Branch ausgelöst
+  schedule:
+    - cron: "0 12 * * *" # Run daily at 12:00 UTC
 
 jobs:
   build:
@@ -15,7 +17,7 @@ jobs:
     steps:
       # Schritt 1: Checkout des Codes
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Schritt 2: Setze Python und installiere Abhängigkeiten
       - name: Set up Python
@@ -24,24 +26,38 @@ jobs:
           python-version: '3.9'
 
       # Schritt 3: Installiere Abhängigkeiten
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
 
       # Schritt 4: Setze Google Chrome und ChromeDriver für Headless-Betrieb
-      - name: Set up Google Chrome
-        run: |
-          sudo apt-get install -y wget curl unzip
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo dpkg -i google-chrome-stable_current_amd64.deb
-          sudo apt --fix-broken install -y
+      # - name: Set up Google Chrome
+      #   run: |
+      #     sudo apt-get install -y wget curl unzip
+      #     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      #     sudo dpkg -i google-chrome-stable_current_amd64.deb
+      #     sudo apt --fix-broken install -y
 
-      # Schritt 5: Installiere ChromeDriver
-      - name: Set up ChromeDriver
-        uses: browser-actions/setup-chromedriver@v2
-        with:
-          chromedriver-version: 'latest'  # Stellt sicher, dass die neueste Version von ChromeDriver verwendet wird
+      # # Schritt 5: Installiere ChromeDriver
+      # - name: Set up ChromeDriver
+      #   uses: browser-actions/setup-chromedriver@v2
+      #   with:
+      #     chromedriver-version: 'latest'  # Stellt sicher, dass die neueste Version von ChromeDriver verwendet wird
+
+      - name: Install Chrome & ChromeDriver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+' | head -1)
+          CHROMEDRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/latest-patch-versions-per-build.json" | jq -r ".builds[\"$CHROME_VERSION\"].version")
+          wget -q -O chromedriver.zip "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
+          unzip chromedriver.zip
+          sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
+          sudo chmod +x /usr/local/bin/chromedriver
+
+          google-chrome --version
+          chromedriver --version
 
       # Schritt 6: Füge Cookies aus GitHub Secrets hinzu
       - name: Write cookies to a file
@@ -54,7 +70,7 @@ jobs:
 
       # Schritt 8: Speichere die JSON-Datei als Artefakt
       - name: Save the flight scraper output as Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: scraper-output
           path: output/flights.json
