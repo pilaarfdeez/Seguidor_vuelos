@@ -59,7 +59,7 @@ def ScrapeObjects(objs, headless=False, add_cookies=False, deep_copy=False):
 		options.add_argument("--disable-blink-features=AutomationControlled") 
 
 	chromedriver_autoinstaller.install() # Check if chromedriver is installed correctly and on path
-	driver = webdriver.Chrome(options=options, desired_capabilities=caps)
+	driver = webdriver.Chrome(options=options)
 	driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
 	if add_cookies:  # Load and add cookies to Selenium driver
