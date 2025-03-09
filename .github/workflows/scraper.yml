@@ -9,6 +9,8 @@ on:
       - main  # Workflow wird auch bei Pull Requests zum main Branch ausgelöst
   # schedule:
     # - cron: "0 12 * * *" # Run daily at 12:00 UTC
+  workflow_dispatch:
+
 
 jobs:
   build:
