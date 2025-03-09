@@ -54,10 +54,13 @@ def ScrapeObjects(objs, headless=False, add_cookies=False, deep_copy=False):
 
 	if headless:	# Necessary for Github Actions
 		options.add_argument("--headless")
+		options.add_argument("--no-sandbox")
+		options.add_argument("disable-dev-shm-usage")
 		options.add_argument("--disable-blink-features=AutomationControlled") 
 
 	chromedriver_autoinstaller.install() # Check if chromedriver is installed correctly and on path
 	driver = webdriver.Chrome(options=options, desired_capabilities=caps)
+	driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
 	if add_cookies:  # Load and add cookies to Selenium driver
 		with open('data/cookies.json', 'r') as f:
@@ -466,7 +469,7 @@ class _Scrape:
 		# Rejecting cookies
 		print('Checking cookies...')
 		try:
-			WebDriverWait(driver, 5).until(lambda d: len(d.find_elements(By.XPATH, value='//body/c-wiz/div')) > 0)
+			WebDriverWait(driver, 10).until(lambda d: len(d.find_elements(By.XPATH, value='//body/c-wiz/div')) > 0)
 			text = driver.find_element(by=By.XPATH, value='//body/c-wiz/div').text.split('\n')[2]
 
 			if text == 'Before you continue to Google':
@@ -475,14 +478,12 @@ class _Scrape:
 				reject_button = [button for button in buttons if button.text == 'Reject all'][0]
 				# reject_button = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, "//button[text()='Reject all']")))
 				reject_button.click()
-
-				WebDriverWait(driver, 10).until(lambda d: len(_Scrape._get_flight_elements(d)) > 0)
 		
 		except Exception as e:
 			print('Error with handling cookies: ', e)
 
 		# Waiting and initial XPATH cleaning
-		WebDriverWait(driver, timeout = 10).until(lambda d: len(_Scrape._get_flight_elements(d)) > 100)
+		# WebDriverWait(driver, timeout = 10).until(lambda d: len(_Scrape._get_flight_elements(d)) > 100)
 		results = _Scrape._get_flight_elements(driver)
 
 		#driver.quit()
