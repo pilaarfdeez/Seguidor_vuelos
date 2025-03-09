@@ -1,7 +1,7 @@
 from src.google_flight_analysis.scrape import *
 
 
-result = Scrape('JFK', 'IST', '2023-07-20', '2023-08-20') # obtain our scrape object, represents out query
+result = Scrape('AGP', 'HAM', '2025-07-20', '2025-08-20') # obtain our scrape object, represents out query
 # result.type # This is in a round-trip format
 # result.origin # ['JFK', 'IST']
 # result.dest # ['IST', 'JFK']
