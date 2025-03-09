@@ -32,20 +32,7 @@ jobs:
           pip install -r requirements.txt
 
       # Schritt 4: Setze Google Chrome und ChromeDriver für Headless-Betrieb
-      # - name: Set up Google Chrome
-      #   run: |
-      #     sudo apt-get install -y wget curl unzip
-      #     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-      #     sudo dpkg -i google-chrome-stable_current_amd64.deb
-      #     sudo apt --fix-broken install -y
-
-      # # Schritt 5: Installiere ChromeDriver
-      # - name: Set up ChromeDriver
-      #   uses: browser-actions/setup-chromedriver@v2
-      #   with:
-      #     chromedriver-version: 'latest'  # Stellt sicher, dass die neueste Version von ChromeDriver verwendet wird
-
-      - name: Install Chrome & ChromeDriver
+      - name: Set up Chrome & ChromeDriver
         run: |
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
@@ -59,22 +46,26 @@ jobs:
           unzip chromedriver.zip
           sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
           sudo chmod +x /usr/local/bin/chromedriver
-
           google-chrome --version
           chromedriver --version
 
-      # Schritt 6: Füge Cookies aus GitHub Secrets hinzu
+        # Alternatively:
+          # uses: browser-actions/setup-chrome@v3
+          # with:
+          #   chrome-version: 'latest'
+
+      # Schritt 5: Füge Cookies aus GitHub Secrets hinzu
       - name: Write cookies to a file
         run: |
           mkdir -p data
           echo "${{ secrets.COOKIES_JSON }}" > data/cookies.json
 
-      # Schritt 7: Führe das Scraper-Skript aus
+      # Schritt 6: Führe das Scraper-Skript aus
       - name: Run scraper script
         run: |
           python main.py
 
-      # Schritt 8: Speichere die JSON-Datei als Artefakt
+      # Schritt 7: Speichere die JSON-Datei als Artefakt
       - name: Save the flight scraper output as Artifact
         uses: actions/upload-artifact@v4
         with:
