@@ -1,6 +1,7 @@
 from datetime import date, datetime, timedelta
 import numpy as np
 import pandas as pd
+import re
 from tqdm import tqdm
 
 __all__ = ['Flight']
@@ -20,6 +21,7 @@ class Flight:
 		self._stops = None
 		self._co2 = None
 		self._emissions = None
+		self._price = None
 		self._price_eur = None
 		self._price_usd = None
 		self._times = []
@@ -95,6 +97,10 @@ class Flight:
 
 	@property
 	def price(self):
+		return self._price
+
+	@property
+	def price_eur(self):
 		return self._price_eur
 	
 	@property
@@ -134,6 +140,9 @@ class Flight:
 			# emmision
 			emission_val = arg.split()[0]
 			self._emissions = 0 if emission_val == 'Avg' else int(emission_val[:-1])
+		elif re.fullmatch(r"\d+", arg):
+			# price
+			self._price = arg
 		elif '€' in arg and self._price_eur is None:
 			# price (€)
 			self._price_eur = int(arg[1:].replace(',',''))
@@ -144,7 +153,7 @@ class Flight:
 			# origin/dest
 			self._origin = arg[:3]
 			self._dest = arg[3:]
-		elif ('hr' in arg and arg[-3:].isupper()) or (len(arg.split(', ')) > 1 and arg.isupper()):
+		elif (('hr' in arg or 'min' in arg) and arg[-3:].isupper()) or (len(arg.split(', ')) > 1 and arg.isupper()):
 			# 1 stop + time at stop
 			# or multiple stops
 			self._stops = arg
@@ -161,7 +170,21 @@ class Flight:
 			self._time_arrive = self._times[1]
 
 	def _parse_args(self, args):
+		ignore = False
 		for arg in args:
+			ignored_args = [
+				'View price history', 
+				'Avoids as much CO2e', 
+				'Prices are currently', 
+				'Price insights'
+				   ]
+			for ignored_arg in ignored_args:
+				if ignored_arg in arg:
+					ignore = True
+			if ignore:
+				ignore = False
+				continue
+
 			self._classify_arg(arg)
 
 	@staticmethod
@@ -173,8 +196,7 @@ class Flight:
 			'Destination' : [],
 			'Airline(s)' : [],
 			'Travel Time' : [],
-			'Price (€)' : [],
-			'Price ($)': [],
+			'Price' : [],
 			'Num Stops' : [],
 			'Layover' : [],
 			'Access Date' : [],
@@ -197,8 +219,11 @@ class Flight:
 			#data['Stop Location'] += [flight.stops]
 			data['CO2 Emission (kg)'] += [flight.co2]
 			data['Emission Diff (%)'] += [flight.emissions]
-			data['Price (€)'] += [flight.price]
-			data['Price ($)'] += [flight.price_usd]
+			data['Price'] += [flight.price]
+			if flight.price_eur:
+				data['Price (€)'] += [flight.price_eur]
+			if flight.price_usd:
+				data['Price ($)'] += [flight.price_usd]
 			data['Access Date'] += [datetime.today().replace(hour = 0, minute = 0, second = 0, microsecond = 0)]
 
 		return pd.DataFrame(data)
