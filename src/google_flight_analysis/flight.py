@@ -221,9 +221,15 @@ class Flight:
 			data['Emission Diff (%)'] += [flight.emissions]
 			data['Price'] += [flight.price]
 			if flight.price_eur:
-				data['Price (€)'] += [flight.price_eur]
+				try:
+					data['Price (€)'] += [flight.price_eur]
+				except KeyError:
+					data['Price (€)'] = [flight.price_eur]
 			if flight.price_usd:
-				data['Price ($)'] += [flight.price_usd]
+				try:
+					data['Price ($)'] += [flight.price_usd]
+				except KeyError:
+					data['Price ($)'] = [flight.price_usd]
 			data['Access Date'] += [datetime.today().replace(hour = 0, minute = 0, second = 0, microsecond = 0)]
 
 		return pd.DataFrame(data)
