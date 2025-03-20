@@ -73,3 +73,11 @@ jobs:
         with:
           name: scraper-output
           path: data/flights.json
+
+      - name: Commit JSON changes
+        run: |
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
+          git add tracked_flights.json
+          git commit -m "Update tracked flight prices" || echo "No changes to commit"
+          git push
