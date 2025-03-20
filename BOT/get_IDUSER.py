@@ -1,6 +1,6 @@
 import telebot
 
-TOKEN = '7630436278:AAEv4NiXibibidgHKOVw02tLE-RnBGCT08s'  # Asegúrate de colocar tu token aquí
+TOKEN = ''  # Asegúrate de colocar tu token aquí
 bot = telebot.TeleBot(TOKEN)
 
 # Manejador para cualquier mensaje recibido
