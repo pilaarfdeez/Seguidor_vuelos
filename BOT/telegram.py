@@ -1,6 +1,6 @@
 import telebot
 import json
-TOKEN = ('7630436278:AAEv4NiXibibidgHKOVw02tLE-RnBGCT08s')
+TOKEN = ('')
 bot = telebot.TeleBot(TOKEN)
 
 
