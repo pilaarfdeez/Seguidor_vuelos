@@ -27,6 +27,7 @@ class Flight:
 		self._times = []
 		self._time_leave = None
 		self._time_arrive = None
+		self._search_date = None
 		self._trash = []
 
 		self._parse_args(*args)
@@ -106,6 +107,10 @@ class Flight:
 	@property
 	def price_usd(self):
 		return self._price_usd
+	
+	@property
+	def search_date(self):
+		return self._search_date.strftime('%Y-%m-%d')
 
 	@property
 	def time_leave(self):
@@ -176,7 +181,7 @@ class Flight:
 				'View price history', 
 				'Avoids as much CO2e', 
 				'Prices are currently', 
-				'Price insights'
+				'Price insights',
 				   ]
 			for ignored_arg in ignored_args:
 				if ignored_arg in arg:
@@ -186,6 +191,13 @@ class Flight:
 				continue
 
 			self._classify_arg(arg)
+
+		self._search_date = datetime.today().replace(hour = 0, minute = 0, second = 0, microsecond = 0)
+		if not self.price:
+			if self.price_eur and not self.price_usd:
+				self.price = self.price_eur
+			elif not self.price_eur and self.price_usd:
+				self.price = self.price_usd
 
 	@staticmethod
 	def dataframe(flights):
@@ -199,10 +211,10 @@ class Flight:
 			'Price' : [],
 			'Num Stops' : [],
 			'Layover' : [],
-			'Access Date' : [],
 			#'Stop Location' : [],
 			'CO2 Emission (kg)' : [],
-			'Emission Diff (%)' : []
+			'Emission Diff (%)' : [],
+			'Search Date' : []
 		}
 
 		for flight in flights:
@@ -230,7 +242,7 @@ class Flight:
 					data['Price ($)'] += [flight.price_usd]
 				except KeyError:
 					data['Price ($)'] = [flight.price_usd]
-			data['Access Date'] += [datetime.today().replace(hour = 0, minute = 0, second = 0, microsecond = 0)]
+			data['Search Date'] += [flight.search_date]
 
 		return pd.DataFrame(data)
 
