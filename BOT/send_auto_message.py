@@ -4,11 +4,11 @@ import schedule
 import time
 from threading import Thread
 
-TOKEN = '7630436278:AAEv4NiXibibidgHKOVw02tLE-RnBGCT08s'  # Asegúrate de colocar tu token aquí
+TOKEN = ''  # Asegúrate de colocar tu token aquí
 bot = telebot.TeleBot(TOKEN)
 
 # Aquí pones el ID del usuario al que quieres enviar el mensaje automáticamente
-user_ids = ['890524575']  # Pon el ID del usuario que recibirá el mensaje
+user_ids = ['']  # Pon el ID del usuario que recibirá el mensaje
 
 def send_auto_message():
     try:
