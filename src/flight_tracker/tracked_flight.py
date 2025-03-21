@@ -43,6 +43,7 @@ class TrackedFlight():
 
         self.plot_name = f"{self.origin}{self.destination}_{self.date.replace('-', '')}_{self.time.replace(':', '')}"
     
+    
     def __str__(self):
         pass
 
@@ -50,6 +51,12 @@ class TrackedFlight():
     def as_dict(self):
         keys = ['origin', 'destination', 'date', 'time', 'prices']
         return {k: v for k, v in self.__dict__.items() if k in keys}
+    
+
+    def remove_last_price(self):
+        if len(self.prices) >= 1:
+            self.prices.remove(self.prices[-1])
+        return
     
 
     def generate_plot(self):

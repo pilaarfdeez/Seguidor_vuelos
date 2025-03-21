@@ -70,6 +70,9 @@ class Tracker:
             return ['existing', idx]  # append flight price straightaway if there are no historical prices
         elif self.tracked_flights[idx].prices[-1]['date'] != new_flight['prices'][0]['date']:
             return ['existing', idx]  # if there are historical prices, check that it hasn't been checked today yet
+        elif self.tracked_flights[idx].prices[-1]['price'] != new_flight['prices'][0]['price']:
+            self.tracked_flights[idx].remove_last_price()
+            return ['existing', idx]  # if it was checked today but the price has changed anyways
         else:
             return ['skip']
         
@@ -90,7 +93,7 @@ class Tracker:
         self.sort_flights()
         updated_flights = []
         updated_flights = [flight for flight in self.tracked_flights 
-                           if flight.prices[-1]['price'] != flight.prices[-2]['price'] if len(flight.prices) > 1]
+                           if len(flight.prices) >= 2 if flight.prices[-1]['price'] != flight.prices[-2]['price']]
         return updated_flights
 
 
