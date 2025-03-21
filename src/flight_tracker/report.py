@@ -8,8 +8,10 @@ from jinja2 import Template
 import os
 
 from config.tracker_config import ReporterConfig
+from src.google_flight_analysis.airport import Airport
 
 conf = ReporterConfig()
+airports = Airport().dictionary
 
 
 class Reporter:
@@ -20,10 +22,14 @@ class Reporter:
             self.template = Template(f.read()) 
 
     def send_report(self, flights):
+        if len(flights) == 0:
+            print('No flights to update --> Skipping daily report')
+            return 
+
         for flight in flights:
             flight.generate_plot()
 
-        html_content = self.template.render(flights=flights, today_date=self.today)
+        html_content = self.template.render(flights=flights, airports=airports, today_date=self.today)
 
         # Create a multipart message and set headers
         message = MIMEMultipart()
@@ -52,3 +58,4 @@ class Reporter:
             server.sendmail(conf.login, conf.recipients, message.as_string())
 
         print('Email sent')
+        return
