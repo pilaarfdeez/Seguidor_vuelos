@@ -15,12 +15,11 @@ reporter = Reporter()
 '''
 TODO: 
 - Calculate elapsed time
+- Adapt for production environment
+- Identify production environment
+- Setup logging
 
 '''
-updated_flights = tracker.new_prices()
-reporter.send_report(updated_flights)
-
-sys.exit()
 
 
 for flight in config.FLIGHTS_TO_TRACK:
@@ -54,4 +53,5 @@ tracker.save_flights()
 print('Tracker jobs terminated successfully!')
 
 print('Sending email...')
-# reporter.send_report(tracker.tracked_flights)
+updated_flights = tracker.new_prices()
+reporter.send_report(updated_flights)
