@@ -65,7 +65,7 @@ jobs:
       # Schritt 6: Führe das Scraper-Skript aus
       - name: Run scraper script
         run: |
-          python main.py
+          python run_tracker.py
 
       # Schritt 7: Speichere die JSON-Datei als Artefakt
       - name: Save the flight scraper output as Artifact
