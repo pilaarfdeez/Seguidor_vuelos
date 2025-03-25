@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Diario de Precios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            background: #ffffff;
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .flight {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .flight:last-child {
+            border-bottom: none;
+        }
+        .flight h2 {
+            margin: 5px 0;
+            color: #007bff;
+        }
+        .price-change {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .price-up {
+            color: red;
+        }
+        .price-down {
+            color: green;
+        }
+        .plot {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>&#128202; Informe Diario de Precios</h1>
+
+        {% for flight in flights %}
+        <div class="flight">
+            <h2> &#9992; {{ airports[flight.origin] }} &rarr; {{ airports[flight.destination] }} ({{ flight.date }} a las {{ flight.time }})</h2>
+            <p><strong>Flight ID:</strong> {{ flight.plot_name }}</p>
+            <p><strong>Nuevo precio:</strong> {{ flight.prices[-2]['price'] }} &euro; &rarr; <strong class="price-change {% if flight.prices[-1]['price'] > flight.prices[-2]['price'] %}price-up{% else %}price-down{% endif %}">{{ flight.prices[-1]['price'] }} &euro;</strong></p>
+            
+            <div class="plot">
+                <img src="cid:plot_{{ flight.plot_name }}" alt="Evolución de precios" width="100%">
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="footer">
+            <p>Creado el {{ today_date }}</p>
+            <p>&copy; Seguidor de Vuelos de los tocinillos</p>
+        </div>
+    </div>
+</body>
+</html>
