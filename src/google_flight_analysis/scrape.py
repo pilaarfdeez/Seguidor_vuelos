@@ -57,7 +57,7 @@ def ScrapeObjects(objs, headless=False, add_cookies=False, deep_copy=False):
 	if headless:	# Necessary for Github Actions
 		options.add_argument("--headless")
 		options.add_argument("--no-sandbox")
-		options.add_argument("disable-dev-shm-usage")
+		options.add_argument("--disable-dev-shm-usage")
 		options.add_argument("--disable-blink-features=AutomationControlled") 
 
 	chromedriver_autoinstaller.install() # Check if chromedriver is installed correctly and on path
@@ -421,7 +421,7 @@ class _Scrape:
 		urls = []
 		for i in range(len(self._date)):
 			urls += [
-				'https://www.google.com/travel/flights?hl=en&q=Flights%20to%20{dest}%20from%20{org}%20on%20{date}%20oneway'.format(
+				'https://www.google.com/travel/flights?hl=en&curr=EUR&q=Flights%20to%20{dest}%20from%20{org}%20on%20{date}%20oneway'.format(
 					dest = self._dest[i],
 					org = self._origin[i],
 					date = self._date[i]
