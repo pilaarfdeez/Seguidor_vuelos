@@ -14,5 +14,6 @@ cached/
 *.Rproj
 
 config/tracker_config.py
-data/
+data/*
+!tracked_flights.json
 src/google_flight_analysis/dev.py
