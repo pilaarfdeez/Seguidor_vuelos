@@ -45,7 +45,7 @@ class TrackedFlight():
     
     
     def __str__(self):
-        pass
+        return f"({self.origin}to{self.destination}, {self.date} at {self.time})"
 
 
     def as_dict(self):
