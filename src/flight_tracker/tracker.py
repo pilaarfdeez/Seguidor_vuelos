@@ -2,8 +2,11 @@ from itertools import groupby
 import json
 import pandas as pd
 
+from config.logging import init_logger
 from src.google_flight_analysis.flight import Flight
 from src.flight_tracker.tracked_flight import TrackedFlight
+
+logger = init_logger(__name__)
 
 #TODO: tracked_flights must be a list of TrackedFlight objects and not dictionaries... come on...
 
@@ -38,17 +41,20 @@ class Tracker:
         classified_flight = self.classify_flight(new_flight)
         if classified_flight[0] == 'new':
             self.tracked_flights.append(new_flight)
+            logger.debug('Adding new flight')
 
         elif classified_flight[0] == 'existing':
             idx = classified_flight[1]
             self.tracked_flights[idx].prices.append(new_flight.prices[0])
+            logger.debug('Adding new price')
 
 
     def delete_flight(self, tracked_flight: TrackedFlight):
         classified_flight = self.classify_flight(tracked_flight)
         if classified_flight[0] == 'new':
-            print('Tried to delete a non-tracked flight')
+            logger.warning('Tried to delete a non-tracked flight')
         elif classified_flight[0] == 'existing':
+            logger.info('Removing flight...')
             flight_remove = self.tracked_flights[classified_flight[1]]
             self.tracked_flights.remove(flight_remove)
 
@@ -98,6 +104,7 @@ class Tracker:
 
 
     def save_flights(self):
+        logger.info('Saving updated flight information...')
         self.sort_flights()
         with open("data/tracked_flights.json", "w") as file:
             json.dump(self.tracked_flights_dict(), file, indent=4)

@@ -7,10 +7,12 @@ from email.mime.base import MIMEBase
 from jinja2 import Template
 import os
 
+from config.logging import init_logger
 from config.tracker_config import ReporterConfig
 from src.google_flight_analysis.airport import Airport
 
 conf = ReporterConfig()
+logger = init_logger(__name__)
 airports = Airport().dictionary
 
 
@@ -23,7 +25,7 @@ class Reporter:
 
     def send_report(self, flights):
         if len(flights) == 0:
-            print('No flights to update --> Skipping daily report')
+            logger.info('No flights to update --> Skipping daily report')
             return 
 
         for flight in flights:
@@ -56,6 +58,9 @@ class Reporter:
             server.starttls()
             server.login(conf.login, conf.password)
             server.sendmail(conf.login, conf.recipients, message.as_string())
+            logger.info('Email sent')
 
-        print('Email sent')
+        for flight in flights:
+            flight.remove_plot()
+
         return

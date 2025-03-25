@@ -18,9 +18,11 @@ import random
 import time
 from tqdm import tqdm
 
+from config.logging import init_logger
 from src.google_flight_analysis.flight import *
 
 __all__ = ['Scrape', '_Scrape', 'ScrapeObjects']
+logger = init_logger(__name__)
 
 date_format = "%Y-%m-%d"
 '''
@@ -451,8 +453,13 @@ class _Scrape:
 		try:
 			mid_end = res2.index("Other departing flights") + 1
 		except Exception as e:
+			logger.warning('Did not find "Other departing flights" item')
 			mid_end = res2.index("Other flights") + 1
-		end = [i for i, x in enumerate(res2) if x.endswith('more flights')][0]
+		try:
+			end = [i for i, x in enumerate(res2) if x.endswith('more flights')][0]
+		except IndexError:
+			logger.warning('Did not find "View more flights" item')
+			end = [i for i, x in enumerate(res2) if x.endswith('more flights')][0]
 
 		res3 = res2[start:mid_start] + res2[mid_end:end]
 
