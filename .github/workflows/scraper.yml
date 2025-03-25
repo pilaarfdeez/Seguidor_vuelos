@@ -78,6 +78,6 @@ jobs:
         run: |
           git config --local user.name "github-actions"
           git config --local user.email "github-actions@github.com"
-          git add tracked_flights.json
+          git add data/tracked_flights.json
           git commit -m "Update tracked flight prices" || echo "No changes to commit"
           git push
