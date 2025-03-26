@@ -1,3 +1,4 @@
+import os
 # from google_flight_analysis.flight import Flight
 # from flight_tracker.tracked_flight import TrackedFlight
 
@@ -17,6 +18,6 @@ class ReporterConfig:
         self.port = 587
         self.smtp_server = 'smtp.gmail.com'
 
-        self.login = ''
-        self.password = ''
-        self.recipients = ['', '']
+        self.login = os.environ.get('GMAIL_LOGIN')
+        self.password = os.environ.get('GMAIL_PASSWORD')
+        self.recipients = os.environ.get('GMAIL_TO')
