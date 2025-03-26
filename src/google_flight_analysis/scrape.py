@@ -435,7 +435,7 @@ class _Scrape:
 		try:
 			results = _Scrape._make_url_request(url, driver)
 		except TimeoutException:
-			print(
+			logger.warning(
 				'''TimeoutException, try again and check your internet connection!\n
 				Also possible that no flights exist for your query :('''.replace('\t','')
 			)
@@ -474,20 +474,20 @@ class _Scrape:
 		driver.get(url)
 		
 		# Rejecting cookies
-		print('Checking cookies...')
+		logger.debug('Checking cookies...')
 		try:
 			WebDriverWait(driver, 10).until(lambda d: len(d.find_elements(By.XPATH, value='//body/c-wiz/div')) > 0)
 			text = driver.find_element(by=By.XPATH, value='//body/c-wiz/div').text.split('\n')[2]
 
 			if text == 'Before you continue to Google':
-				print('Rejecting cookies and proceeding to search page')
+				logger.info('Rejecting cookies and proceeding to search page')
 				buttons = driver.find_elements(by=By.CSS_SELECTOR, value='button')
 				reject_button = [button for button in buttons if button.text == 'Reject all'][0]
 				# reject_button = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, "//button[text()='Reject all']")))
 				reject_button.click()
 		
 		except Exception as e:
-			print('Error with handling cookies: ', e)
+			logger.warning('Error with handling cookies: ', e)
 
 		# Waiting and initial XPATH cleaning
 		# WebDriverWait(driver, timeout = 10).until(lambda d: len(_Scrape._get_flight_elements(d)) > 100)
