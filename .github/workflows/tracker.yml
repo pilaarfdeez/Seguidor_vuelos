@@ -1,6 +1,14 @@
-name: Run Scraper
+name: Run Tracker
 
 on:
+  push:
+    branches:
+      - main  # Workflow wird bei jedem Push zum main Branch ausgelöst
+  pull_request:
+    branches:
+      - main  # Workflow wird auch bei Pull Requests zum main Branch ausgelöst
+  # schedule:
+  #   - cron: "0 12 * * *" # Run daily at 12:00 UTC
   workflow_dispatch:
 
 
@@ -57,19 +65,25 @@ jobs:
       # Schritt 6: Führe das Scraper-Skript aus
       - name: Run scraper script
         run: |
-          python main.py
+          mkdir -p data/images
+          python run_tracker.py
+        env:
+          GMAIL_LOGIN: ${{ secrets.GMAIL_LOGIN }}
+          GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
+          GMAIL_TO: ${{ secrets.GMAIL_TO }}
 
       # Schritt 7: Speichere die JSON-Datei als Artefakt
-      - name: Save the flight scraper output as Artifact
+      - name: Save the updated flight prices as Artifact
         uses: actions/upload-artifact@v4
         with:
           name: scraper-output
-          path: data/flights.json
+          path: data/tracked_flights.json
 
+      # Schritt 8: Push die aktualisierte JSON-Datei
       - name: Commit JSON changes
         run: |
           git config --local user.name "github-actions"
           git config --local user.email "github-actions@github.com"
-          git add data/flights.json
+          git add data/tracked_flights.json
           git commit -m "Update tracked flight prices" || echo "No changes to commit"
           git push
