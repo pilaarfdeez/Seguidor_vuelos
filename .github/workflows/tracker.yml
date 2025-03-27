@@ -2,13 +2,13 @@ name: Run Tracker
 
 on:
   push:
-    branches:
-      - main  # Workflow wird bei jedem Push zum main Branch ausgelöst
-  pull_request:
-    branches:
-      - main  # Workflow wird auch bei Pull Requests zum main Branch ausgelöst
-  # schedule:
-  #   - cron: "0 12 * * *" # Run daily at 12:00 UTC
+  #   branches:
+  #     - main  # Workflow wird bei jedem Push zum main Branch ausgelöst
+  # pull_request:
+  #   branches:
+  #     - main  # Workflow wird auch bei Pull Requests zum main Branch ausgelöst
+  schedule:
+    - cron: "0 8 * * *" # Run daily at 8:00 UTC
   workflow_dispatch:
 
 
