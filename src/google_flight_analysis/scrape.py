@@ -20,6 +20,7 @@ from tqdm import tqdm
 
 from config.logging import init_logger
 from src.google_flight_analysis.flight import *
+from src.google_flight_analysis.human_simulations import *
 
 __all__ = ['Scrape', '_Scrape', 'ScrapeObjects']
 logger = init_logger(__name__)
@@ -37,7 +38,7 @@ date_format = "%Y-%m-%d"
 # Loading some browser options to bypass anti-bot systems
 options = Options()
 options.add_argument("--disable-gpu")
-options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36")
+options.add_argument(f"user-agent={get_user_agent()}")
 
 '''
 TODO:
@@ -70,9 +71,11 @@ def ScrapeObjects(objs, headless=False, add_cookies=False, deep_copy=False):
 		for cookie in cookies:
 			driver.add_cookie(cookie)
 		driver.refresh()
-		time.sleep(random.uniform(2, 5))
+		random_wait()
 
 	driver.maximize_window()
+	simulate_mouse_movement(driver, 3, 10)
+	simulate_scroll(driver, 1, 2)
 
 	# modifies the objects in-place
 	debug = [obj._scrape_data(driver) for obj in tqdm(objs, desc="Scraping Objects")]
