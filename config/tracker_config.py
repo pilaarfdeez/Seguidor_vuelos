@@ -1,9 +1,16 @@
 import os
 # from google_flight_analysis.flight import Flight
 # from flight_tracker.tracked_flight import TrackedFlight
+        
 
 class TrackerConfig:
     def __init__(self):
+        env = os.getenv("ENV", "local")
+        if env == 'production' or os.getenv("GITHUB_ACTIONS") == "true":
+            self.ENV = 'production'
+        else:
+            self.ENV = 'local'
+
         self.FLIGHTS_TO_TRACK = [
             # {'origin': '', 'destination': '', 'date': '', 'time': ''},
         ]

@@ -68,6 +68,7 @@ jobs:
           mkdir -p data/images
           python run_tracker.py
         env:
+          ENV: production
           GMAIL_LOGIN: ${{ secrets.GMAIL_LOGIN }}
           GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
           GMAIL_TO: ${{ secrets.GMAIL_TO }}

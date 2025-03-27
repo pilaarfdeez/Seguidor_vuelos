@@ -18,9 +18,12 @@ reporter = Reporter()
 TODO: 
 - Calculate elapsed time
 - Adapt for production environment
-- Identify production environment
 
 '''
+if config.ENV == 'production':
+    logger.info('Running Tracker in GitHub Actions!')
+elif config.ENV == 'local':
+    logger.info('Running Tracker locally!')
 
 
 for flight in config.FLIGHTS_TO_TRACK:
@@ -34,7 +37,7 @@ for flight in config.FLIGHTS_TO_REMOVE:
 for key, flights in tracker.group_flights().items():
     logger.info(f'Checking {len(flights)} tracked flights for {key}')
     result = Scrape(flights[0].origin, flights[0].destination, flights[0].date)
-    ScrapeObjects(result, headless=True)
+    ScrapeObjects(result, config.ENV, headless=True)
     result_df = result.data
     
     for flight in flights:

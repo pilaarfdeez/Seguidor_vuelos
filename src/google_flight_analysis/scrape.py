@@ -48,7 +48,7 @@ TODO:
 '''
 
 
-def ScrapeObjects(objs, headless=False, add_cookies=False, deep_copy=False):
+def ScrapeObjects(objs, env, headless=False, add_cookies=False, deep_copy=False):
 	if type(objs) is _Scrape:
 		objs = [objs]
 
@@ -78,7 +78,11 @@ def ScrapeObjects(objs, headless=False, add_cookies=False, deep_copy=False):
 	simulate_scroll(driver, 1, 2)
 
 	# modifies the objects in-place
-	debug = [obj._scrape_data(driver) for obj in tqdm(objs, desc="Scraping Objects")]
+	if env == 'local':
+		debug = [obj._scrape_data(driver) for obj in tqdm(objs, desc="Scraping Objects")]
+	elif env == 'production':
+		for obj in objs:
+			obj._scrape_data(driver)
 	
 	driver.quit()
 
