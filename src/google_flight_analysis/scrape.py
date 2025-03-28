@@ -14,8 +14,6 @@ from datetime import date, datetime, timedelta
 import json
 import numpy as np
 import pandas as pd
-import random
-import time
 from tqdm import tqdm
 
 from config.logging import init_logger
@@ -74,8 +72,8 @@ def ScrapeObjects(objs, env, headless=False, add_cookies=False, deep_copy=False)
 		random_wait()
 
 	driver.maximize_window()
-	simulate_mouse_movement(driver, 3, 10)
-	simulate_scroll(driver, 1, 2)
+	# simulate_mouse_movement(driver, 3, 10)
+	# simulate_scroll(driver, 1, 2)
 
 	# modifies the objects in-place
 	if env == 'local':

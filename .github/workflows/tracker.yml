@@ -57,10 +57,10 @@ jobs:
           #   chrome-version: 'latest'
 
       # Schritt 5: Füge Cookies aus GitHub Secrets hinzu
-      - name: Write cookies to a file
-        run: |
-          mkdir -p data
-          echo "${{ secrets.COOKIES_JSON }}" > data/cookies.json
+      # - name: Write cookies to a file
+      #   run: |
+      #     mkdir -p data
+      #     echo "${{ secrets.COOKIES_JSON }}" > data/cookies.json
 
       # Schritt 6: Führe das Scraper-Skript aus
       - name: Run scraper script
