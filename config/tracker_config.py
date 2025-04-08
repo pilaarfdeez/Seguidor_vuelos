@@ -1,4 +1,5 @@
 import os
+import json
 # from google_flight_analysis.flight import Flight
 # from flight_tracker.tracked_flight import TrackedFlight
         
@@ -27,4 +28,15 @@ class ReporterConfig:
 
         self.login = os.environ.get('GMAIL_LOGIN')
         self.password = os.environ.get('GMAIL_PASSWORD')
-        self.recipients = os.environ.get('GMAIL_TO')
+
+        raw_recipients = os.environ.get('GMAIL_TO')
+        self.recipients = json.loads(raw_recipients)
+        print(f"Raw value: {raw_recipients}")
+        print(f"Type: {type(raw_recipients)}\n")
+
+        print(f"Recipients: {self.recipients}")
+        print(f"Type: {type(self.recipients)}")
+        print(f"Length: {len(self.recipients)}")
+
+
+
