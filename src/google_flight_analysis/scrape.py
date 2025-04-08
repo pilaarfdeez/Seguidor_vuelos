@@ -53,7 +53,7 @@ def ScrapeObjects(objs, env, headless=False, add_cookies=False, deep_copy=False)
 	caps = DesiredCapabilities.CHROME.copy()
 	caps["goog:loggingPrefs"] = {"performance": "ALL"}
 
-	if headless:	# Necessary for Github Actions
+	if headless or env == 'production':	# Necessary for Github Actions
 		options.add_argument("--headless")
 		options.add_argument("--no-sandbox")
 		options.add_argument("--disable-dev-shm-usage")

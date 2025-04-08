@@ -24,6 +24,7 @@ class Reporter:
             self.template = Template(f.read()) 
 
     def send_report(self, flights):
+        logger.debug(f'Number of recipients: {len(conf.recipients)}')
         if len(flights) == 0:
             logger.info('No flights to update --> Skipping daily report')
             return 
