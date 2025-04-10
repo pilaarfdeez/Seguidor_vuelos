@@ -37,7 +37,7 @@ for flight in config.FLIGHTS_TO_REMOVE:
 for key, flights in tracker.group_flights().items():
     logger.info(f'Checking {len(flights)} tracked flights for {key}')
     result = Scrape(flights[0].origin, flights[0].destination, flights[0].date)
-    ScrapeObjects(result, config.ENV, headless=True)
+    ScrapeObjects(result, config.ENV, headless=False)
     result_df = result.data
     
     for flight in flights:
