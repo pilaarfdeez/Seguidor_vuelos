@@ -82,12 +82,15 @@ jobs:
 
       # Schritt 8: Push die aktualisierte JSON-Datei
       - name: Commit JSON changes
-        run: |
-          git config --local user.name "github-actions"
-          git config --local user.email "github-actions@github.com"
-          git add data/tracked_flights.json
-          git commit -m "Update tracked flight prices" || echo "No changes to commit"
-          git push
-        env:
-          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: ./data/tracked_flights.json
+        # run: |
+        #   git config --local user.name "github-actions"
+        #   git config --local user.email "github-actions@github.com"
+        #   git add data/tracked_flights.json
+        #   git commit -m "Update tracked flight prices" || echo "No changes to commit"
+        #   git push
+        # env:
+        #   GH_TOKEN: ${{ secrets.REPO_TOKEN }}
           
