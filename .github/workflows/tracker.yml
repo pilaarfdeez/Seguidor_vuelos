@@ -89,5 +89,5 @@ jobs:
           git commit -m "Update tracked flight prices" || echo "No changes to commit"
           git push
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
           
