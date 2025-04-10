@@ -87,5 +87,7 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git add data/tracked_flights.json
           git commit -m "Update tracked flight prices" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.REPO_TOKEN }}@github.com/pilaarfdeez/Seguidor_vuelos.git HEAD:main
+          git push
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
