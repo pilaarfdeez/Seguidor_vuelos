@@ -495,7 +495,7 @@ class _Scrape:
 		
 		except IndexError as e:
 			logger.warning('IndexError with handling cookies: ', e)
-			logger.info(f'Text: {driver.find_element(by=By.XPATH, value='//body/c-wiz/div').text}')
+			logger.info(f'Text: {driver.find_element(by=By.XPATH, value="//body/c-wiz/div").text}')
 
 		# Waiting and initial XPATH cleaning
 		# WebDriverWait(driver, timeout = 10).until(lambda d: len(_Scrape._get_flight_elements(d)) > 100)
