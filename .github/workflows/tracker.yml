@@ -93,6 +93,6 @@ jobs:
         #   git add data/tracked_flights.json
         #   git commit -m "Update tracked flight prices" || echo "No changes to commit"
         #   git push
-        env:
-          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
+        # env:
+        #   GH_TOKEN: ${{ secrets.REPO_TOKEN }}
           
