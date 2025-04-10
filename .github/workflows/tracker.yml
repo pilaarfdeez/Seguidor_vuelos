@@ -20,6 +20,8 @@ jobs:
       # Schritt 1: Checkout des Codes
       - name: Checkout repository
         uses: actions/checkout@v4
+        env:
+          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
 
       # Schritt 2: Setze Python und installiere Abhängigkeiten
       - name: Set up Python
@@ -91,6 +93,6 @@ jobs:
         #   git add data/tracked_flights.json
         #   git commit -m "Update tracked flight prices" || echo "No changes to commit"
         #   git push
-        # env:
-        #   GH_TOKEN: ${{ secrets.REPO_TOKEN }}
+        env:
+          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
           
