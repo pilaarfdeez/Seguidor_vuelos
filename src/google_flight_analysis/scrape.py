@@ -34,9 +34,11 @@ date_format = "%Y-%m-%d"
 '''
 
 # Loading some browser options to bypass anti-bot systems
+user_agent = get_user_agent()
 options = Options()
 options.add_argument("--disable-gpu")
-options.add_argument(f"user-agent={get_user_agent()}")
+options.add_argument(f"user-agent={user_agent}")
+logger.info(f'User agent chosen: {user_agent}')
 
 '''
 TODO:
@@ -491,8 +493,9 @@ class _Scrape:
 				# reject_button = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, "//button[text()='Reject all']")))
 				reject_button.click()
 		
-		except Exception as e:
-			logger.warning('Error with handling cookies: ', e)
+		except IndexError as e:
+			logger.warning('IndexError with handling cookies: ', e)
+			logger.info(f'Text: {driver.find_element(by=By.XPATH, value='//body/c-wiz/div').text}')
 
 		# Waiting and initial XPATH cleaning
 		# WebDriverWait(driver, timeout = 10).until(lambda d: len(_Scrape._get_flight_elements(d)) > 100)
