@@ -29,7 +29,8 @@ class ReporterConfig:
         self.login = os.environ.get('GMAIL_LOGIN')
         self.password = os.environ.get('GMAIL_PASSWORD')
 
-        self.recipients = os.environ.get('GMAIL_TO')
+        raw_recipients = os.environ.get('GMAIL_TO')
+        self.recipients = json.loads(raw_recipients)
         
         # print(f"Raw value: {raw_recipients}")
         # print(f"Type: {type(raw_recipients)}\n")
