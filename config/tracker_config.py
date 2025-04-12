@@ -22,7 +22,7 @@ class TrackerConfig:
 
 
 class ReporterConfig:
-    def __init__(self):
+    def __init__(self, env):
         self.port = 587
         self.smtp_server = 'smtp.gmail.com'
 
@@ -30,7 +30,10 @@ class ReporterConfig:
         self.password = os.environ.get('GMAIL_PASSWORD')
 
         raw_recipients = os.environ.get('GMAIL_TO')
-        self.recipients = json.loads(raw_recipients)
+        if env == 'production':
+            self.recipients = json.loads(raw_recipients)
+        elif env == 'local':
+            self.recipients = raw_recipients
         
         # print(f"Raw value: {raw_recipients}")
         # print(f"Type: {type(raw_recipients)}\n")

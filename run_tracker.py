@@ -12,14 +12,14 @@ from src.google_flight_analysis.scrape import *
 config = TrackerConfig()
 logger = init_logger(__name__)
 tracker = Tracker()
-reporter = Reporter()
+reporter = Reporter(config.ENV)
 
 '''
 TODO: 
 - Calculate elapsed time
 - Adapt for production environment
-
 '''
+
 if config.ENV == 'production':
     logger.info('Running Tracker in GitHub Actions!')
 elif config.ENV == 'local':
@@ -56,4 +56,4 @@ logger.info('Tracker jobs terminated successfully!')
 
 logger.info('Sending email...')
 updated_flights = tracker.new_prices()
-reporter.send_report(updated_flights)
+reporter.send_report(updated_flights, config.ENV)

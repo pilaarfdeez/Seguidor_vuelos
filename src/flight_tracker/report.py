@@ -11,20 +11,19 @@ from config.logging import init_logger
 from config.tracker_config import ReporterConfig
 from src.google_flight_analysis.airport import Airport
 
-conf = ReporterConfig()
 logger = init_logger(__name__)
 airports = Airport().dictionary
 
 
 class Reporter:
-    def __init__(self):
+    def __init__(self, env):
+        self.conf = ReporterConfig(env)
         self.today = dt.datetime.today().strftime('%d/%m/%Y')
 
         with open('data/report_template.html', 'r') as f:
             self.template = Template(f.read()) 
 
-    def send_report(self, flights):
-        logger.debug(f'Number of recipients: {len(conf.recipients)}')
+    def send_report(self, flights, env):
         if len(flights) == 0:
             logger.info('No flights to update --> Skipping daily report')
             return 
@@ -36,8 +35,8 @@ class Reporter:
 
         # Create a multipart message and set headers
         message = MIMEMultipart()
-        message["From"] = conf.login
-        message["To"] = ', '.join(conf.recipients)
+        message["From"] = self.conf.login
+        message["To"] = ', '.join(self.conf.recipients)
         message["Subject"] = f"Tracker | Informe Diario {self.today}"
 
         message.attach(MIMEText(html_content, "html"))
@@ -55,10 +54,10 @@ class Reporter:
                     message.attach(img)
 
         # Send the email
-        with smtplib.SMTP(conf.smtp_server, conf.port) as server:
+        with smtplib.SMTP(self.conf.smtp_server, self.conf.port) as server:
             server.starttls()
-            server.login(conf.login, conf.password)
-            server.sendmail(conf.login, conf.recipients, message.as_string())
+            server.login(self.conf.login, self.conf.password)
+            server.sendmail(self.conf.login, self.conf.recipients, message.as_string())
             logger.info('Email sent')
 
         for flight in flights:
