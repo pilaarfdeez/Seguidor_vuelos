@@ -1,6 +1,7 @@
 import datetime as dt
 import json
 import matplotlib.pyplot as plt
+from matplotlib.dates import DateFormatter
 import os
 import pandas as pd
 
@@ -65,12 +66,16 @@ class TrackedFlight():
         out_path = os.path.join(out_folder, file_name)
         
         fig, ax = plt.subplots()
-        X = [search['date'] for search in self.prices]
+        X = [dt.datetime.strptime(search['date'], "%Y-%m-%d") for search in self.prices]
         Y = [int(search['price']) for search in self.prices]
 
-        ax.plot(X, Y)
-        ax.set_title(f'Evolución de precios')
+        ax.plot(X, Y, marker='o')
         ax.grid()
+        fig.autofmt_xdate(rotation=45)
+        date_format = DateFormatter('%Y-%m-%d')
+        ax.xaxis.set_major_formatter(date_format)
+
+        ax.set_title(f'Evolución de precios')
         ax.set_xlabel('Fecha')
         ax.set_ylabel('Precio (€)')
 
