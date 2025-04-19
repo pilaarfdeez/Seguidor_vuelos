@@ -300,14 +300,27 @@ class _Scrape:
 
 		# one way
 		if len(args) == 3:
-			assert len(args[0]) == 3 and type(args[0]) == str, "Issue with arg 0, see docs"
-			assert len(args[1]) == 3 and type(args[1]) == str, "Issue with arg 1, see docs"
+			assert (len(args[0]) == 3 and type(args[0]) == str) or type(args[0]) == list, "Issue with arg 0, see docs"
+			assert (len(args[1]) == 3 and type(args[1]) == str) or type(args[0]) == list, "Issue with arg 1, see docs"
 			assert len(args[2]) == 10 and type(args[2]) == str, "Issue with arg 2, see docs"
+			tfs = False
 
-			self._origin, self._dest, self._date = [args[0]], [args[1]], [args[2]]
+			if isinstance(args[0], list):
+				self._origin = args[0]
+				tfs = True
 
-			#assert len(self._origin) == len(self._dest) == len(self._date), "Issue with array lengths, talk to dev"
-			self._url = self._make_url()
+			else:
+				self._origin = [args[0]]
+
+			if isinstance(args[1], list):
+				self._dest = args[1]
+				tfs = True
+			else:
+				self._dest = [args[1]]
+
+			self._date = [args[2]]
+
+			self._url = self._make_url(tfs)
 			self._type = 'one-way'
 
 		# round-trip
@@ -424,16 +437,36 @@ class _Scrape:
 		self._data = pd.concat(results, ignore_index = True)
 
 
-	def _make_url(self):
+	def _make_url(self, tfs: bool = False, max_stops: int = 1):
 		urls = []
-		for i in range(len(self._date)):
-			urls += [
-				'https://www.google.com/travel/flights?hl=en&curr=EUR&q=Flights%20to%20{dest}%20from%20{org}%20on%20{date}%20oneway'.format(
-					dest = self._dest[i],
-					org = self._origin[i],
-					date = self._date[i]
-				)
-			]
+		if tfs and len(self._date) == 1:
+			flight_data=[
+				FlightData(
+					date=self._date[0],
+                	from_airport=self._origin,
+                	to_airport=self._dest
+					)
+				]
+			for fd in flight_data:
+				fd.max_stops = max_stops
+
+			filter = TFSData.from_interface(
+				flight_data=flight_data, trip='one-way', passengers=Passengers(adults=1), seat='economy'
+			)
+			b64 = filter.as_b64().decode('utf-8')
+
+			urls = [f"https://www.google.com/travel/flights?hl=en&curr=EUR&tfs={b64}"]
+
+		else:
+			for i in range(len(self._date)):
+				urls += [
+					'https://www.google.com/travel/flights?hl=en&curr=EUR&q=Flights%20to%20{dest}%20from%20{org}%20on%20{date}%20oneway'.format(
+						dest = self._dest[i],
+						org = self._origin[i],
+						date = self._date[i]
+					)
+				]
+		
 		return urls
 
 	@staticmethod

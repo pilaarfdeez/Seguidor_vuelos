@@ -2,15 +2,17 @@ import os
 import json
 # from google_flight_analysis.flight import Flight
 # from flight_tracker.tracked_flight import TrackedFlight
-        
+
+
+if os.getenv("ENV", "local") == 'production' or os.getenv("GITHUB_ACTIONS") == "true":
+    env = 'production'
+else:
+    env = 'local'
+
 
 class TrackerConfig:
     def __init__(self):
-        env = os.getenv("ENV", "local")
-        if env == 'production' or os.getenv("GITHUB_ACTIONS") == "true":
-            self.ENV = 'production'
-        else:
-            self.ENV = 'local'
+        self.ENV = env
 
         self.FLIGHTS_TO_TRACK = [
             # {'origin': '', 'destination': '', 'date': '', 'time': ''},
@@ -18,11 +20,29 @@ class TrackerConfig:
 
         self.FLIGHTS_TO_REMOVE = [
             # {'origin': '', 'destination': '', 'date': '', 'time': ''},
-        ]
+        ] 
+
+
+class BargainFinderConfig:
+    def __init__(self):
+        self.ENV = env
+
+        self.WEEK_START = 3     # In how many weeks from now should the Finder start searching? 
+        self.WEEKS_SEARCH = 13  # How many weeks from the start week should the Finder search?
+
+        self.AIRPORTS_PILAR = (['AGP','GRX'], ['HAM','BRE','LBC'])
+        self.AIRPORTS_DAVID = (['HAM','BRE','LBC'], ['AGP','MAD','BIO'])
+        self.DAYS_PILAR = ([5], [7])  # Each of the lists corresponds to each flight of the round trip
+        self.DAYS_DAVID = ([3,4,5], [7,8])  # 1 is Monday, 7 is Sunday. Higher numbers correpond to the next week
+        
+        self.PRICE_THRESHOLD = 110
+        self.MAX_TRAVEL_HOURS = 6
 
 
 class ReporterConfig:
-    def __init__(self, env):
+    def __init__(self):
+        self.ENV = env
+
         self.port = 587
         self.smtp_server = 'smtp.gmail.com'
 
