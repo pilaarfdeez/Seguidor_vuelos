@@ -19,26 +19,21 @@ from tqdm import tqdm
 from config.logging import init_logger
 from src.google_flight_analysis.flight import *
 from src.google_flight_analysis.human_simulations import *
+from src.google_flight_analysis.protobuf.protobuf_construc import FlightData, Passengers, TFSData
 
 __all__ = ['Scrape', '_Scrape', 'ScrapeObjects']
+chromedriver_autoinstaller.install() # Check if chromedriver is installed correctly and on path
 logger = init_logger(__name__)
 
 date_format = "%Y-%m-%d"
-'''
-	Iterative scraping
-	If value in DB dont run just return query
-	Scraping object overhaul
-	argument change
-	advanced filters
-	Europe date display vs US date display!
-'''
 
 # Loading some browser options to bypass anti-bot systems
-user_agent = get_user_agent()
+
 options = Options()
+options.add_argument('--log-level=3')
 options.add_argument("--disable-gpu")
-options.add_argument(f"user-agent={user_agent}")
-logger.info(f'User agent chosen: {user_agent}')
+caps = DesiredCapabilities.CHROME.copy()
+caps["goog:loggingPrefs"] = {"performance": "ALL"}
 
 '''
 TODO:
@@ -52,16 +47,15 @@ def ScrapeObjects(objs, env, headless=False, add_cookies=False, deep_copy=False)
 	if type(objs) is _Scrape:
 		objs = [objs]
 
-	caps = DesiredCapabilities.CHROME.copy()
-	caps["goog:loggingPrefs"] = {"performance": "ALL"}
-
+	user_agent = get_user_agent()
+	options.add_argument(f"user-agent={user_agent}")
+	logger.debug(f'User agent chosen: {user_agent}')
 	if headless or env == 'production':	# Necessary for Github Actions
 		options.add_argument("--headless")
 		options.add_argument("--no-sandbox")
 		options.add_argument("--disable-dev-shm-usage")
 		options.add_argument("--disable-blink-features=AutomationControlled") 
 
-	chromedriver_autoinstaller.install() # Check if chromedriver is installed correctly and on path
 	driver = webdriver.Chrome(options=options)
 	driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
@@ -71,9 +65,9 @@ def ScrapeObjects(objs, env, headless=False, add_cookies=False, deep_copy=False)
 		for cookie in cookies:
 			driver.add_cookie(cookie)
 		driver.refresh()
-		random_wait()
 
 	driver.maximize_window()
+	random_wait(0.01, 0.03)
 	# simulate_mouse_movement(driver, 3, 10)
 	# simulate_scroll(driver, 1, 2)
 
@@ -490,11 +484,8 @@ class _Scrape:
 
 		start = res2.index("Sorted by top flights") + 1
 		mid_start = res2.index("Track prices")
-		try:
-			mid_end = res2.index("Other departing flights") + 1
-		except Exception as e:
-			logger.warning('Did not find "Other departing flights" item')
-			mid_end = res2.index("Other flights") + 1
+		mid_end = res2.index("Other flights") + 1
+
 		try:
 			end = [i for i, x in enumerate(res2) if x.endswith('more flights')][0]
 		except IndexError:
@@ -520,7 +511,7 @@ class _Scrape:
 			text = driver.find_element(by=By.XPATH, value='//body/c-wiz/div').text.split('\n')[2]
 
 			if text == 'Before you continue to Google':
-				logger.info('Rejecting cookies and proceeding to search page')
+				logger.debug('Rejecting cookies and proceeding to search page')
 				buttons = driver.find_elements(by=By.CSS_SELECTOR, value='button')
 				reject_button = [button for button in buttons if button.text == 'Reject all'][0]
 				# reject_button = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, "//button[text()='Reject all']")))

@@ -231,7 +231,7 @@ class Flight:
 			#data['Stop Location'] += [flight.stops]
 			data['CO2 Emission (kg)'] += [flight.co2]
 			data['Emission Diff (%)'] += [flight.emissions]
-			data['Price'] += [flight.price]
+			data['Price'] += [int(flight.price)]
 			if flight.price_eur:
 				try:
 					data['Price (€)'] += [flight.price_eur]
