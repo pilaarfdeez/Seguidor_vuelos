@@ -1,0 +1,85 @@
+name: Run Discovery
+
+on:
+  schedule:
+    - cron: "0 8 * * *" # Run daily at 8:00 UTC
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Wir verwenden ein Ubuntu-Image
+
+    steps:
+      # Schritt 1: Checkout des Codes
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        env:
+          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
+
+      # Schritt 2: Setze Python und installiere Abhängigkeiten
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      # Schritt 3: Installiere Abhängigkeiten
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Schritt 4: Setze Google Chrome und ChromeDriver für Headless-Betrieb
+      - name: Set up Chrome & ChromeDriver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+          google-chrome --version
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+' | head -1)
+          echo "CHROME_VERSION: $CHROME_VERSION"
+          CHROMEDRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/latest-patch-versions-per-build.json" | jq -r ".builds[\"$CHROME_VERSION\"].version")
+          echo "CHROMEDRIVER_VERSION: $CHROMEDRIVER_VERSION"
+          wget -v -O chromedriver.zip "https://storage.googleapis.com/chrome-for-testing-public/$CHROMEDRIVER_VERSION/linux64/chromedriver-linux64.zip"
+          ls -l chromedriver.zip
+          unzip chromedriver.zip
+          sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
+          sudo chmod +x /usr/local/bin/chromedriver
+          google-chrome --version
+          chromedriver --version
+
+        # Alternatively:
+          # uses: browser-actions/setup-chrome@v3
+          # with:
+          #   chrome-version: 'latest'
+
+      # Schritt 5: Füge Cookies aus GitHub Secrets hinzu
+      # - name: Write cookies to a file
+      #   run: |
+      #     mkdir -p data
+      #     echo "${{ secrets.COOKIES_JSON }}" > data/cookies.json
+
+      # Schritt 6: Führe das Scraper-Skript aus
+      - name: Run Discovery script
+        run: |
+          mkdir -p data/images
+          python run_discoverer.py
+        env:
+          ENV: production
+          GMAIL_LOGIN: ${{ secrets.GMAIL_LOGIN }}
+          GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
+          GMAIL_TO: ${{ secrets.GMAIL_TO }}
+
+      # Schritt 8: Push die aktualisierte JSON-Datei
+      - name: Commit JSON changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: ./data/bargains.json
+        # run: |
+        #   git config --local user.name "github-actions"
+        #   git config --local user.email "github-actions@github.com"
+        #   git add data/tracked_flights.json
+        #   git commit -m "Update tracked flight prices" || echo "No changes to commit"
+        #   git push
+        # env:
+        #   GH_TOKEN: ${{ secrets.REPO_TOKEN }}
+          
