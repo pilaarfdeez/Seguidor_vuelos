@@ -1,6 +1,7 @@
 name: Run Discovery
 
 on:
+  push:
   schedule:
     - cron: "0 8 * * *" # Run daily at 8:00 UTC
   workflow_dispatch:
