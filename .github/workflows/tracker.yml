@@ -1,7 +1,7 @@
 name: Run Tracker
 
 on:
-  push:
+  # push:
   #   branches:
   #     - main  # Workflow wird bei jedem Push zum main Branch ausgelöst
   # pull_request:
@@ -75,12 +75,11 @@ jobs:
           GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
           GMAIL_TO: ${{ secrets.GMAIL_TO }}
 
-      # Schritt 7: Speichere die JSON-Datei als Artefakt
-      # - name: Save the updated flight prices as Artifact
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: scraper-output
-      #     path: data/tracked_flights.json
+      # Schritt 7: Checkout des Codes
+      - name: Intermediate repository Checkout
+        uses: actions/checkout@v4
+        env:
+          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
 
       # Schritt 8: Push die aktualisierte JSON-Datei
       - name: Commit JSON changes
