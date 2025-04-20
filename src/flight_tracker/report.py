@@ -134,9 +134,11 @@ class BargainReporter:
             color: #333;
             text-align: center;
         }
-        .flight {
-            border-bottom: 1px solid #ddd;
-            padding: 10px 0;
+        .table-header {
+            background-color:#f2f2f2;
+        }
+        .new {
+            background-color:#ffa366;
         }
         .plot {
             text-align: center;
@@ -151,28 +153,31 @@ class BargainReporter:
     </style>
 </head>
 ''')
-        html.append('<body style="font-family: Arial, sans-serif;">')
-        html.append('<p>¡Hola! ✈️<br>Aquí están los chollazos de las próximas semanas &#128176;</p>')
-        html.append('<div class="plot"><img src="cid:plot_bargains" alt="Vista de chollazos" width="100%"></div>')
+        html.append('<body>')
+        html.append('<div class="container">')
 
+        html.append('<h1>&#128184; Informe Diario de Chollos</h1>')
+        html.append('<p>¡Hola! ✈️<br>Aquí están los chollazos de las próximas semanas &#128176;</p>')
+        html.append('<div class="plot"><img src="cid:plot_bargains" alt="Vista de chollazos" width="90%"></div>')
+
+        # Tables
         for week_data in data:
             html.append(f'<h2>&#128198; Semana: {week_data["week"]}</h2>')
             grouped_bargains = {key: list(group) 
                            for key, group in groupby(week_data['combinations'], key=lambda f: (f['tocinillo']))}
             for tocinillo,bargains in grouped_bargains.items():
                 html.append('<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse;">')
-                html.append('<tr style="background-color:#f2f2f2;"><th>Ida</th><th>Vuelta</th><th>Aerolínea</th><th>Precio total</th></tr>')
+                html.append('<tr class="table-header"><th>Ida</th><th>Vuelta</th><th>Aerolínea</th><th>Precio total</th></tr>')
                 for bargain in bargains:
                     if bargain['new']:
-                        html.append('<tr style="background-color:#ffa366;">')
+                        html.append('<tr class="new">')
                     else:
                         html.append('<tr>')
                     html.append(f'<td>{bargain["origin"][0]} &rarr; {bargain["destination"][0]} ({bargain["date"][0]}, {bargain["time"][0]})</td>')
                     html.append(f'<td>{bargain["origin"][1]} &rarr; {bargain["destination"][1]} ({bargain["date"][1]}, {bargain["time"][1]})</td>')
                     html.append(f'<td>{bargain["airline"][0]} / {bargain["airline"][1]}</td>')
-                    html.append(f'<td')
                     if bargain['new_price']:
-                        html.append(f'<td style="background-color:#ffa366;">{bargain["total_price"]}&euro;</td>')
+                        html.append(f'<td class="new">{bargain["total_price"]}&euro;</td>')
                     else:
                         html.append(f'<td>{bargain["total_price"]}&euro;</td>')
                     html.append('</tr>')
@@ -183,5 +188,5 @@ class BargainReporter:
                     <p>&copy; Seguidor de Vuelos de los tocinillos</p>
                     </div>''')
 
-        html.append('</body></html>')
+        html.append('</div></body></html>')
         return "\n".join(html)
