@@ -75,13 +75,17 @@ class BargainReporter:
         self.env = self.conf.ENV
         self.today = dt.datetime.today().strftime('%d/%m/%Y')
 
+
     def send_report(self):
         discoverer = Discoverer()
         with open("data/bargains.json", "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        discoverer.generate_plot()        
         html_content = self.build_html_email(data)
+        if not html_content:
+            logger.info('No new deals today --> Skipping daily report')
+            return
+        discoverer.generate_plot()
 
         # Create a multipart message and set headers
         message = MIMEMultipart()
@@ -109,6 +113,8 @@ class BargainReporter:
 
 
     def build_html_email(self, data: list):
+        new_information = False
+
         html = ['<html>']
         html.append('''
 <head>
@@ -171,6 +177,7 @@ class BargainReporter:
                 for bargain in bargains:
                     if bargain['new']:
                         html.append('<tr class="new">')
+                        new_information = True
                     else:
                         html.append('<tr>')
                     html.append(f'<td>{bargain["origin"][0]} &rarr; {bargain["destination"][0]} ({bargain["date"][0]}, {bargain["time"][0]})</td>')
@@ -178,15 +185,18 @@ class BargainReporter:
                     html.append(f'<td>{bargain["airline"][0]} / {bargain["airline"][1]}</td>')
                     if bargain['new_price']:
                         html.append(f'<td class="new">{bargain["total_price"]}&euro;</td>')
+                        new_information = True
                     else:
                         html.append(f'<td>{bargain["total_price"]}&euro;</td>')
                     html.append('</tr>')
-
             html.append('</table><br>')
         
         html.append(f'''<div class="footer"><p>Creado el {dt.datetime.today().strftime('%d/%m/%Y')}</p>
                     <p>&copy; Seguidor de Vuelos de los tocinillos</p>
                     </div>''')
-
         html.append('</div></body></html>')
-        return "\n".join(html)
+
+        if new_information:
+            return "\n".join(html)
+        else:
+            return None
