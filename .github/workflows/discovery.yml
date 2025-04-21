@@ -63,7 +63,7 @@ jobs:
       - name: Run Discovery script
         run: |
           mkdir -p data/images
-          python run_discoverer.py
+          python run_discovery.py
         env:
           ENV: production
           GMAIL_LOGIN: ${{ secrets.GMAIL_LOGIN }}
