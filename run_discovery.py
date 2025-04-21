@@ -3,14 +3,14 @@ import pandas as pd
 
 from config.config import BargainFinderConfig
 from config.logging import init_logger
-from src.bargain_discovery.discoverer import Discoverer
+from src.bargain_discovery.discoverer import Discovery
 from src.bargain_discovery.bargain import Bargain
 from src.google_flight_analysis.human_simulations import *
 from src.google_flight_analysis.scrape import *
 from src.flight_tracker.report import BargainReporter
 
 conf = BargainFinderConfig()
-discoverer = Discoverer()
+discovery = Discovery()
 logger = init_logger(__name__)
 reporter = BargainReporter()
 
@@ -66,13 +66,13 @@ for week in range(conf.WEEKS_SEARCH):
 
         for idx in range(len(combinations_df)):
             bargain = Bargain(combinations_df.iloc[idx,:], week_str, tocinillo)
-            discoverer.add_bargain(bargain)
+            discovery.add_bargain(bargain)
 
     random_wait(min_sec=1, max_sec=5)
 
-discoverer.check_new_bargains()
-discoverer.save_bargains()
-logger.info('Discoverer jobs terminated successfully!')
+discovery.check_new_bargains()
+discovery.save_bargains()
+logger.info('Discovery jobs terminated successfully!')
 
 logger.info('Sending email...')
 reporter.send_report()
