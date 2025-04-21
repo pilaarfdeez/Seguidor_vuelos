@@ -8,12 +8,12 @@ import pandas as pd
 
 from config.config import BargainFinderConfig
 from config.logging import init_logger
-from src.bargain_finder.bargain import Bargain
+from src.bargain_discovery.bargain import Bargain
 
 conf = BargainFinderConfig()
 logger = init_logger(__name__)
 
-class Discoverer():
+class Discovery():
     def __init__(self):
         self.bargains = []
 

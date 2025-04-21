@@ -3,8 +3,8 @@ import pandas as pd
 
 from config.config import BargainFinderConfig
 from config.logging import init_logger
-from src.bargain_finder.discoverer import Discoverer
-from src.bargain_finder.bargain import Bargain
+from src.bargain_discovery.discoverer import Discoverer
+from src.bargain_discovery.bargain import Bargain
 from src.google_flight_analysis.human_simulations import *
 from src.google_flight_analysis.scrape import *
 from src.flight_tracker.report import BargainReporter

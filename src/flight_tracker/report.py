@@ -12,7 +12,7 @@ import os
 from config.logging import init_logger
 from config.config import ReporterConfig
 from src.google_flight_analysis.airport import Airport
-from src.bargain_finder.discoverer import Discoverer
+from src.bargain_discovery.discoverer import Discovery
 
 logger = init_logger(__name__)
 airports = Airport().dictionary
@@ -77,7 +77,7 @@ class BargainReporter:
 
 
     def send_report(self):
-        discoverer = Discoverer()
+        discovery = Discovery()
         with open("data/bargains.json", "r", encoding="utf-8") as f:
             data = json.load(f)
 
@@ -85,7 +85,7 @@ class BargainReporter:
         if not html_content:
             logger.info('No new deals today --> Skipping daily report')
             return
-        discoverer.generate_plot()
+        discovery.generate_plot()
 
         # Create a multipart message and set headers
         message = MIMEMultipart()
