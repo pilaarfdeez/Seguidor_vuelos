@@ -70,7 +70,6 @@ for week in range(conf.WEEKS_SEARCH):
 
     random_wait(min_sec=1, max_sec=5)
 
-discovery.check_new_bargains()
 discovery.save_bargains()
 logger.info('Discovery jobs terminated successfully!')
 
