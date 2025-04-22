@@ -70,6 +70,13 @@ class TrackedFlight():
         Y = [int(search['price']) for search in self.prices]
 
         ax.plot(X, Y, marker='o')
+
+        flight_date = dt.datetime.strptime(self.date, "%Y-%m-%d")
+        if X[-1] > (flight_date - dt.timedelta(days=90)):
+            ax.axvline(x=flight_date - dt.timedelta(days=90), color='orange', ls='--')
+        if X[-1] > (flight_date - dt.timedelta(days=60)):
+            ax.axvline(x=flight_date - dt.timedelta(days=60), color='r', ls='--')
+
         ax.grid()
         fig.autofmt_xdate(rotation=45)
         date_format = DateFormatter('%Y-%m-%d')
