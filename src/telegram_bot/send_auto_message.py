@@ -8,7 +8,7 @@ TOKEN = '7630436278:AAEEH1KtqNsA2sesOii1-VySNWvhHXcvfAA'  # Asegúrate de coloca
 bot = telebot.TeleBot(TOKEN)
 
 # Aquí pones el ID del usuario al que quieres enviar el mensaje automáticamente
-user_ids = ['ID_USER']  # Pon el ID del usuario que recibirá el mensaje
+user_ids = ['user_id']  # Pon el ID del usuario que recibirá el mensaje
 
 def send_auto_message():
     try:
