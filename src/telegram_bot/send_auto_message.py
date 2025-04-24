@@ -55,4 +55,4 @@ def actualizacionprecio(message):
 
 
 # Inicia el bot en modo polling
-bot.polling(none_stop=True, timeout=20, interval=0)
+# bot.polling(none_stop=True, timeout=20, interval=0)
