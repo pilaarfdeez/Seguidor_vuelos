@@ -5,7 +5,7 @@ import schedule
 import time
 from threading import Thread
 
-TOKEN = '7630436278:AAEEH1KtqNsA2sesOii1-VySNWvhHXcvfAA'  # Asegúrate de colocar tu token aquí
+TOKEN = os.environ.get('TOKEN_ID')  # Asegúrate de colocar tu token aquí
 bot = telebot.TeleBot(TOKEN)
 
 # Aquí pones el ID del usuario al que quieres enviar el mensaje automáticamente
