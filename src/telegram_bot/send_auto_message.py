@@ -13,7 +13,7 @@ user_ids = ['ID_USER']  # Pon el ID del usuario que recibirá el mensaje
 def send_auto_message():
     try:
         # Abre el archivo JSON
-        with open('C:/Users/Pilar/Downloads/BOT/datos.json', 'r', encoding='utf-8') as file:
+        with open('pilaarfdeez/Seguidor_vuelos/data/bargains.json', 'r', encoding='utf-8') as file:
             data = json.load(file)
 
         # Formateamos el mensaje
