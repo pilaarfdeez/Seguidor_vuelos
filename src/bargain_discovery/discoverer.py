@@ -111,13 +111,20 @@ class Discovery():
             ax.xaxis.set_major_formatter(date_format)
 
             # dates = pd.date_range("2025-04-01", "2025-04-30", freq="D")
-            start_date = dt.datetime.today() + dt.timedelta(weeks=conf.WEEK_START-1)
+            start_date = min([dt.datetime.strptime(date, "%Y-%m-%d") 
+                              for week_data in data for bargain in week_data['combinations'] for date in bargain['date']])
+            max_price = max([price for week_data in data for bargain in week_data['combinations'] for price in bargain['total_price']])
             dates = [start_date + dt.timedelta(days=i) for i in range((end_date - start_date).days + 1)]
             for date in dates:
                 if date.weekday() == 4:
                     start = date
                     end = date + dt.timedelta(days=2)
                     ax.axvspan(start, end, color="lightgray", alpha=0.5)
+
+                if date.day == 1:
+                    ax.axvline(date, color='k', linewidth=1)
+                # if date.day == 15:
+                #     ax.text(date, int(max_price), str(date.month))
 
             ax.set_title(f'Chollazos próximos')
             ax.set_ylabel('Precio total (€)')
