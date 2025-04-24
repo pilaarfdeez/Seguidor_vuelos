@@ -24,7 +24,7 @@ def send_auto_message(file_path):
                 destination = vuelo.get("destination")
                 date = vuelo.get("date")
                 time = vuelo.get("time")
-                prices = vuelo.get("prices", [])
+                prices = vuelo.get("prices", [-1])
 
                 mensaje = (f"✈️ Vuelo de {origin} a {destination} 🛫\n"
                            f"🗓️ Fecha de vuelo: {date}\n"
@@ -33,10 +33,10 @@ def send_auto_message(file_path):
 
                 # Extraemos los precios y los agregamos al mensaje
                 if prices:
-                    for precio in prices:
-                        precio_fecha = precio.get("date")
-                        precio_valor = precio.get("price")
-                        mensaje += f"\n   - {precio_fecha}: ${precio_valor} 💸"
+                    price_1 = prices[-1]
+                    precio_fecha = price_1.get("date")
+                    precio_valor = price_1.get("price")
+                    mensaje += f"\n   - {precio_fecha}: ${precio_valor} 💸"
 
                 # Enviamos el mensaje automáticamente a cada usuario
                 for user_id in user_ids:
