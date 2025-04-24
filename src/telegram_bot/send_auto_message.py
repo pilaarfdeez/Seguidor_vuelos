@@ -14,7 +14,7 @@ user_ids = [os.environ.get('USER_ID')]  # Pon el ID del usuario que recibirá el
 def send_auto_message(file_path):
     try:
         # Abre el archivo JSON
-        with open('file_path', 'r', encoding='utf-8') as file:
+        with open(file_path, 'r', encoding='utf-8') as file:
             data = json.load(file)
 
         # Formateamos el mensaje
