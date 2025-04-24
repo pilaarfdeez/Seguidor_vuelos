@@ -3,7 +3,7 @@ name: Run Discovery
 on:
   # push:
   schedule:
-    - cron: "0 8 * * *" # Run daily at 8:00 UTC
+    - cron: "0 12 * * *" # Run daily at 12:00 UTC
   workflow_dispatch:
 
 
@@ -70,11 +70,11 @@ jobs:
           GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
           GMAIL_TO: ${{ secrets.GMAIL_TO }}
 
-      # Schritt 7: Checkout des Codes
-      - name: Intermediate repository Checkout
-        uses: actions/checkout@v4
-        env:
-          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
+      # # Schritt 7: Checkout des Codes
+      # - name: Intermediate repository Checkout
+      #   uses: actions/checkout@v4
+      #   env:
+      #     GH_TOKEN: ${{ secrets.REPO_TOKEN }}
 
       # Schritt 8: Push die aktualisierte JSON-Datei
       - name: Commit JSON changes
@@ -89,4 +89,4 @@ jobs:
         #   git push
         # env:
         #   GH_TOKEN: ${{ secrets.REPO_TOKEN }}
-          
+        

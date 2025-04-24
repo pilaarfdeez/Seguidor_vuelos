@@ -77,11 +77,11 @@ jobs:
           GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
           GMAIL_TO: ${{ secrets.GMAIL_TO }}
 
-      # Schritt 7: Checkout des Codes
-      - name: Intermediate repository Checkout
-        uses: actions/checkout@v4
-        env:
-          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
+      # # Schritt 7: Checkout des Codes
+      # - name: Intermediate repository Checkout
+      #   uses: actions/checkout@v4
+      #   env:
+      #     GH_TOKEN: ${{ secrets.REPO_TOKEN }}
 
       # Schritt 8: Push die aktualisierte JSON-Datei
       - name: Commit JSON changes
