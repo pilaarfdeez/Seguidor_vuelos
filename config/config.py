@@ -94,7 +94,7 @@ class BargainFinderConfig:
         self.DAYS_PILAR = ([5], [7])  # Each of the lists corresponds to each flight of the round trip
         self.DAYS_DAVID = ([3,4,5], [7,8])  # 1 is Monday, 7 is Sunday. Higher numbers correpond to the next week
         
-        self.PRICE_THRESHOLD = 110
+        self.PRICE_THRESHOLD = 180
         self.MAX_TRAVEL_HOURS = 6
 
 
