@@ -58,6 +58,7 @@ logger.info('Tracker jobs terminated successfully!')
 logger.info('Sending email...')
 updated_flights = tracker.new_prices()
 reporter.send_report(updated_flights, conf.ENV)
-send_auto_message(data/tracked_flights.json)
+file path = 'data/tracked_flights.json'
+send_auto_message(file_path)
 
 
