@@ -57,8 +57,6 @@ logger.info('Tracker jobs terminated successfully!')
 logger.info('Sending email...')
 updated_flights = tracker.new_prices()
 reporter.send_report(updated_flights, conf.ENV)
-
-@bot.message_handler(commands=['actualizacionprecio'])
-def actualizacionprecio(message):
-    send_auto_message()
+print("aqui estoy")
+send_auto_message()
 
