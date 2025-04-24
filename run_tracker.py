@@ -34,6 +34,8 @@ for flight in conf.FLIGHTS_TO_REMOVE:
     tracked_flight = TrackedFlight(flight)
     tracker.delete_flight(tracked_flight)
 
+send_auto_message()
+
 for key, flights in tracker.group_flights().items():
     logger.info(f'Checking {len(flights)} tracked flights for {key}')
     result = Scrape(key[1], key[2], key[0])
@@ -57,6 +59,5 @@ logger.info('Tracker jobs terminated successfully!')
 logger.info('Sending email...')
 updated_flights = tracker.new_prices()
 reporter.send_report(updated_flights, conf.ENV)
-print("aqui estoy")
-send_auto_message()
+
 
