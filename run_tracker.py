@@ -7,7 +7,7 @@ from src.flight_tracker.tracker import Tracker
 from src.flight_tracker.report import TrackerReporter
 from src.flight_tracker.tracked_flight import TrackedFlight
 from src.google_flight_analysis.scrape import *
-from src.telegram_bot.send_auto_message import send_auto_message
+from src.telegram_bot.send_auto_message import send_auto_message, actualizacionprecio
 
 conf = TrackerConfig()
 logger = init_logger(__name__)
@@ -57,4 +57,8 @@ logger.info('Tracker jobs terminated successfully!')
 logger.info('Sending email...')
 updated_flights = tracker.new_prices()
 reporter.send_report(updated_flights, conf.ENV)
-send_auto_message()
+
+@bot.message_handler(commands=['actualizacionprecio'])
+def actualizacionprecio(message):
+    send_auto_message()
+
