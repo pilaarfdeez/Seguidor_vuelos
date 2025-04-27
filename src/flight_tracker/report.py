@@ -189,8 +189,7 @@ class BargainReporter:
                     else:
                         html.append(f'<td>{bargain["total_price"]}&euro;</td>')
                     html.append('</tr>')
-            html.append('</table><br>')
-        
+                html.append('</table><br>')
         html.append(f'''<div class="footer"><p>Creado el {dt.datetime.today().strftime('%d/%m/%Y')}</p>
                     <p>&copy; Seguidor de Vuelos de los tocinillos</p>
                     </div>''')
