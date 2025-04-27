@@ -64,7 +64,7 @@ class Discovery():
                 k = Bargain.get_key(bargain)
                 old_bargain_prices[k] = int(bargain["total_price"])
             for bargain in new_bargains:
-                k = Bargain.get_key(bargain)
+                k = Bargain.get_key(bargain)  # search each new bargain in the old-bargain price dictionary
                 if k not in old_bargain_prices:
                     bargain.new_bargain = True
                 elif int(bargain.total_price) != old_bargain_prices[k]:
