@@ -19,66 +19,7 @@ class TrackerConfig:
         ]
 
         self.FLIGHTS_TO_REMOVE = [
-        {"origin": "AGP",
-        "destination": "HAM",
-        "date": "2025-06-20",
-        "time": "14:35"},
-        {"origin": "HAM",
-        "destination": "AGP",
-        "date": "2025-06-22",
-        "time": "06:00"},
-        {"origin": "HAM",
-        "destination": "BIO",
-        "date": "2025-06-30",
-        "time": "06:50"},
-        {"origin": "HAM",
-        "destination": "BIO",
-        "date": "2025-06-30",
-        "time": "10:00"},
-        {"origin": "HAM",
-        "destination": "MAD",
-        "date": "2025-06-30",
-        "time": "15:45"},
-        {"origin": "HAM",
-        "destination": "MAD",
-        "date": "2025-07-01",
-        "time": "06:50"},
-        {"origin": "HAM",
-        "destination": "MAD",
-        "date": "2025-07-01",
-        "time": "15:45"},
-        {"origin": "BIO",
-        "destination": "HAM",
-        "date": "2025-07-04",
-        "time": "20:10"},
-        {"origin": "MAD",
-        "destination": "HAM",
-        "date": "2025-07-04",
-        "time": "19:50"},
-        {"origin": "BIO",
-        "destination": "HAM",
-        "date": "2025-07-05",
-        "time": "17:35"},
-        {"origin": "MAD",
-        "destination": "HAM",
-        "date": "2025-07-05",
-        "time": "19:50"},
-        {"origin": "MAD",
-        "destination": "HAM",
-        "date": "2025-07-06",
-        "time": "08:40"},
-        {"origin": "MAD",
-        "destination": "HAM",
-        "date": "2025-07-06",
-        "time": "16:15"},
-        {"origin": "MAD",
-        "destination": "HAM",
-        "date": "2025-07-06",
-        "time": "19:50"},
-        {"origin": "BIO",
-        "destination": "HAM",
-        "date": "2025-07-07",
-        "time": "13:10"}
+        
         ] 
 
 
@@ -94,7 +35,7 @@ class BargainFinderConfig:
         self.DAYS_PILAR = ([5], [7])  # Each of the lists corresponds to each flight of the round trip
         self.DAYS_DAVID = ([3,4,5], [7,8])  # 1 is Monday, 7 is Sunday. Higher numbers correpond to the next week
         
-        self.PRICE_THRESHOLD = 180
+        self.PRICE_THRESHOLD = 150
         self.MAX_TRAVEL_HOURS = 6
 
 
