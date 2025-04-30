@@ -8,6 +8,44 @@
                     "2025-06-29"
                 ],
                 "origin": [
+                    "LBC",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "BRE"
+                ],
+                "time": [
+                    "10:55",
+                    "06:15"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "3 hr 10 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "30",
+                    "40"
+                ],
+                "tocinillo": "David",
+                "new": false,
+                "new_price": true,
+                "total_price": "70"
+            },
+            {
+                "date": [
+                    "2025-06-27",
+                    "2025-06-29"
+                ],
+                "origin": [
                     "BRE",
                     "AGP"
                 ],
@@ -32,13 +70,51 @@
                     "0"
                 ],
                 "price": [
-                    "28",
+                    "39",
                     "40"
                 ],
                 "tocinillo": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "68"
+                "total_price": "79"
+            },
+            {
+                "date": [
+                    "2025-06-27",
+                    "2025-06-30"
+                ],
+                "origin": [
+                    "LBC",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "LBC"
+                ],
+                "time": [
+                    "10:55",
+                    "06:55"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "30",
+                    "58"
+                ],
+                "tocinillo": "David",
+                "new": false,
+                "new_price": true,
+                "total_price": "88"
             },
             {
                 "date": [
@@ -70,13 +146,13 @@
                     "0"
                 ],
                 "price": [
-                    "28",
+                    "39",
                     "58"
                 ],
                 "tocinillo": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "86"
+                "total_price": "97"
             },
             {
                 "date": [
@@ -84,7 +160,7 @@
                     "2025-06-29"
                 ],
                 "origin": [
-                    "BRE",
+                    "LBC",
                     "MAD"
                 ],
                 "destination": [
@@ -92,11 +168,11 @@
                     "HAM"
                 ],
                 "time": [
-                    "17:20",
+                    "10:55",
                     "08:40"
                 ],
                 "travel_time": [
-                    "3 hr 15 min",
+                    "3 hr 25 min",
                     "2 hr 55 min"
                 ],
                 "airline": [
@@ -108,13 +184,13 @@
                     "0"
                 ],
                 "price": [
-                    "28",
+                    "30",
                     "95"
                 ],
                 "tocinillo": "David",
-                "new": false,
-                "new_price": true,
-                "total_price": "123"
+                "new": true,
+                "new_price": false,
+                "total_price": "125"
             },
             {
                 "date": [
@@ -122,7 +198,7 @@
                     "2025-06-30"
                 ],
                 "origin": [
-                    "BRE",
+                    "LBC",
                     "MAD"
                 ],
                 "destination": [
@@ -130,11 +206,11 @@
                     "HAM"
                 ],
                 "time": [
-                    "17:20",
+                    "10:55",
                     "12:05"
                 ],
                 "travel_time": [
-                    "3 hr 15 min",
+                    "3 hr 25 min",
                     "3 hr"
                 ],
                 "airline": [
@@ -146,13 +222,13 @@
                     "0"
                 ],
                 "price": [
-                    "28",
+                    "30",
                     "95"
                 ],
                 "tocinillo": "David",
-                "new": false,
-                "new_price": true,
-                "total_price": "123"
+                "new": true,
+                "new_price": false,
+                "total_price": "125"
             },
             {
                 "date": [
@@ -160,7 +236,7 @@
                     "2025-06-30"
                 ],
                 "origin": [
-                    "BRE",
+                    "LBC",
                     "MAD"
                 ],
                 "destination": [
@@ -168,11 +244,11 @@
                     "HAM"
                 ],
                 "time": [
-                    "17:20",
+                    "10:55",
                     "19:50"
                 ],
                 "travel_time": [
-                    "3 hr 15 min",
+                    "3 hr 25 min",
                     "2 hr 55 min"
                 ],
                 "airline": [
@@ -184,13 +260,89 @@
                     "0"
                 ],
                 "price": [
-                    "28",
+                    "30",
                     "95"
+                ],
+                "tocinillo": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "125"
+            },
+            {
+                "date": [
+                    "2025-06-27",
+                    "2025-06-30"
+                ],
+                "origin": [
+                    "LBC",
+                    "BIO"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "10:55",
+                    "13:10"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "2 hr 25 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "30",
+                    "100"
+                ],
+                "tocinillo": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "130"
+            },
+            {
+                "date": [
+                    "2025-06-27",
+                    "2025-06-29"
+                ],
+                "origin": [
+                    "HAM",
+                    "AGP"
+                ],
+                "destination": [
+                    "BIO",
+                    "BRE"
+                ],
+                "time": [
+                    "16:55",
+                    "06:15"
+                ],
+                "travel_time": [
+                    "2 hr 30 min",
+                    "3 hr 10 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "90",
+                    "40"
                 ],
                 "tocinillo": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "123"
+                "total_price": "130"
             },
             {
                 "date": [
@@ -227,12 +379,12 @@
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "131"
             },
             {
                 "date": [
-                    "2025-06-26",
+                    "2025-06-25",
                     "2025-06-29"
                 ],
                 "origin": [
@@ -244,105 +396,29 @@
                     "BRE"
                 ],
                 "time": [
-                    "14:30",
+                    "11:10",
                     "06:15"
                 ],
                 "travel_time": [
-                    "3 hr 30 min",
+                    "5 hr 35 min",
                     "3 hr 10 min"
                 ],
                 "airline": [
-                    "Eurowings",
+                    "VuelingIberia",
                     "Ryanair"
                 ],
                 "stops": [
-                    "0",
+                    "1",
                     "0"
                 ],
                 "price": [
-                    "95",
+                    "94",
                     "40"
                 ],
                 "tocinillo": "David",
-                "new": false,
-                "new_price": true,
-                "total_price": "135"
-            },
-            {
-                "date": [
-                    "2025-06-27",
-                    "2025-06-29"
-                ],
-                "origin": [
-                    "LBC",
-                    "AGP"
-                ],
-                "destination": [
-                    "AGP",
-                    "BRE"
-                ],
-                "time": [
-                    "10:55",
-                    "06:15"
-                ],
-                "travel_time": [
-                    "3 hr 25 min",
-                    "3 hr 10 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "95",
-                    "40"
-                ],
-                "tocinillo": "David",
-                "new": false,
-                "new_price": true,
-                "total_price": "135"
-            },
-            {
-                "date": [
-                    "2025-06-27",
-                    "2025-06-29"
-                ],
-                "origin": [
-                    "HAM",
-                    "AGP"
-                ],
-                "destination": [
-                    "BIO",
-                    "BRE"
-                ],
-                "time": [
-                    "16:55",
-                    "06:15"
-                ],
-                "travel_time": [
-                    "2 hr 30 min",
-                    "3 hr 10 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "100",
-                    "40"
-                ],
-                "tocinillo": "David",
-                "new": false,
-                "new_price": true,
-                "total_price": "140"
+                "new": true,
+                "new_price": false,
+                "total_price": "134"
             },
             {
                 "date": [
@@ -359,7 +435,7 @@
                 ],
                 "time": [
                     "17:20",
-                    "16:15"
+                    "08:40"
                 ],
                 "travel_time": [
                     "3 hr 15 min",
@@ -374,18 +450,56 @@
                     "0"
                 ],
                 "price": [
-                    "28",
-                    "115"
+                    "39",
+                    "95"
                 ],
                 "tocinillo": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "143"
+                "total_price": "134"
             },
             {
                 "date": [
                     "2025-06-27",
-                    "2025-06-29"
+                    "2025-06-30"
+                ],
+                "origin": [
+                    "BRE",
+                    "MAD"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "17:20",
+                    "12:05"
+                ],
+                "travel_time": [
+                    "3 hr 15 min",
+                    "3 hr"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Iberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "39",
+                    "95"
+                ],
+                "tocinillo": "David",
+                "new": false,
+                "new_price": true,
+                "total_price": "134"
+            },
+            {
+                "date": [
+                    "2025-06-27",
+                    "2025-06-30"
                 ],
                 "origin": [
                     "BRE",
@@ -412,13 +526,127 @@
                     "0"
                 ],
                 "price": [
-                    "28",
-                    "115"
+                    "39",
+                    "95"
                 ],
                 "tocinillo": "David",
                 "new": false,
+                "new_price": true,
+                "total_price": "134"
+            },
+            {
+                "date": [
+                    "2025-06-27",
+                    "2025-06-30"
+                ],
+                "origin": [
+                    "BRE",
+                    "BIO"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "17:20",
+                    "13:10"
+                ],
+                "travel_time": [
+                    "3 hr 15 min",
+                    "2 hr 25 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "39",
+                    "100"
+                ],
+                "tocinillo": "David",
+                "new": true,
                 "new_price": false,
-                "total_price": "143"
+                "total_price": "139"
+            },
+            {
+                "date": [
+                    "2025-06-25",
+                    "2025-06-29"
+                ],
+                "origin": [
+                    "HAM",
+                    "AGP"
+                ],
+                "destination": [
+                    "MAD",
+                    "BRE"
+                ],
+                "time": [
+                    "11:10",
+                    "06:15"
+                ],
+                "travel_time": [
+                    "5 hr 5 min",
+                    "3 hr 10 min"
+                ],
+                "airline": [
+                    "Vueling, Iberia",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "1",
+                    "0"
+                ],
+                "price": [
+                    "101",
+                    "40"
+                ],
+                "tocinillo": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "141"
+            },
+            {
+                "date": [
+                    "2025-06-27",
+                    "2025-06-29"
+                ],
+                "origin": [
+                    "LBC",
+                    "MAD"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "10:55",
+                    "16:15"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "2 hr 55 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Iberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "30",
+                    "115"
+                ],
+                "tocinillo": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "145"
             },
             {
                 "date": [
@@ -455,8 +683,46 @@
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "147"
+            },
+            {
+                "date": [
+                    "2025-06-25",
+                    "2025-06-29"
+                ],
+                "origin": [
+                    "HAM",
+                    "AGP"
+                ],
+                "destination": [
+                    "BIO",
+                    "BRE"
+                ],
+                "time": [
+                    "18:35",
+                    "06:15"
+                ],
+                "travel_time": [
+                    "4 hr 10 min",
+                    "3 hr 10 min"
+                ],
+                "airline": [
+                    "KLM",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "1",
+                    "0"
+                ],
+                "price": [
+                    "108",
+                    "40"
+                ],
+                "tocinillo": "David",
+                "new": false,
+                "new_price": false,
+                "total_price": "148"
             },
             {
                 "date": [
@@ -493,13 +759,13 @@
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "148"
             },
             {
                 "date": [
-                    "2025-06-25",
-                    "2025-06-29"
+                    "2025-06-27",
+                    "2025-06-30"
                 ],
                 "origin": [
                     "HAM",
@@ -507,27 +773,27 @@
                 ],
                 "destination": [
                     "BIO",
-                    "BRE"
+                    "LBC"
                 ],
                 "time": [
-                    "18:35",
-                    "06:15"
+                    "16:55",
+                    "06:55"
                 ],
                 "travel_time": [
-                    "4 hr 10 min",
-                    "3 hr 10 min"
+                    "2 hr 30 min",
+                    "3 hr 25 min"
                 ],
                 "airline": [
-                    "KLM",
+                    "Eurowings",
                     "Ryanair"
                 ],
                 "stops": [
-                    "1",
+                    "0",
                     "0"
                 ],
                 "price": [
-                    "108",
-                    "40"
+                    "90",
+                    "58"
                 ],
                 "tocinillo": "David",
                 "new": false,
@@ -568,13 +834,51 @@
                     "58"
                 ],
                 "tocinillo": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "149"
             },
             {
                 "date": [
                     "2025-06-26",
+                    "2025-06-29"
+                ],
+                "origin": [
+                    "HAM",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "BRE"
+                ],
+                "time": [
+                    "14:30",
+                    "06:15"
+                ],
+                "travel_time": [
+                    "3 hr 30 min",
+                    "3 hr 10 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "110",
+                    "40"
+                ],
+                "tocinillo": "David",
+                "new": false,
+                "new_price": true,
+                "total_price": "150"
+            },
+            {
+                "date": [
+                    "2025-06-25",
                     "2025-06-30"
                 ],
                 "origin": [
@@ -586,29 +890,29 @@
                     "LBC"
                 ],
                 "time": [
-                    "14:30",
+                    "11:10",
                     "06:55"
                 ],
                 "travel_time": [
-                    "3 hr 30 min",
+                    "5 hr 35 min",
                     "3 hr 25 min"
                 ],
                 "airline": [
-                    "Eurowings",
+                    "VuelingIberia",
                     "Ryanair"
                 ],
                 "stops": [
-                    "0",
+                    "1",
                     "0"
                 ],
                 "price": [
-                    "95",
+                    "94",
                     "58"
                 ],
                 "tocinillo": "David",
-                "new": false,
-                "new_price": true,
-                "total_price": "153"
+                "new": true,
+                "new_price": false,
+                "total_price": "152"
             },
             {
                 "date": [
@@ -645,45 +949,45 @@
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "153"
             },
             {
                 "date": [
                     "2025-06-27",
-                    "2025-06-30"
+                    "2025-06-29"
                 ],
                 "origin": [
                     "LBC",
-                    "AGP"
+                    "MAD"
                 ],
                 "destination": [
                     "AGP",
-                    "LBC"
+                    "HAM"
                 ],
                 "time": [
                     "10:55",
-                    "06:55"
+                    "19:50"
                 ],
                 "travel_time": [
                     "3 hr 25 min",
-                    "3 hr 25 min"
+                    "2 hr 55 min"
                 ],
                 "airline": [
                     "Ryanair",
-                    "Ryanair"
+                    "Iberia"
                 ],
                 "stops": [
                     "0",
                     "0"
                 ],
                 "price": [
-                    "95",
-                    "58"
+                    "30",
+                    "123"
                 ],
                 "tocinillo": "David",
-                "new": false,
-                "new_price": true,
+                "new": true,
+                "new_price": false,
                 "total_price": "153"
             },
             {
@@ -721,7 +1025,7 @@
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "154"
             },
             {
@@ -759,17 +1063,17 @@
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "154"
             },
             {
                 "date": [
                     "2025-06-27",
-                    "2025-06-30"
+                    "2025-06-29"
                 ],
                 "origin": [
                     "BRE",
-                    "AGP"
+                    "MAD"
                 ],
                 "destination": [
                     "AGP",
@@ -777,10 +1081,86 @@
                 ],
                 "time": [
                     "17:20",
-                    "19:15"
+                    "16:15"
                 ],
                 "travel_time": [
                     "3 hr 15 min",
+                    "2 hr 55 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Iberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "39",
+                    "115"
+                ],
+                "tocinillo": "David",
+                "new": false,
+                "new_price": true,
+                "total_price": "154"
+            },
+            {
+                "date": [
+                    "2025-06-25",
+                    "2025-06-30"
+                ],
+                "origin": [
+                    "HAM",
+                    "AGP"
+                ],
+                "destination": [
+                    "MAD",
+                    "LBC"
+                ],
+                "time": [
+                    "11:10",
+                    "06:55"
+                ],
+                "travel_time": [
+                    "5 hr 5 min",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "Vueling, Iberia",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "1",
+                    "0"
+                ],
+                "price": [
+                    "101",
+                    "58"
+                ],
+                "tocinillo": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "159"
+            },
+            {
+                "date": [
+                    "2025-06-27",
+                    "2025-06-30"
+                ],
+                "origin": [
+                    "LBC",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "10:55",
+                    "19:15"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
                     "3 hr 15 min"
                 ],
                 "airline": [
@@ -792,89 +1172,51 @@
                     "0"
                 ],
                 "price": [
-                    "28",
+                    "30",
                     "130"
                 ],
                 "tocinillo": "David",
-                "new": false,
+                "new": true,
                 "new_price": false,
-                "total_price": "158"
+                "total_price": "160"
             },
             {
                 "date": [
                     "2025-06-27",
-                    "2025-06-30"
-                ],
-                "origin": [
-                    "HAM",
-                    "AGP"
-                ],
-                "destination": [
-                    "BIO",
-                    "LBC"
-                ],
-                "time": [
-                    "16:55",
-                    "06:55"
-                ],
-                "travel_time": [
-                    "2 hr 30 min",
-                    "3 hr 25 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "100",
-                    "58"
-                ],
-                "tocinillo": "David",
-                "new": false,
-                "new_price": true,
-                "total_price": "158"
-            },
-            {
-                "date": [
-                    "2025-06-25",
                     "2025-06-29"
                 ],
                 "origin": [
-                    "HAM",
-                    "AGP"
+                    "BRE",
+                    "MAD"
                 ],
                 "destination": [
-                    "MAD",
-                    "BRE"
+                    "AGP",
+                    "HAM"
                 ],
                 "time": [
-                    "15:45",
-                    "06:15"
+                    "17:20",
+                    "19:50"
                 ],
                 "travel_time": [
-                    "3 hr",
-                    "3 hr 10 min"
+                    "3 hr 15 min",
+                    "2 hr 55 min"
                 ],
                 "airline": [
-                    "Iberia",
-                    "Ryanair"
+                    "Ryanair",
+                    "Iberia"
                 ],
                 "stops": [
                     "0",
                     "0"
                 ],
                 "price": [
-                    "120",
-                    "40"
+                    "39",
+                    "123"
                 ],
                 "tocinillo": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "160"
+                "total_price": "162"
             },
             {
                 "date": [
@@ -910,47 +1252,9 @@
                     "58"
                 ],
                 "tocinillo": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "165"
-            },
-            {
-                "date": [
-                    "2025-06-25",
-                    "2025-06-30"
-                ],
-                "origin": [
-                    "HAM",
-                    "AGP"
-                ],
-                "destination": [
-                    "BIO",
-                    "LBC"
-                ],
-                "time": [
-                    "06:10",
-                    "06:55"
-                ],
-                "travel_time": [
-                    "5 hr 5 min",
-                    "3 hr 25 min"
-                ],
-                "airline": [
-                    "KLM",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "1",
-                    "0"
-                ],
-                "price": [
-                    "108",
-                    "58"
-                ],
-                "tocinillo": "David",
-                "new": true,
-                "new_price": false,
-                "total_price": "166"
             },
             {
                 "date": [
@@ -986,7 +1290,83 @@
                     "58"
                 ],
                 "tocinillo": "David",
-                "new": true,
+                "new": false,
+                "new_price": false,
+                "total_price": "166"
+            },
+            {
+                "date": [
+                    "2025-06-25",
+                    "2025-06-29"
+                ],
+                "origin": [
+                    "HAM",
+                    "AGP"
+                ],
+                "destination": [
+                    "MAD",
+                    "BRE"
+                ],
+                "time": [
+                    "15:45",
+                    "06:15"
+                ],
+                "travel_time": [
+                    "3 hr",
+                    "3 hr 10 min"
+                ],
+                "airline": [
+                    "Iberia",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "126",
+                    "40"
+                ],
+                "tocinillo": "David",
+                "new": false,
+                "new_price": true,
+                "total_price": "166"
+            },
+            {
+                "date": [
+                    "2025-06-25",
+                    "2025-06-30"
+                ],
+                "origin": [
+                    "HAM",
+                    "AGP"
+                ],
+                "destination": [
+                    "BIO",
+                    "LBC"
+                ],
+                "time": [
+                    "06:10",
+                    "06:55"
+                ],
+                "travel_time": [
+                    "5 hr 5 min",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "KLM",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "1",
+                    "0"
+                ],
+                "price": [
+                    "108",
+                    "58"
+                ],
+                "tocinillo": "David",
+                "new": false,
                 "new_price": false,
                 "total_price": "166"
             },
@@ -1025,8 +1405,84 @@
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "167"
+            },
+            {
+                "date": [
+                    "2025-06-26",
+                    "2025-06-30"
+                ],
+                "origin": [
+                    "HAM",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "LBC"
+                ],
+                "time": [
+                    "14:30",
+                    "06:55"
+                ],
+                "travel_time": [
+                    "3 hr 30 min",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "110",
+                    "58"
+                ],
+                "tocinillo": "David",
+                "new": false,
+                "new_price": true,
+                "total_price": "168"
+            },
+            {
+                "date": [
+                    "2025-06-27",
+                    "2025-06-30"
+                ],
+                "origin": [
+                    "BRE",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "17:20",
+                    "19:15"
+                ],
+                "travel_time": [
+                    "3 hr 15 min",
+                    "3 hr 15 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "39",
+                    "130"
+                ],
+                "tocinillo": "David",
+                "new": false,
+                "new_price": true,
+                "total_price": "169"
             },
             {
                 "date": [
@@ -1063,7 +1519,7 @@
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "170"
             },
             {
@@ -1100,7 +1556,7 @@
                     "58"
                 ],
                 "tocinillo": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "171"
             },
@@ -1138,7 +1594,7 @@
                     "58"
                 ],
                 "tocinillo": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "172"
             },
@@ -1176,7 +1632,7 @@
                     "58"
                 ],
                 "tocinillo": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "172"
             },
@@ -1186,7 +1642,7 @@
                     "2025-06-30"
                 ],
                 "origin": [
-                    "BRE",
+                    "LBC",
                     "BIO"
                 ],
                 "destination": [
@@ -1194,11 +1650,11 @@
                     "HAM"
                 ],
                 "time": [
-                    "17:20",
+                    "10:55",
                     "17:20"
                 ],
                 "travel_time": [
-                    "3 hr 15 min",
+                    "3 hr 25 min",
                     "4 hr 40 min"
                 ],
                 "airline": [
@@ -1210,51 +1666,13 @@
                     "1"
                 ],
                 "price": [
-                    "28",
+                    "30",
                     "145"
-                ],
-                "tocinillo": "David",
-                "new": false,
-                "new_price": false,
-                "total_price": "173"
-            },
-            {
-                "date": [
-                    "2025-06-25",
-                    "2025-06-30"
-                ],
-                "origin": [
-                    "HAM",
-                    "AGP"
-                ],
-                "destination": [
-                    "MAD",
-                    "LBC"
-                ],
-                "time": [
-                    "15:45",
-                    "06:55"
-                ],
-                "travel_time": [
-                    "3 hr",
-                    "3 hr 25 min"
-                ],
-                "airline": [
-                    "Iberia",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "120",
-                    "58"
                 ],
                 "tocinillo": "David",
                 "new": true,
                 "new_price": false,
-                "total_price": "178"
+                "total_price": "175"
             },
             {
                 "date": [
@@ -1291,7 +1709,7 @@
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "178"
             },
             {
@@ -1329,7 +1747,7 @@
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "178"
             },
             {
@@ -1363,12 +1781,12 @@
                 ],
                 "price": [
                     "39",
-                    "56"
+                    "53"
                 ],
                 "tocinillo": "Pilar",
-                "new": true,
-                "new_price": false,
-                "total_price": "95"
+                "new": false,
+                "new_price": true,
+                "total_price": "92"
             },
             {
                 "date": [
@@ -1400,13 +1818,13 @@
                     "0"
                 ],
                 "price": [
-                    "45",
-                    "56"
+                    "46",
+                    "53"
                 ],
                 "tocinillo": "Pilar",
-                "new": true,
-                "new_price": false,
-                "total_price": "101"
+                "new": false,
+                "new_price": true,
+                "total_price": "99"
             },
             {
                 "date": [
@@ -1442,7 +1860,7 @@
                     "127"
                 ],
                 "tocinillo": "Pilar",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "166"
             },
@@ -1476,13 +1894,13 @@
                     "1"
                 ],
                 "price": [
-                    "45",
+                    "46",
                     "127"
                 ],
                 "tocinillo": "Pilar",
-                "new": true,
-                "new_price": false,
-                "total_price": "172"
+                "new": false,
+                "new_price": true,
+                "total_price": "173"
             }
         ]
     },
@@ -1491,11 +1909,11 @@
         "combinations": [
             {
                 "date": [
-                    "2025-07-02",
+                    "2025-07-04",
                     "2025-07-07"
                 ],
                 "origin": [
-                    "HAM",
+                    "BRE",
                     "AGP"
                 ],
                 "destination": [
@@ -1503,37 +1921,37 @@
                     "LBC"
                 ],
                 "time": [
-                    "18:35",
+                    "17:20",
                     "06:55"
                 ],
                 "travel_time": [
-                    "5 hr 10 min",
+                    "3 hr 15 min",
                     "3 hr 25 min"
                 ],
                 "airline": [
-                    "KLM",
+                    "Ryanair",
                     "Ryanair"
                 ],
                 "stops": [
-                    "1",
+                    "0",
                     "0"
                 ],
                 "price": [
-                    "107",
+                    "100",
                     "38"
                 ],
                 "tocinillo": "David",
-                "new": false,
+                "new": true,
                 "new_price": false,
-                "total_price": "145"
+                "total_price": "138"
             },
             {
                 "date": [
-                    "2025-07-02",
+                    "2025-07-04",
                     "2025-07-06"
                 ],
                 "origin": [
-                    "HAM",
+                    "BRE",
                     "AGP"
                 ],
                 "destination": [
@@ -1541,33 +1959,33 @@
                     "BRE"
                 ],
                 "time": [
-                    "18:35",
+                    "17:20",
                     "06:15"
                 ],
                 "travel_time": [
-                    "5 hr 10 min",
+                    "3 hr 15 min",
                     "3 hr 10 min"
                 ],
                 "airline": [
-                    "KLM",
+                    "Ryanair",
                     "Ryanair"
                 ],
                 "stops": [
-                    "1",
+                    "0",
                     "0"
                 ],
                 "price": [
-                    "107",
-                    "40"
+                    "100",
+                    "47"
                 ],
                 "tocinillo": "David",
-                "new": false,
+                "new": true,
                 "new_price": false,
                 "total_price": "147"
             },
             {
                 "date": [
-                    "2025-07-02",
+                    "2025-07-03",
                     "2025-07-07"
                 ],
                 "origin": [
@@ -1579,11 +1997,49 @@
                     "LBC"
                 ],
                 "time": [
+                    "11:00",
+                    "06:55"
+                ],
+                "travel_time": [
+                    "5 hr 15 min",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "Vueling, Iberia",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "1",
+                    "0"
+                ],
+                "price": [
+                    "112",
+                    "38"
+                ],
+                "tocinillo": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "150"
+            },
+            {
+                "date": [
+                    "2025-07-02",
+                    "2025-07-07"
+                ],
+                "origin": [
+                    "HAM",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "LBC"
+                ],
+                "time": [
                     "18:35",
                     "06:55"
                 ],
                 "travel_time": [
-                    "4 hr 50 min",
+                    "5 hr 10 min",
                     "3 hr 25 min"
                 ],
                 "airline": [
@@ -1595,11 +2051,87 @@
                     "0"
                 ],
                 "price": [
-                    "122",
+                    "119",
                     "38"
                 ],
                 "tocinillo": "David",
                 "new": false,
+                "new_price": true,
+                "total_price": "157"
+            },
+            {
+                "date": [
+                    "2025-07-03",
+                    "2025-07-06"
+                ],
+                "origin": [
+                    "HAM",
+                    "AGP"
+                ],
+                "destination": [
+                    "MAD",
+                    "BRE"
+                ],
+                "time": [
+                    "11:00",
+                    "06:15"
+                ],
+                "travel_time": [
+                    "5 hr 15 min",
+                    "3 hr 10 min"
+                ],
+                "airline": [
+                    "Vueling, Iberia",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "1",
+                    "0"
+                ],
+                "price": [
+                    "112",
+                    "47"
+                ],
+                "tocinillo": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "159"
+            },
+            {
+                "date": [
+                    "2025-07-04",
+                    "2025-07-07"
+                ],
+                "origin": [
+                    "BRE",
+                    "BIO"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "17:20",
+                    "13:10"
+                ],
+                "travel_time": [
+                    "3 hr 15 min",
+                    "2 hr 25 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "100",
+                    "60"
+                ],
+                "tocinillo": "David",
+                "new": true,
                 "new_price": false,
                 "total_price": "160"
             },
@@ -1613,7 +2145,7 @@
                     "AGP"
                 ],
                 "destination": [
-                    "MAD",
+                    "AGP",
                     "BRE"
                 ],
                 "time": [
@@ -1621,7 +2153,7 @@
                     "06:15"
                 ],
                 "travel_time": [
-                    "4 hr 50 min",
+                    "5 hr 10 min",
                     "3 hr 10 min"
                 ],
                 "airline": [
@@ -1633,13 +2165,51 @@
                     "0"
                 ],
                 "price": [
-                    "122",
-                    "40"
+                    "119",
+                    "47"
                 ],
                 "tocinillo": "David",
                 "new": false,
+                "new_price": true,
+                "total_price": "166"
+            },
+            {
+                "date": [
+                    "2025-07-03",
+                    "2025-07-07"
+                ],
+                "origin": [
+                    "HAM",
+                    "BIO"
+                ],
+                "destination": [
+                    "MAD",
+                    "HAM"
+                ],
+                "time": [
+                    "11:00",
+                    "13:10"
+                ],
+                "travel_time": [
+                    "5 hr 15 min",
+                    "2 hr 25 min"
+                ],
+                "airline": [
+                    "Vueling, Iberia",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "1",
+                    "0"
+                ],
+                "price": [
+                    "112",
+                    "60"
+                ],
+                "tocinillo": "David",
+                "new": true,
                 "new_price": false,
-                "total_price": "162"
+                "total_price": "172"
             },
             {
                 "date": [
@@ -1682,7 +2252,7 @@
             {
                 "date": [
                     "2025-07-02",
-                    "2025-07-06"
+                    "2025-07-07"
                 ],
                 "origin": [
                     "HAM",
@@ -1690,15 +2260,15 @@
                 ],
                 "destination": [
                     "MAD",
-                    "BRE"
+                    "LBC"
                 ],
                 "time": [
-                    "14:50",
-                    "06:15"
+                    "18:35",
+                    "06:55"
                 ],
                 "travel_time": [
-                    "4 hr 40 min",
-                    "3 hr 10 min"
+                    "4 hr 50 min",
+                    "3 hr 25 min"
                 ],
                 "airline": [
                     "KLM",
@@ -1710,12 +2280,12 @@
                 ],
                 "price": [
                     "136",
-                    "40"
+                    "38"
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": false,
-                "total_price": "176"
+                "new_price": true,
+                "total_price": "174"
             },
             {
                 "date": [
@@ -1747,13 +2317,13 @@
                     "0"
                 ],
                 "price": [
-                    "107",
-                    "70"
+                    "119",
+                    "60"
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": false,
-                "total_price": "177"
+                "new_price": true,
+                "total_price": "179"
             }
         ]
     },
@@ -1790,13 +2360,13 @@
                     "0"
                 ],
                 "price": [
-                    "100",
+                    "86",
                     "42"
                 ],
                 "tocinillo": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "142"
+                "total_price": "128"
             },
             {
                 "date": [
@@ -1828,13 +2398,51 @@
                     "0"
                 ],
                 "price": [
-                    "100",
+                    "86",
                     "56"
                 ],
                 "tocinillo": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "156"
+                "total_price": "142"
+            },
+            {
+                "date": [
+                    "2025-07-11",
+                    "2025-07-13"
+                ],
+                "origin": [
+                    "HAM",
+                    "MAD"
+                ],
+                "destination": [
+                    "BIO",
+                    "HAM"
+                ],
+                "time": [
+                    "16:55",
+                    "08:40"
+                ],
+                "travel_time": [
+                    "2 hr 30 min",
+                    "2 hr 55 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "Iberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "86",
+                    "84"
+                ],
+                "tocinillo": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "170"
             },
             {
                 "date": [
@@ -1866,170 +2474,13 @@
                     "0"
                 ],
                 "price": [
-                    "126",
+                    "133",
                     "42"
                 ],
                 "tocinillo": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "168"
-            }
-        ]
-    },
-    {
-        "week": "2025-07-14 to 2025-07-20",
-        "combinations": [
-            {
-                "date": [
-                    "2025-07-18",
-                    "2025-07-21"
-                ],
-                "origin": [
-                    "LBC",
-                    "AGP"
-                ],
-                "destination": [
-                    "AGP",
-                    "LBC"
-                ],
-                "time": [
-                    "10:55",
-                    "06:55"
-                ],
-                "travel_time": [
-                    "3 hr 25 min",
-                    "3 hr 25 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "87",
-                    "54"
-                ],
-                "tocinillo": "David",
-                "new": false,
-                "new_price": true,
-                "total_price": "141"
-            },
-            {
-                "date": [
-                    "2025-07-18",
-                    "2025-07-20"
-                ],
-                "origin": [
-                    "LBC",
-                    "AGP"
-                ],
-                "destination": [
-                    "AGP",
-                    "BRE"
-                ],
-                "time": [
-                    "10:55",
-                    "06:15"
-                ],
-                "travel_time": [
-                    "3 hr 25 min",
-                    "3 hr 10 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "87",
-                    "76"
-                ],
-                "tocinillo": "David",
-                "new": false,
-                "new_price": false,
-                "total_price": "163"
-            },
-            {
-                "date": [
-                    "2025-07-18",
-                    "2025-07-21"
-                ],
-                "origin": [
-                    "LBC",
-                    "AGP"
-                ],
-                "destination": [
-                    "AGP",
-                    "HAM"
-                ],
-                "time": [
-                    "10:55",
-                    "05:45"
-                ],
-                "travel_time": [
-                    "3 hr 25 min",
-                    "5 hr 45 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "KLM"
-                ],
-                "stops": [
-                    "0",
-                    "1"
-                ],
-                "price": [
-                    "87",
-                    "83"
-                ],
-                "tocinillo": "David",
-                "new": true,
-                "new_price": false,
-                "total_price": "170"
-            },
-            {
-                "date": [
-                    "2025-07-18",
-                    "2025-07-21"
-                ],
-                "origin": [
-                    "LBC",
-                    "MAD"
-                ],
-                "destination": [
-                    "AGP",
-                    "HAM"
-                ],
-                "time": [
-                    "10:55",
-                    "13:05"
-                ],
-                "travel_time": [
-                    "3 hr 25 min",
-                    "4 hr 45 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "KLM"
-                ],
-                "stops": [
-                    "0",
-                    "1"
-                ],
-                "price": [
-                    "87",
-                    "90"
-                ],
-                "tocinillo": "David",
-                "new": false,
-                "new_price": false,
-                "total_price": "177"
+                "total_price": "175"
             }
         ]
     },
@@ -2067,12 +2518,12 @@
                 ],
                 "price": [
                     "48",
-                    "98"
+                    "108"
                 ],
                 "tocinillo": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "146"
+                "total_price": "156"
             },
             {
                 "date": [
@@ -2105,12 +2556,12 @@
                 ],
                 "price": [
                     "56",
-                    "98"
+                    "108"
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": false,
-                "total_price": "154"
+                "new_price": true,
+                "total_price": "164"
             },
             {
                 "date": [
@@ -2146,7 +2597,7 @@
                     "130"
                 ],
                 "tocinillo": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "178"
             },
@@ -2184,7 +2635,7 @@
                     "130"
                 ],
                 "tocinillo": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "178"
             },
@@ -2222,7 +2673,7 @@
                     "130"
                 ],
                 "tocinillo": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "178"
             }
@@ -2348,6 +2799,82 @@
             {
                 "date": [
                     "2025-08-22",
+                    "2025-08-25"
+                ],
+                "origin": [
+                    "BRE",
+                    "MAD"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "17:20",
+                    "12:05"
+                ],
+                "travel_time": [
+                    "3 hr 15 min",
+                    "3 hr"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Iberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "65",
+                    "108"
+                ],
+                "tocinillo": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "173"
+            },
+            {
+                "date": [
+                    "2025-08-22",
+                    "2025-08-25"
+                ],
+                "origin": [
+                    "BRE",
+                    "MAD"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "17:20",
+                    "19:50"
+                ],
+                "travel_time": [
+                    "3 hr 15 min",
+                    "2 hr 55 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Iberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "65",
+                    "108"
+                ],
+                "tocinillo": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "173"
+            },
+            {
+                "date": [
+                    "2025-08-22",
                     "2025-08-24"
                 ],
                 "origin": [
@@ -2380,6 +2907,87 @@
                 ],
                 "tocinillo": "David",
                 "new": false,
+                "new_price": false,
+                "total_price": "178"
+            }
+        ]
+    },
+    {
+        "week": "2025-08-25 to 2025-08-31",
+        "combinations": [
+            {
+                "date": [
+                    "2025-08-29",
+                    "2025-08-31"
+                ],
+                "origin": [
+                    "LBC",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "BRE"
+                ],
+                "time": [
+                    "10:55",
+                    "06:15"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "3 hr 10 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "50",
+                    "111"
+                ],
+                "tocinillo": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "161"
+            },
+            {
+                "date": [
+                    "2025-08-29",
+                    "2025-08-31"
+                ],
+                "origin": [
+                    "BRE",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "BRE"
+                ],
+                "time": [
+                    "17:20",
+                    "06:15"
+                ],
+                "travel_time": [
+                    "3 hr 15 min",
+                    "3 hr 10 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "67",
+                    "111"
+                ],
+                "tocinillo": "David",
+                "new": true,
                 "new_price": false,
                 "total_price": "178"
             }
