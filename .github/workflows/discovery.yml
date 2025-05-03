@@ -90,3 +90,9 @@ jobs:
         # env:
         #   GH_TOKEN: ${{ secrets.REPO_TOKEN }}
         
+        # Schritt 9: Speichere den Bericht-HTML als Artefakt
+      - name: Save the report HTML as Artifact for debugging
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-html
+          path: data/bargain_report.html

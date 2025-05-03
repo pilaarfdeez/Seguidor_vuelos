@@ -115,7 +115,7 @@ class BargainReporter:
     def build_html_email(self, data: list):
         new_information = False
 
-        html = ['<html>']
+        html = ['<!DOCTYPE html>']
         html.append('''
 <head>
     <meta charset="UTF-8">
@@ -172,8 +172,9 @@ class BargainReporter:
             grouped_bargains = {key: list(group) 
                            for key, group in groupby(week_data['combinations'], key=lambda f: (f['tocinillo']))}
             for tocinillo,bargains in grouped_bargains.items():
-                html.append('<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse;">')
-                html.append('<tr class="table-header"><th>Ida</th><th>Vuelta</th><th>Aerolínea</th><th>Precio total</th></tr>')
+                html.append('<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; margin-bottom: 10px;">')
+                html.append('<thead><tr class="table-header"><th>Ida</th><th>Vuelta</th><th>Aerolínea</th><th>Precio total</th></tr></thead>')
+                html.append('<tbody>')
                 for bargain in bargains:
                     if bargain['new']:
                         html.append('<tr class="new">')
@@ -189,11 +190,15 @@ class BargainReporter:
                     else:
                         html.append(f'<td>{bargain["total_price"]}&euro;</td>')
                     html.append('</tr>')
-                html.append('</table><br>')
+                html.append('</tbody>')
+                html.append('</table>')
         html.append(f'''<div class="footer"><p>Creado el {dt.datetime.today().strftime('%d/%m/%Y')}</p>
                     <p>&copy; Seguidor de Vuelos de los tocinillos</p>
                     </div>''')
         html.append('</div></body></html>')
+
+        with open("data/bargain_report.html", "w", encoding="utf-8") as f:
+            f.write("".join(html))
 
         if new_information:
             return "\n".join(html)
