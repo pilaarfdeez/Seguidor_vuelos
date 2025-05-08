@@ -64,6 +64,7 @@ for week in range(conf.WEEKS_SEARCH):
 
         combinations_df = combinations_df[combinations_df['Total Price'] <= conf.PRICE_THRESHOLD]
 
+        logger.info(f'  Found {len(combinations_df)} combinations for {tocinillo}')
         for idx in range(len(combinations_df)):
             bargain = Bargain(combinations_df.iloc[idx,:], week_str, tocinillo)
             discovery.add_bargain(bargain)
