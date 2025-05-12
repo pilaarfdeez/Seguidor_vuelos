@@ -1,27 +1,27 @@
 [
     {
-        "week": "2025-08-11 to 2025-08-17",
+        "week": "2025-08-04 to 2025-08-10",
         "combinations": [
             {
                 "date": [
-                    "2025-08-15",
-                    "2025-08-17"
+                    "2025-08-08",
+                    "2025-08-10"
                 ],
                 "origin": [
-                    "BRE",
-                    "AGP"
-                ],
-                "destination": [
                     "AGP",
                     "BRE"
                 ],
+                "destination": [
+                    "LBC",
+                    "AGP"
+                ],
                 "time": [
-                    "17:20",
-                    "06:15"
+                    "06:55",
+                    "09:55"
                 ],
                 "travel_time": [
-                    "3 hr 15 min",
-                    "3 hr 10 min"
+                    "3 hr 25 min",
+                    "3 hr 15 min"
                 ],
                 "airline": [
                     "Ryanair",
@@ -32,11 +32,11 @@
                     "0"
                 ],
                 "price": [
-                    "65",
-                    "85"
+                    "110",
+                    "40"
                 ],
-                "tocinillo": "David",
-                "new": false,
+                "tocinillo": "Pilar",
+                "new": true,
                 "new_price": false,
                 "total_price": "150"
             }
@@ -80,7 +80,7 @@
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "140"
             },
             {
@@ -118,7 +118,7 @@
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "150"
             },
             {
@@ -156,45 +156,7 @@
                 ],
                 "tocinillo": "David",
                 "new": false,
-                "new_price": true,
-                "total_price": "150"
-            },
-            {
-                "date": [
-                    "2025-08-22",
-                    "2025-08-25"
-                ],
-                "origin": [
-                    "LBC",
-                    "AGP"
-                ],
-                "destination": [
-                    "AGP",
-                    "LBC"
-                ],
-                "time": [
-                    "10:55",
-                    "06:55"
-                ],
-                "travel_time": [
-                    "3 hr 25 min",
-                    "3 hr 25 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "42",
-                    "108"
-                ],
-                "tocinillo": "David",
-                "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "150"
             }
         ]
@@ -279,7 +241,7 @@
                     "67"
                 ],
                 "tocinillo": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "143"
             }
