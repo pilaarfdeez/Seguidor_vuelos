@@ -37,6 +37,7 @@ def send_auto_message(file_path):
                     precio_fecha = price_1.get("date")
                     precio_valor = price_1.get("price")
                     mensaje += f"\n   - {precio_fecha}: ${precio_valor} 💸"
+                mensaje += "\n"
 
                 # Enviamos el mensaje automáticamente a cada usuario
                 for user_id in user_ids:
