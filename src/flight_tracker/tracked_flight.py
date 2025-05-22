@@ -41,7 +41,7 @@ class TrackedFlight():
             self.date = flight['date']
             self.time = flight['time']
             try:
-                self.prices = int(flight['prices'])
+                self.prices = [{'date': query['date'], 'price': int(query['price'])} for query in flight['prices']]
             except KeyError:
                 self.prices = []
 
