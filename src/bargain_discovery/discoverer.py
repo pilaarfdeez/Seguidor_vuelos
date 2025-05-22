@@ -37,8 +37,11 @@ class Discovery():
         self.bargains.append(bargain)
 
 
-    def sort_bargains(self):
-        self.bargains = sorted(self.bargains, key=lambda f: (f.week, f.tocinillo, int(f.total_price)))
+    def sort_bargains(self, custom_jobs=False):
+        if custom_jobs:
+            self.bargains = sorted(self.bargains, key=lambda f: (f.job, f.week, int(f.total_price)))
+        else:
+            self.bargains = sorted(self.bargains, key=lambda f: (f.week, f.tocinillo, int(f.total_price)))
 
 
     def group_bargains(self) -> dict:
@@ -54,8 +57,8 @@ class Discovery():
         return grouped_bargains
     
 
-    def check_new_bargains(self):
-        with open("data/bargains.json", "r", encoding="utf-8") as f:
+    def check_new_bargains(self, file='bargains.json'):
+        with open(f"data/{file}", "r", encoding="utf-8") as f:
             data = json.load(f)
         for key, new_bargains in self.group_bargains().items():  # every week
             old_bargains = next((week['combinations'] for week in data if week['week'] == key), [])
@@ -71,11 +74,11 @@ class Discovery():
                     bargain.new_price = True 
 
     
-    def save_bargains(self):
+    def save_bargains(self, file='bargains.json'):
         logger.info('Saving bargains...')
         self.sort_bargains()
         self.check_new_bargains()
-        with open("data/bargains.json", "w") as file:
+        with open(f"data/{file}", "w+") as file:
             json.dump(self.bargains_dict(), file, indent=4)
 
 
