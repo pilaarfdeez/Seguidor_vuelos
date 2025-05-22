@@ -60,7 +60,8 @@ class Discovery():
     def check_new_bargains(self, file='bargains.json'):
         path = 'data/' + file
         if not os.path.exists(path):
-            open(path, 'w').close()
+            with open(path, 'w') as f:
+                f.write('[]')
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
         for key, new_bargains in self.group_bargains().items():  # every week
