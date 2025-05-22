@@ -21,7 +21,7 @@ class Bargain():
         bargain_dict['job'] = self.tocinillo
         bargain_dict['new'] = self.new_bargain
         bargain_dict['new_price'] = self.new_price
-        bargain_dict['total_price'] = self.total_price
+        bargain_dict['total_price'] = str(self.total_price)
         return bargain_dict
     
     
