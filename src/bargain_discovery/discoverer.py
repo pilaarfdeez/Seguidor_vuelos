@@ -39,7 +39,7 @@ class Discovery():
 
     def sort_bargains(self, custom_jobs=False):
         if custom_jobs:
-            self.bargains = sorted(self.bargains, key=lambda f: (f.job, f.week, f.total_price))
+            self.bargains = sorted(self.bargains, key=lambda f: (f.week, f.total_price))
         else:
             self.bargains = sorted(self.bargains, key=lambda f: (f.week, f.tocinillo, f.total_price))
 
@@ -58,7 +58,7 @@ class Discovery():
     
 
     def check_new_bargains(self, file='bargains.json'):
-        with open(f"data/{file}", "r", encoding="utf-8") as f:
+        with open(f"data/{file}", "r+", encoding="utf-8") as f:
             data = json.load(f)
         for key, new_bargains in self.group_bargains().items():  # every week
             old_bargains = next((week['combinations'] for week in data if week['week'] == key), [])
@@ -76,8 +76,12 @@ class Discovery():
     
     def save_bargains(self, file='bargains.json'):
         logger.info('Saving bargains...')
-        self.sort_bargains()
-        self.check_new_bargains()
+        if file == 'bargains.json':
+            custom = False
+        else:
+            custom = True
+        self.sort_bargains(custom)
+        self.check_new_bargains(file)
         with open(f"data/{file}", "w+") as file:
             json.dump(self.bargains_dict(), file, indent=4)
 
