@@ -17,7 +17,7 @@ class Bargain():
 
     def as_dict(self) -> dict:
         attrs = ['date', 'origin', 'destination', 'time', 'travel_time', 'airline', 'stops', 'price']
-        bargain_dict = {attr: [getattr(self.ida, attr), getattr(self.vuelta, attr)] for attr in attrs}
+        bargain_dict = {attr: [str(getattr(self.ida, attr)), str(getattr(self.vuelta, attr))] for attr in attrs}
         bargain_dict['job'] = self.tocinillo
         bargain_dict['new'] = self.new_bargain
         bargain_dict['new_price'] = self.new_price

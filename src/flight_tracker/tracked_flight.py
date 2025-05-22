@@ -18,7 +18,7 @@ class TrackedFlight():
             self.date = flight.date
             self.time = flight.time_leave.strftime('%H:%M')
             self.prices = [
-                {'date': flight.search_date, 'price': flight.price},
+                {'date': flight.search_date, 'price': int(flight.price)},
                 ]
             
         elif isinstance(flight, pd.DataFrame):
@@ -53,8 +53,10 @@ class TrackedFlight():
 
 
     def as_dict(self) -> dict:
-        keys = ['origin', 'destination', 'date', 'time', 'prices']
-        return {k: v for k, v in self.__dict__.items() if k in keys}
+        keys = ['origin', 'destination', 'date', 'time']
+        dict = {k: v for k, v in self.__dict__.items() if k in keys}
+        dict['prices'] = [{'date': query['date'], 'price': str(query['price'])} for query in self.prices]
+        return dict
     
 
     def remove_last_price(self):
