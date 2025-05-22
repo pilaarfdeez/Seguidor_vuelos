@@ -216,7 +216,7 @@ class CustomBargainReporter:
 
     def send_report(self):
         discovery = Discovery()
-        with open(f'data/bargains_{self.job["name"]}.json', "r", encoding="utf-8") as f:
+        with open(f'data/bargains_{self.job["alias"]}.json', "r", encoding="utf-8") as f:
             data = json.load(f)
 
         html_content = self.build_html_email(data)
