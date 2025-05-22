@@ -70,6 +70,8 @@ for job in custom_jobs:
         for idx in range(len(combinations_df)):
             bargain = Bargain(combinations_df.iloc[idx,:], week_str, job['name'])
             discovery.add_bargain(bargain)
+            
+        date_ref += dt.timedelta(7)
         
     logger.info(f'Job {job["name"]} terminated successfully. Saving deals...')
     discovery.save_bargains(file=f'bargains_{job["alias"]}.json')
