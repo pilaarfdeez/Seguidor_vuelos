@@ -92,7 +92,7 @@ class Discovery():
 
             end_date = dt.datetime.today() + dt.timedelta(weeks=conf.WEEK_START)
             for week_data in data:
-                grouped_bargains = self.group_bargains_by(week_data['combinations'], 'tocinillo')
+                grouped_bargains = self.group_bargains_by(week_data['combinations'], 'job')
                 for tocinillo,bargains in grouped_bargains.items():
                     if tocinillo == 'David':
                         color = 'blue'
