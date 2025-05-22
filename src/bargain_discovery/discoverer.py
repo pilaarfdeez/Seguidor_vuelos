@@ -39,9 +39,9 @@ class Discovery():
 
     def sort_bargains(self, custom_jobs=False):
         if custom_jobs:
-            self.bargains = sorted(self.bargains, key=lambda f: (f.job, f.week, int(f.total_price)))
+            self.bargains = sorted(self.bargains, key=lambda f: (f.job, f.week, f.total_price))
         else:
-            self.bargains = sorted(self.bargains, key=lambda f: (f.week, f.tocinillo, int(f.total_price)))
+            self.bargains = sorted(self.bargains, key=lambda f: (f.week, f.tocinillo, f.total_price))
 
 
     def group_bargains(self) -> dict:
@@ -65,12 +65,12 @@ class Discovery():
             old_bargain_prices = {}
             for bargain in old_bargains:  # build compare price dictionary
                 k = Bargain.get_key(bargain)
-                old_bargain_prices[k] = int(bargain["total_price"])
+                old_bargain_prices[k] = bargain["total_price"]
             for bargain in new_bargains:
                 k = Bargain.get_key(bargain)  # search each new bargain in the old-bargain price dictionary
                 if k not in old_bargain_prices:
                     bargain.new_bargain = True
-                elif int(bargain.total_price) != old_bargain_prices[k]:
+                elif bargain.total_price != old_bargain_prices[k]:
                     bargain.new_price = True 
 
     
@@ -103,7 +103,7 @@ class Discovery():
                         color = 'orange'
                     for bargain in bargains:
                         X = [dt.datetime.strptime(date, "%Y-%m-%d") for date in bargain['date']]
-                        Y = [int(bargain['total_price']), int(bargain['total_price'])]
+                        Y = [bargain['total_price'], bargain['total_price']]
                         ax.plot(X, Y, color=color)
                         if end_date < X[1]:
                             end_date = X[1]

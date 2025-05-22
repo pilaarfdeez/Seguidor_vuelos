@@ -64,7 +64,7 @@
         <div class="flight">
             <h2> &#9992; {{ airports[flight.origin] }} &rarr; {{ airports[flight.destination] }} ({{ flight.date }} a las {{ flight.time }})</h2>
             <p><strong>Flight ID:</strong> {{ flight.plot_name }}</p>
-            <p><strong>Nuevo precio:</strong> {{ flight.prices[-2]['price'] }} &euro; &rarr; <strong class="price-change {% if int(flight.prices[-1]['price']) > int(flight.prices[-2]['price']) %}price-up{% else %}price-down{% endif %}">{{ flight.prices[-1]['price'] }} &euro;</strong></p>
+            <p><strong>Nuevo precio:</strong> {{ flight.prices[-2]['price'] }} &euro; &rarr; <strong class="price-change {% if flight.prices[-1]['price'] > flight.prices[-2]['price'] %}price-up{% else %}price-down{% endif %}">{{ flight.prices[-1]['price'] }} &euro;</strong></p>
             
             <div class="plot">
                 <img src="cid:plot_{{ flight.plot_name }}" alt="Evolución de precios" width="100%">

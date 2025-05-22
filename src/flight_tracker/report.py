@@ -170,7 +170,7 @@ class BargainReporter:
         for week_data in data:
             html.append(f'<h2>&#128198; Semana: {week_data["week"]}</h2>')
             grouped_bargains = {key: list(group) 
-                           for key, group in groupby(week_data['combinations'], key=lambda f: (f['tocinillo']))}
+                           for key, group in groupby(week_data['combinations'], key=lambda f: (f['job']))}
             for tocinillo,bargains in grouped_bargains.items():
                 html.append('<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; margin-bottom: 10px;">')
                 html.append('<thead><tr class="table-header"><th>Ida</th><th>Vuelta</th><th>Aerolínea</th><th>Precio total</th></tr></thead>')

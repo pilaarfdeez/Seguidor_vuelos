@@ -12,7 +12,7 @@ class Bargain():
         self.vuelta = BargainFlight(combination_df, 'return')
         self.new_bargain = False
         self.new_price = False
-        self.total_price = str(combination_df['Total Price'])
+        self.total_price = combination_df['Total Price']
 
 
     def as_dict(self) -> dict:
