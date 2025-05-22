@@ -22,8 +22,6 @@ elif conf.ENV == 'local':
 
 today_date = dt.date.today()
 today_weekday = dt.date.weekday(today_date)
-# today_isocalendar = dt.date.isocalendar(today_date)
-# today_isocalendar.week
 delta_to_start = dt.timedelta(days=(-today_weekday + 7*conf.WEEK_START))
 date_ref = today_date + delta_to_start
 
