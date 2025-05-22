@@ -223,7 +223,7 @@ class CustomBargainReporter:
         if not html_content:
             logger.info(f'No new deals today for job {self.job["name"]} --> Skipping daily report')
             return
-        discovery.generate_plot()
+        discovery.generate_plot(job=self.job)
 
         # Create a multipart message and set headers
         message = MIMEMultipart()
