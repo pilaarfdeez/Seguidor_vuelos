@@ -18,7 +18,7 @@ class TrackedFlight():
             self.date = flight.date
             self.time = flight.time_leave.strftime('%H:%M')
             self.prices = [
-                {'date': flight.search_date, 'price': str(flight.price)},
+                {'date': flight.search_date, 'price': flight.price},
                 ]
             
         elif isinstance(flight, pd.DataFrame):
@@ -29,7 +29,7 @@ class TrackedFlight():
                 self.destination = df['Destination']
                 self.date = df['Departure datetime'].strftime('%Y-%m-%d')
                 self.time = df['Departure datetime'].strftime('%H:%M')
-                self.prices = [{'date': df['Search Date'], 'price': str(df['Price'])}]
+                self.prices = [{'date': df['Search Date'], 'price': df['Price']}]
 
             else:
                 logger.warning(f'Wrong DataFrame size passed! Only one-row df is accepted, {flight.shape[0]} were provided --> ignoring flight')
@@ -70,7 +70,7 @@ class TrackedFlight():
         
         fig, ax = plt.subplots()
         X = [dt.datetime.strptime(search['date'], "%Y-%m-%d") for search in self.prices]
-        Y = [int(search['price']) for search in self.prices]
+        Y = [search['price'] for search in self.prices]
 
         ax.plot(X, Y, marker='o')
 
