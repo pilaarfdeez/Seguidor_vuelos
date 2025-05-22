@@ -5,7 +5,10 @@ from matplotlib.dates import DateFormatter
 import os
 import pandas as pd
 
+from config.logging import init_logger
 from src.google_flight_analysis.flight import Flight
+
+logger = init_logger(__name__)
 
 class TrackedFlight():
     def __init__(self, flight):
@@ -29,7 +32,7 @@ class TrackedFlight():
                 self.prices = [{'date': df['Search Date'], 'price': str(df['Price'])}]
 
             else:
-                print(f'Wrong DataFrame size passed! Only one-row df is accepted, {flight.shape[0]} were provided --> ignoring flight')
+                logger.warning(f'Wrong DataFrame size passed! Only one-row df is accepted, {flight.shape[0]} were provided --> ignoring flight')
                 return
 
         else:
