@@ -89,9 +89,12 @@ class Discovery():
             json.dump(self.bargains_dict(), file, indent=4)
 
 
-    def generate_plot(self, from_json: bool = True):
+    def generate_plot(self, from_json: bool = True, job=None):
         out_folder = 'data/images/'
-        file_name = 'bargains.png'
+        if job:
+            file_name = f'bargains_{job["alias"]}.png'
+        else:
+            file_name = 'bargains.png'
         out_path = os.path.join(out_folder, file_name)
 
         if from_json:
@@ -108,6 +111,8 @@ class Discovery():
                         color = 'blue'
                     elif tocinillo == 'Pilar':
                         color = 'orange'
+                    else:
+                        color = 'blue'
                     for bargain in bargains:
                         X = [dt.datetime.strptime(date, "%Y-%m-%d") for date in bargain['date']]
                         Y = [bargain['total_price'], bargain['total_price']]
