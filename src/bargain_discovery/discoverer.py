@@ -93,13 +93,14 @@ class Discovery():
     def generate_plot(self, from_json: bool = True, job=None):
         out_folder = 'data/images/'
         if job:
-            file_name = f'bargains_{job["alias"]}.png'
+            file_name = f'bargains_{job["alias"]}'
         else:
-            file_name = 'bargains.png'
-        out_path = os.path.join(out_folder, file_name)
+            file_name = 'bargains'
+        out_path = os.path.join(out_folder, file_name + ".png")
 
         if from_json:
-            with open("data/bargains.json", "r", encoding="utf-8") as f:
+            path_json = os.path.join("data/", file_name + ".json")
+            with open(path_json, "r", encoding="utf-8") as f:
                 data = json.load(f)
 
             fig, ax = plt.subplots()
