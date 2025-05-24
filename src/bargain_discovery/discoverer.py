@@ -39,7 +39,7 @@ class Discovery():
 
     def sort_bargains(self, custom_jobs=False):
         if custom_jobs:
-            self.bargains = sorted(self.bargains, key=lambda f: (f.job, f.week, f.total_price))
+            self.bargains = sorted(self.bargains, key=lambda f: (f.week, f.total_price))
         else:
             self.bargains = sorted(self.bargains, key=lambda f: (f.week, f.tocinillo, f.total_price))
 
@@ -58,7 +58,11 @@ class Discovery():
     
 
     def check_new_bargains(self, file='bargains.json'):
-        with open(f"data/{file}", "r", encoding="utf-8") as f:
+        path = 'data/' + file
+        if not os.path.exists(path):
+            with open(path, 'w') as f:
+                f.write('[]')
+        with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
         for key, new_bargains in self.group_bargains().items():  # every week
             old_bargains = next((week['combinations'] for week in data if week['week'] == key), [])
@@ -76,19 +80,27 @@ class Discovery():
     
     def save_bargains(self, file='bargains.json'):
         logger.info('Saving bargains...')
-        self.sort_bargains()
-        self.check_new_bargains()
+        if file == 'bargains.json':
+            custom = False
+        else:
+            custom = True
+        self.sort_bargains(custom)
+        self.check_new_bargains(file)
         with open(f"data/{file}", "w+") as file:
             json.dump(self.bargains_dict(), file, indent=4)
 
 
-    def generate_plot(self, from_json: bool = True):
+    def generate_plot(self, from_json: bool = True, job=None):
         out_folder = 'data/images/'
-        file_name = 'bargains.png'
-        out_path = os.path.join(out_folder, file_name)
+        if job:
+            file_name = f'bargains_{job["alias"]}'
+        else:
+            file_name = 'bargains'
+        out_path = os.path.join(out_folder, file_name + ".png")
 
         if from_json:
-            with open("data/bargains.json", "r", encoding="utf-8") as f:
+            path_json = os.path.join("data/", file_name + ".json")
+            with open(path_json, "r", encoding="utf-8") as f:
                 data = json.load(f)
 
             fig, ax = plt.subplots()
@@ -101,6 +113,8 @@ class Discovery():
                         color = 'blue'
                     elif tocinillo == 'Pilar':
                         color = 'orange'
+                    else:
+                        color = 'blue'
                     for bargain in bargains:
                         X = [dt.datetime.strptime(date, "%Y-%m-%d") for date in bargain['date']]
                         Y = [bargain['total_price'], bargain['total_price']]
