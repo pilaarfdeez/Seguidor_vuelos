@@ -2,8 +2,18 @@
   {
     "name": "Deivid a ver a Piluca",
     "alias": "david_julio",
-    "airports": [["HAM","BRE","LBC"], ["AGP","MAD"]],
+    "airports": [["HAM","BRE","LBC"], ["BIO","MAD"]],
     "days_availability": [[4,5], [7,8]],
+    "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
+    "price_threshold": 180,
+    "days_search": ["2025-07-01", "2025-07-31"],
+    "max_trip_duration": 7
+  },
+  {
+    "name": "Piluca a ver a Deivid",
+    "alias": "pilar_julio",
+    "airports": [["AGP"], ["HAM","BRE","LBC"]],
+    "days_availability": [[5], [7,8]],
     "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
     "price_threshold": 180,
     "days_search": ["2025-07-01", "2025-07-31"],
