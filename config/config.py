@@ -27,7 +27,7 @@ class BargainFinderConfig:
     def __init__(self):
         self.ENV = env
 
-        self.WEEK_START = 7     # In how many weeks from now should the Finder start searching? 
+        self.WEEK_START = 5     # In how many weeks from now should the Finder start searching? 
         self.WEEKS_SEARCH = 10  # How many weeks from the start week should the Finder search?
 
         self.AIRPORTS_PILAR = (['AGP','GRX'], ['HAM','BRE','LBC'])
