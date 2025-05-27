@@ -18,5 +18,15 @@
     "price_threshold": 180,
     "days_search": ["2025-06-18", "2025-06-22"],
     "max_trip_duration": 7
+  },
+    {
+    "name": "Piluca va a hamburguesa",
+    "alias": "pili_julio",
+    "airports": [["AGP","SVQ"],["HAM","BRE","LBC"]],
+    "days_availability": [[4,5,6], [7,8]],
+    "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
+    "price_threshold": 180,
+    "days_search": ["2025-07-01", "2025-07-31"],
+    "max_trip_duration": 7
   }
 ]
