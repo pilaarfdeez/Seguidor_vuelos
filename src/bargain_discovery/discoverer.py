@@ -14,6 +14,8 @@ conf = BargainFinderConfig()
 logger = init_logger(__name__)
 
 class Discovery():
+    # TODO: Build a method to read barbains from JSON and convert appropriate attributes to int
+
     def __init__(self):
         self.bargains = []
 
@@ -117,7 +119,7 @@ class Discovery():
                         color = 'blue'
                     for bargain in bargains:
                         X = [dt.datetime.strptime(date, "%Y-%m-%d") for date in bargain['date']]
-                        Y = [bargain['total_price'], bargain['total_price']]
+                        Y = [int(bargain['total_price']), int(bargain['total_price'])]
                         ax.plot(X, Y, color=color)
                         if end_date < X[1]:
                             end_date = X[1]
