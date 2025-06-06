@@ -7,8 +7,8 @@ on:
   # pull_request:
   #   branches:
   #     - main  # Workflow wird auch bei Pull Requests zum main Branch ausgelöst
-  schedule:
-    - cron: "0 8 * * *" # Run daily at 8:00 UTC
+  # schedule:
+  #   - cron: "0 8 * * *" # Run daily at 8:00 UTC
   workflow_dispatch:
 
 
