@@ -7,7 +7,7 @@ from src.flight_tracker.tracker import Tracker
 from src.flight_tracker.report import TrackerReporter
 from src.flight_tracker.tracked_flight import TrackedFlight
 from src.google_flight_analysis.scrape import *
-from src.telegram_bot.send_auto_message import send_auto_message, actualizacionprecio
+from src.telegram_bot.send_auto_message import send_auto_message
 
 conf = TrackerConfig()
 logger = init_logger(__name__)
@@ -60,5 +60,3 @@ updated_flights = tracker.new_prices()
 reporter.send_report(updated_flights, conf.ENV)
 file_path = 'data/tracked_flights.json'
 send_auto_message(file_path)
-
-
