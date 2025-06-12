@@ -1,0 +1,57 @@
+@bot.message_handler(commands=['save_flight'])
+def nuevo_vuelo(message):
+    chat_id = message.chat.id
+    user_data[chat_id] = {}  # Create a new entry for this user
+    bot.send_message(chat_id, "🛫 Origin?")
+    bot.register_next_step_handler(message, get_origin)
+
+def get_origin(message):
+    chat_id = message.chat.id
+    user_data[chat_id]['origin'] = message.text.strip()
+    bot.send_message(chat_id, "🛬 Destination?")
+    bot.register_next_step_handler(message, get_destination)
+
+def get_destination(message):
+    chat_id = message.chat.id
+    user_data[chat_id]['destination'] = message.text.strip()
+    bot.send_message(chat_id, "📅 Date? (YYYY-MM-DD)")
+    bot.register_next_step_handler(message, get_date)
+
+def get_date(message):
+    chat_id = message.chat.id
+    user_data[chat_id]['date'] = message.text.strip()
+    bot.send_message(chat_id, "⏰ Time of flight? (HH:MM)")
+    bot.register_next_step_handler(message, get_time)
+
+def get_time(message):
+    chat_id = message.chat.id
+    user_data[chat_id]['time'] = message.text.strip()
+
+
+    vuelo = {
+        "origin": user_data[chat_id]['origin'],
+        "destination": user_data[chat_id]['destination'],
+        "date": user_data[chat_id]['date'],
+        "time": user_data[chat_id]['time']
+    }
+
+    try:
+        # Load existing data or create new list
+        try:
+            with open(r"C:\Users\Pilar\Downloads\BOT/datos.json", "r", encoding="utf-8") as file:
+                data = json.load(file)
+        except FileNotFoundError:
+            data = []
+
+        data.append(vuelo)
+
+        # Save updated data
+        with open(r"C:\Users\Pilar\Downloads\BOT/datos.json", "w", encoding="utf-8") as file:
+            json.dump(data, file, indent=4, ensure_ascii=False)
+
+        bot.send_message(chat_id, "✅ Vuelo guardado con éxito.")
+    except Exception as e:
+        bot.send_message(chat_id, f"⚠️ Error guardando vuelo: {e}")
+
+# Start the bot
+bot.polling(none_stop=True)
