@@ -1,5 +1,124 @@
 [
     {
+        "week": "2025-06-30 to 2025-07-06",
+        "combinations": [
+            {
+                "date": [
+                    "2025-07-04",
+                    "2025-07-06"
+                ],
+                "origin": [
+                    "None",
+                    "None"
+                ],
+                "destination": [
+                    "None",
+                    "None"
+                ],
+                "time": [
+                    "06:55",
+                    "06:50"
+                ],
+                "travel_time": [
+                    "Nonstop3 hr 25 minRyanair",
+                    "1 stop5 hr 40 minIberiaOperated by Iberia Express"
+                ],
+                "airline": [
+                    "LBC",
+                    "SVQ"
+                ],
+                "stops": [
+                    "None",
+                    "None"
+                ],
+                "price": [
+                    "30",
+                    "103"
+                ],
+                "job": "Piluca va a hamburguesa",
+                "new": true,
+                "new_price": false,
+                "total_price": "133"
+            },
+            {
+                "date": [
+                    "2025-07-04",
+                    "2025-07-06"
+                ],
+                "origin": [
+                    "None",
+                    "None"
+                ],
+                "destination": [
+                    "None",
+                    "None"
+                ],
+                "time": [
+                    "13:45",
+                    "06:50"
+                ],
+                "travel_time": [
+                    "Nonstop3 hr 10 minRyanair",
+                    "1 stop5 hr 40 minIberiaOperated by Iberia Express"
+                ],
+                "airline": [
+                    "BRE",
+                    "SVQ"
+                ],
+                "stops": [
+                    "None",
+                    "None"
+                ],
+                "price": [
+                    "63",
+                    "103"
+                ],
+                "job": "Piluca va a hamburguesa",
+                "new": true,
+                "new_price": false,
+                "total_price": "166"
+            },
+            {
+                "date": [
+                    "2025-07-04",
+                    "2025-07-07"
+                ],
+                "origin": [
+                    "None",
+                    "None"
+                ],
+                "destination": [
+                    "None",
+                    "None"
+                ],
+                "time": [
+                    "06:55",
+                    "18:20"
+                ],
+                "travel_time": [
+                    "Nonstop3 hr 25 minRyanair",
+                    "1 stop5 hr 25 minKLMOperated by KLM Cityhopper"
+                ],
+                "airline": [
+                    "LBC",
+                    "AGP"
+                ],
+                "stops": [
+                    "None",
+                    "None"
+                ],
+                "price": [
+                    "30",
+                    "147"
+                ],
+                "job": "Piluca va a hamburguesa",
+                "new": true,
+                "new_price": false,
+                "total_price": "177"
+            }
+        ]
+    },
+    {
         "week": "2025-07-07 to 2025-07-13",
         "combinations": [
             {
@@ -33,12 +152,50 @@
                 ],
                 "price": [
                     "30",
-                    "143"
+                    "128"
                 ],
                 "job": "Piluca va a hamburguesa",
                 "new": false,
                 "new_price": true,
-                "total_price": "173"
+                "total_price": "158"
+            },
+            {
+                "date": [
+                    "2025-07-11",
+                    "2025-07-13"
+                ],
+                "origin": [
+                    "None",
+                    "None"
+                ],
+                "destination": [
+                    "None",
+                    "None"
+                ],
+                "time": [
+                    "13:45",
+                    "09:55"
+                ],
+                "travel_time": [
+                    "Nonstop3 hr 10 minRyanair",
+                    "Nonstop3 hr 15 minRyanair"
+                ],
+                "airline": [
+                    "BRE",
+                    "AGP"
+                ],
+                "stops": [
+                    "None",
+                    "None"
+                ],
+                "price": [
+                    "40",
+                    "128"
+                ],
+                "job": "Piluca va a hamburguesa",
+                "new": true,
+                "new_price": false,
+                "total_price": "168"
             }
         ]
     }
