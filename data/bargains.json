@@ -1,5 +1,248 @@
 [
     {
+        "week": "2025-08-11 to 2025-08-17",
+        "combinations": [
+            {
+                "date": [
+                    "2025-08-15",
+                    "2025-08-18"
+                ],
+                "origin": [
+                    "None",
+                    "None"
+                ],
+                "destination": [
+                    "None",
+                    "None"
+                ],
+                "time": [
+                    "10:55",
+                    "06:55"
+                ],
+                "travel_time": [
+                    "Nonstop3 hr 25 minRyanair",
+                    "Nonstop3 hr 25 minRyanair"
+                ],
+                "airline": [
+                    "AGP",
+                    "LBC"
+                ],
+                "stops": [
+                    "None",
+                    "None"
+                ],
+                "price": [
+                    "63",
+                    "66"
+                ],
+                "job": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "129"
+            },
+            {
+                "date": [
+                    "2025-08-15",
+                    "2025-08-18"
+                ],
+                "origin": [
+                    "None",
+                    "None"
+                ],
+                "destination": [
+                    "None",
+                    "None"
+                ],
+                "time": [
+                    "17:20",
+                    "06:55"
+                ],
+                "travel_time": [
+                    "Nonstop3 hr 15 minRyanair",
+                    "Nonstop3 hr 25 minRyanair"
+                ],
+                "airline": [
+                    "AGP",
+                    "LBC"
+                ],
+                "stops": [
+                    "None",
+                    "None"
+                ],
+                "price": [
+                    "73",
+                    "66"
+                ],
+                "job": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "139"
+            }
+        ]
+    },
+    {
+        "week": "2025-08-18 to 2025-08-24",
+        "combinations": [
+            {
+                "date": [
+                    "2025-08-22",
+                    "2025-08-24"
+                ],
+                "origin": [
+                    "None",
+                    "None"
+                ],
+                "destination": [
+                    "None",
+                    "None"
+                ],
+                "time": [
+                    "06:55",
+                    "09:55"
+                ],
+                "travel_time": [
+                    "Nonstop3 hr 25 minRyanair",
+                    "Nonstop3 hr 15 minRyanair"
+                ],
+                "airline": [
+                    "LBC",
+                    "AGP"
+                ],
+                "stops": [
+                    "None",
+                    "None"
+                ],
+                "price": [
+                    "75",
+                    "73"
+                ],
+                "job": "Pilar",
+                "new": true,
+                "new_price": false,
+                "total_price": "148"
+            }
+        ]
+    },
+    {
+        "week": "2025-09-15 to 2025-09-21",
+        "combinations": [
+            {
+                "date": [
+                    "2025-09-19",
+                    "2025-09-21"
+                ],
+                "origin": [
+                    "None",
+                    "None"
+                ],
+                "destination": [
+                    "None",
+                    "None"
+                ],
+                "time": [
+                    "19:50",
+                    "06:20"
+                ],
+                "travel_time": [
+                    "Nonstop3 hrIberia",
+                    "Nonstop3 hr 10 minRyanair"
+                ],
+                "airline": [
+                    "MAD",
+                    "BRE"
+                ],
+                "stops": [
+                    "None",
+                    "None"
+                ],
+                "price": [
+                    "96",
+                    "46"
+                ],
+                "job": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "142"
+            },
+            {
+                "date": [
+                    "2025-09-19",
+                    "2025-09-21"
+                ],
+                "origin": [
+                    "None",
+                    "None"
+                ],
+                "destination": [
+                    "None",
+                    "None"
+                ],
+                "time": [
+                    "17:20",
+                    "06:20"
+                ],
+                "travel_time": [
+                    "Nonstop3 hr 15 minRyanair",
+                    "Nonstop3 hr 10 minRyanair"
+                ],
+                "airline": [
+                    "AGP",
+                    "BRE"
+                ],
+                "stops": [
+                    "None",
+                    "None"
+                ],
+                "price": [
+                    "100",
+                    "46"
+                ],
+                "job": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "146"
+            },
+            {
+                "date": [
+                    "2025-09-19",
+                    "2025-09-21"
+                ],
+                "origin": [
+                    "None",
+                    "None"
+                ],
+                "destination": [
+                    "None",
+                    "None"
+                ],
+                "time": [
+                    "06:55",
+                    "09:55"
+                ],
+                "travel_time": [
+                    "Nonstop3 hr 25 minRyanair",
+                    "Nonstop3 hr 15 minRyanair"
+                ],
+                "airline": [
+                    "LBC",
+                    "AGP"
+                ],
+                "stops": [
+                    "None",
+                    "None"
+                ],
+                "price": [
+                    "45",
+                    "100"
+                ],
+                "job": "Pilar",
+                "new": true,
+                "new_price": false,
+                "total_price": "145"
+            }
+        ]
+    },
+    {
         "week": "2025-09-29 to 2025-10-05",
         "combinations": [
             {
@@ -37,7 +280,7 @@
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "138"
             }
         ]
