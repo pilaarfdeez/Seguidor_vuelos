@@ -10,7 +10,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, WebDriverException
 from selenium.webdriver.common.by import By
 import chromedriver_autoinstaller
-from datetime import date, datetime, timedelta
+import datetime as dt
 import json
 import numpy as np
 import pandas as pd
@@ -141,7 +141,7 @@ class _Scrape:
 			# adding two round-trips makes it into a chain, possible perfect chain
 			# example of perfect: (JFK --> IST, IST --> JFK) + (JFK --> CDG, CDG --> JFK)
 
-			assert datetime.strptime(self.date[1], date_format) < datetime.strptime(other.date[0], date_format), "Dates are not in order. Make sure to provide them in increasing order in YYYY-MM-DD format."
+			assert dt.datetime.strptime(self.date[1], date_format) < dt.datetime.strptime(other.date[0], date_format), "Dates are not in order. Make sure to provide them in increasing order in YYYY-MM-DD format."
 
 			# check perfect chain
 			if self.origin[0] == other.origin[0]:
@@ -176,7 +176,7 @@ class _Scrape:
 			# must result in chain
 			# check last date of self < first of other
 
-			assert datetime.strptime(self.date[-1], date_format) < datetime.strptime(other.date[0], date_format), "Dates are not in order. Make sure to provide them in increasing order in YYYY-MM-DD format."
+			assert dt.datetime.strptime(self.date[-1], date_format) < dt.datetime.strptime(other.date[0], date_format), "Dates are not in order. Make sure to provide them in increasing order in YYYY-MM-DD format."
 
 			if self.data.empty:
 				return Scrape(
@@ -194,7 +194,7 @@ class _Scrape:
 		elif obj_type == 'perfect-chain':
 			# only outputs perfect chain if origins are same
 
-			assert datetime.strptime(self.date[-1], date_format) < datetime.strptime(other.date[0], date_format), "Dates are not in order. Make sure to provide them in increasing order in YYYY-MM-DD format."
+			assert dt.datetime.strptime(self.date[-1], date_format) < dt.datetime.strptime(other.date[0], date_format), "Dates are not in order. Make sure to provide them in increasing order in YYYY-MM-DD format."
 
 			# perfect-chain
 			if self.origin[0] == other.origin[0]:
@@ -324,7 +324,7 @@ class _Scrape:
 			assert len(args[2]) == 10 and type(args[2]) == str, "Issue with arg 2, see docs"
 			assert len(args[3]) == 10 and type(args[3]) == str, "Issue with arg 3, see docs"
 
-			assert datetime.strptime(args[2], date_format) < datetime.strptime(args[3], date_format), "Dates are not in order. Make sure to provide them in increasing order in YYYY-MM-DD format."
+			assert dt.datetime.strptime(args[2], date_format) < dt.datetime.strptime(args[3], date_format), "Dates are not in order. Make sure to provide them in increasing order in YYYY-MM-DD format."
 
 			self._origin, self._dest, self._date = [args[0], args[1]], [args[1], args[0]], args[2:]
 
@@ -342,7 +342,7 @@ class _Scrape:
 				assert len(args[i + 2]) == 10 and type(args[i + 2]) == str, "Issue with arg {}, see docs".format(i+2)
 				
 				if i > 0:
-					assert datetime.strptime(self._date[-1], date_format) < datetime.strptime(args[i + 2], date_format), "Dates are not in order ({d1} > {d2}). Make sure to provide them in increasing order in YYYY-MM-DD format.".format(d1 = self._date[-1], d2 = args[i+2])
+					assert dt.datetime.strptime(self._date[-1], date_format) < dt.datetime.strptime(args[i + 2], date_format), "Dates are not in order ({d1} > {d2}). Make sure to provide them in increasing order in YYYY-MM-DD format.".format(d1 = self._date[-1], d2 = args[i+2])
 
 				self._origin += [args[i]]
 				self._dest += [args[i + 1]]
@@ -363,7 +363,7 @@ class _Scrape:
 			for i in range(2, len(args)-1, 2):
 				assert len(args[i]) == 3 and type(args[i]) == str, "Issue with arg {}, see docs".format(i)
 				assert len(args[i + 1]) == 10 and type(args[i + 1]) == str, "Issue with arg {}, see docs".format(i+1)
-				assert datetime.strptime(self._date[-1], date_format) < datetime.strptime(args[i + 1], date_format), "Dates are not in order ({d1} > {d2}). Make sure to provide them in increasing order in YYYY-MM-DD format.".format(d1 = self._date[-1], d2 = args[i+1])
+				assert dt.datetime.strptime(self._date[-1], date_format) < dt.datetime.strptime(args[i + 1], date_format), "Dates are not in order ({d1} > {d2}). Make sure to provide them in increasing order in YYYY-MM-DD format.".format(d1 = self._date[-1], d2 = args[i+1])
 
 				self._origin += [args[i]]
 				self._dest += [args[i]]
@@ -460,29 +460,27 @@ class _Scrape:
 						date = self._date[i]
 					)
 				]
-		
 		return urls
 
 	@staticmethod
 	def _get_results(url, date, driver):
-		search_date = datetime.fromisoformat(date)
-		today = datetime.today()
+		search_date = dt.date.fromisoformat(date)
+		today = dt.date.today()
 		if search_date < today:
 			logger.warning(f"Search date {search_date} is in the past")
-			return -1
-			# If this does not work, try setting flights to empty list
+			flights = []
+		else:
+			results = None
+			try:
+				results = _Scrape._make_url_request(url, driver)
+			except TimeoutException:
+				logger.warning(
+					'''TimeoutException, try again and check your internet connection!\n
+					Also possible that no flights exist for your query :('''.replace('\t','')
+				)
+				return -1
 
-		results = None
-		try:
-			results = _Scrape._make_url_request(url, driver)
-		except TimeoutException:
-			logger.warning(
-				'''TimeoutException, try again and check your internet connection!\n
-				Also possible that no flights exist for your query :('''.replace('\t','')
-			)
-			return -1
-
-		flights = _Scrape._clean_results(results, date)
+			flights = _Scrape._clean_results(results, date)
 		return Flight.dataframe(flights)
 
 	@staticmethod
