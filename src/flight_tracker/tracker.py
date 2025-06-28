@@ -12,6 +12,33 @@ logger = init_logger(__name__)
 
 
 class Tracker:
+    """
+    Tracker class for managing tracked flights and their price histories.
+    This class provides methods to load, process, classify, group, and save tracked flights,
+    as well as to detect new price updates. It interacts with a JSON file to persist flight data.
+    Attributes:
+        tracked_flights (list): List of TrackedFlight objects currently being tracked.
+    Methods:
+        __init__():
+            Initializes the Tracker instance by loading tracked flights from a JSON file.
+            If the file does not exist, initializes with an empty list.
+        tracked_flights_dict():
+            Returns a list of dictionaries representing the tracked flights.
+        process_flight(flight: Flight = None, tracked_flight: TrackedFlight = None):
+            Processes a new or existing flight, classifies it, and updates the tracked flights list accordingly.
+        delete_flight(tracked_flight: TrackedFlight):
+            Removes a tracked flight if it exists; logs a warning if the flight is not found.
+        classify_flight(new_flight: TrackedFlight) -> list:
+            Classifies a flight as 'new', 'existing', or 'skip' based on its attributes and price history.
+        sort_flights():
+            Sorts the tracked flights by date, origin, destination, and time.
+        group_flights() -> dict:
+            Groups the tracked flights by date, origin, and destination.
+        new_prices():
+            Returns a list of flights where the latest price differs from the previous price.
+        save_flights():
+            Saves the current tracked flights to the JSON file, after sorting them.
+    """
     def __init__(self):
         try:
             self.tracked_flights = []

@@ -1,3 +1,24 @@
+"""
+This script performs automated flight bargain discovery and reporting.
+Workflow:
+1. Initializes configuration, logging, and reporting utilities.
+2. Determines the reference date for weekly searches based on configuration.
+3. Iterates over a configured number of weeks, searching for flight bargains for two users ("Pilar" and "David"):
+    - For each user, retrieves origin/destination airports and search days from configuration.
+    - For each leg (outbound/return) and each search day:
+        - Skips dates in the past.
+        - Scrapes flight data using the `Scrape` function.
+        - Filters results by price and maximum travel duration.
+        - Aggregates filtered results.
+    - Combines outbound and return flights, calculates total price, and filters by price threshold.
+    - Logs the number of valid combinations and adds each as a `Bargain` to the discovery object.
+4. Waits a random interval between weeks to simulate human behavior.
+5. Saves discovered bargains and sends a report via email.
+Modules used:
+- `datetime`, `pandas`
+- Custom modules for configuration, logging, scraping, and reporting
+Intended for use in both local and production environments, with logging to indicate the execution context.
+"""
 import datetime as dt
 import pandas as pd
 

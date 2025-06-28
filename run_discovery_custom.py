@@ -1,3 +1,22 @@
+"""
+This script runs a custom flight discovery and reporting workflow based on jobs defined in a JSON configuration file.
+It performs the following steps for each custom job:
+1. Loads configuration and initializes logging.
+2. Reads custom job definitions from 'config/custom_jobs.json'.
+3. For each job:
+    - Initializes a Discovery object and a CustomBargainReporter.
+    - Calculates the search window in weeks and iterates through each week.
+    - For each leg (outbound and return), scrapes flight data for specified days, filters results by price and trip duration, and aggregates candidates.
+    - Combines outbound and return flights to form round-trip combinations, filtering by total price.
+    - Creates Bargain objects for each valid combination and adds them to the discovery.
+    - Saves discovered bargains to a JSON file and sends a report via email.
+    - Waits a random interval between jobs to simulate human behavior.
+4. Logs the completion of all jobs.
+Modules used:
+- datetime, json, pandas
+- Custom modules for configuration, logging, scraping, discovery, and reporting
+Intended for use in both local and production environments.
+"""
 import datetime as dt
 import json
 import pandas as pd
