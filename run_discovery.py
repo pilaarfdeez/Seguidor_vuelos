@@ -44,6 +44,9 @@ for week in range(conf.WEEKS_SEARCH):
         for leg,days in enumerate(days_search): 
             for day in days:
                 day_date = date_ref + dt.timedelta(days=day-1)
+                if day_date < today_date:
+                    logger.warning(f"Date {day_date.isoformat()} is in the past --> Skipping.")
+                    continue
                 if leg == 0:
                     result = Scrape(airports_origin, airports_dest, day_date.isoformat())
                 elif leg == 1:

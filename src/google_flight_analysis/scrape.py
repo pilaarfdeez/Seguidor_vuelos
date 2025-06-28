@@ -465,6 +465,13 @@ class _Scrape:
 
 	@staticmethod
 	def _get_results(url, date, driver):
+		search_date = date.fromisoformat(date)
+		today = date.today()
+		if search_date < today:
+			logger.warning(f"Search date {search_date} is in the past")
+			return -1
+			# If this does not work, try setting flights to empty list
+
 		results = None
 		try:
 			results = _Scrape._make_url_request(url, driver)
