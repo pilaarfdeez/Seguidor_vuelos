@@ -66,7 +66,7 @@ def ScrapeObjects(objs, env, headless=False, add_cookies=False, deep_copy=False)
 			driver.add_cookie(cookie)
 		driver.refresh()
 
-	driver.maximize_window()
+	driver.set_window_size(1920, 1080)
 	random_wait(0.01, 0.03)
 	# simulate_mouse_movement(driver, 3, 10)
 	# simulate_scroll(driver, 1, 2)
@@ -532,13 +532,15 @@ class _Scrape:
 		# WebDriverWait(driver, timeout = 10).until(lambda d: len(_Scrape._get_flight_elements(d)) > 100)
 		results = _Scrape._get_flight_elements(driver)
 
-		#driver.quit()
-
 		return results
 	
 
 	@staticmethod
 	def _get_flight_elements(driver):
+		# Possible workaround to get flight elements (would require adaptation of _clean_results)
+		# element = driver.find_element(By.XPATH, '//body[@id="yDmH0d"]')
+		# text = driver.execute_script("return arguments[0].innerText;", element)
+		# lines = text.split('\n')
 		return driver.find_element(by = By.XPATH, value = '//body[@id = "yDmH0d"]').text.split('\n')
 	
 
