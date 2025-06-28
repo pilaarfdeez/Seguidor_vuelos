@@ -1,12 +1,31 @@
-import datetime as dt
-import sys
+"""
+This script runs the flight tracker workflow, which includes tracking, updating, and reporting flight information.
+Workflow Steps:
+1. Initializes configuration, logger, tracker, and reporter.
+2. Logs the environment (production or local).
+3. Processes flights to track and remove, as specified in the configuration.
+4. Groups tracked flights and scrapes flight data for each group.
+5. Matches scraped flight data with tracked flights by departure time and updates tracking information.
+6. Saves the updated list of tracked flights.
+7. Sends a report of updated flights via email and notifies via Telegram.
+Modules Used:
+- config.logging: Logger initialization.
+- config.config: Tracker configuration.
+- src.flight_tracker.tracker: Main tracker logic.
+- src.flight_tracker.report: Reporting functionality.
+- src.flight_tracker.tracked_flight: Tracked flight data structure.
+- src.google_flight_analysis.scrape: Flight data scraping.
+- src.telegram_bot.send_auto_message: Telegram notification.
+- Calculate elapsed time for the workflow.
+- Adapt the script for production environment deployment.
+"""
 
 from config.logging import init_logger
 from config.config import TrackerConfig
 from src.flight_tracker.tracker import Tracker
 from src.flight_tracker.report import TrackerReporter
 from src.flight_tracker.tracked_flight import TrackedFlight
-from src.google_flight_analysis.scrape import *
+from src.google_flight_analysis.scrape import Scrape, ScrapeObjects
 from src.telegram_bot.send_auto_message import send_auto_message
 
 conf = TrackerConfig()
