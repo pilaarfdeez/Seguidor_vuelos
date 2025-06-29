@@ -26,7 +26,7 @@ from src.flight_tracker.tracker import Tracker
 from src.flight_tracker.report import TrackerReporter
 from src.flight_tracker.tracked_flight import TrackedFlight
 from src.google_flight_analysis.scrape import Scrape, ScrapeObjects
-from src.telegram_bot.send_auto_message import send_auto_message
+# from src.telegram_bot.send_auto_message import send_auto_message
 
 conf = TrackerConfig()
 logger = init_logger(__name__)
@@ -50,6 +50,7 @@ for flight in conf.FLIGHTS_TO_TRACK:
     tracker.process_flight(tracked_flight=tracked_flight)
 
 for flight in conf.FLIGHTS_TO_REMOVE:
+    # TODO: Remove flights from past dates
     tracked_flight = TrackedFlight(flight)
     tracker.delete_flight(tracked_flight)
 
@@ -59,7 +60,10 @@ for key, flights in tracker.group_flights().items():
     result = Scrape(key[1], key[2], key[0])
     ScrapeObjects(result, conf.ENV, headless=False)
     result_df = result.data
-    
+    if not result_df.shape[0]:
+        logger.warning(f"No results found for {key}")
+        continue
+
     for flight in flights:
         match_df = result_df[result_df['Departure datetime'].dt.strftime('%H:%M') == flight.time]
         if match_df.shape[0] == 1:
@@ -78,4 +82,4 @@ logger.info('Sending email...')
 updated_flights = tracker.new_prices()
 reporter.send_report(updated_flights, conf.ENV)
 file_path = 'data/tracked_flights.json'
-send_auto_message(file_path)
+# send_auto_message(file_path)
