@@ -39,10 +39,10 @@ class FlightData:
         data = info.data.add()
         data.date = self.date
         for airp in self.from_airport:
-            airport = data.from_flight.add ()
+            airport = data.from_flight.add()
             airport.airport = airp
         for airp in self.to_airport:
-            airport = data.to_flight.add ()
+            airport = data.to_flight.add()
             airport.airport = airp
         if self.max_stops is not None:
             data.max_stops = self.max_stops
