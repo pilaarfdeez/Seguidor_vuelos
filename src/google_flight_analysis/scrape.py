@@ -9,17 +9,19 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, WebDriverException
 from selenium.webdriver.common.by import By
+from bs4 import BeautifulSoup
 import chromedriver_autoinstaller
 import datetime as dt
 import json
 import numpy as np
 import pandas as pd
+import re
 from tqdm import tqdm
 
 from config.logging import init_logger
 from src.google_flight_analysis.flight import *
 from src.google_flight_analysis.human_simulations import *
-from src.google_flight_analysis.protobuf.protobuf_construc import FlightData, Passengers, TFSData
+from src.google_flight_analysis.protobuf.test.protobuf_construc_test import FlightData, Passengers, TFSData
 
 __all__ = ['Scrape', '_Scrape', 'ScrapeObjects']
 chromedriver_autoinstaller.install() # Check if chromedriver is installed correctly and on path
@@ -92,6 +94,7 @@ class _Scrape:
 		self._data = pd.DataFrame()
 		self._url = None
 		self._type = None
+		self._explore = False
 
 	# if date leave and date return, return 2 objects?
 	def __call__(self, *args):
@@ -99,6 +102,9 @@ class _Scrape:
 		self._set_properties(*args)
 		obj = self.clone(*args)
 		obj.data = self._data
+		pattern = re.compile(r'^[A-Z]{3}$')
+		if any(not pattern.match(x) for x in self.origin + self.dest):
+			self._explore = True
 		return obj
 
 
@@ -462,8 +468,7 @@ class _Scrape:
 				]
 		return urls
 
-	@staticmethod
-	def _get_results(url, date, driver):
+	def _get_results(self, url, date, driver):
 		search_date = dt.date.fromisoformat(date)
 		today = dt.date.today()
 		if search_date < today:
@@ -480,11 +485,14 @@ class _Scrape:
 				)
 				return -1
 
-			flights = _Scrape._clean_results(results, date)
-		return Flight.dataframe(flights)
+			if self._explore:
+				pass
+			else:
+				flights = self._clean_results(results, date)
+				flights_df = Flight.dataframe(flights)
+		return flights_df
 
-	@staticmethod
-	def _clean_results(result, date):
+	def _clean_results(self, result, date):
 		res2 = [x.encode("ascii", "ignore").decode().strip() for x in result]
 
 		start = res2.index("Sorted by top flights") + 1
@@ -503,10 +511,41 @@ class _Scrape:
 		flights = [Flight(date, res3[matches[i]:matches[i+1]]) for i in range(len(matches)-1)]
 
 		return flights
-		
+	
+	def _process_explore(self, results):
+		soup = BeautifulSoup(results, 'html.parser')
+		data = []
 
-	@staticmethod
-	def _make_url_request(url, driver):
+		# Iterate over each flight entry
+		for item in soup.select('div.tsAU4e'):
+			try:
+				# Check for car travel distance by counting <span> tags in o9JBjb sSHqwe
+				travel_info = item.select_one('div.o9JBjb.sSHqwe')
+				if travel_info:
+					spans = travel_info.find_all('span')
+					if len(spans) > 3:
+						continue  # Skip this entry
+
+				city = item.select_one('h3.W6bZuc.YMlIz')
+				price = item.select_one('div.MJg7fb.QB2Jof span')
+				stops = item.select_one('span.nx0jzf')
+				flight_time = item.select_one('span.Xq1DAb')
+
+				data.append({
+					'City': city.get_text(strip=True) if city else None,
+					'Price': price.get_text(strip=True) if price else None,
+					'Stops': stops.get_text(strip=True) if stops else None,
+					'Flight time': flight_time.get_text(strip=True) if flight_time else None,
+				})
+
+			except Exception as e:
+				print(f"Error parsing an entry: {e}")
+				continue
+
+		explore_df = pd.DataFrame(data)
+		return explore_df
+
+	def _make_url_request(self, url, driver):
 		driver.get(url)
 		
 		# Rejecting cookies
@@ -530,7 +569,10 @@ class _Scrape:
 
 		# Waiting and initial XPATH cleaning
 		# WebDriverWait(driver, timeout = 10).until(lambda d: len(_Scrape._get_flight_elements(d)) > 100)
-		results = _Scrape._get_flight_elements(driver)
+		if self._explore:
+			results = self._get_source_page(driver)
+		else:	
+			results = self._get_flight_elements(driver)
 
 		return results
 	
@@ -542,6 +584,10 @@ class _Scrape:
 		# text = driver.execute_script("return arguments[0].innerText;", element)
 		# lines = text.split('\n')
 		return driver.find_element(by = By.XPATH, value = '//body[@id = "yDmH0d"]').text.split('\n')
+	
+	@staticmethod
+	def _get_source_page(driver):
+		return driver.page_source
 	
 
 Scrape = _Scrape()
