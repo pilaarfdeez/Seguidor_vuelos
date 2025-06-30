@@ -81,6 +81,9 @@ for week in range(conf.WEEKS_SEARCH):
                 filtered_df = result_df [filter]
                 candidates_df[leg] = pd.concat([candidates_df[leg], filtered_df], axis=0)
 
+        if candidates_df[0].empty or candidates_df[1].empty:
+            logger.info(f'  No matches found for {tocinillo} in week {week_str}')
+            continue
         combinations_df = candidates_df[0].merge(candidates_df[1], how='cross', suffixes=('_out', '_return'))
         combinations_df['Total Price'] = combinations_df['Price_out'] + combinations_df['Price_return']
 
