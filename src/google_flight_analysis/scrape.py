@@ -21,7 +21,6 @@ from tqdm import tqdm
 from config.logging import init_logger
 from src.google_flight_analysis.flight import *
 from src.google_flight_analysis.human_simulations import *
-from src.google_flight_analysis.protobuf.test.protobuf_construc_test import FlightData, Passengers, TFSData
 
 __all__ = ['Scrape', '_Scrape', 'ScrapeObjects']
 chromedriver_autoinstaller.install() # Check if chromedriver is installed correctly and on path
@@ -102,9 +101,6 @@ class _Scrape:
 		self._set_properties(*args)
 		obj = self.clone(*args)
 		obj.data = self._data
-		pattern = re.compile(r'^[A-Z]{3}$')
-		if any(not pattern.match(x) for x in self.origin + self.dest):
-			self._explore = True
 		return obj
 
 
@@ -301,7 +297,7 @@ class _Scrape:
 		# one way
 		if len(args) == 3:
 			assert (len(args[0]) == 3 and type(args[0]) == str) or type(args[0]) == list, "Issue with arg 0, see docs"
-			assert (len(args[1]) == 3 and type(args[1]) == str) or type(args[0]) == list, "Issue with arg 1, see docs"
+			assert (len(args[1]) == 3 and type(args[1]) == str) or type(args[1]) == list, "Issue with arg 1, see docs"
 			assert len(args[2]) == 10 and type(args[2]) == str, "Issue with arg 2, see docs"
 			tfs = False
 
@@ -320,6 +316,7 @@ class _Scrape:
 
 			self._date = [args[2]]
 
+			self._set_search_mode()
 			self._url = self._make_url(tfs)
 			self._type = 'one-way'
 
@@ -355,6 +352,7 @@ class _Scrape:
 				self._date += [args[i + 2]]
 
 			assert len(self._origin) == len(self._dest) == len(self._date), "Issue with array lengths, talk to dev"
+			self._set_search_mode()
 			self._url = self._make_url()
 			self._type = 'chain-trip'
 
@@ -379,11 +377,17 @@ class _Scrape:
 			self._dest += [args[-1]]
 
 			assert len(self._origin) == len(self._dest) == len(self._date), "Issue with array lengths, talk to dev"
+			self._set_search_mode()
 			self._url = self._make_url()
 			self._type = 'perfect-chain'
 
 		else:
 			raise NotImplementedError()
+	
+	def _set_search_mode(self):
+		pattern = re.compile(r'^[A-Z]{3}$')
+		if any(not pattern.match(x) for x in self.origin + self.dest):
+			self._explore = True
 
 	@property
 	def origin(self):
@@ -438,6 +442,12 @@ class _Scrape:
 
 
 	def _make_url(self, tfs: bool = False, max_stops: int = 1):
+		'''Make the URL for the query. If tfs is True, use TFSData to create a b64 encoded URL.'''
+		if not self._explore:
+			from src.google_flight_analysis.protobuf.protobuf_construc import FlightData, Passengers, TFSData
+		else:
+			from src.google_flight_analysis.protobuf.protobuf_construc_explore import FlightData, Passengers, TFSData
+
 		urls = []
 		if tfs and len(self._date) == 1:
 			flight_data=[
@@ -477,7 +487,7 @@ class _Scrape:
 		else:
 			results = None
 			try:
-				results = _Scrape._make_url_request(url, driver)
+				results = self._make_url_request(url, driver)
 			except TimeoutException:
 				logger.warning(
 					'''TimeoutException, try again and check your internet connection!\n
@@ -486,11 +496,12 @@ class _Scrape:
 				return -1
 
 			if self._explore:
-				pass
+				explore_df = self._process_explore(results)
+				return explore_df
 			else:
 				flights = self._clean_results(results, date)
 				flights_df = Flight.dataframe(flights)
-		return flights_df
+				return flights_df
 
 	def _clean_results(self, result, date):
 		res2 = [x.encode("ascii", "ignore").decode().strip() for x in result]
@@ -525,17 +536,46 @@ class _Scrape:
 					spans = travel_info.find_all('span')
 					if len(spans) > 3:
 						continue  # Skip this entry
+				
+				info = {
+					'City': item.select_one('h3.W6bZuc.YMlIz'),
+					'Price': item.select_one('div.MJg7fb.QB2Jof span'),
+					'Stops': item.select_one('span.nx0jzf'),
+					'Flight time': item.select_one('span.Xq1DAb'),
+					'Flight time (td)': dt.timedelta(0)
+				}
 
-				city = item.select_one('h3.W6bZuc.YMlIz')
-				price = item.select_one('div.MJg7fb.QB2Jof span')
-				stops = item.select_one('span.nx0jzf')
-				flight_time = item.select_one('span.Xq1DAb')
+				for key, value in info.items():
+					if value:
+						info[key] = value.get_text(strip=True)
+					else:
+						info[key] = None
+
+				# Price is an essential attribute, skip if not present (some entries are just empty)
+				if info['Price']:
+					info['Price'] = int(info['Price'][1:])
+				else:
+					continue
+
+				# Parse flight_time using regex to support '2 hr 30 min', '2 hr', or '30 min'
+				hours = 0
+				minutes = 0
+				if info['Flight time']:
+					match = re.search(r"(?:(\d+)\s*hr)?\s*(?:(\d+)\s*min)?", info['Flight time'])
+					if match:
+						if match.group(1):
+							hours = int(match.group(1))
+						if match.group(2):
+							minutes = int(match.group(2))
+					info['Flight time (td)'] = dt.timedelta(hours=hours, minutes=minutes)
+				else:
+					info['Flight time (td)'] = None
 
 				data.append({
-					'City': city.get_text(strip=True) if city else None,
-					'Price': price.get_text(strip=True) if price else None,
-					'Stops': stops.get_text(strip=True) if stops else None,
-					'Flight time': flight_time.get_text(strip=True) if flight_time else None,
+					'City': info['City'],
+					'Price': info['Price'],
+					'Stops': info['Stops'],
+					'Flight_Time': info['Flight time (td)'],
 				})
 
 			except Exception as e:
@@ -587,6 +627,11 @@ class _Scrape:
 	
 	@staticmethod
 	def _get_source_page(driver):
+		# Wait until at least one flight card is present or timeout after 15 seconds
+		WebDriverWait(driver, 15).until(
+			lambda d: len(d.find_elements(By.CSS_SELECTOR, "div.tsAU4e")) > 0
+		)
+		random_wait(5, 10)
 		return driver.page_source
 	
 

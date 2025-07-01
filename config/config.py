@@ -38,6 +38,19 @@ class BargainFinderConfig:
         self.PRICE_THRESHOLD = 150
         self.MAX_TRAVEL_HOURS = 6
 
+class ExplorerConfig:
+    def __init__(self):
+        self.ENV = env
+
+        self.AIRPORT_DAVID = 'HAM'
+        self.AIRPORT_PILAR = 'AGP'
+
+        self.DAYS_DEPARTURE = ["2025-11-07", "2025-11-08", "2025-11-12"]
+        self.DAYS_RETURN = ["2025-11-16", "2025-11-17"]
+
+        self.MAX_TRAVEL_HOURS = 6
+        self.MAX_PRICE = 300
+
 
 class ReporterConfig:
     def __init__(self):
