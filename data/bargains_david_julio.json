@@ -1,5 +1,86 @@
 [
     {
+        "week": "2025-07-14 to 2025-07-20",
+        "combinations": [
+            {
+                "date": [
+                    "2025-07-18",
+                    "2025-07-20"
+                ],
+                "origin": [
+                    "LBC",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "BRE"
+                ],
+                "time": [
+                    "10:55",
+                    "06:15"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "3 hr 10 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "87",
+                    "58"
+                ],
+                "job": "Deivid a ver a Piluca",
+                "new": true,
+                "new_price": false,
+                "total_price": "145"
+            },
+            {
+                "date": [
+                    "2025-07-18",
+                    "2025-07-21"
+                ],
+                "origin": [
+                    "LBC",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "LBC"
+                ],
+                "time": [
+                    "10:55",
+                    "06:55"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "87",
+                    "66"
+                ],
+                "job": "Deivid a ver a Piluca",
+                "new": true,
+                "new_price": false,
+                "total_price": "153"
+            }
+        ]
+    },
+    {
         "week": "2025-07-21 to 2025-07-27",
         "combinations": [
             {
@@ -32,51 +113,13 @@
                     "0"
                 ],
                 "price": [
-                    "54",
-                    "75"
+                    "83",
+                    "83"
                 ],
                 "job": "Deivid a ver a Piluca",
-                "new": true,
-                "new_price": false,
-                "total_price": "129"
-            },
-            {
-                "date": [
-                    "2025-07-25",
-                    "2025-07-27"
-                ],
-                "origin": [
-                    "LBC",
-                    "AGP"
-                ],
-                "destination": [
-                    "AGP",
-                    "BRE"
-                ],
-                "time": [
-                    "10:55",
-                    "06:15"
-                ],
-                "travel_time": [
-                    "3 hr 25 min",
-                    "3 hr 10 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "54",
-                    "98"
-                ],
-                "job": "Deivid a ver a Piluca",
-                "new": true,
-                "new_price": false,
-                "total_price": "152"
+                "new": false,
+                "new_price": true,
+                "total_price": "166"
             },
             {
                 "date": [
@@ -109,12 +152,12 @@
                 ],
                 "price": [
                     "95",
-                    "75"
+                    "83"
                 ],
                 "job": "Deivid a ver a Piluca",
-                "new": true,
-                "new_price": false,
-                "total_price": "170"
+                "new": false,
+                "new_price": true,
+                "total_price": "178"
             }
         ]
     },
@@ -151,13 +194,13 @@
                     "0"
                 ],
                 "price": [
-                    "56",
-                    "49"
+                    "49",
+                    "58"
                 ],
                 "job": "Deivid a ver a Piluca",
-                "new": true,
-                "new_price": false,
-                "total_price": "105"
+                "new": false,
+                "new_price": true,
+                "total_price": "107"
             },
             {
                 "date": [
@@ -189,13 +232,89 @@
                     "0"
                 ],
                 "price": [
-                    "65",
-                    "49"
+                    "63",
+                    "58"
+                ],
+                "job": "Deivid a ver a Piluca",
+                "new": false,
+                "new_price": true,
+                "total_price": "121"
+            },
+            {
+                "date": [
+                    "2025-08-01",
+                    "2025-08-04"
+                ],
+                "origin": [
+                    "BRE",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "LBC"
+                ],
+                "time": [
+                    "17:20",
+                    "06:55"
+                ],
+                "travel_time": [
+                    "3 hr 15 min",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "49",
+                    "73"
                 ],
                 "job": "Deivid a ver a Piluca",
                 "new": true,
                 "new_price": false,
-                "total_price": "114"
+                "total_price": "122"
+            },
+            {
+                "date": [
+                    "2025-08-01",
+                    "2025-08-04"
+                ],
+                "origin": [
+                    "LBC",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "LBC"
+                ],
+                "time": [
+                    "10:55",
+                    "06:55"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "63",
+                    "73"
+                ],
+                "job": "Deivid a ver a Piluca",
+                "new": true,
+                "new_price": false,
+                "total_price": "136"
             },
             {
                 "date": [
@@ -227,13 +346,51 @@
                     "0"
                 ],
                 "price": [
-                    "80",
-                    "49"
+                    "95",
+                    "58"
+                ],
+                "job": "Deivid a ver a Piluca",
+                "new": false,
+                "new_price": true,
+                "total_price": "153"
+            },
+            {
+                "date": [
+                    "2025-08-01",
+                    "2025-08-04"
+                ],
+                "origin": [
+                    "HAM",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "LBC"
+                ],
+                "time": [
+                    "14:40",
+                    "06:55"
+                ],
+                "travel_time": [
+                    "3 hr 30 min",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "95",
+                    "73"
                 ],
                 "job": "Deivid a ver a Piluca",
                 "new": true,
                 "new_price": false,
-                "total_price": "129"
+                "total_price": "168"
             },
             {
                 "date": [
@@ -266,88 +423,12 @@
                 ],
                 "price": [
                     "117",
-                    "49"
+                    "58"
                 ],
                 "job": "Deivid a ver a Piluca",
-                "new": true,
-                "new_price": false,
-                "total_price": "166"
-            },
-            {
-                "date": [
-                    "2025-07-31",
-                    "2025-08-03"
-                ],
-                "origin": [
-                    "HAM",
-                    "AGP"
-                ],
-                "destination": [
-                    "MAD",
-                    "BRE"
-                ],
-                "time": [
-                    "06:50",
-                    "06:15"
-                ],
-                "travel_time": [
-                    "3 hr",
-                    "3 hr 10 min"
-                ],
-                "airline": [
-                    "Iberia",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "126",
-                    "49"
-                ],
-                "job": "Deivid a ver a Piluca",
-                "new": true,
-                "new_price": false,
+                "new": false,
+                "new_price": true,
                 "total_price": "175"
-            },
-            {
-                "date": [
-                    "2025-07-31",
-                    "2025-08-03"
-                ],
-                "origin": [
-                    "HAM",
-                    "AGP"
-                ],
-                "destination": [
-                    "AGP",
-                    "BRE"
-                ],
-                "time": [
-                    "14:30",
-                    "06:15"
-                ],
-                "travel_time": [
-                    "3 hr 30 min",
-                    "3 hr 10 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "130",
-                    "49"
-                ],
-                "job": "Deivid a ver a Piluca",
-                "new": true,
-                "new_price": false,
-                "total_price": "179"
             }
         ]
     }

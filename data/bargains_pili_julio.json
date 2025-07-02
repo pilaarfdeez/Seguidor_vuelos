@@ -32,13 +32,51 @@
                     "0"
                 ],
                 "price": [
-                    "28",
-                    "132"
+                    "50",
+                    "95"
                 ],
                 "job": "Piluca va a hamburguesa",
                 "new": false,
                 "new_price": true,
-                "total_price": "160"
+                "total_price": "145"
+            },
+            {
+                "date": [
+                    "2025-07-18",
+                    "2025-07-21"
+                ],
+                "origin": [
+                    "AGP",
+                    "LBC"
+                ],
+                "destination": [
+                    "BRE",
+                    "AGP"
+                ],
+                "time": [
+                    "13:45",
+                    "11:00"
+                ],
+                "travel_time": [
+                    "3 hr 10 min",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "76",
+                    "95"
+                ],
+                "job": "Piluca va a hamburguesa",
+                "new": true,
+                "new_price": false,
+                "total_price": "171"
             },
             {
                 "date": [
@@ -47,36 +85,236 @@
                 ],
                 "origin": [
                     "AGP",
-                    "HAM"
+                    "BRE"
                 ],
                 "destination": [
                     "LBC",
-                    "SVQ"
+                    "AGP"
                 ],
                 "time": [
                     "06:55",
-                    "06:50"
+                    "09:55"
                 ],
                 "travel_time": [
                     "3 hr 25 min",
-                    "5 hr 40 min"
+                    "3 hr 15 min"
                 ],
                 "airline": [
                     "Ryanair",
-                    "Iberia"
+                    "Ryanair"
                 ],
                 "stops": [
                     "0",
-                    "1"
+                    "0"
                 ],
                 "price": [
-                    "28",
-                    "140"
+                    "50",
+                    "121"
+                ],
+                "job": "Piluca va a hamburguesa",
+                "new": true,
+                "new_price": false,
+                "total_price": "171"
+            }
+        ]
+    },
+    {
+        "week": "2025-07-21 to 2025-07-27",
+        "combinations": [
+            {
+                "date": [
+                    "2025-07-25",
+                    "2025-07-27"
+                ],
+                "origin": [
+                    "AGP",
+                    "BRE"
+                ],
+                "destination": [
+                    "LBC",
+                    "AGP"
+                ],
+                "time": [
+                    "06:55",
+                    "09:55"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "3 hr 15 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "58",
+                    "108"
+                ],
+                "job": "Piluca va a hamburguesa",
+                "new": true,
+                "new_price": false,
+                "total_price": "166"
+            },
+            {
+                "date": [
+                    "2025-07-25",
+                    "2025-07-28"
+                ],
+                "origin": [
+                    "AGP",
+                    "LBC"
+                ],
+                "destination": [
+                    "LBC",
+                    "AGP"
+                ],
+                "time": [
+                    "06:55",
+                    "11:00"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "58",
+                    "110"
                 ],
                 "job": "Piluca va a hamburguesa",
                 "new": true,
                 "new_price": false,
                 "total_price": "168"
+            }
+        ]
+    },
+    {
+        "week": "2025-07-28 to 2025-08-03",
+        "combinations": [
+            {
+                "date": [
+                    "2025-08-01",
+                    "2025-08-03"
+                ],
+                "origin": [
+                    "AGP",
+                    "BRE"
+                ],
+                "destination": [
+                    "BRE",
+                    "AGP"
+                ],
+                "time": [
+                    "13:45",
+                    "09:55"
+                ],
+                "travel_time": [
+                    "3 hr 10 min",
+                    "3 hr 15 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "87",
+                    "40"
+                ],
+                "job": "Piluca va a hamburguesa",
+                "new": true,
+                "new_price": false,
+                "total_price": "127"
+            },
+            {
+                "date": [
+                    "2025-08-01",
+                    "2025-08-03"
+                ],
+                "origin": [
+                    "AGP",
+                    "BRE"
+                ],
+                "destination": [
+                    "LBC",
+                    "AGP"
+                ],
+                "time": [
+                    "06:55",
+                    "09:55"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "3 hr 15 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "101",
+                    "40"
+                ],
+                "job": "Piluca va a hamburguesa",
+                "new": true,
+                "new_price": false,
+                "total_price": "141"
+            },
+            {
+                "date": [
+                    "2025-08-01",
+                    "2025-08-03"
+                ],
+                "origin": [
+                    "AGP",
+                    "BRE"
+                ],
+                "destination": [
+                    "HAM",
+                    "AGP"
+                ],
+                "time": [
+                    "18:55",
+                    "09:55"
+                ],
+                "travel_time": [
+                    "3 hr 20 min",
+                    "3 hr 15 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "130",
+                    "40"
+                ],
+                "job": "Piluca va a hamburguesa",
+                "new": true,
+                "new_price": false,
+                "total_price": "170"
             }
         ]
     }
