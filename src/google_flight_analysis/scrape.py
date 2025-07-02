@@ -637,7 +637,7 @@ class _Scrape:
 		WebDriverWait(driver, 15).until(
 			lambda d: len(d.find_elements(By.CSS_SELECTOR, "div.tsAU4e")) > 0
 		)
-		random_wait(5, 10)
+		random_wait(0.5, 1)
 		return driver.page_source
 	
 
