@@ -438,7 +438,13 @@ class _Scrape:
 	'''
 	def _scrape_data(self, driver):
 		results = [self._get_results(url, self._date[i], driver) for i, url in enumerate(self._url)]
-		self._data = pd.concat(results, ignore_index = True)
+		results = [res for res in results if isinstance(res, pd.DataFrame)]  # Filter out timeouts
+		if results:
+			self._data = pd.concat(results, ignore_index=True)
+		else:
+			logger.warning("No results found for the given query.")
+			self._data = pd.DataFrame()
+			
 
 
 	def _make_url(self, tfs: bool = False, max_stops: int = 1):
