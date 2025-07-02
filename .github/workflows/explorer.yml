@@ -1,9 +1,9 @@
-name: Run Discovery Custom
+name: Run Discovery
 
 on:
   # push:
   schedule:
-    - cron: "0 14 * * *" # Run daily at 14:00 UTC
+    - cron: "0 18 * * *" # Run daily at 18:00 UTC
   workflow_dispatch:
 
 
@@ -48,45 +48,21 @@ jobs:
           google-chrome --version
           chromedriver --version
 
-        # Alternatively:
-          # uses: browser-actions/setup-chrome@v3
-          # with:
-          #   chrome-version: 'latest'
-
-      # Schritt 5: Füge Cookies aus GitHub Secrets hinzu
-      # - name: Write cookies to a file
-      #   run: |
-      #     mkdir -p data
-      #     echo "${{ secrets.COOKIES_JSON }}" > data/cookies.json
-
-      # Schritt 6: Führe das Scraper-Skript aus
-      - name: Run Discovery script
+      # Schritt 5: Führe das Scraper-Skript aus
+      - name: Run Explorer script
         run: |
           mkdir -p data/images
-          python run_discovery_custom.py
+          python run_explorer.py
         env:
           ENV: production
           GMAIL_LOGIN: ${{ secrets.GMAIL_LOGIN }}
           GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
           GMAIL_TO: ${{ secrets.GMAIL_TO }}
 
-      # # Schritt 7: Checkout des Codes
-      # - name: Intermediate repository Checkout
-      #   uses: actions/checkout@v4
-      #   env:
-      #     GH_TOKEN: ${{ secrets.REPO_TOKEN }}
-
-      # Schritt 8: Push die aktualisierte JSON-Datei
+      # Schritt 6: Push die aktualisierte JSON-Datei
       - name: Commit JSON changes
         uses: EndBug/add-and-commit@v9
         with:
-          add: ./data
-        # run: |
-        #   git config --local user.name "github-actions"
-        #   git config --local user.email "github-actions@github.com"
-        #   git add data/tracked_flights.json
-        #   git commit -m "Update tracked flight prices" || echo "No changes to commit"
-        #   git push
-        # env:
-        #   GH_TOKEN: ${{ secrets.REPO_TOKEN }}
-        
+          add: ./data/potential_destinations.json
+          message: "Update potential destinations"
+
