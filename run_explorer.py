@@ -48,6 +48,7 @@ for day in conf.DAYS_RETURN:
         continue
     for country in explorer.potential_matches['Country'].unique():
         origin = explorer.potential_matches[explorer.potential_matches['Country'] == country]['City'].unique()
+        # TODO: Get the freebase ID (alternatively airport code) for each of the cities
         results_david = Scrape([origin], conf.AIRPORT_DAVID, day)
         results_pilar = Scrape([origin], conf.AIRPORT_PILAR, day)
         ScrapeObjects(results_david, conf.ENV)
@@ -55,7 +56,7 @@ for day in conf.DAYS_RETURN:
         explorer.verify_matches(results_david.data, results_pilar.data)
 
 
-explorer.save_matches()
+explorer.save_matches(matches='potential')
 logger.info('Explorer job terminated successfully!')
 
 logger.info('Sending email...')
