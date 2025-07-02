@@ -8,12 +8,12 @@ from src.destination_explorer.explorer import Explorer
 # from src.destination_explorer.match import Match
 from src.google_flight_analysis.human_simulations import *
 from src.google_flight_analysis.scrape import *
-from src.flight_tracker.report import BargainReporter
+from src.flight_tracker.report import FlightMatchReporter
 
 conf = ExplorerConfig()
 explorer = Explorer(conf)
 logger = init_logger(__name__)
-reporter = BargainReporter()
+reporter = FlightMatchReporter()
 
 if conf.ENV == 'production':
     logger.info('Running Explorer in GitHub Actions!')
