@@ -559,7 +559,7 @@ class _Scrape:
 
 				# Price is an essential attribute, skip if not present (some entries are just empty)
 				if info['Price']:
-					info['Price'] = int(info['Price'][1:])
+					info['Price'] = int(info['Price'][1:].replace(',', ''))  # Convert price to integer
 				else:
 					continue
 

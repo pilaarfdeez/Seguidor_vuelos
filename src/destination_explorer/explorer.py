@@ -65,9 +65,9 @@ class Explorer:
         if joined_filtered.empty:
             return
 
-        joined_filtered['Day'] = day
-        joined_filtered['Country'] = country
-        joined_filtered['Total_Price'] = joined_filtered['Price_David'] + joined_filtered['Price_Pilar']
+        joined_filtered.loc[:, 'Day'] = day
+        joined_filtered.loc[:, 'Country'] = country
+        joined_filtered.loc[:, 'Total_Price'] = joined_filtered['Price_David'] + joined_filtered['Price_Pilar']
         self.potential_matches = pd.concat([self.potential_matches, joined_filtered], axis=0)
         logger.info(f"--> {len(joined_filtered)} potential matches found!")
 
