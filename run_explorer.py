@@ -42,18 +42,18 @@ for day in conf.DAYS_DEPARTURE:
 
     random_wait(min_sec=10, max_sec=15)
 
-for day in conf.DAYS_RETURN:
-    if day < today_date:
-        logger.warning(f"Date {day} is in the past --> Skipping.")
-        continue
-    for country in explorer.potential_matches['Country'].unique():
-        origin = explorer.potential_matches[explorer.potential_matches['Country'] == country]['City'].unique()
-        # TODO: Get the freebase ID (alternatively airport code) for each of the cities
-        results_david = Scrape([origin], conf.AIRPORT_DAVID, day)
-        results_pilar = Scrape([origin], conf.AIRPORT_PILAR, day)
-        ScrapeObjects(results_david, conf.ENV)
-        ScrapeObjects(results_pilar, conf.ENV)
-        explorer.verify_matches(results_david.data, results_pilar.data)
+# for day in conf.DAYS_RETURN:
+#     if dt.datetime.strptime(day, "%Y-%m-%d").date() < today_date:
+#         logger.warning(f"Date {day} is in the past --> Skipping.")
+#         continue
+#     for country in explorer.potential_matches['Country'].unique():
+#         origin = explorer.potential_matches[explorer.potential_matches['Country'] == country]['City'].unique()
+#         # TODO: Get the freebase ID (alternatively airport code) for each of the cities
+#         results_david = Scrape([origin], conf.AIRPORT_DAVID, day)
+#         results_pilar = Scrape([origin], conf.AIRPORT_PILAR, day)
+#         ScrapeObjects(results_david, conf.ENV)
+#         ScrapeObjects(results_pilar, conf.ENV)
+#         explorer.verify_matches(results_david.data, results_pilar.data)
 
 
 explorer.save_matches(matches='potential')
