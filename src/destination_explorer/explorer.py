@@ -61,7 +61,7 @@ class Explorer:
             (cross_joined['Flight_Time_David'] < dt.timedelta(hours=self.conf.MAX_TRAVEL_HOURS)) &
             (cross_joined['Flight_Time_Pilar'] < dt.timedelta(hours=self.conf.MAX_TRAVEL_HOURS))
         )
-        joined_filtered = cross_joined[filter]
+        joined_filtered = cross_joined[filter].copy()
         if joined_filtered.empty:
             return
 
@@ -70,6 +70,7 @@ class Explorer:
         joined_filtered.loc[:, 'Total_Price'] = joined_filtered['Price_David'] + joined_filtered['Price_Pilar']
         self.potential_matches = pd.concat([self.potential_matches, joined_filtered], axis=0)
         logger.info(f"--> {len(joined_filtered)} potential matches found!")
+        logger.info(f"potential_matches shape: {self.potential_matches.shape}")
 
 
     def verify_matches(self, results_david, results_pilar):
