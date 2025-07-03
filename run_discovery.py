@@ -28,7 +28,7 @@ from src.bargain_discovery.discoverer import Discovery
 from src.bargain_discovery.bargain import Bargain
 from src.google_flight_analysis.human_simulations import *
 from src.google_flight_analysis.scrape import *
-from src.flight_tracker.report import BargainReporter
+from report.report import BargainReporter
 
 conf = BargainFinderConfig()
 discovery = Discovery()

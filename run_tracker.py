@@ -23,7 +23,7 @@ Modules Used:
 from config.logging import init_logger
 from config.config import TrackerConfig
 from src.flight_tracker.tracker import Tracker
-from src.flight_tracker.report import TrackerReporter
+from report.report import TrackerReporter
 from src.flight_tracker.tracked_flight import TrackedFlight
 from src.google_flight_analysis.scrape import Scrape, ScrapeObjects
 # from src.telegram_bot.send_auto_message import send_auto_message
