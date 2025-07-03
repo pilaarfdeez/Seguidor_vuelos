@@ -1,11 +1,8 @@
 name: Run Explorer
 
 on:
-  push:
-    branches:
-      - explore-flights
-  # schedule:
-  #   - cron: "0 18 * * *" # Run daily at 18:00 UTC
+  schedule:
+    - cron: "0 18 * * 0" # Run weekly at 18:00 UTC on Sunday
   workflow_dispatch:
 
 
@@ -67,10 +64,3 @@ jobs:
         with:
           add: ./data/potential_destinations.json
           message: "Update potential destinations"
-
-      # Schritt 7: Speichere die JSON-Datei als Artefakt
-      - name: Save the explorer output as Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: explorer-output
-          path: data/potential_matches.json
