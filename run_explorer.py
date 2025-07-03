@@ -39,10 +39,9 @@ for day in conf.DAYS_DEPARTURE:
         ScrapeObjects(results_pilar, conf.ENV)
         explorer.process_matches(day, country, results_david.data, results_pilar.data)
         random_wait(min_sec=0.1, max_sec=1)
-        if country == 'Belarus':
-            break # temp
-    break # temp
-
+        if country == 'Denmark':
+            break
+        
     random_wait(min_sec=10, max_sec=15)
 
 # for day in conf.DAYS_RETURN:
