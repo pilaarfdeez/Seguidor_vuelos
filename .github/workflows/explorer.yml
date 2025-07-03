@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - explore-flights
-  schedule:
-    - cron: "0 18 * * *" # Run daily at 18:00 UTC
+  # schedule:
+  #   - cron: "0 18 * * *" # Run daily at 18:00 UTC
   workflow_dispatch:
 
 
