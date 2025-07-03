@@ -41,7 +41,7 @@ for day in conf.DAYS_DEPARTURE:
         random_wait(min_sec=0.1, max_sec=1)
         if country == 'Denmark':
             break
-        
+
     random_wait(min_sec=10, max_sec=15)
 
 # for day in conf.DAYS_RETURN:
@@ -62,4 +62,4 @@ explorer.save_matches(matches='potential')
 logger.info('Explorer job terminated successfully!')
 
 logger.info('Sending email...')
-reporter.send_report()
+# reporter.send_report()
