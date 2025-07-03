@@ -21,8 +21,8 @@ class Explorer:
         elif matches == 'real':
             matches_df = self.matches.copy()
 
-        matches_dict = [{} for day in matches_df['Day'].unique()]
-        for i, day in enumerate(matches_df['Day'].unique()):
+        matches_dict = []
+        for day in matches_df['Day'].unique():
             day_matches = matches_df[matches_df['Day'] == day].drop(columns=['Day'])
 
             # Format flight times as 'Xh Ymin'
@@ -37,11 +37,11 @@ class Explorer:
                 elif 'Flight_Time' in col:
                     day_matches[col] = day_matches[col].apply(format_flight_time)
 
-            matches_dict[i] = {
+            matches_dict.append({
                 'Day': day,
                 'Matches': day_matches.to_dict(orient='records')
-            }
-            return matches_dict
+            })
+        return matches_dict
 
     def sort_matches(self):
         self.potential_matches = self.potential_matches.sort_values(by=['Day', 'Total_Price', 'Country', 'City'])
