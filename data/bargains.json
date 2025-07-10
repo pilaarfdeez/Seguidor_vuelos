@@ -1,57 +1,14 @@
 [
     {
-        "week": "2025-08-18 to 2025-08-24",
-        "combinations": [
-            {
-                "date": [
-                    "2025-08-22",
-                    "2025-08-24"
-                ],
-                "origin": [
-                    "LBC",
-                    "AGP"
-                ],
-                "destination": [
-                    "AGP",
-                    "BRE"
-                ],
-                "time": [
-                    "10:55",
-                    "06:15"
-                ],
-                "travel_time": [
-                    "3 hr 25 min",
-                    "3 hr 10 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "36",
-                    "111"
-                ],
-                "job": "David",
-                "new": true,
-                "new_price": false,
-                "total_price": "147"
-            }
-        ]
-    },
-    {
         "week": "2025-08-25 to 2025-08-31",
         "combinations": [
             {
                 "date": [
-                    "2025-08-29",
+                    "2025-08-27",
                     "2025-08-31"
                 ],
                 "origin": [
-                    "BRE",
+                    "HAM",
                     "AGP"
                 ],
                 "destination": [
@@ -59,15 +16,15 @@
                     "BRE"
                 ],
                 "time": [
-                    "17:20",
+                    "09:30",
                     "06:15"
                 ],
                 "travel_time": [
-                    "3 hr 15 min",
+                    "3 hr 30 min",
                     "3 hr 10 min"
                 ],
                 "airline": [
-                    "Ryanair",
+                    "Eurowings",
                     "Ryanair"
                 ],
                 "stops": [
@@ -75,57 +32,19 @@
                     "0"
                 ],
                 "price": [
-                    "47",
-                    "89"
+                    "65",
+                    "78"
                 ],
                 "job": "David",
-                "new": false,
-                "new_price": true,
-                "total_price": "136"
+                "new": true,
+                "new_price": false,
+                "total_price": "143"
             }
         ]
     },
     {
         "week": "2025-09-15 to 2025-09-21",
         "combinations": [
-            {
-                "date": [
-                    "2025-09-19",
-                    "2025-09-22"
-                ],
-                "origin": [
-                    "BRE",
-                    "AGP"
-                ],
-                "destination": [
-                    "AGP",
-                    "LBC"
-                ],
-                "time": [
-                    "17:20",
-                    "06:55"
-                ],
-                "travel_time": [
-                    "3 hr 15 min",
-                    "3 hr 25 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "83",
-                    "42"
-                ],
-                "job": "David",
-                "new": false,
-                "new_price": true,
-                "total_price": "125"
-            },
             {
                 "date": [
                     "2025-09-17",
@@ -141,44 +60,6 @@
                 ],
                 "time": [
                     "08:40",
-                    "06:55"
-                ],
-                "travel_time": [
-                    "3 hr 30 min",
-                    "3 hr 25 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "95",
-                    "42"
-                ],
-                "job": "David",
-                "new": false,
-                "new_price": false,
-                "total_price": "137"
-            },
-            {
-                "date": [
-                    "2025-09-19",
-                    "2025-09-22"
-                ],
-                "origin": [
-                    "HAM",
-                    "AGP"
-                ],
-                "destination": [
-                    "AGP",
-                    "LBC"
-                ],
-                "time": [
-                    "14:40",
                     "06:55"
                 ],
                 "travel_time": [
@@ -239,44 +120,6 @@
                 "new": false,
                 "new_price": false,
                 "total_price": "144"
-            },
-            {
-                "date": [
-                    "2025-09-19",
-                    "2025-09-21"
-                ],
-                "origin": [
-                    "AGP",
-                    "BRE"
-                ],
-                "destination": [
-                    "LBC",
-                    "AGP"
-                ],
-                "time": [
-                    "06:55",
-                    "09:55"
-                ],
-                "travel_time": [
-                    "3 hr 25 min",
-                    "3 hr 15 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "67",
-                    "83"
-                ],
-                "job": "Pilar",
-                "new": false,
-                "new_price": false,
-                "total_price": "150"
             }
         ]
     }
