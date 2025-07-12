@@ -32,13 +32,13 @@
                     "0"
                 ],
                 "price": [
-                    "79",
+                    "86",
                     "67"
                 ],
                 "job": "Nos vamos al octokber???",
                 "new": false,
                 "new_price": true,
-                "total_price": "146"
+                "total_price": "153"
             },
             {
                 "date": [
@@ -75,46 +75,89 @@
                 ],
                 "job": "Nos vamos al octokber???",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "163"
             },
             {
                 "date": [
-                    "2025-09-20",
+                    "2025-09-19",
                     "2025-09-21"
+                ],
+                "origin": [
+                    "AGP",
+                    "FMM"
+                ],
+                "destination": [
+                    "FMM",
+                    "AGP"
+                ],
+                "time": [
+                    "13:30",
+                    "06:00"
+                ],
+                "travel_time": [
+                    "2 hr 40 min",
+                    "2 hr 55 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "108",
+                    "67"
+                ],
+                "job": "Nos vamos al octokber???",
+                "new": true,
+                "new_price": false,
+                "total_price": "175"
+            }
+        ]
+    },
+    {
+        "week": "2025-09-29 to 2025-10-05",
+        "combinations": [
+            {
+                "date": [
+                    "2025-10-02",
+                    "2025-10-05"
                 ],
                 "origin": [
                     "AGP",
                     "NUE"
                 ],
                 "destination": [
-                    "NUE",
+                    "MUC",
                     "AGP"
                 ],
                 "time": [
-                    "14:25",
+                    "07:10",
                     "19:15"
                 ],
                 "travel_time": [
-                    "5 hr 30 min",
+                    "2 hr 50 min",
                     "3 hr 5 min"
                 ],
                 "airline": [
-                    "VuelingIberia",
+                    "Norwegian",
                     "Ryanair"
                 ],
                 "stops": [
-                    "1",
+                    "0",
                     "0"
                 ],
                 "price": [
-                    "79",
-                    "98"
+                    "86",
+                    "87"
                 ],
                 "job": "Nos vamos al octokber???",
-                "new": false,
+                "new": true,
                 "new_price": false,
-                "total_price": "177"
+                "total_price": "173"
             }
         ]
     }
