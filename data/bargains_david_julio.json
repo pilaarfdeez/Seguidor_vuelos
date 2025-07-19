@@ -4,6 +4,44 @@
         "combinations": [
             {
                 "date": [
+                    "2025-08-01",
+                    "2025-08-04"
+                ],
+                "origin": [
+                    "LBC",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "LBC"
+                ],
+                "time": [
+                    "10:55",
+                    "06:55"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "110",
+                    "39"
+                ],
+                "job": "Deivid a ver a Piluca",
+                "new": false,
+                "new_price": true,
+                "total_price": "149"
+            },
+            {
+                "date": [
                     "2025-07-31",
                     "2025-08-04"
                 ],
@@ -33,12 +71,12 @@
                 ],
                 "price": [
                     "113",
-                    "46"
+                    "39"
                 ],
                 "job": "Deivid a ver a Piluca",
                 "new": false,
                 "new_price": true,
-                "total_price": "159"
+                "total_price": "152"
             },
             {
                 "date": [
@@ -46,7 +84,7 @@
                     "2025-08-04"
                 ],
                 "origin": [
-                    "LBC",
+                    "BRE",
                     "AGP"
                 ],
                 "destination": [
@@ -54,11 +92,11 @@
                     "LBC"
                 ],
                 "time": [
-                    "10:55",
+                    "17:20",
                     "06:55"
                 ],
                 "travel_time": [
-                    "3 hr 25 min",
+                    "3 hr 15 min",
                     "3 hr 25 min"
                 ],
                 "airline": [
@@ -71,12 +109,12 @@
                 ],
                 "price": [
                     "125",
-                    "46"
+                    "39"
                 ],
                 "job": "Deivid a ver a Piluca",
-                "new": false,
-                "new_price": true,
-                "total_price": "171"
+                "new": true,
+                "new_price": false,
+                "total_price": "164"
             },
             {
                 "date": [
@@ -109,50 +147,12 @@
                 ],
                 "price": [
                     "130",
-                    "46"
+                    "39"
                 ],
                 "job": "Deivid a ver a Piluca",
-                "new": true,
-                "new_price": false,
-                "total_price": "176"
-            },
-            {
-                "date": [
-                    "2025-07-31",
-                    "2025-08-04"
-                ],
-                "origin": [
-                    "HAM",
-                    "AGP"
-                ],
-                "destination": [
-                    "MAD",
-                    "LBC"
-                ],
-                "time": [
-                    "15:45",
-                    "06:55"
-                ],
-                "travel_time": [
-                    "3 hr",
-                    "3 hr 25 min"
-                ],
-                "airline": [
-                    "Iberia",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "133",
-                    "46"
-                ],
-                "job": "Deivid a ver a Piluca",
-                "new": true,
-                "new_price": false,
-                "total_price": "179"
+                "new": false,
+                "new_price": true,
+                "total_price": "169"
             },
             {
                 "date": [
@@ -185,12 +185,12 @@
                 ],
                 "price": [
                     "133",
-                    "46"
+                    "39"
                 ],
                 "job": "Deivid a ver a Piluca",
-                "new": true,
-                "new_price": false,
-                "total_price": "179"
+                "new": false,
+                "new_price": true,
+                "total_price": "172"
             }
         ]
     },
@@ -228,50 +228,12 @@
                 ],
                 "price": [
                     "46",
-                    "106"
+                    "108"
                 ],
                 "job": "Deivid a ver a Piluca",
                 "new": false,
                 "new_price": true,
-                "total_price": "152"
-            },
-            {
-                "date": [
-                    "2025-08-08",
-                    "2025-08-11"
-                ],
-                "origin": [
-                    "LBC",
-                    "AGP"
-                ],
-                "destination": [
-                    "AGP",
-                    "LBC"
-                ],
-                "time": [
-                    "10:55",
-                    "06:55"
-                ],
-                "travel_time": [
-                    "3 hr 25 min",
-                    "3 hr 25 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "67",
-                    "106"
-                ],
-                "job": "Deivid a ver a Piluca",
-                "new": false,
-                "new_price": false,
-                "total_price": "173"
+                "total_price": "154"
             }
         ]
     }
