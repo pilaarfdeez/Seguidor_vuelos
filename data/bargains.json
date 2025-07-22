@@ -32,13 +32,13 @@
                     "0"
                 ],
                 "price": [
-                    "71",
-                    "50"
+                    "62",
+                    "49"
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": false,
-                "total_price": "121"
+                "new_price": true,
+                "total_price": "111"
             },
             {
                 "date": [
@@ -70,13 +70,13 @@
                     "0"
                 ],
                 "price": [
-                    "73",
-                    "50"
+                    "76",
+                    "49"
                 ],
                 "job": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "123"
+                "total_price": "125"
             },
             {
                 "date": [
@@ -109,12 +109,12 @@
                 ],
                 "price": [
                     "95",
-                    "50"
+                    "49"
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": false,
-                "total_price": "145"
+                "new_price": true,
+                "total_price": "144"
             },
             {
                 "date": [
@@ -147,56 +147,18 @@
                 ],
                 "price": [
                     "100",
-                    "50"
+                    "49"
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": false,
-                "total_price": "150"
+                "new_price": true,
+                "total_price": "149"
             }
         ]
     },
     {
         "week": "2025-09-08 to 2025-09-14",
         "combinations": [
-            {
-                "date": [
-                    "2025-09-12",
-                    "2025-09-14"
-                ],
-                "origin": [
-                    "BRE",
-                    "AGP"
-                ],
-                "destination": [
-                    "AGP",
-                    "BRE"
-                ],
-                "time": [
-                    "17:20",
-                    "06:20"
-                ],
-                "travel_time": [
-                    "3 hr 15 min",
-                    "3 hr 10 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "63",
-                    "86"
-                ],
-                "job": "David",
-                "new": false,
-                "new_price": true,
-                "total_price": "149"
-            },
             {
                 "date": [
                     "2025-09-12",
@@ -227,13 +189,56 @@
                     "0"
                 ],
                 "price": [
-                    "36",
-                    "81"
+                    "45",
+                    "84"
                 ],
                 "job": "Pilar",
                 "new": false,
                 "new_price": true,
-                "total_price": "117"
+                "total_price": "129"
+            }
+        ]
+    },
+    {
+        "week": "2025-09-15 to 2025-09-21",
+        "combinations": [
+            {
+                "date": [
+                    "2025-09-19",
+                    "2025-09-21"
+                ],
+                "origin": [
+                    "LBC",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "BRE"
+                ],
+                "time": [
+                    "10:55",
+                    "06:20"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "3 hr 10 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "90",
+                    "60"
+                ],
+                "job": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "150"
             }
         ]
     },
@@ -270,13 +275,13 @@
                     "0"
                 ],
                 "price": [
-                    "67",
-                    "74"
+                    "57",
+                    "76"
                 ],
                 "job": "Pilar",
                 "new": false,
-                "new_price": false,
-                "total_price": "141"
+                "new_price": true,
+                "total_price": "133"
             }
         ]
     },
@@ -474,7 +479,7 @@
                     "63"
                 ],
                 "job": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "105"
             },
@@ -512,7 +517,7 @@
                     "63"
                 ],
                 "job": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "116"
             },
@@ -550,7 +555,7 @@
                     "78"
                 ],
                 "job": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "120"
             },
@@ -588,7 +593,7 @@
                     "78"
                 ],
                 "job": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "131"
             },
@@ -626,7 +631,7 @@
                     "95"
                 ],
                 "job": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "137"
             },
@@ -664,7 +669,7 @@
                     "95"
                 ],
                 "job": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "148"
             },
@@ -702,7 +707,7 @@
                     "63"
                 ],
                 "job": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "149"
             }
