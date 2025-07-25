@@ -15,7 +15,7 @@ class TrackerConfig:
         self.ENV = env
 
         self.FLIGHTS_TO_TRACK = [
-            # {'origin': '', 'destination': '', 'date': '', 'time': ''},
+            # {'origin': '', 'destination': '', 'date': 'YYYY-MM-DD', 'time': ''},
             {'origin': 'LBC', 'destination': 'AGP', 'date': '2025-08-01', 'time': '10:55'},            
             {'origin': 'BRE', 'destination': 'AGP', 'date': '2025-08-01', 'time': '17:20'},            
             {'origin': 'AGP', 'destination': 'LBC', 'date': '2025-08-04', 'time': '6:55'},
