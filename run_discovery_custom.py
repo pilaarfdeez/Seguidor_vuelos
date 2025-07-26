@@ -43,6 +43,7 @@ with open(f"config/custom_jobs.json", "r", encoding="utf-8") as f:
 for job in custom_jobs:
     discovery = Discovery()
     reporter = CustomBargainReporter(job)
+    logger.info(f'Starting job {job["name"]}...')
 
     today_date = dt.date.today()
     day_start = dt.date.fromisoformat(job["days_search"][0])

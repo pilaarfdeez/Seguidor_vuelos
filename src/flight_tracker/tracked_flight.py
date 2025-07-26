@@ -34,6 +34,9 @@ class TrackedFlight():
             else:
                 logger.warning(f'Wrong DataFrame size passed! Only one-row df is accepted, {flight.shape[0]} were provided --> ignoring flight')
                 return
+        
+        elif isinstance(flight, TrackedFlight):
+            return flight
 
         else:
             self.origin = flight['origin']
