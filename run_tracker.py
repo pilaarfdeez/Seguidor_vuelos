@@ -20,6 +20,8 @@ Modules Used:
 - Adapt the script for production environment deployment.
 """
 
+import datetime as dt
+
 from config.logging import init_logger
 from config.config import TrackerConfig
 from src.flight_tracker.tracker import Tracker
@@ -50,12 +52,20 @@ for flight in conf.FLIGHTS_TO_TRACK:
     tracker.process_flight(tracked_flight=tracked_flight)
 
 for flight in conf.FLIGHTS_TO_REMOVE:
-    # TODO: Remove flights from past dates
     tracked_flight = TrackedFlight(flight)
     tracker.delete_flight(tracked_flight)
 
 
 for key, flights in tracker.group_flights().items():
+    search_date = dt.date.fromisoformat(key[0])
+    today = dt.date.today()
+    if search_date < today:
+        logger.warning(f"Flights {key} are in the past --> removing from tracker")
+        for flight in flights:
+            tracked_flight = TrackedFlight(flight)
+            tracker.delete_flight(tracked_flight)
+        continue
+
     logger.info(f'Checking {len(flights)} tracked flights for {key}')
     result = Scrape(key[1], key[2], key[0])
     ScrapeObjects(result, conf.ENV, headless=False)
