@@ -503,14 +503,20 @@ class _Scrape:
 				return explore_df
 			else:
 				flights = self._clean_results(results, date)
+				if not flights:
+					return -1
 				flights_df = Flight.dataframe(flights)
 				return flights_df
 
 	def _clean_results(self, result, date):
 		res2 = [x.encode("ascii", "ignore").decode().strip() for x in result]
 
-		start = res2.index("Sorted by top flights") + 1
-		mid_start = res2.index("Track prices")
+		try:
+			start = res2.index("Sorted by top flights") + 1
+			mid_start = res2.index("Track prices")
+		except ValueError:
+			logger.warning('Error parsing flight results --> Skipping.')
+			return None
 
 		try:
 			mid_end = res2.index("Other flights") + 1
