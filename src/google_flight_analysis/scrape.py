@@ -515,7 +515,7 @@ class _Scrape:
 			start = res2.index("Sorted by top flights") + 1
 			mid_start = res2.index("Track prices")
 		except ValueError:
-			logger.warning('Error parsing flight results --> Skipping.')
+			logger.error('Error parsing flight results --> Skipping.')
 			return None
 
 		try:
