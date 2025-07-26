@@ -9,17 +9,18 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, WebDriverException
 from selenium.webdriver.common.by import By
+from bs4 import BeautifulSoup
 import chromedriver_autoinstaller
 import datetime as dt
 import json
 import numpy as np
 import pandas as pd
+import re
 from tqdm import tqdm
 
 from config.logging import init_logger
 from src.google_flight_analysis.flight import *
 from src.google_flight_analysis.human_simulations import *
-from src.google_flight_analysis.protobuf.protobuf_construc import FlightData, Passengers, TFSData
 
 __all__ = ['Scrape', '_Scrape', 'ScrapeObjects']
 chromedriver_autoinstaller.install() # Check if chromedriver is installed correctly and on path
@@ -92,6 +93,7 @@ class _Scrape:
 		self._data = pd.DataFrame()
 		self._url = None
 		self._type = None
+		self._explore = False
 
 	# if date leave and date return, return 2 objects?
 	def __call__(self, *args):
@@ -295,7 +297,7 @@ class _Scrape:
 		# one way
 		if len(args) == 3:
 			assert (len(args[0]) == 3 and type(args[0]) == str) or type(args[0]) == list, "Issue with arg 0, see docs"
-			assert (len(args[1]) == 3 and type(args[1]) == str) or type(args[0]) == list, "Issue with arg 1, see docs"
+			assert (len(args[1]) == 3 and type(args[1]) == str) or type(args[1]) == list, "Issue with arg 1, see docs"
 			assert len(args[2]) == 10 and type(args[2]) == str, "Issue with arg 2, see docs"
 			tfs = False
 
@@ -314,6 +316,7 @@ class _Scrape:
 
 			self._date = [args[2]]
 
+			self._set_search_mode()
 			self._url = self._make_url(tfs)
 			self._type = 'one-way'
 
@@ -349,6 +352,7 @@ class _Scrape:
 				self._date += [args[i + 2]]
 
 			assert len(self._origin) == len(self._dest) == len(self._date), "Issue with array lengths, talk to dev"
+			self._set_search_mode()
 			self._url = self._make_url()
 			self._type = 'chain-trip'
 
@@ -373,11 +377,17 @@ class _Scrape:
 			self._dest += [args[-1]]
 
 			assert len(self._origin) == len(self._dest) == len(self._date), "Issue with array lengths, talk to dev"
+			self._set_search_mode()
 			self._url = self._make_url()
 			self._type = 'perfect-chain'
 
 		else:
 			raise NotImplementedError()
+	
+	def _set_search_mode(self):
+		pattern = re.compile(r'^[A-Z]{3}$')
+		if any(not pattern.match(x) for x in self.origin + self.dest):
+			self._explore = True
 
 	@property
 	def origin(self):
@@ -428,10 +438,19 @@ class _Scrape:
 	'''
 	def _scrape_data(self, driver):
 		results = [self._get_results(url, self._date[i], driver) for i, url in enumerate(self._url)]
-		self._data = pd.concat(results, ignore_index = True)
+		results = [res for res in results if isinstance(res, pd.DataFrame)]  # Filter out timeouts
+		if results:
+			self._data = pd.concat(results, ignore_index=True)
+		else:
+			logger.warning("No results found for the given query.")
+			self._data = pd.DataFrame()
+			
 
 
 	def _make_url(self, tfs: bool = False, max_stops: int = 1):
+		'''Make the URL for the query. If tfs is True, use TFSData to create a b64 encoded URL.'''
+		from src.google_flight_analysis.protobuf.protobuf_construc import FlightData, Passengers, TFSData
+
 		urls = []
 		if tfs and len(self._date) == 1:
 			flight_data=[
@@ -462,8 +481,7 @@ class _Scrape:
 				]
 		return urls
 
-	@staticmethod
-	def _get_results(url, date, driver):
+	def _get_results(self, url, date, driver):
 		search_date = dt.date.fromisoformat(date)
 		today = dt.date.today()
 		if search_date < today:
@@ -472,7 +490,7 @@ class _Scrape:
 		else:
 			results = None
 			try:
-				results = _Scrape._make_url_request(url, driver)
+				results = self._make_url_request(url, driver)
 			except TimeoutException:
 				logger.warning(
 					'''TimeoutException, try again and check your internet connection!\n
@@ -480,11 +498,15 @@ class _Scrape:
 				)
 				return -1
 
-			flights = _Scrape._clean_results(results, date)
-		return Flight.dataframe(flights)
+			if self._explore:
+				explore_df = self._process_explore(results)
+				return explore_df
+			else:
+				flights = self._clean_results(results, date)
+				flights_df = Flight.dataframe(flights)
+				return flights_df
 
-	@staticmethod
-	def _clean_results(result, date):
+	def _clean_results(self, result, date):
 		res2 = [x.encode("ascii", "ignore").decode().strip() for x in result]
 
 		start = res2.index("Sorted by top flights") + 1
@@ -507,10 +529,70 @@ class _Scrape:
 		flights = [Flight(date, res3[matches[i]:matches[i+1]]) for i in range(len(matches)-1)]
 
 		return flights
-		
+	
+	def _process_explore(self, results):
+		soup = BeautifulSoup(results, 'html.parser')
+		data = []
 
-	@staticmethod
-	def _make_url_request(url, driver):
+		# Iterate over each flight entry
+		for item in soup.select('div.tsAU4e'):
+			try:
+				# Check for car travel distance by counting <span> tags in o9JBjb sSHqwe
+				travel_info = item.select_one('div.o9JBjb.sSHqwe')
+				if travel_info:
+					spans = travel_info.find_all('span')
+					if len(spans) > 3:
+						continue  # Skip this entry
+				
+				info = {
+					'City': item.select_one('h3.W6bZuc.YMlIz'),
+					'Price': item.select_one('div.MJg7fb.QB2Jof span'),
+					'Stops': item.select_one('span.nx0jzf'),
+					'Flight time': item.select_one('span.Xq1DAb'),
+					'Flight time (td)': dt.timedelta(0)
+				}
+
+				for key, value in info.items():
+					if value:
+						info[key] = value.get_text(strip=True)
+					else:
+						info[key] = None
+
+				# Price is an essential attribute, skip if not present (some entries are just empty)
+				if info['Price']:
+					info['Price'] = int(info['Price'][1:].replace(',', ''))  # Convert price to integer
+				else:
+					continue
+
+				# Parse flight_time using regex to support '2 hr 30 min', '2 hr', or '30 min'
+				hours = 0
+				minutes = 0
+				if info['Flight time']:
+					match = re.search(r"(?:(\d+)\s*hr)?\s*(?:(\d+)\s*min)?", info['Flight time'])
+					if match:
+						if match.group(1):
+							hours = int(match.group(1))
+						if match.group(2):
+							minutes = int(match.group(2))
+					info['Flight time (td)'] = dt.timedelta(hours=hours, minutes=minutes)
+				else:
+					info['Flight time (td)'] = None
+
+				data.append({
+					'City': info['City'],
+					'Price': info['Price'],
+					'Stops': info['Stops'],
+					'Flight_Time': info['Flight time (td)'],
+				})
+
+			except Exception as e:
+				print(f"Error parsing an entry: {e}")
+				continue
+
+		explore_df = pd.DataFrame(data)
+		return explore_df
+
+	def _make_url_request(self, url, driver):
 		driver.get(url)
 		
 		# Rejecting cookies
@@ -534,7 +616,10 @@ class _Scrape:
 
 		# Waiting and initial XPATH cleaning
 		# WebDriverWait(driver, timeout = 10).until(lambda d: len(_Scrape._get_flight_elements(d)) > 100)
-		results = _Scrape._get_flight_elements(driver)
+		if self._explore:
+			results = self._get_source_page(driver)
+		else:	
+			results = self._get_flight_elements(driver)
 
 		return results
 	
@@ -547,6 +632,15 @@ class _Scrape:
 		# lines = text.split('\n')
 		random_wait(0.1, 0.5)
 		return driver.find_element(by = By.XPATH, value = '//body[@id = "yDmH0d"]').text.split('\n')
+	
+	@staticmethod
+	def _get_source_page(driver):
+		# Wait until at least one flight card is present or timeout after 15 seconds
+		WebDriverWait(driver, 15).until(
+			lambda d: len(d.find_elements(By.CSS_SELECTOR, "div.tsAU4e")) > 0
+		)
+		random_wait(0.5, 1)
+		return driver.page_source
 	
 
 Scrape = _Scrape()
