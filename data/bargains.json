@@ -32,13 +32,13 @@
                     "0"
                 ],
                 "price": [
-                    "64",
-                    "56"
+                    "55",
+                    "55"
                 ],
                 "job": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "120"
+                "total_price": "110"
             },
             {
                 "date": [
@@ -70,13 +70,89 @@
                     "0"
                 ],
                 "price": [
-                    "64",
-                    "79"
+                    "55",
+                    "69"
                 ],
                 "job": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "143"
+                "total_price": "124"
+            },
+            {
+                "date": [
+                    "2025-09-05",
+                    "2025-09-08"
+                ],
+                "origin": [
+                    "LBC",
+                    "BIO"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "10:55",
+                    "13:10"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "2 hr 25 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "55",
+                    "90"
+                ],
+                "job": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "145"
+            },
+            {
+                "date": [
+                    "2025-09-03",
+                    "2025-09-08"
+                ],
+                "origin": [
+                    "HAM",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "LBC"
+                ],
+                "time": [
+                    "09:30",
+                    "06:55"
+                ],
+                "travel_time": [
+                    "3 hr 30 min",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "95",
+                    "55"
+                ],
+                "job": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "150"
             }
         ]
     },
@@ -114,12 +190,12 @@
                 ],
                 "price": [
                     "64",
-                    "75"
+                    "81"
                 ],
                 "job": "Pilar",
                 "new": false,
                 "new_price": true,
-                "total_price": "139"
+                "total_price": "145"
             }
         ]
     },
@@ -160,9 +236,47 @@
                     "73"
                 ],
                 "job": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "135"
+            },
+            {
+                "date": [
+                    "2025-09-26",
+                    "2025-09-29"
+                ],
+                "origin": [
+                    "HAM",
+                    "AGP"
+                ],
+                "destination": [
+                    "BIO",
+                    "LBC"
+                ],
+                "time": [
+                    "16:55",
+                    "06:55"
+                ],
+                "travel_time": [
+                    "2 hr 30 min",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "70",
+                    "73"
+                ],
+                "job": "David",
+                "new": true,
+                "new_price": false,
+                "total_price": "143"
             }
         ]
     },
@@ -361,7 +475,7 @@
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "108"
             },
             {
@@ -399,7 +513,7 @@
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "123"
             },
             {
@@ -432,13 +546,13 @@
                     "0"
                 ],
                 "price": [
-                    "63",
+                    "62",
                     "63"
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": false,
-                "total_price": "126"
+                "new_price": true,
+                "total_price": "125"
             },
             {
                 "date": [
@@ -475,7 +589,7 @@
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "140"
             },
             {
@@ -508,13 +622,13 @@
                     "0"
                 ],
                 "price": [
-                    "63",
+                    "62",
                     "78"
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": false,
-                "total_price": "141"
+                "new_price": true,
+                "total_price": "140"
             },
             {
                 "date": [
