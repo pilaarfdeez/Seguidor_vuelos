@@ -2,41 +2,31 @@
   {
     "name": "Deivid a ver a Piluca",
     "alias": "david_julio",
-    "airports": [["HAM","BRE","LBC"], ["AGP","MAD"]],
+    "airports": [["HAM","BRE","LBC"], ["AGP","MAD","BIO"]],
     "days_availability": [[4,5], [7,8]],
     "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
-    "price_threshold": 180,
-    "days_search": ["2025-07-01", "2025-07-31"],
-    "max_trip_duration": 7
-  },
-  {
-    "name": "Ir a ver al fuckin Rodri",
-    "alias": "rodri",
-    "airports": [["HAM","BRE","LBC"], ["MAD","BIO"]],
-    "days_availability": [[4,5, 6], [7,8]],
-    "email": ["davidmayoral1505@gmail.com"],
-    "price_threshold": 180,
-    "days_search": ["2025-06-18", "2025-06-22"],
-    "max_trip_duration": 7
-  },
-    {
-    "name": "Piluca va a hamburguesa",
-    "alias": "pili_julio",
-    "airports": [["AGP","SVQ"],["HAM","BRE","LBC"]],
-    "days_availability": [[4,5,6], [7,8]],
-    "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
-    "price_threshold": 180,
-    "days_search": ["2025-07-01", "2025-07-31"],
+    "price_threshold": 130,
+    "days_search": ["2025-08-01", "2025-08-07"],
     "max_trip_duration": 7
   },
   {
     "name": "Nos vamos al octokber???",
     "alias": "octoker",
-    "airports": [["AGP","SVQ","GRX"],["MUC","FMM","NUE"]],
-    "days_availability": [[4,5,6], [7,8]],
+    "airports": [["AGP","GRX"],["MUC","FMM","NUE"]],
+    "days_availability": [[3,4,5], [7,8]],
     "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
-    "price_threshold": 180,
+    "price_threshold": 160,
     "days_search": ["2025-09-20", "2025-10-05"],
+    "max_trip_duration": 7
+  },
+  {
+    "name": "Octubre por burguitos",
+    "alias": "burguitos",
+    "airports": [["HAM","BRE","LBC"], ["MAD","BIO"]],
+    "days_availability": [[3,4,5], [7,8]],
+    "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
+    "price_threshold": 150,
+    "days_search": ["2025-10-01", "2025-11-01"],
     "max_trip_duration": 7
   }
 ]

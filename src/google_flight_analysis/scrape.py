@@ -541,6 +541,7 @@ class _Scrape:
 		# element = driver.find_element(By.XPATH, '//body[@id="yDmH0d"]')
 		# text = driver.execute_script("return arguments[0].innerText;", element)
 		# lines = text.split('\n')
+		random_wait(0.1, 0.5)
 		return driver.find_element(by = By.XPATH, value = '//body[@id = "yDmH0d"]').text.split('\n')
 	
 

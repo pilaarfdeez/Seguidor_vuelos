@@ -1,87 +1,201 @@
 [
     {
-        "week": "2025-06-30 to 2025-07-06",
+        "week": "2025-07-14 to 2025-07-20",
         "combinations": [
             {
                 "date": [
-                    "2025-07-04",
-                    "2025-07-06"
+                    "2025-07-18",
+                    "2025-07-21"
                 ],
                 "origin": [
-                    "None",
-                    "None"
+                    "AGP",
+                    "LBC"
                 ],
                 "destination": [
-                    "None",
-                    "None"
+                    "LBC",
+                    "AGP"
                 ],
                 "time": [
                     "06:55",
-                    "06:50"
+                    "11:00"
                 ],
                 "travel_time": [
-                    "Nonstop3 hr 25 minRyanair",
-                    "1 stop5 hr 40 minIberiaOperated by Iberia Express"
+                    "3 hr 25 min",
+                    "3 hr 25 min"
                 ],
                 "airline": [
-                    "LBC",
-                    "SVQ"
+                    "Ryanair",
+                    "Ryanair"
                 ],
                 "stops": [
-                    "None",
-                    "None"
+                    "0",
+                    "0"
                 ],
                 "price": [
-                    "30",
-                    "140"
+                    "42",
+                    "97"
                 ],
                 "job": "Piluca va a hamburguesa",
                 "new": false,
                 "new_price": true,
-                "total_price": "170"
-            }
-        ]
-    },
-    {
-        "week": "2025-07-14 to 2025-07-20",
-        "combinations": [
+                "total_price": "139"
+            },
             {
                 "date": [
                     "2025-07-18",
                     "2025-07-20"
                 ],
                 "origin": [
-                    "None",
-                    "None"
+                    "AGP",
+                    "BRE"
                 ],
                 "destination": [
-                    "None",
-                    "None"
+                    "LBC",
+                    "AGP"
                 ],
                 "time": [
                     "06:55",
                     "09:55"
                 ],
                 "travel_time": [
-                    "Nonstop3 hr 25 minRyanair",
-                    "Nonstop3 hr 15 minRyanair"
+                    "3 hr 25 min",
+                    "3 hr 15 min"
                 ],
                 "airline": [
-                    "LBC",
-                    "AGP"
+                    "Ryanair",
+                    "Ryanair"
                 ],
                 "stops": [
-                    "None",
-                    "None"
+                    "0",
+                    "0"
                 ],
                 "price": [
-                    "67",
-                    "111"
+                    "42",
+                    "117"
+                ],
+                "job": "Piluca va a hamburguesa",
+                "new": false,
+                "new_price": true,
+                "total_price": "159"
+            },
+            {
+                "date": [
+                    "2025-07-18",
+                    "2025-07-21"
+                ],
+                "origin": [
+                    "GRX",
+                    "LBC"
+                ],
+                "destination": [
+                    "HAM",
+                    "AGP"
+                ],
+                "time": [
+                    "13:40",
+                    "11:00"
+                ],
+                "travel_time": [
+                    "5 hr 30 min",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "Iberia",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "1",
+                    "0"
+                ],
+                "price": [
+                    "82",
+                    "97"
                 ],
                 "job": "Piluca va a hamburguesa",
                 "new": true,
                 "new_price": false,
-                "total_price": "178"
+                "total_price": "179"
+            }
+        ]
+    },
+    {
+        "week": "2025-07-28 to 2025-08-03",
+        "combinations": [
+            {
+                "date": [
+                    "2025-08-01",
+                    "2025-08-03"
+                ],
+                "origin": [
+                    "AGP",
+                    "BRE"
+                ],
+                "destination": [
+                    "BRE",
+                    "AGP"
+                ],
+                "time": [
+                    "13:45",
+                    "09:55"
+                ],
+                "travel_time": [
+                    "3 hr 10 min",
+                    "3 hr 15 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "97",
+                    "63"
+                ],
+                "job": "Piluca va a hamburguesa",
+                "new": false,
+                "new_price": true,
+                "total_price": "160"
+            },
+            {
+                "date": [
+                    "2025-08-01",
+                    "2025-08-03"
+                ],
+                "origin": [
+                    "AGP",
+                    "BRE"
+                ],
+                "destination": [
+                    "LBC",
+                    "AGP"
+                ],
+                "time": [
+                    "06:55",
+                    "09:55"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "3 hr 15 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "100",
+                    "63"
+                ],
+                "job": "Piluca va a hamburguesa",
+                "new": false,
+                "new_price": true,
+                "total_price": "163"
             }
         ]
     }
