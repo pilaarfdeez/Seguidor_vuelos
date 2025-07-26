@@ -489,15 +489,19 @@ class _Scrape:
 
 		start = res2.index("Sorted by top flights") + 1
 		mid_start = res2.index("Track prices")
-		mid_end = res2.index("Other flights") + 1
 
 		try:
-			end = [i for i, x in enumerate(res2) if x.endswith('more flights')][0]
-		except IndexError:
-			logger.warning('Did not find "View more flights" item')
-			end = [i for i, x in enumerate(res2) if x.endswith('more flights')][0]
+			mid_end = res2.index("Other flights") + 1
+			try:
+				end = [i for i, x in enumerate(res2) if x.endswith('more flights')][0]
+			except IndexError:
+				logger.warning('Did not find "View more flights" item')
+				end = [i for i, x in enumerate(res2) if x.endswith('more flights')][0]
 
-		res3 = res2[start:mid_start] + res2[mid_end:end]
+			res3 = res2[start:mid_start] + res2[mid_end:end]
+			
+		except ValueError:
+			res3 = res2[start:mid_start]
 
 		matches = [i for i, x in enumerate(res3) if len(x) > 2 and ((x[-2] != '+' and (x.endswith('PM') or x.endswith('AM')) and ':' in x) or x[-2] == '+')][::2]
 		flights = [Flight(date, res3[matches[i]:matches[i+1]]) for i in range(len(matches)-1)]
