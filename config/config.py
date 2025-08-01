@@ -16,14 +16,6 @@ class TrackerConfig:
 
         self.FLIGHTS_TO_TRACK = [
             # {'origin': '', 'destination': '', 'date': 'YYYY-MM-DD', 'time': ''},
-            {'origin': 'LBC', 'destination': 'AGP', 'date': '2025-08-01', 'time': '10:55'},            
-            {'origin': 'BRE', 'destination': 'AGP', 'date': '2025-08-01', 'time': '17:20'},            
-            {'origin': 'AGP', 'destination': 'LBC', 'date': '2025-08-04', 'time': '6:55'},
-            {'origin': 'AGP', 'destination': 'BRE', 'date': '2025-08-04', 'time': '13:10'},
-            {'origin': 'AGP', 'destination': 'LBC', 'date': '2025-11-16', 'time': '15:25'},
-            {'origin': 'AGP', 'destination': 'HAM', 'date': '2025-11-16', 'time': '19:05'},
-            {'origin': 'AGP', 'destination': 'HAM', 'date': '2025-11-13', 'time': '10:05'},
-            {'origin': 'AGP', 'destination': 'HAM', 'date': '2025-11-15', 'time': '10:00'}
         ]
 
         self.FLIGHTS_TO_REMOVE = [
