@@ -32,13 +32,13 @@
                     "0"
                 ],
                 "price": [
-                    "81",
+                    "73",
                     "54"
                 ],
                 "job": "Pilar",
-                "new": true,
-                "new_price": false,
-                "total_price": "135"
+                "new": false,
+                "new_price": true,
+                "total_price": "127"
             }
         ]
     },
@@ -385,12 +385,12 @@
                 ],
                 "price": [
                     "40",
-                    "78"
+                    "73"
                 ],
                 "job": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "118"
+                "total_price": "113"
             },
             {
                 "date": [
@@ -423,12 +423,12 @@
                 ],
                 "price": [
                     "42",
-                    "78"
+                    "73"
                 ],
                 "job": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "120"
+                "total_price": "115"
             },
             {
                 "date": [
@@ -461,12 +461,12 @@
                 ],
                 "price": [
                     "42",
-                    "78"
+                    "73"
                 ],
                 "job": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "120"
+                "total_price": "115"
             },
             {
                 "date": [
@@ -541,7 +541,7 @@
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "126"
             },
             {
@@ -613,12 +613,12 @@
                 ],
                 "price": [
                     "65",
-                    "78"
+                    "73"
                 ],
                 "job": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "143"
+                "total_price": "138"
             },
             {
                 "date": [
@@ -693,8 +693,46 @@
                 ],
                 "job": "Pilar",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "137"
+            },
+            {
+                "date": [
+                    "2025-11-14",
+                    "2025-11-16"
+                ],
+                "origin": [
+                    "GRX",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "AGP"
+                ],
+                "time": [
+                    "14:25",
+                    "15:05"
+                ],
+                "travel_time": [
+                    "5 hr 35 min",
+                    "3 hr 20 min"
+                ],
+                "airline": [
+                    "Vueling",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "1",
+                    "0"
+                ],
+                "price": [
+                    "95",
+                    "55"
+                ],
+                "job": "Pilar",
+                "new": true,
+                "new_price": false,
+                "total_price": "150"
             }
         ]
     },
