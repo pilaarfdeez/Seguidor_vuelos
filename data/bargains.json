@@ -33,12 +33,12 @@
                 ],
                 "price": [
                     "36",
-                    "63"
+                    "68"
                 ],
                 "job": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "99"
+                "total_price": "104"
             },
             {
                 "date": [
@@ -71,12 +71,12 @@
                 ],
                 "price": [
                     "42",
-                    "63"
+                    "68"
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": false,
-                "total_price": "105"
+                "new_price": true,
+                "total_price": "110"
             },
             {
                 "date": [
@@ -113,7 +113,7 @@
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -185,50 +185,12 @@
                 ],
                 "price": [
                     "65",
-                    "63"
-                ],
-                "job": "David",
-                "new": false,
-                "new_price": false,
-                "total_price": "128"
-            },
-            {
-                "date": [
-                    "2025-11-06",
-                    "2025-11-09"
-                ],
-                "origin": [
-                    "BRE",
-                    "MAD"
-                ],
-                "destination": [
-                    "AGP",
-                    "HAM"
-                ],
-                "time": [
-                    "20:35",
-                    "12:15"
-                ],
-                "travel_time": [
-                    "3 hr 15 min",
-                    "3 hr"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Iberia"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "36",
-                    "108"
+                    "68"
                 ],
                 "job": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "144"
+                "total_price": "133"
             },
             {
                 "date": [
@@ -264,7 +226,7 @@
                     "110"
                 ],
                 "job": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "146"
             },
@@ -305,44 +267,6 @@
                 "new": false,
                 "new_price": false,
                 "total_price": "149"
-            },
-            {
-                "date": [
-                    "2025-11-05",
-                    "2025-11-09"
-                ],
-                "origin": [
-                    "LBC",
-                    "MAD"
-                ],
-                "destination": [
-                    "AGP",
-                    "HAM"
-                ],
-                "time": [
-                    "19:45",
-                    "12:15"
-                ],
-                "travel_time": [
-                    "3 hr 30 min",
-                    "3 hr"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Iberia"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "42",
-                    "108"
-                ],
-                "job": "David",
-                "new": false,
-                "new_price": false,
-                "total_price": "150"
             }
         ]
     },
@@ -384,7 +308,7 @@
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "114"
             },
             {
@@ -422,46 +346,8 @@
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "117"
-            },
-            {
-                "date": [
-                    "2025-11-12",
-                    "2025-11-16"
-                ],
-                "origin": [
-                    "HAM",
-                    "MAD"
-                ],
-                "destination": [
-                    "AGP",
-                    "HAM"
-                ],
-                "time": [
-                    "07:20",
-                    "12:15"
-                ],
-                "travel_time": [
-                    "3 hr 20 min",
-                    "3 hr"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "Iberia"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "40",
-                    "78"
-                ],
-                "job": "David",
-                "new": false,
-                "new_price": true,
-                "total_price": "118"
             },
             {
                 "date": [
@@ -498,7 +384,7 @@
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -536,8 +422,46 @@
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "123"
+            },
+            {
+                "date": [
+                    "2025-11-12",
+                    "2025-11-16"
+                ],
+                "origin": [
+                    "HAM",
+                    "MAD"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "07:20",
+                    "12:15"
+                ],
+                "travel_time": [
+                    "3 hr 20 min",
+                    "3 hr"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "Iberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "55",
+                    "78"
+                ],
+                "job": "David",
+                "new": false,
+                "new_price": true,
+                "total_price": "133"
             },
             {
                 "date": [
@@ -569,13 +493,13 @@
                     "0"
                 ],
                 "price": [
-                    "40",
+                    "55",
                     "84"
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": false,
-                "total_price": "124"
+                "new_price": true,
+                "total_price": "139"
             },
             {
                 "date": [
@@ -612,7 +536,7 @@
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "143"
             },
             {
@@ -659,44 +583,6 @@
                     "2025-11-16"
                 ],
                 "origin": [
-                    "AGP",
-                    "LBC"
-                ],
-                "destination": [
-                    "HAM",
-                    "AGP"
-                ],
-                "time": [
-                    "17:35",
-                    "19:20"
-                ],
-                "travel_time": [
-                    "5 hr 5 min",
-                    "3 hr 30 min"
-                ],
-                "airline": [
-                    "Iberia",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "1",
-                    "0"
-                ],
-                "price": [
-                    "90",
-                    "36"
-                ],
-                "job": "Pilar",
-                "new": true,
-                "new_price": false,
-                "total_price": "126"
-            },
-            {
-                "date": [
-                    "2025-11-14",
-                    "2025-11-16"
-                ],
-                "origin": [
                     "GRX",
                     "LBC"
                 ],
@@ -722,50 +608,12 @@
                 ],
                 "price": [
                     "95",
-                    "36"
+                    "42"
                 ],
                 "job": "Pilar",
                 "new": false,
                 "new_price": true,
-                "total_price": "131"
-            },
-            {
-                "date": [
-                    "2025-11-14",
-                    "2025-11-16"
-                ],
-                "origin": [
-                    "AGP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "AGP"
-                ],
-                "time": [
-                    "17:35",
-                    "15:05"
-                ],
-                "travel_time": [
-                    "5 hr 5 min",
-                    "3 hr 20 min"
-                ],
-                "airline": [
-                    "Iberia",
-                    "Eurowings"
-                ],
-                "stops": [
-                    "1",
-                    "0"
-                ],
-                "price": [
-                    "90",
-                    "55"
-                ],
-                "job": "Pilar",
-                "new": true,
-                "new_price": false,
-                "total_price": "145"
+                "total_price": "137"
             },
             {
                 "date": [
@@ -965,6 +813,44 @@
             {
                 "date": [
                     "2025-11-19",
+                    "2025-11-23"
+                ],
+                "origin": [
+                    "HAM",
+                    "MAD"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "07:20",
+                    "19:45"
+                ],
+                "travel_time": [
+                    "3 hr 20 min",
+                    "2 hr 55 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "Iberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "30",
+                    "78"
+                ],
+                "job": "David",
+                "new": false,
+                "new_price": true,
+                "total_price": "108"
+            },
+            {
+                "date": [
+                    "2025-11-19",
                     "2025-11-24"
                 ],
                 "origin": [
@@ -1040,44 +926,6 @@
             },
             {
                 "date": [
-                    "2025-11-19",
-                    "2025-11-23"
-                ],
-                "origin": [
-                    "HAM",
-                    "MAD"
-                ],
-                "destination": [
-                    "AGP",
-                    "HAM"
-                ],
-                "time": [
-                    "07:20",
-                    "19:45"
-                ],
-                "travel_time": [
-                    "3 hr 20 min",
-                    "2 hr 55 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "Iberia"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "30",
-                    "84"
-                ],
-                "job": "David",
-                "new": false,
-                "new_price": false,
-                "total_price": "114"
-            },
-            {
-                "date": [
                     "2025-11-20",
                     "2025-11-23"
                 ],
@@ -1113,6 +961,44 @@
                 "new": false,
                 "new_price": false,
                 "total_price": "115"
+            },
+            {
+                "date": [
+                    "2025-11-20",
+                    "2025-11-23"
+                ],
+                "origin": [
+                    "HAM",
+                    "MAD"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "06:00",
+                    "19:45"
+                ],
+                "travel_time": [
+                    "3 hr 20 min",
+                    "2 hr 55 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "Iberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "40",
+                    "78"
+                ],
+                "job": "David",
+                "new": false,
+                "new_price": true,
+                "total_price": "118"
             },
             {
                 "date": [
@@ -1196,44 +1082,6 @@
                     "2025-11-23"
                 ],
                 "origin": [
-                    "HAM",
-                    "MAD"
-                ],
-                "destination": [
-                    "AGP",
-                    "HAM"
-                ],
-                "time": [
-                    "06:00",
-                    "19:45"
-                ],
-                "travel_time": [
-                    "3 hr 20 min",
-                    "2 hr 55 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "Iberia"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "40",
-                    "84"
-                ],
-                "job": "David",
-                "new": false,
-                "new_price": false,
-                "total_price": "124"
-            },
-            {
-                "date": [
-                    "2025-11-20",
-                    "2025-11-23"
-                ],
-                "origin": [
                     "BRE",
                     "MAD"
                 ],
@@ -1259,12 +1107,50 @@
                 ],
                 "price": [
                     "42",
-                    "84"
+                    "78"
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": false,
-                "total_price": "126"
+                "new_price": true,
+                "total_price": "120"
+            },
+            {
+                "date": [
+                    "2025-11-19",
+                    "2025-11-23"
+                ],
+                "origin": [
+                    "LBC",
+                    "MAD"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "19:45",
+                    "19:45"
+                ],
+                "travel_time": [
+                    "3 hr 30 min",
+                    "2 hr 55 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Iberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "47",
+                    "78"
+                ],
+                "job": "David",
+                "new": false,
+                "new_price": true,
+                "total_price": "125"
             },
             {
                 "date": [
@@ -1303,44 +1189,6 @@
                 "new": false,
                 "new_price": false,
                 "total_price": "129"
-            },
-            {
-                "date": [
-                    "2025-11-19",
-                    "2025-11-23"
-                ],
-                "origin": [
-                    "LBC",
-                    "MAD"
-                ],
-                "destination": [
-                    "AGP",
-                    "HAM"
-                ],
-                "time": [
-                    "19:45",
-                    "19:45"
-                ],
-                "travel_time": [
-                    "3 hr 30 min",
-                    "2 hr 55 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Iberia"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "47",
-                    "84"
-                ],
-                "job": "David",
-                "new": false,
-                "new_price": false,
-                "total_price": "131"
             },
             {
                 "date": [
@@ -1607,44 +1455,6 @@
                 "new": false,
                 "new_price": false,
                 "total_price": "149"
-            },
-            {
-                "date": [
-                    "2025-11-21",
-                    "2025-11-23"
-                ],
-                "origin": [
-                    "AGP",
-                    "LBC"
-                ],
-                "destination": [
-                    "HAM",
-                    "AGP"
-                ],
-                "time": [
-                    "17:35",
-                    "19:20"
-                ],
-                "travel_time": [
-                    "5 hr 5 min",
-                    "3 hr 30 min"
-                ],
-                "airline": [
-                    "Iberia",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "1",
-                    "0"
-                ],
-                "price": [
-                    "77",
-                    "36"
-                ],
-                "job": "Pilar",
-                "new": true,
-                "new_price": false,
-                "total_price": "113"
             }
         ]
     },
@@ -1686,7 +1496,7 @@
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "104"
             },
             {
@@ -1724,7 +1534,7 @@
                 ],
                 "job": "David",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "109"
             },
             {
@@ -1834,50 +1644,12 @@
                 ],
                 "price": [
                     "36",
-                    "98"
+                    "109"
                 ],
                 "job": "David",
                 "new": false,
                 "new_price": true,
-                "total_price": "134"
-            },
-            {
-                "date": [
-                    "2025-11-26",
-                    "2025-11-30"
-                ],
-                "origin": [
-                    "LBC",
-                    "AGP"
-                ],
-                "destination": [
-                    "AGP",
-                    "LBC"
-                ],
-                "time": [
-                    "19:45",
-                    "15:25"
-                ],
-                "travel_time": [
-                    "3 hr 30 min",
-                    "3 hr 30 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "42",
-                    "98"
-                ],
-                "job": "David",
-                "new": false,
-                "new_price": false,
-                "total_price": "140"
+                "total_price": "145"
             },
             {
                 "date": [
@@ -1913,7 +1685,7 @@
                     "110"
                 ],
                 "job": "David",
-                "new": true,
+                "new": false,
                 "new_price": false,
                 "total_price": "146"
             },
