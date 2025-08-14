@@ -1,9 +1,19 @@
 [
   {
-    "name": "Nos vamos al octokber???",
+    "name": "Juancho por Hamburguesa?",
+    "alias": "juan_hamburgo",
+    "airports": [["MAD"], ["HAM","BRE","LBC"]],
+    "days_availability": [[3,4], [7,8]],
+    "email": ["davidmayoral1505@gmail.com", "juanchoalerta2001@hotmail.com"],
+    "price_threshold": 175,
+    "days_search": ["2025-11-01", "2025-12-07"],
+    "max_trip_duration": 7
+  },
+  {
+    "name": "Nos vamos al Oktober???",
     "alias": "octoker",
     "airports": [["AGP","GRX"],["MUC","FMM","NUE"]],
-    "days_availability": [[4,5], [7,8]],
+    "days_availability": [[3,4,5], [7,8]],
     "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
     "price_threshold": 160,
     "days_search": ["2025-09-20", "2025-10-05"],
@@ -15,28 +25,8 @@
     "airports": [["HAM","BRE","LBC"], ["MAD","BIO"]],
     "days_availability": [[3,4,5], [7,8]],
     "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
-    "price_threshold": 200,
+    "price_threshold": 150,
     "days_search": ["2025-10-01", "2025-11-01"],
-    "max_trip_duration": 7
-  },
-  {
-    "name": "Carnaval carnaval",
-    "alias": "carnaval",
-    "airports": [["AGP","GRX"], ["TFN","TFS"]],
-    "days_availability": [[4,5], [7,8]],
-    "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
-    "price_threshold": 100,
-    "days_search": ["2026-02-18", "2025-02-23"],
-    "max_trip_duration": 5
-  },
-  {
-    "name": "Rompetimpanos a la isla",
-    "alias": "oct_rompe",
-    "airports": [["HAM","BRE", "LBC"], ["TFN","TFS"]],
-    "days_availability": [[3,4,5], [7,8, 9]],
-    "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
-    "price_threshold": 100,
-    "days_search": ["2025-10-22", "2025-10-27"],
     "max_trip_duration": 7
   }
 ]
