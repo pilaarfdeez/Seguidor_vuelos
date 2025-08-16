@@ -513,10 +513,14 @@ class _Scrape:
 
 		try:
 			start = res2.index("Sorted by top flights") + 1
-			mid_start = res2.index("Track prices")
 		except ValueError:
 			logger.error('Error parsing flight results --> Skipping.')
 			return None
+		
+		if "Track prices" in res2:
+			mid_start = res2.index("Track prices")
+		else:
+			mid_start = res2.index("Other flights")
 
 		try:
 			mid_end = res2.index("Other flights") + 1
@@ -623,6 +627,7 @@ class _Scrape:
 		x_path_cheapest = '//div[@class="eaO3rb yRaoXe"]'
 		cheapest_button = driver.find_element(by=By.XPATH, value=x_path_cheapest)
 		cheapest_button.click()
+		random_wait(1, 2)
 		# links = self._get_flight_links(driver)
 
 		# Waiting and initial XPATH cleaning
