@@ -620,6 +620,11 @@ class _Scrape:
 			logger.warning('Could not find reject button while handling cookies: ', e)
 			logger.info('(Text node definition probably outdated)')
 
+		x_path_cheapest = '//div[@class="eaO3rb yRaoXe"]'
+		cheapest_button = driver.find_element(by=By.XPATH, value=x_path_cheapest)
+		cheapest_button.click()
+		# links = self._get_flight_links(driver)
+
 		# Waiting and initial XPATH cleaning
 		# WebDriverWait(driver, timeout = 10).until(lambda d: len(_Scrape._get_flight_elements(d)) > 100)
 		if self._explore:
