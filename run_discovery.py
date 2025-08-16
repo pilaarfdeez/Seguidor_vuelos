@@ -85,9 +85,11 @@ for week in range(conf.WEEKS_SEARCH):
                 candidates_df[leg] = pd.concat([candidates_df[leg], filtered_df], axis=0)
 
         combinations_df = candidates_df[0].merge(candidates_df[1], how='cross', suffixes=('_out', '_return'))
-        combinations_df['Total Price'] = combinations_df['Price_out'] + combinations_df['Price_return']
-
-        combinations_df = combinations_df[combinations_df['Total Price'] <= conf.PRICE_THRESHOLD]
+        try:
+            combinations_df['Total Price'] = combinations_df['Price_out'] + combinations_df['Price_return']
+            combinations_df = combinations_df[combinations_df['Total Price'] <= conf.PRICE_THRESHOLD]
+        except KeyError:
+            pass
 
         logger.info(f'  Found {len(combinations_df)} combinations for {tocinillo}')
         for idx in range(len(combinations_df)):
