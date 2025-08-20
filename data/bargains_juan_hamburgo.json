@@ -37,7 +37,7 @@
                 ],
                 "job": "Juancho por Hamburguesa?",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "159"
             },
             {
@@ -75,7 +75,7 @@
                 ],
                 "job": "Juancho por Hamburguesa?",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "164"
             },
             {
@@ -113,7 +113,7 @@
                 ],
                 "job": "Juancho por Hamburguesa?",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "169"
             },
             {
@@ -151,7 +151,7 @@
                 ],
                 "job": "Juancho por Hamburguesa?",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "169"
             },
             {
@@ -584,6 +584,44 @@
                 ],
                 "origin": [
                     "MAD",
+                    "BRE"
+                ],
+                "destination": [
+                    "HAM",
+                    "MAD"
+                ],
+                "time": [
+                    "12:15",
+                    "06:10"
+                ],
+                "travel_time": [
+                    "3 hr",
+                    "6 hr"
+                ],
+                "airline": [
+                    "Iberia",
+                    "KLM"
+                ],
+                "stops": [
+                    "0",
+                    "1"
+                ],
+                "price": [
+                    "63",
+                    "112"
+                ],
+                "job": "Juancho por Hamburguesa?",
+                "new": true,
+                "new_price": false,
+                "total_price": "175"
+            },
+            {
+                "date": [
+                    "2025-11-12",
+                    "2025-11-16"
+                ],
+                "origin": [
+                    "MAD",
                     "HAM"
                 ],
                 "destination": [
@@ -650,6 +688,44 @@
                 ],
                 "job": "Juancho por Hamburguesa?",
                 "new": false,
+                "new_price": false,
+                "total_price": "175"
+            },
+            {
+                "date": [
+                    "2025-11-13",
+                    "2025-11-16"
+                ],
+                "origin": [
+                    "MAD",
+                    "BRE"
+                ],
+                "destination": [
+                    "HAM",
+                    "MAD"
+                ],
+                "time": [
+                    "12:15",
+                    "06:10"
+                ],
+                "travel_time": [
+                    "3 hr",
+                    "6 hr"
+                ],
+                "airline": [
+                    "Iberia",
+                    "KLM"
+                ],
+                "stops": [
+                    "0",
+                    "1"
+                ],
+                "price": [
+                    "63",
+                    "112"
+                ],
+                "job": "Juancho por Hamburguesa?",
+                "new": true,
                 "new_price": false,
                 "total_price": "175"
             },
@@ -1090,11 +1166,11 @@
                     "MAD"
                 ],
                 "time": [
-                    "19:45",
-                    "15:55"
+                    "12:15",
+                    "07:00"
                 ],
                 "travel_time": [
-                    "2 hr 55 min",
+                    "3 hr",
                     "3 hr"
                 ],
                 "airline": [
@@ -1106,8 +1182,84 @@
                     "0"
                 ],
                 "price": [
-                    "63",
-                    "96"
+                    "78",
+                    "81"
+                ],
+                "job": "Juancho por Hamburguesa?",
+                "new": false,
+                "new_price": false,
+                "total_price": "159"
+            },
+            {
+                "date": [
+                    "2025-11-19",
+                    "2025-11-24"
+                ],
+                "origin": [
+                    "MAD",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MAD"
+                ],
+                "time": [
+                    "12:15",
+                    "07:00"
+                ],
+                "travel_time": [
+                    "3 hr",
+                    "3 hr"
+                ],
+                "airline": [
+                    "Iberia",
+                    "Iberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "78",
+                    "81"
+                ],
+                "job": "Juancho por Hamburguesa?",
+                "new": false,
+                "new_price": false,
+                "total_price": "159"
+            },
+            {
+                "date": [
+                    "2025-11-19",
+                    "2025-11-24"
+                ],
+                "origin": [
+                    "MAD",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MAD"
+                ],
+                "time": [
+                    "12:15",
+                    "15:55"
+                ],
+                "travel_time": [
+                    "3 hr",
+                    "3 hr"
+                ],
+                "airline": [
+                    "Iberia",
+                    "Iberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "78",
+                    "81"
                 ],
                 "job": "Juancho por Hamburguesa?",
                 "new": false,
@@ -1128,87 +1280,11 @@
                     "MAD"
                 ],
                 "time": [
-                    "12:15",
-                    "07:00"
-                ],
-                "travel_time": [
-                    "3 hr",
-                    "3 hr"
-                ],
-                "airline": [
-                    "Iberia",
-                    "Iberia"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "78",
-                    "81"
-                ],
-                "job": "Juancho por Hamburguesa?",
-                "new": false,
-                "new_price": false,
-                "total_price": "159"
-            },
-            {
-                "date": [
-                    "2025-11-19",
-                    "2025-11-24"
-                ],
-                "origin": [
-                    "MAD",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MAD"
-                ],
-                "time": [
-                    "12:15",
-                    "07:00"
-                ],
-                "travel_time": [
-                    "3 hr",
-                    "3 hr"
-                ],
-                "airline": [
-                    "Iberia",
-                    "Iberia"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "78",
-                    "81"
-                ],
-                "job": "Juancho por Hamburguesa?",
-                "new": false,
-                "new_price": false,
-                "total_price": "159"
-            },
-            {
-                "date": [
-                    "2025-11-19",
-                    "2025-11-24"
-                ],
-                "origin": [
-                    "MAD",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MAD"
-                ],
-                "time": [
-                    "12:15",
+                    "19:45",
                     "15:55"
                 ],
                 "travel_time": [
-                    "3 hr",
+                    "2 hr 55 min",
                     "3 hr"
                 ],
                 "airline": [
@@ -1220,13 +1296,13 @@
                     "0"
                 ],
                 "price": [
-                    "78",
-                    "81"
+                    "63",
+                    "102"
                 ],
                 "job": "Juancho por Hamburguesa?",
                 "new": false,
-                "new_price": false,
-                "total_price": "159"
+                "new_price": true,
+                "total_price": "165"
             },
             {
                 "date": [
@@ -1259,12 +1335,12 @@
                 ],
                 "price": [
                     "68",
-                    "96"
+                    "102"
                 ],
                 "job": "Juancho por Hamburguesa?",
                 "new": false,
-                "new_price": false,
-                "total_price": "164"
+                "new_price": true,
+                "total_price": "170"
             },
             {
                 "date": [
@@ -1297,50 +1373,12 @@
                 ],
                 "price": [
                     "68",
-                    "96"
+                    "102"
                 ],
                 "job": "Juancho por Hamburguesa?",
                 "new": false,
-                "new_price": false,
-                "total_price": "164"
-            },
-            {
-                "date": [
-                    "2025-11-19",
-                    "2025-11-23"
-                ],
-                "origin": [
-                    "MAD",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MAD"
-                ],
-                "time": [
-                    "12:15",
-                    "15:55"
-                ],
-                "travel_time": [
-                    "3 hr",
-                    "3 hr"
-                ],
-                "airline": [
-                    "Iberia",
-                    "Iberia"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "78",
-                    "96"
-                ],
-                "job": "Juancho por Hamburguesa?",
-                "new": false,
-                "new_price": false,
-                "total_price": "174"
+                "new_price": true,
+                "total_price": "170"
             },
             {
                 "date": [
@@ -1924,7 +1962,7 @@
                 ],
                 "origin": [
                     "MAD",
-                    "BRE"
+                    "HAM"
                 ],
                 "destination": [
                     "HAM",
@@ -1940,7 +1978,7 @@
                 ],
                 "airline": [
                     "Iberia",
-                    "KLM"
+                    "KLMAir Europa"
                 ],
                 "stops": [
                     "0",

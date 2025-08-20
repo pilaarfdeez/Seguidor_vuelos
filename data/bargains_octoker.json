@@ -1,5 +1,48 @@
 [
     {
+        "week": "2025-09-15 to 2025-09-21",
+        "combinations": [
+            {
+                "date": [
+                    "2025-09-17",
+                    "2025-09-21"
+                ],
+                "origin": [
+                    "AGP",
+                    "FMM"
+                ],
+                "destination": [
+                    "MUC",
+                    "AGP"
+                ],
+                "time": [
+                    "10:40",
+                    "06:00"
+                ],
+                "travel_time": [
+                    "6 hr 20 min",
+                    "2 hr 55 min"
+                ],
+                "airline": [
+                    "Transavia, KLM",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "1",
+                    "0"
+                ],
+                "price": [
+                    "104",
+                    "53"
+                ],
+                "job": "Nos vamos al Oktober???",
+                "new": true,
+                "new_price": false,
+                "total_price": "157"
+            }
+        ]
+    },
+    {
         "week": "2025-09-22 to 2025-09-28",
         "combinations": [
             {
@@ -33,12 +76,50 @@
                 ],
                 "price": [
                     "98",
-                    "55"
+                    "45"
+                ],
+                "job": "Nos vamos al Oktober???",
+                "new": false,
+                "new_price": true,
+                "total_price": "143"
+            },
+            {
+                "date": [
+                    "2025-09-24",
+                    "2025-09-28"
+                ],
+                "origin": [
+                    "AGP",
+                    "NUE"
+                ],
+                "destination": [
+                    "FMM",
+                    "AGP"
+                ],
+                "time": [
+                    "19:15",
+                    "19:15"
+                ],
+                "travel_time": [
+                    "2 hr 45 min",
+                    "3 hr 5 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "98",
+                    "58"
                 ],
                 "job": "Nos vamos al Oktober???",
                 "new": true,
                 "new_price": false,
-                "total_price": "153"
+                "total_price": "156"
             },
             {
                 "date": [
@@ -70,13 +151,13 @@
                     "0"
                 ],
                 "price": [
-                    "103",
-                    "55"
+                    "114",
+                    "45"
                 ],
                 "job": "Nos vamos al Oktober???",
-                "new": true,
-                "new_price": false,
-                "total_price": "158"
+                "new": false,
+                "new_price": true,
+                "total_price": "159"
             }
         ]
     }
