@@ -1,5 +1,48 @@
 [
     {
+        "week": "2025-09-29 to 2025-10-05",
+        "combinations": [
+            {
+                "date": [
+                    "2025-10-03",
+                    "2025-10-05"
+                ],
+                "origin": [
+                    "BRE",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "BRE"
+                ],
+                "time": [
+                    "17:20",
+                    "06:20"
+                ],
+                "travel_time": [
+                    "3 hr 15 min",
+                    "3 hr 10 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "98",
+                    "41"
+                ],
+                "job": "Octubre por granada",
+                "new": true,
+                "new_price": false,
+                "total_price": "139"
+            }
+        ]
+    },
+    {
         "week": "2025-10-27 to 2025-11-02",
         "combinations": [
             {
@@ -32,51 +75,13 @@
                     "0"
                 ],
                 "price": [
-                    "36",
-                    "97"
+                    "30",
+                    "109"
                 ],
                 "job": "Octubre por granada",
                 "new": false,
                 "new_price": true,
-                "total_price": "133"
-            },
-            {
-                "date": [
-                    "2025-10-30",
-                    "2025-11-02"
-                ],
-                "origin": [
-                    "BRE",
-                    "AGP"
-                ],
-                "destination": [
-                    "AGP",
-                    "BRE"
-                ],
-                "time": [
-                    "20:35",
-                    "07:00"
-                ],
-                "travel_time": [
-                    "3 hr 15 min",
-                    "3 hr 15 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "39",
-                    "97"
-                ],
-                "job": "Octubre por granada",
-                "new": true,
-                "new_price": false,
-                "total_price": "136"
+                "total_price": "139"
             }
         ]
     }
