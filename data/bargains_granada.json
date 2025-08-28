@@ -8,6 +8,44 @@
                     "2025-10-05"
                 ],
                 "origin": [
+                    "LBC",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "BRE"
+                ],
+                "time": [
+                    "10:55",
+                    "06:20"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "3 hr 10 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "65",
+                    "65"
+                ],
+                "job": "Octubre por granada",
+                "new": true,
+                "new_price": false,
+                "total_price": "130"
+            },
+            {
+                "date": [
+                    "2025-10-03",
+                    "2025-10-05"
+                ],
+                "origin": [
                     "BRE",
                     "AGP"
                 ],
@@ -32,23 +70,18 @@
                     "0"
                 ],
                 "price": [
-                    "98",
-                    "41"
+                    "77",
+                    "65"
                 ],
                 "job": "Octubre por granada",
-                "new": true,
-                "new_price": false,
-                "total_price": "139"
-            }
-        ]
-    },
-    {
-        "week": "2025-10-27 to 2025-11-02",
-        "combinations": [
+                "new": false,
+                "new_price": true,
+                "total_price": "142"
+            },
             {
                 "date": [
-                    "2025-10-29",
-                    "2025-11-02"
+                    "2025-10-03",
+                    "2025-10-06"
                 ],
                 "origin": [
                     "LBC",
@@ -56,15 +89,15 @@
                 ],
                 "destination": [
                     "AGP",
-                    "BRE"
+                    "LBC"
                 ],
                 "time": [
-                    "19:45",
-                    "07:00"
+                    "10:55",
+                    "06:55"
                 ],
                 "travel_time": [
-                    "3 hr 30 min",
-                    "3 hr 15 min"
+                    "3 hr 25 min",
+                    "3 hr 25 min"
                 ],
                 "airline": [
                     "Ryanair",
@@ -75,13 +108,13 @@
                     "0"
                 ],
                 "price": [
-                    "30",
-                    "109"
+                    "65",
+                    "82"
                 ],
                 "job": "Octubre por granada",
-                "new": false,
-                "new_price": true,
-                "total_price": "139"
+                "new": true,
+                "new_price": false,
+                "total_price": "147"
             }
         ]
     }
