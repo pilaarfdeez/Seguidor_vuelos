@@ -1,11 +1,125 @@
 [
     {
-        "week": "2025-09-15 to 2025-09-21",
+        "week": "2025-09-29 to 2025-10-05",
         "combinations": [
             {
                 "date": [
-                    "2025-09-17",
-                    "2025-09-21"
+                    "2025-10-03",
+                    "2025-10-05"
+                ],
+                "origin": [
+                    "AGP",
+                    "NUE"
+                ],
+                "destination": [
+                    "FMM",
+                    "AGP"
+                ],
+                "time": [
+                    "13:30",
+                    "19:15"
+                ],
+                "travel_time": [
+                    "2 hr 40 min",
+                    "3 hr 5 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "63",
+                    "42"
+                ],
+                "job": "Nos vamos al Oktober???",
+                "new": false,
+                "new_price": true,
+                "total_price": "105"
+            },
+            {
+                "date": [
+                    "2025-10-01",
+                    "2025-10-05"
+                ],
+                "origin": [
+                    "AGP",
+                    "NUE"
+                ],
+                "destination": [
+                    "FMM",
+                    "AGP"
+                ],
+                "time": [
+                    "19:15",
+                    "19:15"
+                ],
+                "travel_time": [
+                    "2 hr 45 min",
+                    "3 hr 5 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "84",
+                    "42"
+                ],
+                "job": "Nos vamos al Oktober???",
+                "new": false,
+                "new_price": true,
+                "total_price": "126"
+            },
+            {
+                "date": [
+                    "2025-10-03",
+                    "2025-10-05"
+                ],
+                "origin": [
+                    "AGP",
+                    "FMM"
+                ],
+                "destination": [
+                    "FMM",
+                    "AGP"
+                ],
+                "time": [
+                    "13:30",
+                    "06:00"
+                ],
+                "travel_time": [
+                    "2 hr 40 min",
+                    "2 hr 55 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "63",
+                    "64"
+                ],
+                "job": "Nos vamos al Oktober???",
+                "new": false,
+                "new_price": true,
+                "total_price": "127"
+            },
+            {
+                "date": [
+                    "2025-10-01",
+                    "2025-10-05"
                 ],
                 "origin": [
                     "AGP",
@@ -32,13 +146,51 @@
                     "0"
                 ],
                 "price": [
-                    "105",
-                    "50"
+                    "84",
+                    "64"
                 ],
                 "job": "Nos vamos al Oktober???",
                 "new": false,
                 "new_price": true,
-                "total_price": "155"
+                "total_price": "148"
+            },
+            {
+                "date": [
+                    "2025-10-02",
+                    "2025-10-05"
+                ],
+                "origin": [
+                    "AGP",
+                    "NUE"
+                ],
+                "destination": [
+                    "MUC",
+                    "AGP"
+                ],
+                "time": [
+                    "07:10",
+                    "19:15"
+                ],
+                "travel_time": [
+                    "2 hr 50 min",
+                    "3 hr 5 min"
+                ],
+                "airline": [
+                    "Norwegian",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "116",
+                    "42"
+                ],
+                "job": "Nos vamos al Oktober???",
+                "new": false,
+                "new_price": false,
+                "total_price": "158"
             }
         ]
     }

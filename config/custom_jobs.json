@@ -10,22 +10,22 @@
     "max_trip_duration": 7
   },
   {
-    "name": "Nos vamos al Oktober???",
-    "alias": "octoker",
-    "airports": [["AGP","GRX"],["MUC","FMM","NUE"]],
-    "days_availability": [[3,4,5], [7,8]],
-    "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
-    "price_threshold": 160,
-    "days_search": ["2025-09-20", "2025-10-05"],
-    "max_trip_duration": 7
-  },
-  {
     "name": "Octubre por burguitos",
     "alias": "burguitos",
     "airports": [["HAM","BRE","LBC"], ["MAD","BIO"]],
     "days_availability": [[3,4,5], [7,8]],
     "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
-    "price_threshold": 150,
+    "price_threshold": 160,
+    "days_search": ["2025-10-01", "2025-11-01"],
+    "max_trip_duration": 7
+  },
+  {
+    "name": "Octubre por hamburgss",
+    "alias": "hamburgss",
+    "airports": [["GRX","AGP"],["HAM","BRE","LBC"]],
+    "days_availability": [[4,5], [7]],
+    "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
+    "price_threshold": 160,
     "days_search": ["2025-10-01", "2025-11-01"],
     "max_trip_duration": 7
   },
@@ -35,8 +35,18 @@
     "airports": [["HAM","BRE","LBC"], ["GRX","AGP"]],
     "days_availability": [[3,4,5], [7,8]],
     "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
-    "price_threshold": 150,
+    "price_threshold": 160,
     "days_search": ["2025-10-01", "2025-11-01"],
     "max_trip_duration": 7
+  },
+  {
+    "name": "Javi enamorado",
+    "alias": "psiista",
+    "airports": [["AGP"], ["MXP","PSA"]],
+    "days_availability": [[4,5], [7,8]],
+    "email": ["fjavims89@gmail.com"],
+    "price_threshold": 80,
+    "days_search": ["2025-10-01", "2025-12-01"],
+    "max_trip_duration": 5
   }
 ]
