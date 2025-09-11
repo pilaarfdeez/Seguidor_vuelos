@@ -30,13 +30,23 @@
     "max_trip_duration": 7
   },
   {
-    "name": "Javi enamorado",
-    "alias": "psiista",
-    "airports": [["AGP"], ["MXP","PSA"]],
+    "name": "Viajecito para morir de frio desde Pisa",
+    "alias": "PSA_HAM",
+    "airports": [["MXP","PSA"], ["HAM", "LBC", "HAJ", "BRE"]],
     "days_availability": [[4,5], [7,8]],
     "email": ["fjavims89@gmail.com"],
-    "price_threshold": 110,
-    "days_search": ["2025-10-01", "2025-12-01"],
+    "price_threshold": 130,
+    "days_search": ["2026-02-01", "2026-03-31"],
+    "max_trip_duration": 5
+  },
+  {
+    "name": "Viajecito para morir de frio desde Málaga",
+    "alias": "AGP_HAM",
+    "airports": [[["GRX","AGP"], ["HAM", "LBC", "HAJ", "BRE"],
+    "days_availability": [[4,5], [7]],
+    "email": ["victoriapilar2001@gmail.com", "fjavims89@gmail.com"],
+    "price_threshold": 130,
+    "days_search": ["2026-02-01", "2026-03-31"],
     "max_trip_duration": 5
   },
   {
