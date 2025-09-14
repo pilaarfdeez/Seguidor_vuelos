@@ -37,7 +37,7 @@ if conf.ENV == 'production':
 elif conf.ENV == 'local':
     logger.info('Running Discovery locally!')
 
-with open(f"config/custom_jobs.json", "r", encoding="utf-8") as f:  
+with open(f"config/custom_jobs.json", "r", encoding="utf-8") as f:
     custom_jobs = json.load(f)
 
 for job in custom_jobs:
