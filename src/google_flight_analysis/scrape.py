@@ -19,6 +19,7 @@ import re
 from tqdm import tqdm
 
 from config.logging import init_logger
+from src.google_flight_analysis.analysis import save_results
 from src.google_flight_analysis.flight import *
 from src.google_flight_analysis.human_simulations import *
 
@@ -506,6 +507,11 @@ class _Scrape:
 				if not flights:
 					return -1
 				flights_df = Flight.dataframe(flights)
+
+				# Save all results to database
+				if len(flights_df):
+					save_results(flights_df)
+
 				return flights_df
 
 	def _clean_results(self, result, date):
