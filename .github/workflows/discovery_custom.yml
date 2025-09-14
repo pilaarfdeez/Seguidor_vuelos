@@ -60,7 +60,7 @@ jobs:
       #     echo "${{ secrets.COOKIES_JSON }}" > data/cookies.json
 
       # Schritt 6: Führe das Scraper-Skript aus
-      - name: Run Discovery script
+      - name: Run Discovery Custom script
         run: |
           mkdir -p data/images
           python run_discovery_custom.py

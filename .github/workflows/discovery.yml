@@ -80,7 +80,7 @@ jobs:
       - name: Commit JSON changes
         uses: EndBug/add-and-commit@v9
         with:
-          add: ./data/bargains.json
+          add: ./data
         # run: |
         #   git config --local user.name "github-actions"
         #   git config --local user.email "github-actions@github.com"
