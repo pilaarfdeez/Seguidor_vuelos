@@ -218,6 +218,8 @@ class Flight:
 		}
 
 		for flight in flights:
+			if not flight.price:
+				continue
 			data['Departure datetime'] += [flight.time_leave]
 			data['Arrival datetime'] += [flight.time_arrive]
 
