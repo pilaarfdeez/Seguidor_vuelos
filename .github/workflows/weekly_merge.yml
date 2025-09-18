@@ -1,0 +1,61 @@
+name: Weekly Dataset Merge
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"   # Every Sunday at 00:00 UTC
+  workflow_dispatch:
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout with LFS enabled
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+        env:
+          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
+
+      # Step 2: Setup Git LFS
+      - name: Setup Git LFS
+        run: |
+          git lfs install
+          git lfs pull
+
+      # Step 3: Setup Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      # Step 4: Install dependencies
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install pandas pyarrow fastparquet
+
+      # Step 5: Run merge script
+      - name: Run Weekly Merge script
+        run: python run_weekly_merge.py
+
+      # Step 6: Commit merged dataset (processed file only)
+      - name: Commit merged dataset
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: "data/results/processed/results.parquet"
+          message: "Weekly merge ($(date +'%Y-%m-%d'))"
+        env:
+          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
+
+      # Step 7: Cleanup raw files (only if merge worked)
+      - name: Cleanup raw files
+        if: success()
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: "data/results/raw"
+          remove: "data/results/raw"
+          message: "Cleanup weekly files after merge into LFS"
+        env:
+          GH_TOKEN: ${{ secrets.REPO_TOKEN }}
