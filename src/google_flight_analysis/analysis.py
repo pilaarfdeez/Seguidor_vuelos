@@ -44,9 +44,15 @@ def save_results(flights_df: pd.DataFrame):
   }
   df.rename(columns=rename_dict, inplace=True)
 
+  # Ensure output directories exist
+  parquet_dir = 'data/results/raw'
+  preview_csv_path = os.path.join(parquet_dir, 'preview.csv')
+  parquet_path = os.path.join(parquet_dir, 'weekly_results.parquet')
+  os.makedirs(parquet_dir, exist_ok=True)
+
   # Save result df to database
   try:
-      existing_df = pd.read_parquet('data/results/raw/weekly_results.parquet')
+      existing_df = pd.read_parquet(parquet_path)
       # Filter out rows where all columns except 'price_eur' are already present in existing_df
       compare_cols = [col for col in df.columns if col != 'price_eur']
       if not existing_df.empty:
@@ -57,7 +63,7 @@ def save_results(flights_df: pd.DataFrame):
       existing_df = pd.DataFrame()
 
   updated_df = pd.concat([existing_df, df], ignore_index=True)
-  updated_df.to_parquet('data/results/raw/weekly_results.parquet', index=False)
+  updated_df.to_parquet(parquet_path, index=False)
   logger.info(f"Saved {len(df)} new results to database (total: {len(updated_df)})")
   logger.info(f"Database size: {updated_df.memory_usage(deep=True).sum() / 1024**2:.4f} MB")
   logger.info(f"New results:\n{df.head(5)}")
@@ -65,10 +71,10 @@ def save_results(flights_df: pd.DataFrame):
   # Save one random row from the new results to a CSV sample file
   if not df.empty:
       sample_row = df.sample(n=1, random_state=42)
-      if os.path.exists('data/results/raw/preview.csv'):
-          sample_df = pd.read_csv('data/results/raw/preview.csv')
+      if os.path.exists(preview_csv_path):
+          sample_df = pd.read_csv(preview_csv_path)
       else:
           sample_df = pd.DataFrame()
 
       sample_df = pd.concat([sample_df, sample_row], ignore_index=True)
-      sample_df.to_csv('data/results/raw/preview.csv', index=False)
+      sample_df.to_csv(preview_csv_path, index=False)
