@@ -265,7 +265,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "82"
             },
             {
@@ -303,7 +303,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "83"
             },
             {
@@ -341,7 +341,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "90"
             },
             {
@@ -379,7 +379,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "90"
             },
             {
@@ -417,7 +417,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "92"
             },
             {
@@ -455,7 +455,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "92"
             },
             {
@@ -493,7 +493,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "92"
             },
             {
@@ -531,7 +531,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "92"
             },
             {
@@ -569,7 +569,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "92"
             },
             {
@@ -607,7 +607,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "93"
             },
             {
@@ -645,7 +645,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "110"
             },
             {
@@ -683,7 +683,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "110"
             },
             {
@@ -797,7 +797,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -835,7 +835,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -873,7 +873,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -911,7 +911,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -949,7 +949,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "122"
             },
             {
@@ -987,7 +987,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "122"
             },
             {
@@ -1025,7 +1025,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "122"
             },
             {
@@ -1063,7 +1063,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "122"
             }
         ]
@@ -1102,11 +1102,49 @@
                 ],
                 "price": [
                     "22",
+                    "42"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "64"
+            },
+            {
+                "date": [
+                    "2026-02-05",
+                    "2026-02-08"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "19:20",
+                    "21:50"
+                ],
+                "travel_time": [
+                    "1 hr 50 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "easyJet",
+                    "easyJet"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "22",
                     "43"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
+                "new_price": true,
                 "total_price": "65"
             },
             {
@@ -1144,46 +1182,8 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
-                "total_price": "67"
-            },
-            {
-                "date": [
-                    "2026-02-05",
-                    "2026-02-08"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MXP"
-                ],
-                "time": [
-                    "19:20",
-                    "21:50"
-                ],
-                "travel_time": [
-                    "1 hr 50 min",
-                    "1 hr 45 min"
-                ],
-                "airline": [
-                    "easyJet",
-                    "easyJet"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "22",
-                    "48"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
                 "new_price": false,
-                "total_price": "70"
+                "total_price": "67"
             },
             {
                 "date": [
@@ -1215,51 +1215,13 @@
                     "0"
                 ],
                 "price": [
-                    "30",
-                    "43"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": false,
-                "total_price": "73"
-            },
-            {
-                "date": [
-                    "2026-02-06",
-                    "2026-02-09"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MXP"
-                ],
-                "time": [
-                    "19:10",
-                    "06:15"
-                ],
-                "travel_time": [
-                    "1 hr 50 min",
-                    "1 hr 45 min"
-                ],
-                "airline": [
-                    "easyJet",
-                    "Eurowings"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "30",
-                    "45"
+                    "27",
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "75"
+                "total_price": "69"
             },
             {
                 "date": [
@@ -1291,13 +1253,51 @@
                     "0"
                 ],
                 "price": [
-                    "30",
-                    "48"
+                    "27",
+                    "43"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
-                "total_price": "78"
+                "new_price": true,
+                "total_price": "70"
+            },
+            {
+                "date": [
+                    "2026-02-06",
+                    "2026-02-09"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "19:10",
+                    "06:15"
+                ],
+                "travel_time": [
+                    "1 hr 50 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "easyJet",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "27",
+                    "45"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "72"
             },
             {
                 "date": [
@@ -1334,7 +1334,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "82"
             },
             {
@@ -1367,13 +1367,13 @@
                     "0"
                 ],
                 "price": [
-                    "30",
+                    "27",
                     "60"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "90"
+                "total_price": "87"
             },
             {
                 "date": [
@@ -1406,12 +1406,12 @@
                 ],
                 "price": [
                     "50",
-                    "43"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "93"
+                "total_price": "92"
             },
             {
                 "date": [
@@ -1429,6 +1429,82 @@
                 "time": [
                     "20:25",
                     "09:05"
+                ],
+                "travel_time": [
+                    "1 hr 45 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "easyJet"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "50",
+                    "42"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "92"
+            },
+            {
+                "date": [
+                    "2026-02-05",
+                    "2026-02-08"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "20:40",
+                    "21:50"
+                ],
+                "travel_time": [
+                    "1 hr 45 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "easyJet"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "50",
+                    "43"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "93"
+            },
+            {
+                "date": [
+                    "2026-02-06",
+                    "2026-02-08"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "20:25",
+                    "21:50"
                 ],
                 "travel_time": [
                     "1 hr 45 min",
@@ -1486,7 +1562,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "95"
             },
             {
@@ -1524,84 +1600,8 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "95"
-            },
-            {
-                "date": [
-                    "2026-02-05",
-                    "2026-02-08"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MXP"
-                ],
-                "time": [
-                    "20:40",
-                    "21:50"
-                ],
-                "travel_time": [
-                    "1 hr 45 min",
-                    "1 hr 45 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "easyJet"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "50",
-                    "48"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": true,
-                "total_price": "98"
-            },
-            {
-                "date": [
-                    "2026-02-06",
-                    "2026-02-08"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MXP"
-                ],
-                "time": [
-                    "20:25",
-                    "21:50"
-                ],
-                "travel_time": [
-                    "1 hr 45 min",
-                    "1 hr 45 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "easyJet"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "50",
-                    "48"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": true,
-                "total_price": "98"
             },
             {
                 "date": [
@@ -1638,8 +1638,46 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "102"
+            },
+            {
+                "date": [
+                    "2026-02-06",
+                    "2026-02-08"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "19:10",
+                    "17:50"
+                ],
+                "travel_time": [
+                    "1 hr 50 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "easyJet",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "27",
+                    "80"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "107"
             },
             {
                 "date": [
@@ -1676,45 +1714,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
-                "total_price": "110"
-            },
-            {
-                "date": [
-                    "2026-02-06",
-                    "2026-02-08"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MXP"
-                ],
-                "time": [
-                    "19:10",
-                    "17:50"
-                ],
-                "travel_time": [
-                    "1 hr 50 min",
-                    "1 hr 45 min"
-                ],
-                "airline": [
-                    "easyJet",
-                    "Eurowings"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "30",
-                    "80"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "110"
             },
             {
@@ -1752,7 +1752,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "110"
             },
             {
@@ -1786,12 +1786,12 @@
                 ],
                 "price": [
                     "80",
-                    "43"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "123"
+                "total_price": "122"
             },
             {
                 "date": [
@@ -1824,6 +1824,82 @@
                 ],
                 "price": [
                     "80",
+                    "42"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "122"
+            },
+            {
+                "date": [
+                    "2026-02-05",
+                    "2026-02-08"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAJ",
+                    "MXP"
+                ],
+                "time": [
+                    "20:30",
+                    "21:50"
+                ],
+                "travel_time": [
+                    "1 hr 35 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "easyJet"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "80",
+                    "43"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "123"
+            },
+            {
+                "date": [
+                    "2026-02-06",
+                    "2026-02-08"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAJ",
+                    "MXP"
+                ],
+                "time": [
+                    "20:20",
+                    "21:50"
+                ],
+                "travel_time": [
+                    "1 hr 35 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "easyJet"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "80",
                     "43"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
@@ -1866,7 +1942,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "125"
             },
             {
@@ -1904,84 +1980,8 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "125"
-            },
-            {
-                "date": [
-                    "2026-02-05",
-                    "2026-02-08"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAJ",
-                    "MXP"
-                ],
-                "time": [
-                    "20:30",
-                    "21:50"
-                ],
-                "travel_time": [
-                    "1 hr 35 min",
-                    "1 hr 45 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "easyJet"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "80",
-                    "48"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": true,
-                "total_price": "128"
-            },
-            {
-                "date": [
-                    "2026-02-06",
-                    "2026-02-08"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAJ",
-                    "MXP"
-                ],
-                "time": [
-                    "20:20",
-                    "21:50"
-                ],
-                "travel_time": [
-                    "1 hr 35 min",
-                    "1 hr 45 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "easyJet"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "80",
-                    "48"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": true,
-                "total_price": "128"
             },
             {
                 "date": [
@@ -2018,7 +2018,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "130"
             },
             {
@@ -2056,7 +2056,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "130"
             }
         ]
@@ -2133,12 +2133,12 @@
                 ],
                 "price": [
                     "22",
-                    "44"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
-                "total_price": "66"
+                "new_price": true,
+                "total_price": "64"
             },
             {
                 "date": [
@@ -2171,12 +2171,12 @@
                 ],
                 "price": [
                     "22",
-                    "46"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
-                "total_price": "68"
+                "new_price": true,
+                "total_price": "64"
             },
             {
                 "date": [
@@ -2247,12 +2247,12 @@
                 ],
                 "price": [
                     "33",
-                    "44"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
-                "total_price": "77"
+                "new_price": true,
+                "total_price": "75"
             },
             {
                 "date": [
@@ -2285,12 +2285,12 @@
                 ],
                 "price": [
                     "33",
-                    "46"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
-                "total_price": "79"
+                "new_price": true,
+                "total_price": "75"
             },
             {
                 "date": [
@@ -2327,7 +2327,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "82"
             },
             {
@@ -2365,8 +2365,84 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "90"
+            },
+            {
+                "date": [
+                    "2026-02-12",
+                    "2026-02-15"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "20:40",
+                    "21:50"
+                ],
+                "travel_time": [
+                    "1 hr 45 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "easyJet"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "50",
+                    "42"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "92"
+            },
+            {
+                "date": [
+                    "2026-02-12",
+                    "2026-02-16"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "20:40",
+                    "09:05"
+                ],
+                "travel_time": [
+                    "1 hr 45 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "easyJet"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "50",
+                    "42"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "92"
             },
             {
                 "date": [
@@ -2403,7 +2479,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "92"
             },
             {
@@ -2441,84 +2517,8 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "93"
-            },
-            {
-                "date": [
-                    "2026-02-12",
-                    "2026-02-15"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MXP"
-                ],
-                "time": [
-                    "20:40",
-                    "21:50"
-                ],
-                "travel_time": [
-                    "1 hr 45 min",
-                    "1 hr 45 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "easyJet"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "50",
-                    "44"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": true,
-                "total_price": "94"
-            },
-            {
-                "date": [
-                    "2026-02-12",
-                    "2026-02-16"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MXP"
-                ],
-                "time": [
-                    "20:40",
-                    "09:05"
-                ],
-                "travel_time": [
-                    "1 hr 45 min",
-                    "1 hr 45 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "easyJet"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "50",
-                    "46"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": true,
-                "total_price": "96"
             },
             {
                 "date": [
@@ -2555,8 +2555,84 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "100"
+            },
+            {
+                "date": [
+                    "2026-02-13",
+                    "2026-02-15"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "20:25",
+                    "21:50"
+                ],
+                "travel_time": [
+                    "1 hr 45 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "easyJet"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "60",
+                    "42"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "102"
+            },
+            {
+                "date": [
+                    "2026-02-13",
+                    "2026-02-16"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "20:25",
+                    "09:05"
+                ],
+                "travel_time": [
+                    "1 hr 45 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "easyJet"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "60",
+                    "42"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "102"
             },
             {
                 "date": [
@@ -2593,84 +2669,8 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "103"
-            },
-            {
-                "date": [
-                    "2026-02-13",
-                    "2026-02-15"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MXP"
-                ],
-                "time": [
-                    "20:25",
-                    "21:50"
-                ],
-                "travel_time": [
-                    "1 hr 45 min",
-                    "1 hr 45 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "easyJet"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "60",
-                    "44"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": true,
-                "total_price": "104"
-            },
-            {
-                "date": [
-                    "2026-02-13",
-                    "2026-02-16"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MXP"
-                ],
-                "time": [
-                    "20:25",
-                    "09:05"
-                ],
-                "travel_time": [
-                    "1 hr 45 min",
-                    "1 hr 45 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "easyJet"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "60",
-                    "46"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": true,
-                "total_price": "106"
             },
             {
                 "date": [
@@ -2707,7 +2707,45 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
+                "total_price": "110"
+            },
+            {
+                "date": [
+                    "2026-02-12",
+                    "2026-02-16"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "11:30",
+                    "06:15"
+                ],
+                "travel_time": [
+                    "3 hr 40 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "Condor",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "1",
+                    "0"
+                ],
+                "price": [
+                    "70",
+                    "40"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": true,
+                "new_price": false,
                 "total_price": "110"
             },
             {
@@ -2724,6 +2762,82 @@
                     "MXP"
                 ],
                 "time": [
+                    "11:30",
+                    "21:50"
+                ],
+                "travel_time": [
+                    "3 hr 40 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "Condor",
+                    "easyJet"
+                ],
+                "stops": [
+                    "1",
+                    "0"
+                ],
+                "price": [
+                    "70",
+                    "42"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": true,
+                "new_price": false,
+                "total_price": "112"
+            },
+            {
+                "date": [
+                    "2026-02-12",
+                    "2026-02-16"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "11:30",
+                    "09:05"
+                ],
+                "travel_time": [
+                    "3 hr 40 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "Condor",
+                    "easyJet"
+                ],
+                "stops": [
+                    "1",
+                    "0"
+                ],
+                "price": [
+                    "70",
+                    "42"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": true,
+                "new_price": false,
+                "total_price": "112"
+            },
+            {
+                "date": [
+                    "2026-02-12",
+                    "2026-02-15"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
                     "20:40",
                     "17:50"
                 ],
@@ -2745,7 +2859,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -2783,7 +2897,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -2821,7 +2935,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -2859,7 +2973,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -2893,88 +3007,12 @@
                 ],
                 "price": [
                     "80",
-                    "44"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "124"
-            },
-            {
-                "date": [
-                    "2026-02-13",
-                    "2026-02-15"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MXP"
-                ],
-                "time": [
-                    "19:10",
-                    "11:05"
-                ],
-                "travel_time": [
-                    "1 hr 50 min",
-                    "4 hr 55 min"
-                ],
-                "airline": [
-                    "easyJet",
-                    "VuelingIberia"
-                ],
-                "stops": [
-                    "0",
-                    "1"
-                ],
-                "price": [
-                    "22",
-                    "102"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": false,
-                "total_price": "124"
-            },
-            {
-                "date": [
-                    "2026-02-13",
-                    "2026-02-15"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAJ",
-                    "MXP"
-                ],
-                "time": [
-                    "20:20",
-                    "21:50"
-                ],
-                "travel_time": [
-                    "1 hr 35 min",
-                    "1 hr 45 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "easyJet"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "80",
-                    "44"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": true,
-                "total_price": "124"
+                "total_price": "122"
             },
             {
                 "date": [
@@ -3007,12 +3045,50 @@
                 ],
                 "price": [
                     "80",
-                    "46"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "126"
+                "total_price": "122"
+            },
+            {
+                "date": [
+                    "2026-02-13",
+                    "2026-02-15"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAJ",
+                    "MXP"
+                ],
+                "time": [
+                    "20:20",
+                    "21:50"
+                ],
+                "travel_time": [
+                    "1 hr 35 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "easyJet"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "80",
+                    "42"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "122"
             },
             {
                 "date": [
@@ -3045,12 +3121,50 @@
                 ],
                 "price": [
                     "80",
-                    "46"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "126"
+                "total_price": "122"
+            },
+            {
+                "date": [
+                    "2026-02-12",
+                    "2026-02-16"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAJ"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "11:30",
+                    "14:35"
+                ],
+                "travel_time": [
+                    "3 hr 40 min",
+                    "1 hr 35 min"
+                ],
+                "airline": [
+                    "Condor",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "1",
+                    "0"
+                ],
+                "price": [
+                    "70",
+                    "60"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": true,
+                "new_price": false,
+                "total_price": "130"
             },
             {
                 "date": [
@@ -3087,7 +3201,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "130"
             }
         ]
@@ -3095,6 +3209,44 @@
     {
         "week": "2026-02-16 to 2026-02-22",
         "combinations": [
+            {
+                "date": [
+                    "2026-02-19",
+                    "2026-02-23"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "19:20",
+                    "06:15"
+                ],
+                "travel_time": [
+                    "1 hr 50 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "easyJet",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "28",
+                    "40"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "68"
+            },
             {
                 "date": [
                     "2026-02-20",
@@ -3130,7 +3282,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "68"
             },
             {
@@ -3148,7 +3300,7 @@
                 ],
                 "time": [
                     "19:20",
-                    "06:15"
+                    "09:05"
                 ],
                 "travel_time": [
                     "1 hr 50 min",
@@ -3156,19 +3308,19 @@
                 ],
                 "airline": [
                     "easyJet",
-                    "Eurowings"
+                    "easyJet"
                 ],
                 "stops": [
                     "0",
                     "0"
                 ],
                 "price": [
-                    "30",
-                    "40"
+                    "28",
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
+                "new_price": true,
                 "total_price": "70"
             },
             {
@@ -3202,17 +3354,17 @@
                 ],
                 "price": [
                     "28",
-                    "46"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "74"
+                "total_price": "70"
             },
             {
                 "date": [
                     "2026-02-19",
-                    "2026-02-23"
+                    "2026-02-22"
                 ],
                 "origin": [
                     "MXP",
@@ -3224,7 +3376,7 @@
                 ],
                 "time": [
                     "19:20",
-                    "09:05"
+                    "21:50"
                 ],
                 "travel_time": [
                     "1 hr 50 min",
@@ -3239,13 +3391,13 @@
                     "0"
                 ],
                 "price": [
-                    "30",
-                    "46"
+                    "28",
+                    "53"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
-                "total_price": "76"
+                "new_price": true,
+                "total_price": "81"
             },
             {
                 "date": [
@@ -3278,21 +3430,21 @@
                 ],
                 "price": [
                     "28",
-                    "58"
+                    "53"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "86"
+                "total_price": "81"
             },
             {
                 "date": [
                     "2026-02-19",
-                    "2026-02-22"
+                    "2026-02-23"
                 ],
                 "origin": [
                     "MXP",
-                    "HAM"
+                    "HAJ"
                 ],
                 "destination": [
                     "HAM",
@@ -3300,27 +3452,27 @@
                 ],
                 "time": [
                     "19:20",
-                    "21:50"
+                    "14:35"
                 ],
                 "travel_time": [
                     "1 hr 50 min",
-                    "1 hr 45 min"
+                    "1 hr 35 min"
                 ],
                 "airline": [
                     "easyJet",
-                    "easyJet"
+                    "Eurowings"
                 ],
                 "stops": [
                     "0",
                     "0"
                 ],
                 "price": [
-                    "30",
-                    "58"
+                    "28",
+                    "60"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
+                "new_price": true,
                 "total_price": "88"
             },
             {
@@ -3358,46 +3510,8 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "88"
-            },
-            {
-                "date": [
-                    "2026-02-19",
-                    "2026-02-23"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAJ"
-                ],
-                "destination": [
-                    "HAM",
-                    "MXP"
-                ],
-                "time": [
-                    "19:20",
-                    "14:35"
-                ],
-                "travel_time": [
-                    "1 hr 50 min",
-                    "1 hr 35 min"
-                ],
-                "airline": [
-                    "easyJet",
-                    "Eurowings"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "30",
-                    "60"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": true,
-                "total_price": "90"
             },
             {
                 "date": [
@@ -3434,7 +3548,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "90"
             },
             {
@@ -3468,12 +3582,12 @@
                 ],
                 "price": [
                     "50",
-                    "46"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "96"
+                "total_price": "92"
             },
             {
                 "date": [
@@ -3510,7 +3624,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "100"
             },
             {
@@ -3544,12 +3658,12 @@
                 ],
                 "price": [
                     "60",
-                    "46"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "106"
+                "total_price": "102"
             },
             {
                 "date": [
@@ -3565,7 +3679,45 @@
                     "MXP"
                 ],
                 "time": [
-                    "19:10",
+                    "20:25",
+                    "21:50"
+                ],
+                "travel_time": [
+                    "1 hr 45 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "easyJet"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "50",
+                    "53"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "103"
+            },
+            {
+                "date": [
+                    "2026-02-19",
+                    "2026-02-22"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "19:20",
                     "17:50"
                 ],
                 "travel_time": [
@@ -3603,45 +3755,7 @@
                     "MXP"
                 ],
                 "time": [
-                    "20:25",
-                    "21:50"
-                ],
-                "travel_time": [
-                    "1 hr 45 min",
-                    "1 hr 45 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "easyJet"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "50",
-                    "58"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": true,
-                "total_price": "108"
-            },
-            {
-                "date": [
-                    "2026-02-19",
-                    "2026-02-22"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MXP"
-                ],
-                "time": [
-                    "19:20",
+                    "19:10",
                     "17:50"
                 ],
                 "travel_time": [
@@ -3657,13 +3771,13 @@
                     "0"
                 ],
                 "price": [
-                    "30",
+                    "28",
                     "80"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
-                "total_price": "110"
+                "new_price": false,
+                "total_price": "108"
             },
             {
                 "date": [
@@ -3700,7 +3814,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "110"
             },
             {
@@ -3734,12 +3848,12 @@
                 ],
                 "price": [
                     "60",
-                    "58"
+                    "53"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "118"
+                "total_price": "113"
             },
             {
                 "date": [
@@ -3776,7 +3890,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -3814,7 +3928,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -3852,7 +3966,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -3886,12 +4000,12 @@
                 ],
                 "price": [
                     "80",
-                    "46"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "126"
+                "total_price": "122"
             },
             {
                 "date": [
@@ -3924,12 +4038,12 @@
                 ],
                 "price": [
                     "80",
-                    "46"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "126"
+                "total_price": "122"
             },
             {
                 "date": [
@@ -3966,7 +4080,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "130"
             }
         ]
@@ -4042,13 +4156,13 @@
                     "0"
                 ],
                 "price": [
-                    "45",
+                    "42",
                     "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
-                "total_price": "87"
+                "new_price": true,
+                "total_price": "84"
             },
             {
                 "date": [
@@ -4085,7 +4199,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "92"
             },
             {
@@ -4119,12 +4233,50 @@
                 ],
                 "price": [
                     "41",
-                    "56"
+                    "52"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
-                "total_price": "97"
+                "new_price": true,
+                "total_price": "93"
+            },
+            {
+                "date": [
+                    "2026-02-27",
+                    "2026-03-01"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "19:10",
+                    "21:50"
+                ],
+                "travel_time": [
+                    "1 hr 50 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "easyJet",
+                    "easyJet"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "42",
+                    "52"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "94"
             },
             {
                 "date": [
@@ -4161,7 +4313,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "101"
             },
             {
@@ -4199,12 +4351,12 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "101"
             },
             {
                 "date": [
-                    "2026-02-27",
+                    "2026-02-26",
                     "2026-03-01"
                 ],
                 "origin": [
@@ -4216,46 +4368,8 @@
                     "MXP"
                 ],
                 "time": [
-                    "19:10",
+                    "20:40",
                     "21:50"
-                ],
-                "travel_time": [
-                    "1 hr 50 min",
-                    "1 hr 45 min"
-                ],
-                "airline": [
-                    "easyJet",
-                    "easyJet"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "45",
-                    "56"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": false,
-                "total_price": "101"
-            },
-            {
-                "date": [
-                    "2026-02-27",
-                    "2026-03-02"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MXP"
-                ],
-                "time": [
-                    "20:25",
-                    "09:05"
                 ],
                 "travel_time": [
                     "1 hr 45 min",
@@ -4270,8 +4384,8 @@
                     "0"
                 ],
                 "price": [
-                    "60",
-                    "42"
+                    "50",
+                    "52"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
@@ -4308,13 +4422,13 @@
                     "0"
                 ],
                 "price": [
-                    "45",
+                    "42",
                     "60"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "105"
+                "total_price": "102"
             },
             {
                 "date": [
@@ -4346,18 +4460,18 @@
                     "0"
                 ],
                 "price": [
-                    "45",
+                    "42",
                     "60"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "105"
+                "total_price": "102"
             },
             {
                 "date": [
-                    "2026-02-26",
-                    "2026-03-01"
+                    "2026-02-27",
+                    "2026-03-02"
                 ],
                 "origin": [
                     "MXP",
@@ -4368,8 +4482,8 @@
                     "MXP"
                 ],
                 "time": [
-                    "20:40",
-                    "21:50"
+                    "20:25",
+                    "09:05"
                 ],
                 "travel_time": [
                     "1 hr 45 min",
@@ -4384,13 +4498,13 @@
                     "0"
                 ],
                 "price": [
-                    "50",
-                    "56"
+                    "60",
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
-                "total_price": "106"
+                "new_price": false,
+                "total_price": "102"
             },
             {
                 "date": [
@@ -4427,7 +4541,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "110"
             },
             {
@@ -4465,7 +4579,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "110"
             },
             {
@@ -4503,7 +4617,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "111"
             },
             {
@@ -4536,13 +4650,13 @@
                     "0"
                 ],
                 "price": [
-                    "45",
+                    "42",
                     "70"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "115"
+                "total_price": "112"
             },
             {
                 "date": [
@@ -4575,12 +4689,12 @@
                 ],
                 "price": [
                     "60",
-                    "56"
+                    "52"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "116"
+                "total_price": "112"
             },
             {
                 "date": [
@@ -4617,7 +4731,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -4655,7 +4769,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -4693,7 +4807,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -4731,7 +4845,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "122"
             },
             {
@@ -4769,7 +4883,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "122"
             },
             {
@@ -4807,7 +4921,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "130"
             }
         ]
@@ -4888,7 +5002,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "67"
             },
             {
@@ -4921,13 +5035,13 @@
                     "0"
                 ],
                 "price": [
-                    "26",
+                    "24",
                     "44"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
-                "total_price": "70"
+                "new_price": true,
+                "total_price": "68"
             },
             {
                 "date": [
@@ -4959,13 +5073,13 @@
                     "0"
                 ],
                 "price": [
-                    "26",
+                    "24",
                     "45"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "71"
+                "total_price": "69"
             },
             {
                 "date": [
@@ -5035,13 +5149,13 @@
                     "0"
                 ],
                 "price": [
-                    "26",
+                    "24",
                     "53"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
-                "total_price": "79"
+                "new_price": true,
+                "total_price": "77"
             },
             {
                 "date": [
@@ -5078,7 +5192,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "82"
             },
             {
@@ -5111,13 +5225,13 @@
                     "0"
                 ],
                 "price": [
-                    "26",
+                    "24",
                     "60"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "86"
+                "total_price": "84"
             },
             {
                 "date": [
@@ -5154,7 +5268,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "92"
             },
             {
@@ -5187,13 +5301,13 @@
                     "0"
                 ],
                 "price": [
-                    "26",
+                    "24",
                     "70"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "96"
+                "total_price": "94"
             },
             {
                 "date": [
@@ -5230,7 +5344,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "104"
             },
             {
@@ -5268,7 +5382,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "105"
             },
             {
@@ -5306,7 +5420,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "113"
             },
             {
@@ -5344,7 +5458,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -5382,7 +5496,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "124"
             },
             {
@@ -5420,7 +5534,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "124"
             },
             {
@@ -5458,7 +5572,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "124"
             },
             {
@@ -5496,7 +5610,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "125"
             },
             {
@@ -5534,7 +5648,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "125"
             },
             {
@@ -5572,7 +5686,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "125"
             },
             {
@@ -5610,7 +5724,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "130"
             }
         ]
@@ -5648,13 +5762,13 @@
                     "0"
                 ],
                 "price": [
-                    "58",
+                    "54",
                     "50"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
-                "total_price": "108"
+                "new_price": true,
+                "total_price": "104"
             },
             {
                 "date": [
@@ -5686,13 +5800,13 @@
                     "0"
                 ],
                 "price": [
-                    "58",
+                    "54",
                     "50"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "108"
+                "total_price": "104"
             },
             {
                 "date": [
@@ -5724,13 +5838,13 @@
                     "0"
                 ],
                 "price": [
-                    "58",
+                    "55",
                     "50"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
-                "total_price": "108"
+                "new_price": true,
+                "total_price": "105"
             },
             {
                 "date": [
@@ -5762,13 +5876,13 @@
                     "0"
                 ],
                 "price": [
-                    "58",
+                    "55",
                     "50"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "108"
+                "total_price": "105"
             },
             {
                 "date": [
@@ -5805,7 +5919,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "110"
             },
             {
@@ -5843,7 +5957,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "110"
             },
             {
@@ -5876,13 +5990,13 @@
                     "0"
                 ],
                 "price": [
-                    "58",
+                    "54",
                     "60"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "118"
+                "total_price": "114"
             },
             {
                 "date": [
@@ -5914,13 +6028,13 @@
                     "0"
                 ],
                 "price": [
-                    "58",
+                    "55",
                     "60"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
                 "new_price": true,
-                "total_price": "118"
+                "total_price": "115"
             },
             {
                 "date": [
@@ -5957,7 +6071,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -5995,7 +6109,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -6033,7 +6147,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -6066,13 +6180,89 @@
                     "0"
                 ],
                 "price": [
-                    "58",
-                    "72"
+                    "54",
+                    "68"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
+                "new_price": true,
+                "total_price": "122"
+            },
+            {
+                "date": [
+                    "2026-03-13",
+                    "2026-03-15"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAM",
+                    "MXP"
+                ],
+                "time": [
+                    "19:10",
+                    "21:50"
+                ],
+                "travel_time": [
+                    "1 hr 50 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "easyJet",
+                    "easyJet"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "55",
+                    "68"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": false,
+                "new_price": true,
+                "total_price": "123"
+            },
+            {
+                "date": [
+                    "2026-03-12",
+                    "2026-03-15"
+                ],
+                "origin": [
+                    "MXP",
+                    "HAM"
+                ],
+                "destination": [
+                    "HAJ",
+                    "MXP"
+                ],
+                "time": [
+                    "20:30",
+                    "21:50"
+                ],
+                "travel_time": [
+                    "1 hr 35 min",
+                    "1 hr 45 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "easyJet"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "60",
+                    "68"
+                ],
+                "job": "Viajecito para morir de frio desde Pisa",
+                "new": true,
                 "new_price": false,
-                "total_price": "130"
+                "total_price": "128"
             },
             {
                 "date": [
@@ -6109,7 +6299,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "130"
             },
             {
@@ -6144,44 +6334,6 @@
                 "price": [
                     "80",
                     "50"
-                ],
-                "job": "Viajecito para morir de frio desde Pisa",
-                "new": false,
-                "new_price": true,
-                "total_price": "130"
-            },
-            {
-                "date": [
-                    "2026-03-13",
-                    "2026-03-15"
-                ],
-                "origin": [
-                    "MXP",
-                    "HAM"
-                ],
-                "destination": [
-                    "HAM",
-                    "MXP"
-                ],
-                "time": [
-                    "19:10",
-                    "21:50"
-                ],
-                "travel_time": [
-                    "1 hr 50 min",
-                    "1 hr 45 min"
-                ],
-                "airline": [
-                    "easyJet",
-                    "easyJet"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "58",
-                    "72"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
@@ -6223,7 +6375,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "130"
             },
             {
@@ -6261,7 +6413,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "130"
             },
             {
@@ -6299,7 +6451,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "130"
             }
         ]
@@ -6494,7 +6646,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "73"
             },
             {
@@ -6532,7 +6684,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "73"
             },
             {
@@ -6570,7 +6722,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "93"
             },
             {
@@ -6608,7 +6760,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "93"
             },
             {
@@ -6646,7 +6798,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "102"
             },
             {
@@ -6684,7 +6836,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "105"
             },
             {
@@ -6722,7 +6874,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "110"
             },
             {
@@ -6760,7 +6912,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "112"
             },
             {
@@ -6798,7 +6950,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "115"
             },
             {
@@ -6836,7 +6988,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "120"
             },
             {
@@ -6874,7 +7026,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "122"
             },
             {
@@ -6912,7 +7064,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "122"
             },
             {
@@ -6950,7 +7102,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "125"
             },
             {
@@ -6988,7 +7140,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "125"
             },
             {
@@ -7026,7 +7178,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "130"
             },
             {
@@ -7064,7 +7216,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "130"
             },
             {
@@ -7102,7 +7254,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "130"
             }
         ]
@@ -7221,7 +7373,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "96"
             },
             {
@@ -7259,7 +7411,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "97"
             },
             {
@@ -7373,7 +7525,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "103"
             },
             {
@@ -7411,7 +7563,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "105"
             },
             {
@@ -7449,7 +7601,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "107"
             },
             {
@@ -7487,7 +7639,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "113"
             },
             {
@@ -7525,7 +7677,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "113"
             },
             {
@@ -7563,7 +7715,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "115"
             },
             {
@@ -7601,7 +7753,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "115"
             },
             {
@@ -7639,7 +7791,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "117"
             },
             {
@@ -7677,7 +7829,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "117"
             },
             {
@@ -7715,7 +7867,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "121"
             },
             {
@@ -7753,7 +7905,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "122"
             },
             {
@@ -7791,7 +7943,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "123"
             },
             {
@@ -7829,7 +7981,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "125"
             },
             {
@@ -7867,7 +8019,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "127"
             },
             {
@@ -7905,7 +8057,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": true,
+                "new_price": false,
                 "total_price": "130"
             }
         ]
@@ -8019,13 +8171,13 @@
                     "0"
                 ],
                 "price": [
-                    "52",
+                    "53",
                     "43"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
-                "total_price": "95"
+                "new_price": true,
+                "total_price": "96"
             },
             {
                 "date": [
@@ -8171,13 +8323,13 @@
                     "0"
                 ],
                 "price": [
-                    "52",
+                    "53",
                     "60"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
-                "total_price": "112"
+                "new_price": true,
+                "total_price": "113"
             },
             {
                 "date": [
@@ -8285,13 +8437,13 @@
                     "0"
                 ],
                 "price": [
-                    "52",
+                    "53",
                     "70"
                 ],
                 "job": "Viajecito para morir de frio desde Pisa",
                 "new": false,
-                "new_price": false,
-                "total_price": "122"
+                "new_price": true,
+                "total_price": "123"
             },
             {
                 "date": [
