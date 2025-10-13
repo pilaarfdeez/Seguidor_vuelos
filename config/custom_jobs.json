@@ -1,37 +1,17 @@
 [
   {
-    "name": "Octubre por burguitos",
-    "alias": "burguitos",
-    "airports": [["HAM","BRE","LBC", "HAJ"], ["MAD","BIO"]],
-    "days_availability": [[3,4,5], [7,8]],
-    "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
-    "price_threshold": 180,
-    "days_search": ["2025-10-01", "2025-11-01"],
-    "max_trip_duration": 7
-  },
-  {
-    "name": "Octubre por granada",
-    "alias": "granada",
-    "airports": [["HAM","BRE","LBC", "HAJ"], ["GRX","AGP"]],
-    "days_availability": [[3,4,5], [7,8]],
-    "email": ["davidmayoral1505@gmail.com", "victoriapilar2001@gmail.com"],
-    "price_threshold": 160,
-    "days_search": ["2025-10-01", "2025-11-01"],
-    "max_trip_duration": 7
-  },
-  {
     "name": "Viajecito para morir de frio desde Pisa",
-    "alias": "PSA_HAM",
+    "alias": "PSA_HAM_Feb-Mar",
     "airports": [["MXP","PSA"], ["HAM", "LBC", "HAJ", "BRE"]],
     "days_availability": [[4,5], [7,8]],
     "email": ["fjavims89@gmail.com"],
-    "price_threshold": 130,
+    "price_threshold": 100,
     "days_search": ["2026-02-01", "2026-03-31"],
     "max_trip_duration": 5
   },
   {
     "name": "Viajecito para morir de frio desde Málaga",
-    "alias": "AGP_HAM",
+    "alias": "AGP_HAM_Feb-Mar",
     "airports": [["GRX","AGP"], ["HAM", "LBC", "HAJ", "BRE"]],
     "days_availability": [[4,5], [7]],
     "email": ["victoriapilar2001@gmail.com", "fjavims89@gmail.com"],
@@ -41,7 +21,7 @@
   },
   {
     "name": "Carnaval Carnaval",
-    "alias": "carnaval",
+    "alias": "carnaval_AGP_TF-Feb",
     "airports": [["GRX","AGP"], ["TFN", "TFS"]],
     "days_availability": [[4,5], [7]],
     "email": ["victoriapilar2001@gmail.com"],
