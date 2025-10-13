@@ -146,6 +146,12 @@ class BargainReporter:
         .new {
             background-color:#ffa366;
         }
+        .lower {
+            background-color:#60b041;
+        }
+        .higher {
+            background-color:#ff4c26;
+        }
         .plot {
             text-align: center;
             margin-top: 10px;
@@ -184,8 +190,11 @@ class BargainReporter:
                     html.append(f'<td>{bargain["origin"][0]} &rarr; {bargain["destination"][0]} ({bargain["date"][0]}, {bargain["time"][0]})</td>')
                     html.append(f'<td>{bargain["origin"][1]} &rarr; {bargain["destination"][1]} ({bargain["date"][1]}, {bargain["time"][1]})</td>')
                     html.append(f'<td>{bargain["airline"][0]} / {bargain["airline"][1]}</td>')
-                    if bargain['new_price']:
-                        html.append(f'<td class="new">{bargain["total_price"]}&euro;</td>')
+                    if bargain['price_change'] == 1:  # cheaper
+                        html.append(f'<td class="lower">{bargain["total_price"]}&euro;</td>')
+                        new_information = True
+                    elif bargain['price_change'] == 2:  # more expensive
+                        html.append(f'<td class="higher">{bargain["total_price"]}&euro;</td>')
                         new_information = True
                     else:
                         html.append(f'<td>{bargain["total_price"]}&euro;</td>')
@@ -284,6 +293,12 @@ class CustomBargainReporter:
         .new {
             background-color:#ffa366;
         }
+        .lower {
+            background-color:#60b041;
+        }
+        .higher {
+            background-color:#ff4c26;
+        }
         .plot {
             text-align: center;
             margin-top: 10px;
@@ -319,8 +334,11 @@ class CustomBargainReporter:
                 html.append(f'<td>{bargain["origin"][0]} &rarr; {bargain["destination"][0]} ({bargain["date"][0]}, {bargain["time"][0]})</td>')
                 html.append(f'<td>{bargain["origin"][1]} &rarr; {bargain["destination"][1]} ({bargain["date"][1]}, {bargain["time"][1]})</td>')
                 html.append(f'<td>{bargain["airline"][0]} / {bargain["airline"][1]}</td>')
-                if bargain['new_price']:
-                    html.append(f'<td class="new">{bargain["total_price"]}&euro;</td>')
+                if bargain['price_change'] == 1:  # cheaper
+                    html.append(f'<td class="lower">{bargain["total_price"]}&euro;</td>')
+                    new_information = True
+                elif bargain['price_change'] == 2:  # more expensive
+                    html.append(f'<td class="higher">{bargain["total_price"]}&euro;</td>')
                     new_information = True
                 else:
                     html.append(f'<td>{bargain["total_price"]}&euro;</td>')

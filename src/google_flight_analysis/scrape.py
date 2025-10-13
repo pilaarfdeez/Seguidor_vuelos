@@ -672,5 +672,58 @@ class _Scrape:
 		random_wait(0.5, 1)
 		return driver.page_source
 	
+	@staticmethod
+	def _get_flight_links(driver):
+		"""Method to extract flight links from the page"""
 
+		x_path_expand = '//button[@class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-Bz112c-M1Soyc VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe LQeN7 nJawce OTelKf XPGpHc mAozAc"]'
+		x_path_select = '//button[@class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-INsAgc VfPpkd-LgbsSe-OWXEXe-dgl2Hf Rj2Mlf OLiIxf PDpWxe P62QJc LQeN7 my6Xrf wJjnG dA7Fcf"]'
+		links = []
+
+		driver.execute_script(
+			"""
+	(function() {
+        window.__last_flight_url = null;
+
+        function capture(orig) {
+            return function(state, title, url) {
+                if (url) {
+                    window.__last_flight_url = url;
+                } else {
+                    window.__last_flight_url = window.location.href;
+                }
+                // do not call orig, so no navigation
+            };
+        }
+
+        history.pushState = capture(history.pushState);
+        history.replaceState = capture(history.replaceState);
+
+        window.addEventListener('hashchange', function() {
+            window.__last_flight_url = window.location.href;
+        });
+
+        window.addEventListener('popstate', function() {
+            window.__last_flight_url = window.location.href;
+        });
+    })();
+			"""
+		)	
+		expand_buttons = driver.find_elements(by=By.XPATH, value=x_path_expand)
+		for idx, expand_button in enumerate(expand_buttons):
+			expand_button.click()
+			random_wait(1, 2)
+
+			select_flight_button = driver.find_elements(by=By.XPATH, value=x_path_select)[idx]
+			select_flight_button.click()
+
+			url_fragment = driver.execute_script("return window.__last_flight_url;")
+			# Header is "google.com/travel/flights/booking?tfs=..."
+			link = [fragment for fragment in url_fragment.split('?')[-1].split('&') if fragment.startswith('tfs=')]
+			print(f"Flight url {idx}: {link}")
+			links.append(link)
+
+		return links
+
+		
 Scrape = _Scrape()

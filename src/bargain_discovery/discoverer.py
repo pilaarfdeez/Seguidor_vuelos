@@ -76,8 +76,11 @@ class Discovery():
                 k = Bargain.get_key(bargain)  # search each new bargain in the old-bargain price dictionary
                 if k not in old_bargain_prices:
                     bargain.new_bargain = True
-                elif bargain.total_price != old_bargain_prices[k]:
-                    bargain.new_price = True 
+                elif bargain.total_price < old_bargain_prices[k]:
+                    bargain.price_change = 1  # cheaper
+                elif bargain.total_price > old_bargain_prices[k]:
+                    bargain.price_change = 2  # more expensive
+                    
 
     
     def save_bargains(self, file='bargains.json'):
@@ -118,6 +121,10 @@ class Discovery():
                     else:
                         color = 'blue'
                     for bargain in bargains:
+                        if job and bargain['price_change'] == 1:  # cheaper
+                            color = 'green'
+                        elif job and bargain['price_change'] == 2:  # more expensive
+                            color = 'red'
                         X = [dt.datetime.strptime(date, "%Y-%m-%d") for date in bargain['date']]
                         Y = [int(bargain['total_price']), int(bargain['total_price'])]
                         ax.plot(X, Y, color=color)

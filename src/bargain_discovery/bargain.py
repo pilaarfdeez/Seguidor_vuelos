@@ -11,7 +11,7 @@ class Bargain():
         self.ida = BargainFlight(combination_df, 'out')
         self.vuelta = BargainFlight(combination_df, 'return')
         self.new_bargain = False
-        self.new_price = False
+        self.price_change = 0  # 0: same price, 1: cheaper, 2: more expensive
         self.total_price = combination_df['Total Price']
 
 
@@ -20,7 +20,7 @@ class Bargain():
         bargain_dict = {attr: [str(getattr(self.ida, attr)), str(getattr(self.vuelta, attr))] for attr in attrs}
         bargain_dict['job'] = self.tocinillo
         bargain_dict['new'] = self.new_bargain
-        bargain_dict['new_price'] = self.new_price
+        bargain_dict['price_change'] = self.price_change
         bargain_dict['total_price'] = str(self.total_price)
         return bargain_dict
     
