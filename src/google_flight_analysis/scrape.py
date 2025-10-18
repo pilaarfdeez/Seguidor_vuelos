@@ -638,10 +638,14 @@ class _Scrape:
 			logger.warning('Could not find reject button while handling cookies: ', e)
 			logger.info('(Text node definition probably outdated)')
 
-		x_path_cheapest = '//div[@class="eaO3rb yRaoXe"]'
-		cheapest_button = driver.find_element(by=By.XPATH, value=x_path_cheapest)
-		# cheapest_button.click()
-		# random_wait(0.5, 1)
+		# try:
+		# 	x_path_cheapest = '//div[@class="eaO3rb yRaoXe"]'
+		# 	cheapest_button = driver.find_element(by=By.XPATH, value=x_path_cheapest)
+		# 	cheapest_button.click()
+		# 	random_wait(0.5, 1)
+		# except NoSuchElementException:
+		# 	logger.warning('Could not find "Cheapest flight" button, proceeding without clicking it.')
+		# 	pass
 		# links = self._get_flight_links(driver)
 
 		# Waiting and initial XPATH cleaning
