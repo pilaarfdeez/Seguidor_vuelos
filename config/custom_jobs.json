@@ -50,6 +50,26 @@
     "max_trip_duration": 3
   },
   {
+    "name": "Viajecito a Roma (vuelos España)",
+    "alias": "Roma_enero_esp",
+    "airports": [["MAD", "BIO", "SDR", "VLL", "VIT"], ["FCO", "CIA"]],
+    "days_availability": [[7,8], [12,13]],
+    "email": ["davidmayoral1505@gmail.com", "inmavillamartin@gmail.com", "mario@joyeriamanacor.com"],
+    "price_threshold": 100,
+    "days_search": ["2026-01-12", "2026-01-31"],
+    "max_trip_duration": 3
+  },
+  {
+    "name": "Viajecito a Roma (vuelos Hamburgo)",
+    "alias": "Roma_enero_ham",
+    "airports": [["HAM", "BRE", "LBC"], ["FCO", "CIA"]],
+    "days_availability": [[7,8], [12,13]],
+    "email": ["davidmayoral1505@gmail.com", "inmavillamartin@gmail.com"],
+    "price_threshold": 100,
+    "days_search": ["2026-01-12", "2026-01-31"],
+    "max_trip_duration": 3
+  },
+  {
     "name": "Carnaval Carnaval",
     "alias": "carnaval_AGP_TF-Feb",
     "airports": [["GRX","AGP"], ["TFN", "TFS"]],
