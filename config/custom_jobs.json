@@ -50,6 +50,16 @@
     "max_trip_duration": 3
   },
   {
+    "name": "Viajecito a Roma (vuelos Hamburgo)",
+    "alias": "Roma_enero_ham",
+    "airports": [["HAM", "BRE", "LBC"], ["FCO", "CIA"]],
+    "days_availability": [[7,8], [12,13]],
+    "email": ["davidmayoral1505@gmail.com", "inmavillamartin@gmail.com"],
+    "price_threshold": 100,
+    "days_search": ["2026-01-12", "2026-01-31"],
+    "max_trip_duration": 3
+  },
+  {
     "name": "Viajecito a Roma (vuelos España)",
     "alias": "Roma_enero_esp",
     "airports": [["MAD", "BIO", "SDR", "VLL", "VIT"], ["FCO", "CIA"]],
@@ -60,13 +70,13 @@
     "max_trip_duration": 3
   },
   {
-    "name": "Viajecito a Roma (vuelos Hamburgo)",
-    "alias": "Roma_enero_ham",
-    "airports": [["HAM", "BRE", "LBC"], ["FCO", "CIA"]],
-    "days_availability": [[7,8], [12,13]],
-    "email": ["davidmayoral1505@gmail.com", "inmavillamartin@gmail.com"],
-    "price_threshold": 100,
-    "days_search": ["2026-01-12", "2026-01-31"],
+    "name": "Ana por Hamburguesa",
+    "alias": "MAD_HAM_Ana",
+    "airports": [["MAD"], ["HAM", "BRE", "LBC"]],
+    "days_availability": [[4,5], [7,8,9]],
+    "email": ["anaglez.200142@gmail.com", "davidmayoral1505@gmail.com"],
+    "price_threshold": 180,
+    "days_search": ["2026-02-02", "2026-02-08"],
     "max_trip_duration": 3
   },
   {
