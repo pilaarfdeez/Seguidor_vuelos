@@ -45,8 +45,8 @@
     "airports": [["HAM", "BRE", "LBC"], ["FCO", "CIA"]],
     "days_availability": [[7,8], [12,13]],
     "email": ["davidmayoral1505@gmail.com", "inmavillamartin@gmail.com"],
-    "price_threshold": 100,
-    "days_search": ["2026-01-12", "2026-01-31"],
+    "price_threshold": 80,
+    "days_search": ["2026-01-19", "2026-01-31"],
     "max_trip_duration": 3
   },
   {
@@ -55,15 +55,15 @@
     "airports": [["MAD", "BIO", "SDR", "VLL", "VIT"], ["FCO", "CIA"]],
     "days_availability": [[7,8], [12,13]],
     "email": ["davidmayoral1505@gmail.com", "inmavillamartin@gmail.com", "mario@joyeriamanacor.com"],
-    "price_threshold": 100,
-    "days_search": ["2026-01-12", "2026-01-31"],
+    "price_threshold": 80,
+    "days_search": ["2026-01-19", "2026-01-31"],
     "max_trip_duration": 3
   },
   {
     "name": "Ana por Hamburguesa",
     "alias": "MAD_HAM_Ana",
     "airports": [["MAD"], ["HAM", "BRE", "LBC"]],
-    "days_availability": [[4,5], [7,8,9]],
+    "days_availability": [[3,4], [7,8]],
     "email": ["anaglez.200142@gmail.com", "davidmayoral1505@gmail.com"],
     "price_threshold": 180,
     "days_search": ["2026-02-02", "2026-02-08"],
