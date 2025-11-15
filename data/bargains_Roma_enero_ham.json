@@ -36,7 +36,7 @@
                     "37"
                 ],
                 "job": "Viajecito a Roma (vuelos Hamburgo)",
-                "new": true,
+                "new": false,
                 "price_change": 0,
                 "total_price": "72"
             },
@@ -74,7 +74,7 @@
                     "37"
                 ],
                 "job": "Viajecito a Roma (vuelos Hamburgo)",
-                "new": true,
+                "new": false,
                 "price_change": 0,
                 "total_price": "72"
             },
@@ -112,7 +112,7 @@
                     "37"
                 ],
                 "job": "Viajecito a Roma (vuelos Hamburgo)",
-                "new": true,
+                "new": false,
                 "price_change": 0,
                 "total_price": "72"
             },
@@ -150,7 +150,7 @@
                     "37"
                 ],
                 "job": "Viajecito a Roma (vuelos Hamburgo)",
-                "new": true,
+                "new": false,
                 "price_change": 0,
                 "total_price": "72"
             }
@@ -162,7 +162,7 @@
             {
                 "date": [
                     "2026-01-18",
-                    "2026-01-23"
+                    "2026-01-24"
                 ],
                 "origin": [
                     "HAM",
@@ -190,17 +190,55 @@
                 ],
                 "price": [
                     "35",
-                    "37"
+                    "38"
                 ],
                 "job": "Viajecito a Roma (vuelos Hamburgo)",
-                "new": true,
-                "price_change": 0,
-                "total_price": "72"
+                "new": false,
+                "price_change": 2,
+                "total_price": "73"
+            },
+            {
+                "date": [
+                    "2026-01-19",
+                    "2026-01-24"
+                ],
+                "origin": [
+                    "HAM",
+                    "FCO"
+                ],
+                "destination": [
+                    "FCO",
+                    "HAM"
+                ],
+                "time": [
+                    "15:00",
+                    "12:00"
+                ],
+                "travel_time": [
+                    "2 hr 20 min",
+                    "2 hr 30 min"
+                ],
+                "airline": [
+                    "easyJet",
+                    "easyJet"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "35",
+                    "38"
+                ],
+                "job": "Viajecito a Roma (vuelos Hamburgo)",
+                "new": false,
+                "price_change": 2,
+                "total_price": "73"
             },
             {
                 "date": [
                     "2026-01-18",
-                    "2026-01-24"
+                    "2026-01-23"
                 ],
                 "origin": [
                     "HAM",
@@ -228,12 +266,12 @@
                 ],
                 "price": [
                     "35",
-                    "37"
+                    "41"
                 ],
                 "job": "Viajecito a Roma (vuelos Hamburgo)",
-                "new": true,
-                "price_change": 0,
-                "total_price": "72"
+                "new": false,
+                "price_change": 2,
+                "total_price": "76"
             },
             {
                 "date": [
@@ -266,50 +304,12 @@
                 ],
                 "price": [
                     "35",
-                    "37"
+                    "41"
                 ],
                 "job": "Viajecito a Roma (vuelos Hamburgo)",
-                "new": true,
-                "price_change": 0,
-                "total_price": "72"
-            },
-            {
-                "date": [
-                    "2026-01-19",
-                    "2026-01-24"
-                ],
-                "origin": [
-                    "HAM",
-                    "FCO"
-                ],
-                "destination": [
-                    "FCO",
-                    "HAM"
-                ],
-                "time": [
-                    "15:00",
-                    "12:00"
-                ],
-                "travel_time": [
-                    "2 hr 20 min",
-                    "2 hr 30 min"
-                ],
-                "airline": [
-                    "easyJet",
-                    "easyJet"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "35",
-                    "37"
-                ],
-                "job": "Viajecito a Roma (vuelos Hamburgo)",
-                "new": true,
-                "price_change": 0,
-                "total_price": "72"
+                "new": false,
+                "price_change": 2,
+                "total_price": "76"
             }
         ]
     }
