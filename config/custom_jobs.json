@@ -20,13 +20,73 @@
     "max_trip_duration": 5
   },
   {
+    "name": "Vernos en navidad (va Pili)",
+    "alias": "SUR_NORTE_Navidad",
+    "airports": [["GRX","AGP"], ["MAD", "BIO", "SDR", "VLL", "VIT"]],
+    "days_availability": [[5, 6,7], [9,10]],
+    "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
+    "price_threshold": 150,
+    "days_search": ["2025-12-21", "2026-01-01"],
+    "max_trip_duration": 3
+  },
+  {
+    "name": "Vernos en navidad (va David)",
+    "alias": "NORTE_SUR_Navidad",
+    "airports": [["MAD", "BIO", "SDR", "VLL", "VIT"], ["GRX","AGP"]],
+    "days_availability": [[5,6], [9]],
+    "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
+    "price_threshold": 120,
+    "days_search": ["2025-12-17", "2025-12-27"],
+    "max_trip_duration": 3
+  },
+  {
+    "name": "Viajecito a Roma (vuelos Hamburgo)",
+    "alias": "Roma_enero_ham",
+    "airports": [["HAM", "BRE", "LBC"], ["FCO", "CIA"]],
+    "days_availability": [[0,1], [5,6]],
+    "email": ["davidmayoral1505@gmail.com", "inmavillamartin@gmail.com"],
+    "price_threshold": 80,
+    "days_search": ["2026-01-12", "2026-01-25"],
+    "max_trip_duration": 3
+  },
+  {
+    "name": "Viajecito a Roma (vuelos España)",
+    "alias": "Roma_enero_esp",
+    "airports": [["MAD", "BIO", "SDR", "VLL", "VIT"], ["FCO", "CIA"]],
+    "days_availability": [[0,1], [5,6]],
+    "email": ["davidmayoral1505@gmail.com", "inmavillamartin@gmail.com", "mario@joyeriamanacor.com"],
+    "price_threshold": 80,
+    "days_search": ["2026-01-12", "2026-01-25"],
+    "max_trip_duration": 3
+  },
+  {
+    "name": "Ana por Hamburguesa",
+    "alias": "MAD_HAM_Ana",
+    "airports": [["MAD"], ["HAM", "BRE", "LBC"]],
+    "days_availability": [[3,4], [7,8]],
+    "email": ["anaglez.200142@gmail.com", "davidmayoral1505@gmail.com"],
+    "price_threshold": 180,
+    "days_search": ["2026-02-02", "2026-02-08"],
+    "max_trip_duration": 5
+  },
+  {
     "name": "Carnaval Carnaval",
     "alias": "carnaval_AGP_TF-Feb",
     "airports": [["GRX","AGP"], ["TFN", "TFS"]],
     "days_availability": [[4,5], [7]],
     "email": ["victoriapilar2001@gmail.com"],
-    "price_threshold": 70,
+    "price_threshold": 100,
     "days_search": ["2026-02-15", "2026-02-22"],
+    "max_trip_duration": 5
+  },
+  {
+    "name": "cumplecito",
+    "alias": "AGP_HAM_May",
+    "airports": [["GRX","AGP"], ["HAM", "LBC", "HAJ", "BRE"]],
+    "days_availability": [[4,5], [7,8]],
+    "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
+    "price_threshold": 130,
+    "days_search": ["2026-05-10", "2026-05-20"],
     "max_trip_duration": 5
   }
 ]

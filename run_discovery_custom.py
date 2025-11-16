@@ -78,6 +78,9 @@ for job in custom_jobs:
                     result = Scrape(airports_dest, airports_origin, day_date.isoformat())
                 ScrapeObjects(result, conf.ENV, headless=True)
                 result_df = result.data
+                if result_df.empty:
+                    logger.warning(f"No results found for {day_date.isoformat()} --> Skipping.")
+                    continue
                 filter = ((result_df['Price'] < 0.9*job['price_threshold']) 
                           & 
                           (result_df['Arrival datetime'] - result_df['Departure datetime']

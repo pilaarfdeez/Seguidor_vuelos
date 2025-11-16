@@ -64,9 +64,9 @@ def save_results(flights_df: pd.DataFrame):
 
   updated_df = pd.concat([existing_df, df], ignore_index=True)
   updated_df.to_parquet(parquet_path, index=False)
-  logger.info(f"Saved {len(df)} new results to database (total: {len(updated_df)})")
-  logger.info(f"Database size: {updated_df.memory_usage(deep=True).sum() / 1024**2:.4f} MB")
-  logger.info(f"New results:\n{df.head(5)}")
+  logger.debug(f"Saved {len(df)} new results to database (total: {len(updated_df)})")
+  logger.debug(f"Database size: {updated_df.memory_usage(deep=True).sum() / 1024**2:.4f} MB")
+  logger.debug(f"New results:\n{df.head(5)}")
 
   # Save one random row from the new results to a CSV sample file
   if not df.empty:
