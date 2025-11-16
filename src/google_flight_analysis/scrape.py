@@ -527,7 +527,9 @@ class _Scrape:
 				logger.debug(f"result: {res2}")
 				return None
 		
-		if "Track prices" in res2:
+		if "Trains to considerTo arrive closer to your destination" in res2:
+			mid_start = res2.index("Trains to considerTo arrive closer to your destination")
+		elif "Track prices" in res2:
 			mid_start = res2.index("Track prices")
 		elif "Other flights" in res2:
 			mid_start = res2.index("Other flights")
