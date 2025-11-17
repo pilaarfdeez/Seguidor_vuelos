@@ -114,6 +114,7 @@ class BargainReporter:
 
     def build_html_email(self, data: list):
         new_information = False
+        weekday_abbr = ['L', 'M', 'X', 'J', 'V', 'S', 'D']
 
         html = ['<!DOCTYPE html>']
         html.append('''
@@ -182,13 +183,21 @@ class BargainReporter:
                 html.append('<thead><tr class="table-header"><th>Ida</th><th>Vuelta</th><th>Aerolínea</th><th>Precio total</th></tr></thead>')
                 html.append('<tbody>')
                 for bargain in bargains:
+                    out_date = dt.date.fromisoformat(bargain['date'][0])
+                    ret_date = dt.date.fromisoformat(bargain['date'][1])
                     if bargain['new']:
                         html.append('<tr class="new">')
                         new_information = True
                     else:
                         html.append('<tr>')
-                    html.append(f'<td>{bargain["origin"][0]} &rarr; {bargain["destination"][0]} ({bargain["date"][0]}, {bargain["time"][0]})</td>')
-                    html.append(f'<td>{bargain["origin"][1]} &rarr; {bargain["destination"][1]} ({bargain["date"][1]}, {bargain["time"][1]})</td>')
+                    html.append(
+                        f'<td>{bargain["origin"][0]} &rarr; {bargain["destination"][0]}<br>'
+                        f'({bargain["date"][0]}, {bargain["time"][0]}) [{weekday_abbr[out_date.weekday()]}]</td>'
+                    )
+                    html.append(
+                        f'<td>{bargain["origin"][1]} &rarr; {bargain["destination"][1]}<br>'
+                        f'({bargain["date"][1]}, {bargain["time"][1]}) [{weekday_abbr[ret_date.weekday()]}]</td>'
+                    )
                     html.append(f'<td>{bargain["airline"][0]} / {bargain["airline"][1]}</td>')
                     if bargain['price_change'] == 1:  # cheaper
                         html.append(f'<td class="lower">{bargain["total_price"]}&euro;</td>')
@@ -261,6 +270,7 @@ class CustomBargainReporter:
 
     def build_html_email(self, data: list):
         new_information = False
+        weekday_abbr = ['L', 'M', 'X', 'J', 'V', 'S', 'D']
 
         html = ['<!DOCTYPE html>']
         html.append('''
@@ -326,13 +336,22 @@ class CustomBargainReporter:
             html.append('<thead><tr class="table-header"><th>Ida</th><th>Vuelta</th><th>Aerolínea</th><th>Precio total</th></tr></thead>')
             html.append('<tbody>')
             for bargain in week_data['combinations']:
+                out_date = dt.date.fromisoformat(bargain['date'][0])
+                ret_date = dt.date.fromisoformat(bargain['date'][1])
+
                 if bargain['new']:
                     html.append('<tr class="new">')
                     new_information = True
                 else:
                     html.append('<tr>')
-                html.append(f'<td>{bargain["origin"][0]} &rarr; {bargain["destination"][0]} ({bargain["date"][0]}, {bargain["time"][0]})</td>')
-                html.append(f'<td>{bargain["origin"][1]} &rarr; {bargain["destination"][1]} ({bargain["date"][1]}, {bargain["time"][1]})</td>')
+                html.append(
+                    f'<td>{bargain["origin"][0]} &rarr; {bargain["destination"][0]}<br>'
+                    f'({bargain["date"][0]}, {bargain["time"][0]}) [{weekday_abbr[out_date.weekday()]}]</td>'
+                )
+                html.append(
+                    f'<td>{bargain["origin"][1]} &rarr; {bargain["destination"][1]}<br>'
+                    f'({bargain["date"][1]}, {bargain["time"][1]}) [{weekday_abbr[ret_date.weekday()]}]</td>'
+                )
                 html.append(f'<td>{bargain["airline"][0]} / {bargain["airline"][1]}</td>')
                 if bargain['price_change'] == 1:  # cheaper
                     html.append(f'<td class="lower">{bargain["total_price"]}&euro;</td>')
