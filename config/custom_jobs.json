@@ -3,6 +3,16 @@
     "name": "Viajecito para morir de frio desde Pisa",
     "alias": "PSA_HAM_Feb-Mar",
     "airports": [["MXP","PSA"], ["HAM", "LBC", "HAJ", "BRE"]],
+    "days_availability": [[3,4,5], [7,8]],
+    "email": ["fjavims89@gmail.com"],
+    "price_threshold": 60,
+    "days_search": ["2026-03-01", "2026-06-31"],
+    "max_trip_duration": 5
+  },
+  {
+    "name": "Javi en busca de la Mari,
+    "alias": "AGP_PSA_Mar-Jun",
+    "airports": [[AGP,GRX],["MXP","PSA"]],
     "days_availability": [[4,5], [7,8]],
     "email": ["fjavims89@gmail.com"],
     "price_threshold": 100,
