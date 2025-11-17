@@ -1,8 +1,9 @@
 import datetime as dt
 from itertools import groupby
 import json
-import matplotlib.pyplot as plt
 from matplotlib.dates import DateFormatter
+import matplotlib.pyplot as plt
+from matplotlib.ticker import (MultipleLocator, AutoMinorLocator)
 import os
 import pandas as pd
 
@@ -97,6 +98,7 @@ class Discovery():
 
     def generate_plot(self, from_json: bool = True, job=None):
         out_folder = 'data/images/'
+        weekday_abbreviations = ['L', 'M', 'X', 'J', 'V', 'S', 'D']
         if job:
             file_name = f'bargains_{job["alias"]}'
         else:
@@ -127,32 +129,53 @@ class Discovery():
                             color = 'red'
                         X = [dt.datetime.strptime(date, "%Y-%m-%d") for date in bargain['date']]
                         Y = [int(bargain['total_price']), int(bargain['total_price'])]
-                        ax.plot(X, Y, color=color)
+                        linewidth = 2
+                        ax.plot(
+                            X, Y, 
+                            color=color, 
+                            linewidth=linewidth, 
+                            marker='.', 
+                            markersize=linewidth * 4,
+                        )
                         if end_date < X[1]:
                             end_date = X[1]
 
-            # ax.grid()
             fig.autofmt_xdate(rotation=45)
             date_format = DateFormatter('%Y-%m-%d')
             ax.xaxis.set_major_formatter(date_format)
+            ax.xaxis.set_minor_locator(MultipleLocator(1))
+            ax.tick_params(axis='x', which='major', length=4)
+            ax.yaxis.set_minor_locator(AutoMinorLocator(1))
 
-            # dates = pd.date_range("2025-04-01", "2025-04-30", freq="D")
-            start_date = min([dt.datetime.strptime(date, "%Y-%m-%d") 
-                              for week_data in data for bargain in week_data['combinations'] for date in bargain['date']])
+            # ax.grid()
+
+            start_date = min([dt.datetime.strptime(date, "%Y-%m-%d")
+                                for week_data in data for bargain in week_data['combinations'] for date in bargain['date']]) - dt.timedelta(days=1)
             max_price = max([price for week_data in data for bargain in week_data['combinations'] for price in bargain['total_price']])
-            dates = [start_date + dt.timedelta(days=i) for i in range((end_date - start_date).days + 1)]
+            dates = [start_date + dt.timedelta(days=i) for i in range((end_date - start_date).days + 2)]
             for date in dates:
+                ax.axvline(date + dt.timedelta(hours=12), color='k', alpha=0.1, linewidth=1)
+                ax.text(
+                    x=date, y=0.97, 
+                    s=weekday_abbreviations[date.weekday()],
+                    alpha=0.5,
+                    size='x-small', ha='center',
+                    transform=ax.get_xaxis_transform()
+                )
+
                 if date.weekday() == 4:
-                    start = date
-                    end = date + dt.timedelta(days=2)
+                    start = date + dt.timedelta(hours=12)
+                    end = start + dt.timedelta(days=2)
                     ax.axvspan(start, end, color="lightgray", alpha=0.5)
 
                 if date.day == 1:
-                    ax.axvline(date, color='k', linewidth=1)
-                # if date.day == 15:
-                #     ax.text(date, int(max_price), str(date.month))
+                    ax.axvline(date - dt.timedelta(hours=12), color='k', linewidth=1)
 
-            ax.set_title(f'Chollazos próximos')
+            if job:
+                title = f"Chollazos próximos para: {job['name']}"
+            else:
+                title = "Chollazos próximos"
+            ax.set_title(title)
             ax.set_ylabel('Precio total (€)')
 
             fig.savefig(out_path)
