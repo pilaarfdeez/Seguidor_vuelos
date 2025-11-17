@@ -3,7 +3,7 @@ from itertools import groupby
 import json
 from matplotlib.dates import DateFormatter
 import matplotlib.pyplot as plt
-from matplotlib.ticker import (MultipleLocator, AutoMinorLocator)
+import matplotlib.ticker as ticker
 import os
 import pandas as pd
 
@@ -101,8 +101,11 @@ class Discovery():
         weekday_abbreviations = ['L', 'M', 'X', 'J', 'V', 'S', 'D']
         if job:
             file_name = f'bargains_{job["alias"]}'
+            linewidth = 3
         else:
             file_name = 'bargains'
+            linewidth = 1.5
+        
         out_path = os.path.join(out_folder, file_name + ".png")
 
         if from_json:
@@ -129,7 +132,6 @@ class Discovery():
                             color = 'red'
                         X = [dt.datetime.strptime(date, "%Y-%m-%d") for date in bargain['date']]
                         Y = [int(bargain['total_price']), int(bargain['total_price'])]
-                        linewidth = 2
                         ax.plot(
                             X, Y, 
                             color=color, 
@@ -139,34 +141,52 @@ class Discovery():
                         )
                         if end_date < X[1]:
                             end_date = X[1]
+            
+            min_price = min([float(bargain['total_price']) for week_data in data for bargain in week_data['combinations']])
+            max_price = max([float(bargain['total_price']) for week_data in data for bargain in week_data['combinations']])
+            minor_yticker = 100 // (max_price - min_price)
+            if minor_yticker == 3:
+                minor_yticker = 2
+            elif minor_yticker in [6, 7, 8, 9]:
+                minor_yticker = 5
+            elif minor_yticker > 10:
+                minor_yticker = 10
 
             fig.autofmt_xdate(rotation=45)
             date_format = DateFormatter('%Y-%m-%d')
             ax.xaxis.set_major_formatter(date_format)
-            ax.xaxis.set_minor_locator(MultipleLocator(1))
+            ax.xaxis.set_minor_locator(ticker.MultipleLocator(1))
+            ax.yaxis.set_major_locator(ticker.MultipleLocator(10))
+            ax.yaxis.set_minor_formatter(ticker.ScalarFormatter())
+            ax.yaxis.set_minor_locator(ticker.AutoMinorLocator(minor_yticker))
             ax.tick_params(axis='x', which='major', length=4)
-            ax.yaxis.set_minor_locator(AutoMinorLocator(1))
+            ax.tick_params(axis='y', which='minor', labelsize=7.5)
 
-            # ax.grid()
+            ax.grid(visible=True, which='major', axis='y', linestyle='--', alpha=1)
 
             start_date = min([dt.datetime.strptime(date, "%Y-%m-%d")
                                 for week_data in data for bargain in week_data['combinations'] for date in bargain['date']]) - dt.timedelta(days=1)
-            max_price = max([price for week_data in data for bargain in week_data['combinations'] for price in bargain['total_price']])
             dates = [start_date + dt.timedelta(days=i) for i in range((end_date - start_date).days + 2)]
+            if end_date - start_date < dt.timedelta(days=40):
+                weekday_size = 'x-small'
+                weekday_alpha = 0.75
+            else:
+                weekday_size = 'xx-small'
+                weekday_alpha = 0.75
             for date in dates:
-                ax.axvline(date + dt.timedelta(hours=12), color='k', alpha=0.1, linewidth=1)
+                ax.axvline(date + dt.timedelta(hours=12), color='k', alpha=0.2, linewidth=1)
                 ax.text(
-                    x=date, y=0.97, 
+                    x=date, y=0.97,
                     s=weekday_abbreviations[date.weekday()],
-                    alpha=0.5,
-                    size='x-small', ha='center',
+                    alpha=weekday_alpha,
+                    size=weekday_size, ha='center',
                     transform=ax.get_xaxis_transform()
                 )
 
                 if date.weekday() == 4:
                     start = date + dt.timedelta(hours=12)
                     end = start + dt.timedelta(days=2)
-                    ax.axvspan(start, end, color="lightgray", alpha=0.5)
+                    ax.axvspan(start, end, color="lightgray", alpha=0.6)
 
                 if date.day == 1:
                     ax.axvline(date - dt.timedelta(hours=12), color='k', linewidth=1)
