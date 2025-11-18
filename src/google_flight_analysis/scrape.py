@@ -524,12 +524,12 @@ class _Scrape:
 				start = res2.index("Checking prices from multiple sources...") + 1
 			except ValueError:
 				logger.error(f'Error parsing flight results of query {self}')
-				logger.debug(f"result: {res2}")
+				logger.error(f"Result: {res2}")
 				return None
 		
 		if "Trains to considerTo arrive closer to your destination" in res2:
 			mid_start = res2.index("Trains to considerTo arrive closer to your destination")
-		elif "Track prices" in res2:
+		elif "Track prices" in res2 and res2.index("Track prices") > start:
 			mid_start = res2.index("Track prices")
 		elif "Other flights" in res2:
 			mid_start = res2.index("Other flights")
@@ -553,6 +553,11 @@ class _Scrape:
 		matches = [i for i, x in enumerate(res3) if len(x) > 2 and ((x[-2] != '+' and (x.endswith('PM') or x.endswith('AM')) and ':' in x) or x[-2] == '+')][::2]
 		matches.append(end)
 		flights = [Flight(date, res3[matches[i]:matches[i+1]]) for i in range(len(matches)-1)]
+
+		if not flights:
+			logger.warning(f'No flights found for query {self}')
+			logger.warning(f"Raw results: {res2}")
+			logger.warning(f"Filtered results: {res3}")
 
 		return flights
 	
