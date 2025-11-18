@@ -144,7 +144,11 @@ class Discovery():
             
             min_price = min([float(bargain['total_price']) for week_data in data for bargain in week_data['combinations']])
             max_price = max([float(bargain['total_price']) for week_data in data for bargain in week_data['combinations']])
-            minor_yticker = 100 // (max_price - min_price)
+            if min_price != max_price:
+                minor_yticker = 100 // (max_price - min_price)
+            else:
+                minor_yticker = 1
+                
             if minor_yticker == 3:
                 minor_yticker = 2
             elif minor_yticker in [6, 7, 8, 9]:
