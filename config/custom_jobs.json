@@ -88,5 +88,25 @@
     "price_threshold": 130,
     "days_search": ["2026-05-10", "2026-05-20"],
     "max_trip_duration": 5
+  },
+  {
+    "name": "Viaje a Mont Saint (desde Malaga)",
+    "alias": "AGP_MS",
+    "airports": [["GRX","AGP"], [" CDG", "ORY", "BVA", "NTE"]],
+    "days_availability": [[4,5], [7,8]],
+    "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
+    "price_threshold": 70,
+    "days_search": ["2026-03-01", "2026-06-20"],
+    "max_trip_duration": 5
+  },
+  {
+    "name": "Viaje a Mont Saint (desde Hamburgo)",
+    "alias": "HAM_MS",
+    "airports": [["HAM", "LBC", "HAJ", "BRE"], [" CDG", "ORY", "BVA", "NTE"]],
+    "days_availability": [[4,5], [7,8]],
+    "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
+    "price_threshold": 70,
+    "days_search": ["2026-03-01", "2026-06-20"],
+    "max_trip_duration": 5
   }
 ]
