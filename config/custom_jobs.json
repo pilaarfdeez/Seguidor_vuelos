@@ -30,36 +30,6 @@
     "max_trip_duration": 5
   },
   {
-    "name": "Vernos en navidad (va David)",
-    "alias": "NORTE_SUR_Navidad",
-    "airports": [["MAD", "BIO", "SDR", "VLL", "VIT"], ["GRX","AGP"]],
-    "days_availability": [[5], [8,9]],
-    "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
-    "price_threshold": 120,
-    "days_search": ["2025-12-17", "2025-12-27"],
-    "max_trip_duration": 3
-  },
-  {
-    "name": "Viajecito a Roma (vuelos Hamburgo)",
-    "alias": "Roma_enero_ham",
-    "airports": [["HAM", "BRE", "LBC"], ["FCO", "CIA"]],
-    "days_availability": [[0,1], [5,6]],
-    "email": ["davidmayoral1505@gmail.com", "inmavillamartin@gmail.com"],
-    "price_threshold": 80,
-    "days_search": ["2026-01-19", "2026-01-31"],
-    "max_trip_duration": 5
-  },
-  {
-    "name": "Viajecito a Roma (vuelos España)",
-    "alias": "Roma_enero_esp",
-    "airports": [["MAD", "BIO", "SDR", "VLL", "VIT"], ["FCO", "CIA"]],
-    "days_availability": [[0,1], [5,6]],
-    "email": ["davidmayoral1505@gmail.com", "inmavillamartin@gmail.com", "mario@joyeriamanacor.com"],
-    "price_threshold": 100,
-    "days_search": ["2026-01-19", "2026-01-31"],
-    "max_trip_duration": 5
-  },
-  {
     "name": "Ana por Hamburguesa",
     "alias": "MAD_HAM_Ana",
     "airports": [["MAD"], ["HAM", "BRE", "LBC"]],
@@ -80,7 +50,7 @@
     "max_trip_duration": 5
   },
   {
-    "name": "cumplecito",
+    "name": "Cumplecito",
     "alias": "AGP_HAM_May",
     "airports": [["GRX","AGP"], ["HAM", "LBC", "HAJ", "BRE"]],
     "days_availability": [[4,5], [7,8]],
