@@ -80,11 +80,21 @@
     "max_trip_duration": 5
   },
   {
-    "name": "Viaje a Amsterdam",
+    "name": "Viaje a Amsterdam (desde españa)",
     "alias": "AGP_AMS",
     "airports": [["GRX","AGP"], ["AMS"]],
     "days_availability": [[4,5], [7]],
     "email": ["victoriapilar2001@gmail.com",  "inmapulido34@gmail.com", "raquel.rom@protonmail.com", "fjavims89@gmail.com", "bocanegrajesus777@gmail.com"],
+    "price_threshold": 80,
+    "days_search": ["2026-03-01", "2026-04-01"],
+    "max_trip_duration": 5
+  },
+  {
+    "name": "Viaje a Amsterdam (desde alemania)",
+    "alias": "AGP_AMS",
+    "airports": [["MUN","FMM", "NUE"], ["AMS"]],
+    "days_availability": [[4,5], [7]],
+    "email": ["victoriapilar2001@gmail.com",  "raquel.rom@protonmail.com","mariagutihe@gmail.com", "guilleiglesias2001@gmail.com"],
     "price_threshold": 80,
     "days_search": ["2026-03-01", "2026-04-01"],
     "max_trip_duration": 5
