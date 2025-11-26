@@ -92,11 +92,21 @@
   {
     "name": "Viaje a Amsterdam (desde alemania)",
     "alias": "AGP_AMS",
-    "airports": [["MUN","FMM", "NUE"], ["AMS"]],
+    "airports": [["MUC","FMM"], ["AMS"]],
     "days_availability": [[4,5], [7]],
     "email": ["victoriapilar2001@gmail.com",  "raquel.rom@protonmail.com","mariagutihe@gmail.com", "guilleiglesias2001@gmail.com"],
     "price_threshold": 80,
     "days_search": ["2026-03-01", "2026-04-01"],
     "max_trip_duration": 5
-  }
+  },
+  {
+    "name": "Huele a incienso",
+    "alias": "SS_Raquel",
+    "airports": [["MUC","FMM"], ["GRX", "AGP"]],
+    "days_availability": [[4,5,6], [6,7,8,9, 13, 14, 15, 16]],
+    "email": ["raquelrp1426@hotmail.com"],
+    "price_threshold": 120,
+    "days_search": ["2026-03-23", "2026-04-05"],
+    "max_trip_duration": 6
+  }
 ]
