@@ -1,5 +1,86 @@
 [
     {
+        "week": "2026-02-09 to 2026-02-15",
+        "combinations": [
+            {
+                "date": [
+                    "2026-02-12",
+                    "2026-02-15"
+                ],
+                "origin": [
+                    "AGP",
+                    "TFN"
+                ],
+                "destination": [
+                    "TFN",
+                    "GRX"
+                ],
+                "time": [
+                    "17:55",
+                    "08:30"
+                ],
+                "travel_time": [
+                    "2 hr 30 min",
+                    "2 hr 35 min"
+                ],
+                "airline": [
+                    "VuelingIberia",
+                    "VuelingIberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "43",
+                    "44"
+                ],
+                "job": "Carnaval Carnaval",
+                "new": true,
+                "price_change": 0,
+                "total_price": "87"
+            },
+            {
+                "date": [
+                    "2026-02-12",
+                    "2026-02-15"
+                ],
+                "origin": [
+                    "AGP",
+                    "TFN"
+                ],
+                "destination": [
+                    "TFS",
+                    "GRX"
+                ],
+                "time": [
+                    "20:40",
+                    "08:30"
+                ],
+                "travel_time": [
+                    "2 hr 40 min",
+                    "2 hr 35 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "VuelingIberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "45",
+                    "44"
+                ],
+                "job": "Carnaval Carnaval",
+                "new": true,
+                "price_change": 0,
+                "total_price": "89"
+            }
+        ]
+    },
+    {
         "week": "2026-02-16 to 2026-02-22",
         "combinations": [
             {
@@ -37,7 +118,7 @@
                 ],
                 "job": "Carnaval Carnaval",
                 "new": false,
-                "price_change": 1,
+                "price_change": 0,
                 "total_price": "87"
             }
         ]
