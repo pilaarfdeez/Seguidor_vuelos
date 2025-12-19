@@ -32,13 +32,13 @@
                     "0"
                 ],
                 "price": [
-                    "31",
-                    "25"
+                    "22",
+                    "29"
                 ],
                 "job": "Javi en busca de la Mari",
                 "new": false,
                 "price_change": 1,
-                "total_price": "56"
+                "total_price": "51"
             }
         ]
     },
@@ -49,6 +49,49 @@
                 "date": [
                     "2026-02-06",
                     "2026-02-09"
+                ],
+                "origin": [
+                    "AGP",
+                    "PSA"
+                ],
+                "destination": [
+                    "PSA",
+                    "AGP"
+                ],
+                "time": [
+                    "14:10",
+                    "11:25"
+                ],
+                "travel_time": [
+                    "2 hr 25 min",
+                    "2 hr 25 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "30",
+                    "53"
+                ],
+                "job": "Javi en busca de la Mari",
+                "new": false,
+                "price_change": 1,
+                "total_price": "83"
+            }
+        ]
+    },
+    {
+        "week": "2026-02-16 to 2026-02-22",
+        "combinations": [
+            {
+                "date": [
+                    "2026-02-20",
+                    "2026-02-23"
                 ],
                 "origin": [
                     "AGP",
@@ -86,49 +129,6 @@
         ]
     },
     {
-        "week": "2026-02-16 to 2026-02-22",
-        "combinations": [
-            {
-                "date": [
-                    "2026-02-20",
-                    "2026-02-23"
-                ],
-                "origin": [
-                    "AGP",
-                    "PSA"
-                ],
-                "destination": [
-                    "PSA",
-                    "AGP"
-                ],
-                "time": [
-                    "14:10",
-                    "11:25"
-                ],
-                "travel_time": [
-                    "2 hr 25 min",
-                    "2 hr 25 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "31",
-                    "58"
-                ],
-                "job": "Javi en busca de la Mari",
-                "new": true,
-                "price_change": 0,
-                "total_price": "89"
-            }
-        ]
-    },
-    {
         "week": "2026-03-02 to 2026-03-08",
         "combinations": [
             {
@@ -161,13 +161,13 @@
                     "0"
                 ],
                 "price": [
-                    "38",
+                    "43",
                     "32"
                 ],
                 "job": "Javi en busca de la Mari",
                 "new": false,
-                "price_change": 1,
-                "total_price": "70"
+                "price_change": 2,
+                "total_price": "75"
             }
         ]
     },
@@ -204,13 +204,13 @@
                     "0"
                 ],
                 "price": [
-                    "35",
-                    "32"
+                    "36",
+                    "35"
                 ],
                 "job": "Javi en busca de la Mari",
                 "new": false,
-                "price_change": 0,
-                "total_price": "67"
+                "price_change": 2,
+                "total_price": "71"
             }
         ]
     }
