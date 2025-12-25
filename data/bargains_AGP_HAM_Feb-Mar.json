@@ -80,7 +80,7 @@
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
-                "price_change": 2,
+                "price_change": 0,
                 "total_price": "126"
             }
         ]
@@ -119,12 +119,12 @@
                 ],
                 "price": [
                     "49",
-                    "36"
+                    "39"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
                 "price_change": 2,
-                "total_price": "85"
+                "total_price": "88"
             }
         ]
     },
@@ -161,13 +161,13 @@
                     "0"
                 ],
                 "price": [
-                    "40",
+                    "25",
                     "25"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
-                "price_change": 2,
-                "total_price": "65"
+                "price_change": 1,
+                "total_price": "50"
             },
             {
                 "date": [
@@ -199,13 +199,13 @@
                     "0"
                 ],
                 "price": [
-                    "40",
+                    "25",
                     "80"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
-                "price_change": 2,
-                "total_price": "120"
+                "price_change": 1,
+                "total_price": "105"
             },
             {
                 "date": [
@@ -237,13 +237,13 @@
                     "0"
                 ],
                 "price": [
-                    "40",
+                    "25",
                     "85"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
-                "price_change": 2,
-                "total_price": "125"
+                "price_change": 1,
+                "total_price": "110"
             }
         ]
     },
@@ -280,13 +280,13 @@
                     "0"
                 ],
                 "price": [
-                    "41",
-                    "66"
+                    "47",
+                    "78"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
-                "price_change": 1,
-                "total_price": "107"
+                "price_change": 2,
+                "total_price": "125"
             }
         ]
     },
@@ -324,12 +324,50 @@
                 ],
                 "price": [
                     "28",
-                    "73"
+                    "58"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
                 "price_change": 1,
-                "total_price": "101"
+                "total_price": "86"
+            },
+            {
+                "date": [
+                    "2026-03-06",
+                    "2026-03-08"
+                ],
+                "origin": [
+                    "AGP",
+                    "LBC"
+                ],
+                "destination": [
+                    "HAJ",
+                    "AGP"
+                ],
+                "time": [
+                    "11:25",
+                    "19:20"
+                ],
+                "travel_time": [
+                    "3 hr 20 min",
+                    "3 hr 30 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "70",
+                    "58"
+                ],
+                "job": "Viajecito para morir de frio desde M\u00e1laga",
+                "new": true,
+                "price_change": 0,
+                "total_price": "128"
             }
         ]
     },
@@ -367,12 +405,12 @@
                 ],
                 "price": [
                     "55",
-                    "56"
+                    "57"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
                 "price_change": 2,
-                "total_price": "111"
+                "total_price": "112"
             },
             {
                 "date": [
@@ -405,12 +443,55 @@
                 ],
                 "price": [
                     "67",
-                    "56"
+                    "57"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
                 "price_change": 2,
-                "total_price": "123"
+                "total_price": "124"
+            }
+        ]
+    },
+    {
+        "week": "2026-03-16 to 2026-03-22",
+        "combinations": [
+            {
+                "date": [
+                    "2026-03-19",
+                    "2026-03-22"
+                ],
+                "origin": [
+                    "AGP",
+                    "LBC"
+                ],
+                "destination": [
+                    "BRE",
+                    "AGP"
+                ],
+                "time": [
+                    "16:55",
+                    "19:20"
+                ],
+                "travel_time": [
+                    "3 hr 15 min",
+                    "3 hr 30 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "55",
+                    "74"
+                ],
+                "job": "Viajecito para morir de frio desde M\u00e1laga",
+                "new": true,
+                "price_change": 0,
+                "total_price": "129"
             }
         ]
     }
