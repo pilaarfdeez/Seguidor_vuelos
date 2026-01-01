@@ -1,8 +1,27 @@
 from telegram import Update, InlineQueryResultArticle, InputTextMessageContent
-from telegram.ext import filters, MessageHandler, ApplicationBuilder, CommandHandler, ContextTypes, InlineQueryHandler
 import json
 import os
 from uuid import uuid4
+
+from telegram.ext import (
+    ApplicationBuilder,
+    CommandHandler,
+    MessageHandler,
+    ConversationHandler,
+    InlineQueryHandler,
+    filters,
+)
+
+from handlers.basic import start, echo, caps, unknown
+from handlers.tracker import send_tracker_updates
+from handlers.discovery import (
+    discovery_start,
+    discovery_show,
+    discovery_cancel,
+    SELECT_JOB,
+)
+from handlers.inline import inline_caps
+
 
 # from config.logging import init_logger
 
@@ -14,6 +33,8 @@ WEBHOOK_TOKEN = os.environ.get("WEBHOOK_TOKEN")
 WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
 PORT = int(os.environ.get("PORT", 8443))
 
+
+'''
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text="I'm a bot, please talk to me!")
 
@@ -44,10 +65,8 @@ async def send_tracker_updates(update: Update, context: ContextTypes.DEFAULT_TYP
 
                 # Extraemos los precios y los agregamos al mensaje
                 if prices:
-                    price_1 = prices[-1]
-                    precio_fecha = price_1.get("date")
-                    precio_valor = price_1.get("price")
-                    mensaje += f"\n   - {precio_fecha}: ${precio_valor} 💸"
+                    last = prices[-1]
+                    mensaje += f"\n   - {last.get("date")}: {last.get("price")} €"
                 mensaje += "\n"
 
                 # Enviamos el mensaje al usuario
@@ -79,6 +98,7 @@ async def inline_caps(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
     )
     await context.bot.answer_inline_query(update.inline_query.id, results)
+'''
 
 
 if __name__ == '__main__':
@@ -87,13 +107,22 @@ if __name__ == '__main__':
     start_handler = CommandHandler('start', start)
     echo_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), echo)
     tracker_handler = CommandHandler('tracker', send_tracker_updates)
+    discovery_handler = ConversationHandler(
+        entry_points=[CommandHandler("discovery", discovery_start)],
+        states={
+            SELECT_JOB: [MessageHandler(filters.TEXT & ~filters.COMMAND, discovery_show)]
+        },
+        fallbacks=[CommandHandler("cancel", discovery_cancel)],
+    )
     caps_handler = CommandHandler('caps', caps)
     inline_caps_handler = InlineQueryHandler(inline_caps)
     unknown_handler = MessageHandler(filters.COMMAND, unknown)
+    
 
     application.add_handler(start_handler)
     application.add_handler(echo_handler)
     application.add_handler(tracker_handler)
+    application.add_handler(discovery_handler)
     application.add_handler(caps_handler)
     application.add_handler(inline_caps_handler)
     application.add_handler(unknown_handler)
