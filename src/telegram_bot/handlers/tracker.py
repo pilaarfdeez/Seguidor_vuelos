@@ -26,7 +26,7 @@ async def send_tracker_updates(update: Update, context: ContextTypes.DEFAULT_TYP
                 # Extraemos los precios y los agregamos al mensaje
                 if prices:
                     last = prices[-1]
-                    mensaje += f"\n   - {last.get("date")}: {last.get("price")} €"
+                    mensaje += f"\n   - {last.get('date')}: {last.get('price')} €"
                 mensaje += "\n"
 
                 # Enviamos el mensaje al usuario
