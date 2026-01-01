@@ -13,44 +13,6 @@
                 ],
                 "destination": [
                     "TFS",
-                    "AGP"
-                ],
-                "time": [
-                    "20:40",
-                    "10:20"
-                ],
-                "travel_time": [
-                    "2 hr 40 min",
-                    "2 hr 25 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "VuelingIberia"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "31",
-                    "56"
-                ],
-                "job": "Carnaval Carnaval",
-                "new": false,
-                "price_change": 0,
-                "total_price": "87"
-            },
-            {
-                "date": [
-                    "2026-02-12",
-                    "2026-02-15"
-                ],
-                "origin": [
-                    "AGP",
-                    "TFN"
-                ],
-                "destination": [
-                    "TFS",
                     "GRX"
                 ],
                 "time": [
@@ -70,13 +32,51 @@
                     "0"
                 ],
                 "price": [
-                    "31",
+                    "27",
                     "65"
                 ],
                 "job": "Carnaval Carnaval",
                 "new": false,
+                "price_change": 1,
+                "total_price": "92"
+            },
+            {
+                "date": [
+                    "2026-02-12",
+                    "2026-02-15"
+                ],
+                "origin": [
+                    "AGP",
+                    "TFS"
+                ],
+                "destination": [
+                    "TFS",
+                    "AGP"
+                ],
+                "time": [
+                    "20:40",
+                    "18:15"
+                ],
+                "travel_time": [
+                    "2 hr 40 min",
+                    "2 hr 40 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "27",
+                    "71"
+                ],
+                "job": "Carnaval Carnaval",
+                "new": true,
                 "price_change": 0,
-                "total_price": "96"
+                "total_price": "98"
             }
         ]
     },
@@ -194,7 +194,7 @@
                 ],
                 "job": "Carnaval Carnaval",
                 "new": false,
-                "price_change": 2,
+                "price_change": 0,
                 "total_price": "90"
             },
             {
@@ -232,46 +232,8 @@
                 ],
                 "job": "Carnaval Carnaval",
                 "new": false,
-                "price_change": 2,
-                "total_price": "95"
-            },
-            {
-                "date": [
-                    "2026-02-20",
-                    "2026-02-22"
-                ],
-                "origin": [
-                    "AGP",
-                    "TFN"
-                ],
-                "destination": [
-                    "TFN",
-                    "GRX"
-                ],
-                "time": [
-                    "17:55",
-                    "08:30"
-                ],
-                "travel_time": [
-                    "2 hr 30 min",
-                    "2 hr 35 min"
-                ],
-                "airline": [
-                    "VuelingIberia",
-                    "VuelingIberia"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "61",
-                    "35"
-                ],
-                "job": "Carnaval Carnaval",
-                "new": false,
                 "price_change": 0,
-                "total_price": "96"
+                "total_price": "95"
             }
         ]
     }

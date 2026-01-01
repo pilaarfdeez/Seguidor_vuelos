@@ -37,7 +37,7 @@
                 ],
                 "job": "Javi en busca de la Mari",
                 "new": false,
-                "price_change": 1,
+                "price_change": 0,
                 "total_price": "76"
             }
         ]
@@ -75,13 +75,13 @@
                     "0"
                 ],
                 "price": [
-                    "28",
+                    "29",
                     "37"
                 ],
                 "job": "Javi en busca de la Mari",
                 "new": false,
-                "price_change": 1,
-                "total_price": "65"
+                "price_change": 2,
+                "total_price": "66"
             }
         ]
     },
@@ -119,12 +119,55 @@
                 ],
                 "price": [
                     "42",
-                    "32"
+                    "25"
                 ],
                 "job": "Javi en busca de la Mari",
                 "new": false,
                 "price_change": 1,
-                "total_price": "74"
+                "total_price": "67"
+            }
+        ]
+    },
+    {
+        "week": "2026-02-16 to 2026-02-22",
+        "combinations": [
+            {
+                "date": [
+                    "2026-02-20",
+                    "2026-02-23"
+                ],
+                "origin": [
+                    "AGP",
+                    "PSA"
+                ],
+                "destination": [
+                    "PSA",
+                    "AGP"
+                ],
+                "time": [
+                    "14:10",
+                    "11:25"
+                ],
+                "travel_time": [
+                    "2 hr 25 min",
+                    "2 hr 25 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "50",
+                    "38"
+                ],
+                "job": "Javi en busca de la Mari",
+                "new": true,
+                "price_change": 0,
+                "total_price": "88"
             }
         ]
     }
