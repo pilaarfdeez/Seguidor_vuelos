@@ -2,6 +2,9 @@ import json
 from telegram import Update
 from telegram.ext import ContextTypes
 
+from github_utils import update_json_file
+
+
 DATA_PATH = "../../data/tracked_flights.json"
 
 async def send_tracker_updates(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -37,3 +40,24 @@ async def send_tracker_updates(update: Update, context: ContextTypes.DEFAULT_TYP
 
     except Exception as e:
         await update.message.reply_text(f"Error reading flights: {e}")
+
+
+async def add_tracked_flight(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # origin, dest, date = context.args
+
+    def add_flight_fn(data):
+        data.append({
+            "origin": "MAD",
+            "destination": "BCN",
+            "date": "2026-01-01",
+            "time": "12:00",
+            "prices": []
+        })
+
+    update_json_file(
+        DATA_PATH,
+        add_flight_fn,
+        "(Test2) Add flight (MAD-BCN) on 2026-01-01"
+    )
+
+    await update.message.reply_text("Flight added and pushed to GitHub ✅")

@@ -13,7 +13,7 @@ from telegram.ext import (
 )
 
 from handlers.basic import start, echo, caps, unknown
-from handlers.tracker import send_tracker_updates
+from handlers.tracker import send_tracker_updates, add_tracked_flight
 from handlers.discovery import (
     discovery_start,
     select_job,
@@ -30,6 +30,7 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN")
 WEBHOOK_TOKEN = os.environ.get("WEBHOOK_TOKEN")
 WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
 PORT = int(os.environ.get("PORT", 8443))
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 
 
 if __name__ == '__main__':
@@ -37,6 +38,7 @@ if __name__ == '__main__':
     
     start_handler = CommandHandler('start', start)
     tracker_handler = CommandHandler('tracker', send_tracker_updates)
+    add_flight_handler = CommandHandler('add_flight', add_tracked_flight)
     discovery_handler = ConversationHandler(
         entry_points=[CommandHandler("buscador", discovery_start)],
         states={
@@ -57,6 +59,7 @@ if __name__ == '__main__':
 
     application.add_handler(start_handler)
     application.add_handler(tracker_handler)
+    application.add_handler(add_flight_handler)
     application.add_handler(discovery_handler)
     application.add_handler(caps_handler)
     application.add_handler(inline_caps_handler)
