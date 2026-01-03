@@ -1,6 +1,51 @@
 from functools import wraps
+import logging
+import sys
+from telegram import Update
+from telegram.ext import ContextTypes
 
 LIST_OF_ADMINS = [12345678, 87654321]
+
+
+def handle_error(func):
+    """Decorator to handle errors in Telegram bot handlers."""
+    @wraps(func)
+    async def wrapper(update: Update, context: ContextTypes.DEFAULT_TYPE, *args, **kwargs):
+        try:
+            return await func(update, context, *args, **kwargs)
+        except Exception:
+            """Log the error and send a telegram message to notify the developer."""
+            user_id = update.effective_user.id if update.effective_user else "unknown"
+
+            tb = sys.exc_info()[2]
+            while tb.tb_next:
+                tb = tb.tb_next
+            frame = tb.tb_frame
+            function_name = frame.f_code.co_name
+            filename = frame.f_code.co_filename
+            line_no = tb.tb_lineno
+
+            logging.error(
+                msg=f"Exception while handling an update in function '{function_name}' from user {update.effective_user.id}:", 
+                exc_info=context.error
+            )
+
+            try:
+                if user_id in LIST_OF_ADMINS:
+                    await update.message.reply_text(
+                        f"Ha ocurrido un error en la función '{function_name}': {context.error}\n"
+                        f"({filename}:{line_no})"
+                    )
+                else:
+                    await update.message.reply_text("Ha ocurrido un error inesperado con tu petición. El equipo de desarrollo ha sido notificado.")
+                    for admin in LIST_OF_ADMINS:
+                        pass
+                        # await context.bot.send_message(chat_id=admin, text=f"Ha ocurrido un error en la función '{function_name}': {context.error}")
+            except Exception:
+                logging.error("Failed to send error message to user/admin.", exc_info=True)
+
+    return wrapper
+
 
 def restricted(func):
     @wraps(func)

@@ -10,6 +10,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     await update.message.reply_text(text)
 
+    await update.message.reply_text(f"Tu ID de chat es: {update.effective_chat.id}")
+
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(update.message.text)
 
@@ -18,4 +20,4 @@ async def caps(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(text_caps)
 
 async def unknown(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Sorry, I didn't understand that command.")
+    await update.message.reply_text("Lo siento, ese comando no lo entiendo. Tu madre por si acaso.")

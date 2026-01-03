@@ -3,15 +3,17 @@ import glob
 import json
 import logging
 import os
-# import re
 from telegram import Update, InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove, constants
 from telegram.ext import ContextTypes, ConversationHandler
 from telegram.error import BadRequest
+
+from utils import handle_error
 
 DATA_PATH = "../../data/"
 JOB_SELECTION, SHOW_DATA, DECISION_CONTINUE = range(3)
 price_filter = None
 
+@handle_error
 async def discovery_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     available_jobs = [[os.path.basename(f).replace("bargains_", "").replace(".json", "")] for f in glob.glob(f"{DATA_PATH}bargains_*.json")]
     
@@ -24,6 +26,8 @@ async def discovery_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(text, reply_markup=markup)
     return JOB_SELECTION
 
+
+@handle_error
 async def select_job(update: Update, context: ContextTypes.DEFAULT_TYPE):
     selected_job = update.message.text.strip()
     friendly_name = None
@@ -66,11 +70,13 @@ async def select_job(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
     return SHOW_DATA
 
+
 async def wrong_job(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("No se han encontrado resultados para el buscador.")
     return JOB_SELECTION
 
 
+@handle_error
 async def discovery_show(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_chat.id
     selected_job = context.user_data.get("selected_job")
@@ -194,6 +200,7 @@ async def discovery_show(update: Update, context: ContextTypes.DEFAULT_TYPE):
     return DECISION_CONTINUE
 
 
+@handle_error
 async def discovery_decision(update: Update, context: ContextTypes.DEFAULT_TYPE):
     decision = update.message.text.lower()
     if decision in ['sí', 'si', 'yes']:
