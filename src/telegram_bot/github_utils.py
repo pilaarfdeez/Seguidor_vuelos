@@ -3,9 +3,8 @@ import os
 import base64
 import requests
 
-from telegram_main import GITHUB_TOKEN
 
-
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 REPO = 'pilaarfdeez/Seguidor_vuelos'
 BRANCH = 'main'
 API = "https://api.github.com"

@@ -30,8 +30,6 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN")
 WEBHOOK_TOKEN = os.environ.get("WEBHOOK_TOKEN")
 WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
 PORT = int(os.environ.get("PORT", 8443))
-GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-
 
 if __name__ == '__main__':
     application = ApplicationBuilder().token(BOT_TOKEN).build()
