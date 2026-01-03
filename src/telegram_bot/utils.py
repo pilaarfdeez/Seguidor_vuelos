@@ -4,7 +4,7 @@ import sys
 from telegram import Update
 from telegram.ext import ContextTypes
 
-LIST_OF_ADMINS = [12345678, 87654321]
+LIST_OF_ADMINS = [1042856343]
 
 
 def handle_error(func):
@@ -13,7 +13,7 @@ def handle_error(func):
     async def wrapper(update: Update, context: ContextTypes.DEFAULT_TYPE, *args, **kwargs):
         try:
             return await func(update, context, *args, **kwargs)
-        except Exception:
+        except Exception as e:
             """Log the error and send a telegram message to notify the developer."""
             user_id = update.effective_user.id if update.effective_user else "unknown"
 
@@ -26,7 +26,7 @@ def handle_error(func):
             line_no = tb.tb_lineno
 
             logging.error(
-                msg=f"Exception while handling an update in function '{function_name}' from user {update.effective_user.id}:", 
+                msg=f"Exception while handling an update in function '{function_name}' from user {update.effective_user.id}: {e}", 
                 exc_info=context.error
             )
 
