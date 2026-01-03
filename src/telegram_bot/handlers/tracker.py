@@ -5,11 +5,11 @@ from telegram.ext import ContextTypes
 from github_utils import update_json_file
 
 
-DATA_PATH = "../../data/tracked_flights.json"
+DATA_PATH = "data/tracked_flights.json"
 
 async def send_tracker_updates(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
-        with open(DATA_PATH, 'r', encoding='utf-8') as file:
+        with open(f"../../{DATA_PATH}", 'r', encoding='utf-8') as file:
             data = json.load(file)
 
         # Formateamos el mensaje
