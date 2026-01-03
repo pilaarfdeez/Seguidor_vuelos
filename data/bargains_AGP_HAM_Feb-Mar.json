@@ -32,19 +32,57 @@
                     "0"
                 ],
                 "price": [
-                    "40",
+                    "55",
                     "25"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
-                "price_change": 0,
-                "total_price": "65"
+                "price_change": 2,
+                "total_price": "80"
             }
         ]
     },
     {
         "week": "2026-02-02 to 2026-02-08",
         "combinations": [
+            {
+                "date": [
+                    "2026-02-05",
+                    "2026-02-08"
+                ],
+                "origin": [
+                    "AGP",
+                    "LBC"
+                ],
+                "destination": [
+                    "BRE",
+                    "AGP"
+                ],
+                "time": [
+                    "16:55",
+                    "19:20"
+                ],
+                "travel_time": [
+                    "3 hr 15 min",
+                    "3 hr 30 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "25",
+                    "83"
+                ],
+                "job": "Viajecito para morir de frio desde M\u00e1laga",
+                "new": true,
+                "price_change": 0,
+                "total_price": "108"
+            },
             {
                 "date": [
                     "2026-02-05",
@@ -76,12 +114,50 @@
                 ],
                 "price": [
                     "40",
-                    "84"
+                    "83"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
                 "price_change": 1,
-                "total_price": "124"
+                "total_price": "123"
+            },
+            {
+                "date": [
+                    "2026-02-05",
+                    "2026-02-08"
+                ],
+                "origin": [
+                    "AGP",
+                    "HAJ"
+                ],
+                "destination": [
+                    "BRE",
+                    "AGP"
+                ],
+                "time": [
+                    "16:55",
+                    "06:30"
+                ],
+                "travel_time": [
+                    "3 hr 15 min",
+                    "3 hr 20 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "25",
+                    "100"
+                ],
+                "job": "Viajecito para morir de frio desde M\u00e1laga",
+                "new": true,
+                "price_change": 0,
+                "total_price": "125"
             }
         ]
     },
@@ -118,175 +194,18 @@
                     "0"
                 ],
                 "price": [
-                    "40",
-                    "25"
+                    "25",
+                    "36"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
-                "price_change": 0,
-                "total_price": "65"
+                "price_change": 1,
+                "total_price": "61"
             },
             {
                 "date": [
                     "2026-02-12",
                     "2026-02-15"
-                ],
-                "origin": [
-                    "AGP",
-                    "LBC"
-                ],
-                "destination": [
-                    "HAM",
-                    "AGP"
-                ],
-                "time": [
-                    "10:05",
-                    "19:20"
-                ],
-                "travel_time": [
-                    "3 hr 20 min",
-                    "3 hr 30 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "95",
-                    "25"
-                ],
-                "job": "Viajecito para morir de frio desde M\u00e1laga",
-                "new": false,
-                "price_change": 0,
-                "total_price": "120"
-            },
-            {
-                "date": [
-                    "2026-02-12",
-                    "2026-02-15"
-                ],
-                "origin": [
-                    "AGP",
-                    "HAJ"
-                ],
-                "destination": [
-                    "BRE",
-                    "AGP"
-                ],
-                "time": [
-                    "16:55",
-                    "06:30"
-                ],
-                "travel_time": [
-                    "3 hr 15 min",
-                    "3 hr 20 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Eurowings"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "40",
-                    "85"
-                ],
-                "job": "Viajecito para morir de frio desde M\u00e1laga",
-                "new": false,
-                "price_change": 0,
-                "total_price": "125"
-            }
-        ]
-    },
-    {
-        "week": "2026-02-16 to 2026-02-22",
-        "combinations": [
-            {
-                "date": [
-                    "2026-02-19",
-                    "2026-02-22"
-                ],
-                "origin": [
-                    "AGP",
-                    "LBC"
-                ],
-                "destination": [
-                    "BRE",
-                    "AGP"
-                ],
-                "time": [
-                    "16:55",
-                    "19:20"
-                ],
-                "travel_time": [
-                    "3 hr 15 min",
-                    "3 hr 30 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "25",
-                    "25"
-                ],
-                "job": "Viajecito para morir de frio desde M\u00e1laga",
-                "new": false,
-                "price_change": 1,
-                "total_price": "50"
-            },
-            {
-                "date": [
-                    "2026-02-19",
-                    "2026-02-22"
-                ],
-                "origin": [
-                    "AGP",
-                    "HAM"
-                ],
-                "destination": [
-                    "BRE",
-                    "AGP"
-                ],
-                "time": [
-                    "16:55",
-                    "15:05"
-                ],
-                "travel_time": [
-                    "3 hr 15 min",
-                    "3 hr 20 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Eurowings"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "25",
-                    "80"
-                ],
-                "job": "Viajecito para morir de frio desde M\u00e1laga",
-                "new": false,
-                "price_change": 1,
-                "total_price": "105"
-            },
-            {
-                "date": [
-                    "2026-02-19",
-                    "2026-02-22"
                 ],
                 "origin": [
                     "AGP",
@@ -324,12 +243,12 @@
         ]
     },
     {
-        "week": "2026-02-23 to 2026-03-01",
+        "week": "2026-02-16 to 2026-02-22",
         "combinations": [
             {
                 "date": [
-                    "2026-02-26",
-                    "2026-03-01"
+                    "2026-02-19",
+                    "2026-02-22"
                 ],
                 "origin": [
                     "AGP",
@@ -356,13 +275,89 @@
                     "0"
                 ],
                 "price": [
-                    "41",
-                    "78"
+                    "30",
+                    "25"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
-                "price_change": 0,
-                "total_price": "119"
+                "price_change": 2,
+                "total_price": "55"
+            },
+            {
+                "date": [
+                    "2026-02-19",
+                    "2026-02-22"
+                ],
+                "origin": [
+                    "AGP",
+                    "HAM"
+                ],
+                "destination": [
+                    "BRE",
+                    "AGP"
+                ],
+                "time": [
+                    "16:55",
+                    "15:05"
+                ],
+                "travel_time": [
+                    "3 hr 15 min",
+                    "3 hr 20 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "30",
+                    "80"
+                ],
+                "job": "Viajecito para morir de frio desde M\u00e1laga",
+                "new": false,
+                "price_change": 2,
+                "total_price": "110"
+            },
+            {
+                "date": [
+                    "2026-02-19",
+                    "2026-02-22"
+                ],
+                "origin": [
+                    "AGP",
+                    "HAJ"
+                ],
+                "destination": [
+                    "BRE",
+                    "AGP"
+                ],
+                "time": [
+                    "16:55",
+                    "06:30"
+                ],
+                "travel_time": [
+                    "3 hr 15 min",
+                    "3 hr 20 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "30",
+                    "85"
+                ],
+                "job": "Viajecito para morir de frio desde M\u00e1laga",
+                "new": false,
+                "price_change": 2,
+                "total_price": "115"
             }
         ]
     },
@@ -399,13 +394,13 @@
                     "0"
                 ],
                 "price": [
-                    "28",
-                    "50"
+                    "30",
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
                 "price_change": 1,
-                "total_price": "78"
+                "total_price": "72"
             },
             {
                 "date": [
@@ -438,12 +433,12 @@
                 ],
                 "price": [
                     "65",
-                    "50"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
-                "price_change": 0,
-                "total_price": "115"
+                "price_change": 1,
+                "total_price": "107"
             },
             {
                 "date": [
@@ -476,12 +471,12 @@
                 ],
                 "price": [
                     "70",
-                    "50"
+                    "42"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
-                "price_change": 0,
-                "total_price": "120"
+                "price_change": 1,
+                "total_price": "112"
             }
         ]
     },
@@ -519,12 +514,12 @@
                 ],
                 "price": [
                     "40",
-                    "57"
+                    "47"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
-                "price_change": 0,
-                "total_price": "97"
+                "price_change": 1,
+                "total_price": "87"
             },
             {
                 "date": [
@@ -557,55 +552,12 @@
                 ],
                 "price": [
                     "57",
-                    "57"
+                    "47"
                 ],
                 "job": "Viajecito para morir de frio desde M\u00e1laga",
                 "new": false,
                 "price_change": 1,
-                "total_price": "114"
-            }
-        ]
-    },
-    {
-        "week": "2026-03-16 to 2026-03-22",
-        "combinations": [
-            {
-                "date": [
-                    "2026-03-19",
-                    "2026-03-22"
-                ],
-                "origin": [
-                    "AGP",
-                    "LBC"
-                ],
-                "destination": [
-                    "BRE",
-                    "AGP"
-                ],
-                "time": [
-                    "16:55",
-                    "19:20"
-                ],
-                "travel_time": [
-                    "3 hr 15 min",
-                    "3 hr 30 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "47",
-                    "78"
-                ],
-                "job": "Viajecito para morir de frio desde M\u00e1laga",
-                "new": true,
-                "price_change": 0,
-                "total_price": "125"
+                "total_price": "104"
             }
         ]
     }

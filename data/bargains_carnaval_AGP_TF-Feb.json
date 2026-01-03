@@ -1,48 +1,5 @@
 [
     {
-        "week": "2026-02-09 to 2026-02-15",
-        "combinations": [
-            {
-                "date": [
-                    "2026-02-12",
-                    "2026-02-15"
-                ],
-                "origin": [
-                    "AGP",
-                    "TFN"
-                ],
-                "destination": [
-                    "TFS",
-                    "GRX"
-                ],
-                "time": [
-                    "20:40",
-                    "08:30"
-                ],
-                "travel_time": [
-                    "2 hr 40 min",
-                    "2 hr 35 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "VuelingIberia"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "31",
-                    "65"
-                ],
-                "job": "Carnaval Carnaval",
-                "new": false,
-                "price_change": 2,
-                "total_price": "96"
-            }
-        ]
-    },
-    {
         "week": "2026-02-16 to 2026-02-22",
         "combinations": [
             {
@@ -75,13 +32,51 @@
                     "0"
                 ],
                 "price": [
-                    "28",
+                    "31",
                     "35"
                 ],
                 "job": "Carnaval Carnaval",
                 "new": false,
                 "price_change": 2,
-                "total_price": "63"
+                "total_price": "66"
+            },
+            {
+                "date": [
+                    "2026-02-19",
+                    "2026-02-22"
+                ],
+                "origin": [
+                    "AGP",
+                    "TFN"
+                ],
+                "destination": [
+                    "TFN",
+                    "GRX"
+                ],
+                "time": [
+                    "17:55",
+                    "08:30"
+                ],
+                "travel_time": [
+                    "2 hr 30 min",
+                    "2 hr 35 min"
+                ],
+                "airline": [
+                    "VuelingIberia",
+                    "VuelingIberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "43",
+                    "35"
+                ],
+                "job": "Carnaval Carnaval",
+                "new": false,
+                "price_change": 1,
+                "total_price": "78"
             },
             {
                 "date": [
@@ -118,46 +113,8 @@
                 ],
                 "job": "Carnaval Carnaval",
                 "new": false,
-                "price_change": 2,
-                "total_price": "84"
-            },
-            {
-                "date": [
-                    "2026-02-19",
-                    "2026-02-22"
-                ],
-                "origin": [
-                    "AGP",
-                    "TFN"
-                ],
-                "destination": [
-                    "TFN",
-                    "GRX"
-                ],
-                "time": [
-                    "17:55",
-                    "08:30"
-                ],
-                "travel_time": [
-                    "2 hr 30 min",
-                    "2 hr 35 min"
-                ],
-                "airline": [
-                    "VuelingIberia",
-                    "VuelingIberia"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "55",
-                    "35"
-                ],
-                "job": "Carnaval Carnaval",
-                "new": false,
                 "price_change": 0,
-                "total_price": "90"
+                "total_price": "84"
             },
             {
                 "date": [
@@ -193,47 +150,9 @@
                     "35"
                 ],
                 "job": "Carnaval Carnaval",
-                "new": true,
+                "new": false,
                 "price_change": 0,
                 "total_price": "98"
-            },
-            {
-                "date": [
-                    "2026-02-19",
-                    "2026-02-22"
-                ],
-                "origin": [
-                    "AGP",
-                    "TFS"
-                ],
-                "destination": [
-                    "TFS",
-                    "AGP"
-                ],
-                "time": [
-                    "20:40",
-                    "18:15"
-                ],
-                "travel_time": [
-                    "2 hr 40 min",
-                    "2 hr 40 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "28",
-                    "71"
-                ],
-                "job": "Carnaval Carnaval",
-                "new": false,
-                "price_change": 2,
-                "total_price": "99"
             }
         ]
     }
