@@ -90,6 +90,7 @@ if __name__ == '__main__':
     application.add_handler(start_handler)
     application.add_handler(tracker_handler)
     application.add_handler(add_flight_handler)
+    application.add_handler(remove_flight_handler)
     application.add_handler(discovery_handler)
     application.add_handler(caps_handler)
     application.add_handler(inline_caps_handler)
