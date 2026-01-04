@@ -1,8 +1,5 @@
-from telegram import Update, InlineQueryResultArticle, InputTextMessageContent
-import json
 import os
-from uuid import uuid4
-
+from telegram import Bot
 from telegram.ext import (
     ApplicationBuilder,
     CommandHandler,
@@ -35,6 +32,7 @@ from handlers.discovery import (
     JOB_SELECTION, SHOW_DATA, DECISION_CONTINUE
 )
 from handlers.inline import inline_caps
+from utils import send_server_up
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 WEBHOOK_TOKEN = os.environ.get("WEBHOOK_TOKEN")
@@ -94,6 +92,9 @@ if __name__ == '__main__':
     application.add_handler(inline_caps_handler)
     application.add_handler(echo_handler)
     application.add_handler(unknown_handler)
+
+    with Bot("TOKEN") as bot:
+        send_server_up(bot)
 
     application.run_webhook(
         listen="0.0.0.0",

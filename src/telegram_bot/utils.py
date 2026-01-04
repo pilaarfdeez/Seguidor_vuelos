@@ -1,7 +1,8 @@
+import asyncio
 from functools import wraps
 import logging
 import sys
-from telegram import Update
+from telegram import Update, Bot
 from telegram.ext import ContextTypes
 
 LIST_OF_ADMINS = [1042856343]
@@ -45,6 +46,12 @@ def handle_error(func):
 
     return wrapper
 
+
+def send_server_up(bot: Bot):
+    async def send():
+        await bot.send_message(chat_id=1042856343, text="Server is up and running!")
+
+    asyncio.run(send())
 
 def restricted(func):
     @wraps(func)
