@@ -45,7 +45,7 @@ if __name__ == '__main__':
     start_handler = CommandHandler('start', start)
     tracker_handler = CommandHandler('tracker', send_tracker_updates)
     add_flight_handler = ConversationHandler(
-        entry_points=[CommandHandler("añadir_vuelo", addflight_start)],
+        entry_points=[CommandHandler("nuevo_vuelo", addflight_start)],
         states={
             ORIGIN: [MessageHandler(filters.TEXT, tracker_origin)],
             DESTINATION: [MessageHandler(filters.TEXT, tracker_destination)],
