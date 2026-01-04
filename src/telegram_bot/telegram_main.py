@@ -39,8 +39,11 @@ WEBHOOK_TOKEN = os.environ.get("WEBHOOK_TOKEN")
 WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
 PORT = int(os.environ.get("PORT", 8443))
 
+async def _post_init(app):
+    await send_server_up(app.bot)
+
 if __name__ == '__main__':
-    application = ApplicationBuilder().token(BOT_TOKEN).build()
+    application = ApplicationBuilder().token(BOT_TOKEN).post_init(_post_init).build()
     
     start_handler = CommandHandler('start', start)
     tracker_handler = CommandHandler('tracker', send_tracker_updates)

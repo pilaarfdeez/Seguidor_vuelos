@@ -47,11 +47,9 @@ def handle_error(func):
     return wrapper
 
 
-def send_server_up(bot: Bot):
-    async def send():
-        await bot.send_message(chat_id=1042856343, text="Server is up and running!")
+async def send_server_up(bot: Bot):
+    await bot.send_message(chat_id=1042856343, text="Server is up and running!")
 
-    asyncio.run(send())
 
 def restricted(func):
     @wraps(func)
