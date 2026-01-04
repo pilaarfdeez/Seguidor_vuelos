@@ -39,8 +39,7 @@ def handle_error(func):
                 else:
                     await update.message.reply_text("Ha ocurrido un error inesperado con tu petición. El equipo de desarrollo ha sido notificado.")
                     for admin in LIST_OF_ADMINS:
-                        pass
-                        # await context.bot.send_message(chat_id=admin, text=f"Ha ocurrido un error en la función '{function_name}': {context.error}")
+                        await context.bot.send_message(chat_id=admin, text=f"Ha ocurrido un error en la función '{function_name}': {context.error}")
             except Exception:
                 logging.error("Failed to send error message to user/admin.", exc_info=True)
 
@@ -52,7 +51,7 @@ def restricted(func):
     async def wrapped(update, context, *args, **kwargs):
         user_id = update.effective_user.id
         if user_id not in LIST_OF_ADMINS:
-            print(f"Unauthorized access denied for {user_id}.")
+            print(f"Para realizar esta acción, tienes que pedir permiso a papi o mami (@DeividMay, @pilar_fdeez).")
             return
         return await func(update, context, *args, **kwargs)
     return wrapped

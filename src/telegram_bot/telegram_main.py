@@ -13,16 +13,26 @@ from telegram.ext import (
 )
 
 from handlers.basic import start, echo, caps, unknown
-from handlers.tracker import send_tracker_updates, add_tracked_flight
+from handlers.tracker import (
+    send_tracker_updates,
+    addflight_start,
+    removeflight_start,
+    tracker_origin,
+    tracker_destination,
+    tracker_date,
+    tracker_time,
+    addflight_confirm,
+    removeflight_confirm,
+    tracker_cancel,
+    ORIGIN, DESTINATION, DATE, TIME, CONFIRM
+)
 from handlers.discovery import (
     discovery_start,
     select_job,
     discovery_show,
     discovery_decision, 
     discovery_cancel,
-    JOB_SELECTION,
-    SHOW_DATA,
-    DECISION_CONTINUE,
+    JOB_SELECTION, SHOW_DATA, DECISION_CONTINUE
 )
 from handlers.inline import inline_caps
 
@@ -36,7 +46,28 @@ if __name__ == '__main__':
     
     start_handler = CommandHandler('start', start)
     tracker_handler = CommandHandler('tracker', send_tracker_updates)
-    add_flight_handler = CommandHandler('add_flight', add_tracked_flight)
+    add_flight_handler = ConversationHandler(
+        entry_points=[CommandHandler("añadir_vuelo", addflight_start)],
+        states={
+            ORIGIN: [MessageHandler(filters.TEXT, tracker_origin)],
+            DESTINATION: [MessageHandler(filters.TEXT, tracker_destination)],
+            DATE: [MessageHandler(filters.TEXT, tracker_date)],
+            TIME: [MessageHandler(filters.TEXT, tracker_time)],
+            CONFIRM: [MessageHandler(filters.TEXT, addflight_confirm)],
+        },
+        fallbacks=[CommandHandler("cancelar", tracker_cancel)],
+    )
+    remove_flight_handler = ConversationHandler(
+        entry_points=[CommandHandler("eliminar_vuelo", removeflight_start)],
+        states={
+            ORIGIN: [MessageHandler(filters.TEXT, tracker_origin)],
+            DESTINATION: [MessageHandler(filters.TEXT, tracker_destination)],
+            DATE: [MessageHandler(filters.TEXT, tracker_date)],
+            TIME: [MessageHandler(filters.TEXT, tracker_time)],
+            CONFIRM: [MessageHandler(filters.TEXT, removeflight_confirm)],
+        },
+        fallbacks=[CommandHandler("cancelar", tracker_cancel)],
+    )
     discovery_handler = ConversationHandler(
         entry_points=[CommandHandler("buscador", discovery_start)],
         states={
