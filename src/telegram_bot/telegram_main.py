@@ -93,8 +93,7 @@ if __name__ == '__main__':
     application.add_handler(echo_handler)
     application.add_handler(unknown_handler)
 
-    with Bot("TOKEN") as bot:
-        send_server_up(bot)
+    send_server_up(application.bot)
 
     application.run_webhook(
         listen="0.0.0.0",
