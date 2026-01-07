@@ -24,9 +24,9 @@
     "alias": "AGP_HAM_Feb-Mar",
     "airports": [["GRX","AGP"], ["HAM", "LBC", "HAJ", "BRE"]],
     "days_availability": [[4,5], [7]],
-    "email": ["victoriapilar2001@gmail.com", "fjavims89@gmail.com"],
+    "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
     "price_threshold": 130,
-    "days_search": ["2026-02-01", "2026-03-31"],
+    "days_search": ["2026-02-01", "2026-04-31"],
     "max_trip_duration": 5
   },
   {
@@ -40,22 +40,12 @@
     "max_trip_duration": 5
   },
   {
-    "name": "Carnaval Carnaval",
-    "alias": "carnaval_AGP_TF-Feb",
-    "airports": [["GRX","AGP"], ["TFN", "TFS"]],
-    "days_availability": [[4,5], [7]],
-    "email": ["victoriapilar2001@gmail.com"],
-    "price_threshold": 100,
-    "days_search": ["2026-02-15", "2026-02-22"],
-    "max_trip_duration": 5
-  },
-  {
     "name": "Cumplecito",
     "alias": "AGP_HAM_May",
     "airports": [["GRX","AGP"], ["HAM", "LBC", "HAJ", "BRE"]],
     "days_availability": [[4,5], [7,8]],
     "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
-    "price_threshold": 130,
+    "price_threshold": 150,
     "days_search": ["2026-05-10", "2026-05-20"],
     "max_trip_duration": 5
   },
@@ -105,8 +95,18 @@
     "airports": [["MUC","FMM"], ["GRX", "AGP"]],
     "days_availability": [[4,5,6], [6,7,8,9, 13, 14, 15, 16]],
     "email": ["raquelrp1426@hotmail.com"],
-    "price_threshold": 120,
-    "days_search": ["2026-03-23", "2026-04-05"],
+    "price_threshold": 220,
+    "days_search": ["2026-03-23", "2026-04-10"],
+    "max_trip_duration": 6
+  },
+  {
+    "name": "SS por españita",
+    "alias": "SS_David",
+    "airports": [["HAM","BRE", "LBC"], ["GRX", "AGP"], "MAD", "BIO"],
+    "days_availability": [[3, 4,5,6], [16, 17, 18, 19,20]],
+    "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
+    "price_threshold": 270,
+    "days_search": ["2026-03-23", "2026-04-10"],
     "max_trip_duration": 6
   }
 ]
