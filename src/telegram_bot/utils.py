@@ -48,7 +48,8 @@ def handle_error(func):
 
 
 async def send_server_up(bot: Bot):
-    await bot.send_message(chat_id=1042856343, text="Server is up and running!")
+    for admin in LIST_OF_ADMINS:
+        await bot.send_message(chat_id=admin, text="Server is up and running!")
 
 
 def restricted(func):
