@@ -16,7 +16,7 @@ class Flight:
 		self._date = date
 		self._dow = datetime.strptime(date, '%Y-%m-%d').isoweekday() # day of week
 		self._airline = None
-		self._flight_time = None
+		self._travel_time = None
 		self._num_stops = None
 		self._stops = None
 		self._co2 = None
@@ -77,8 +77,8 @@ class Flight:
 		return self._airline
 
 	@property
-	def flight_time(self):
-		return self._flight_time
+	def Travel_Time(self):
+		return self._travel_time
 
 	@property
 	def num_stops(self):
@@ -131,11 +131,11 @@ class Flight:
 			date_format = "%Y-%m-%d %I:%M %p"
 			self._times += [datetime.strptime(self._date + " " + arg, date_format) + delta]
 
-		elif ('hr' in arg or 'min'in arg) and self._flight_time is None:
+		elif ('hr' in arg or 'min'in arg) and self._travel_time is None:
 			# flight time
-			self._flight_time = arg
+			self._travel_time = arg
 		elif 'stop' in arg and self._num_stops is None:
-			# num stops
+			# Num_Stops
 			self._num_stops = 0 if arg == 'Nonstop' else int(arg.split()[0])
 
 		elif arg.endswith('CO2e') and self._co2 is None:
@@ -207,9 +207,9 @@ class Flight:
 			'Origin' : [],
 			'Destination' : [],
 			'Airline(s)' : [],
-			'Travel Time' : [],
+			'Travel_Time' : [],
 			'Price' : [],
-			'Num Stops' : [],
+			'Num_Stops' : [],
 			'Layover' : [],
 			#'Stop Location' : [],
 			'CO2 Emission (kg)' : [],
@@ -222,11 +222,11 @@ class Flight:
 			data['Arrival datetime'] += [flight.time_arrive]
 
 			data['Airline(s)'] += [flight.airline]
-			data['Travel Time'] += [flight.flight_time]
+			data['Travel_Time'] += [flight.Travel_Time]
 			data['Origin'] += [flight.origin]
 			data['Destination'] += [flight.dest]
 
-			data['Num Stops'] += [flight.num_stops]
+			data['Num_Stops'] += [flight.num_stops]
 			data['Layover'] += [flight.stops]
 			#data['Stop Location'] += [flight.stops]
 			data['CO2 Emission (kg)'] += [flight.co2]
