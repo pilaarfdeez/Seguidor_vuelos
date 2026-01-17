@@ -43,7 +43,7 @@ class BargainFlight():
         self.destination = flight_df[f'Destination_{leg}']
         self.date = flight_df[f'Departure datetime_{leg}'].strftime('%Y-%m-%d')
         self.time = flight_df[f'Departure datetime_{leg}'].strftime('%H:%M')
-        self.travel_time = flight_df[f'Travel Time_{leg}']
+        self.travel_time = flight_df[f'Travel_Time_{leg}']
         self.airline = flight_df[f'Airline(s)_{leg}']
-        self.stops = str(flight_df[f'Num Stops_{leg}'])
+        self.stops = str(flight_df[f'Num_Stops_{leg}'])
         self.price = str(flight_df[f'Price_{leg}'])

@@ -431,9 +431,9 @@ class FlightMatchReporter:
                 html.append(f'<td>{match["City"]} ({match["Country"]})</td>')
                 html.append(f'<td><strong>{match["Total_Price"]}</strong></td>')
                 html.append(f'<td>{match["Price_Pilar"]}</td>')
-                html.append(f'<td>{match["Flight_Time_Pilar"]}</td>')
+                html.append(f'<td>{match["Travel_Time_Pilar"]}</td>')
                 html.append(f'<td>{match["Price_David"]}</td>')
-                html.append(f'<td>{match["Flight_Time_David"]}</td>')
+                html.append(f'<td>{match["Travel_Time_David"]}</td>')
                 html.append('</tr>')
 
             html.append('</tbody></table>')
