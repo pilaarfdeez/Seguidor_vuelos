@@ -94,6 +94,7 @@ class _Scrape:
 		self._url = None
 		self._type = None
 		self._explore = False
+		self.pattern_iata = re.compile(r'^[A-Z]{3}$')
 
 	# if date leave and date return, return 2 objects?
 	def __call__(self, *args):
@@ -316,6 +317,9 @@ class _Scrape:
 
 			self._date = [args[2]]
 
+			if any(not self.pattern_iata.match(x) for x in self._origin + self._dest):
+				tfs = True
+
 			self._set_search_mode()
 			self._url = self._make_url(tfs)
 			self._type = 'one-way'
@@ -385,8 +389,7 @@ class _Scrape:
 			raise NotImplementedError()
 	
 	def _set_search_mode(self):
-		pattern = re.compile(r'^[A-Z]{3}$')
-		if any(not pattern.match(x) for x in self.origin + self.dest):
+		if any(not self.pattern_iata.match(x) for x in self.dest):
 			self._explore = True
 
 	@property
@@ -571,7 +574,7 @@ class _Scrape:
 				else:
 					continue
 
-				# Parse flight_time using regex to support '2 hr 30 min', '2 hr', or '30 min'
+				# Parse Travel_Time using regex to support '2 hr 30 min', '2 hr', or '30 min'
 				hours = 0
 				minutes = 0
 				if info['Flight time']:
@@ -589,7 +592,7 @@ class _Scrape:
 					'City': info['City'],
 					'Price': info['Price'],
 					'Stops': info['Stops'],
-					'Flight_Time': info['Flight time (td)'],
+					'Travel_Time': info['Flight time (td)'],
 				})
 
 			except Exception as e:
