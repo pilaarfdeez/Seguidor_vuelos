@@ -348,8 +348,8 @@ class FlightMatchReporter:
         self.env = self.conf.ENV
         self.today = dt.datetime.today().strftime('%d/%m/%Y')
 
-    def send_report(self):
-        with open("data/potential_matches.json", "r", encoding="utf-8") as f:
+    def send_report(self, matches='real'):
+        with open(f"data/{matches}_matches.json", "r", encoding="utf-8") as f:
             data = json.load(f)
 
         html_content = self.build_html_email(data)
@@ -365,12 +365,12 @@ class FlightMatchReporter:
         message.attach(MIMEText(html_content, "html"))
 
         # Optional: Add a plot/image if available
-        plot_path = 'data/images/matches.png'
-        if os.path.exists(plot_path):
-            with open(plot_path, "rb") as img_file:
-                img = MIMEImage(img_file.read(), name=os.path.basename(plot_path))
-                img.add_header("Content-ID", "<plot_matches>")
-                message.attach(img)
+        # plot_path = 'data/images/matches.png'
+        # if os.path.exists(plot_path):
+        #     with open(plot_path, "rb") as img_file:
+        #         img = MIMEImage(img_file.read(), name=os.path.basename(plot_path))
+        #         img.add_header("Content-ID", "<plot_matches>")
+        #         message.attach(img)
 
         with smtplib.SMTP(self.conf.smtp_server, self.conf.port) as server:
             server.starttls()
@@ -381,62 +381,78 @@ class FlightMatchReporter:
     def build_html_email(self, data: list):
         if not data:
             return None
+        
+        matches = data
 
         html = ['<!DOCTYPE html>']
         html.append('''
-<head>
-    <meta charset="UTF-8">
-    <title>Informe de Vuelos Conjuntos</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 0; padding: 20px; }
-        .container { max-width: 700px; margin: auto; background: white; padding: 20px; border-radius: 8px; }
-        h1 { text-align: center; color: #333; }
-        h2 { color: #444; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
-        th { background-color: #f2f2f2; }
-        .footer { text-align: center; font-size: 12px; color: #777; margin-top: 20px; }
-    </style>
-</head>
-''')
+    <head>
+        <meta charset="UTF-8">
+        <title>Informe de Vuelos Conjuntos</title>
+        <style>
+            body { font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 0; padding: 20px; }
+            .container { max-width: 700px; margin: auto; background: white; padding: 20px; border-radius: 8px; }
+            h1 { text-align: center; color: #333; }
+            h2 { color: #444; }
+            table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+            th { background-color: #f2f2f2; }
+            .footer { text-align: center; font-size: 12px; color: #777; margin-top: 20px; }
+        </style>
+    </head>
+    ''')
 
         html.append('<body><div class="container">')
         html.append('<h1>✈️ Informe de Exploración de Vuelos</h1>')
-        html.append('<p>Estas son las mejores coincidencias encontradas para que David y Pilar celebren su aniversario juntitos:</p>')
+        html.append('<p>Estas son las mejores coincidencias encontradas para que David y Pilar hagan su próximo viaje juntitos:</p>')
 
-        for day_info in data:
-            date = day_info["Day"]
-            matches = day_info["Matches"]
-            if not matches:
-                continue
 
-            html.append(f'<h2>📅 {date}</h2>')
-            html.append('<table>')
-            html.append('''
-                <thead>
-                    <tr>
-                        <th>Destino</th>
-                        <th>Precio Total</th>
-                        <th>Precio (P)</th>
-                        <th>Duración (P)</th>
-                        <th>Precio (D)</th>
-                        <th>Duración (D)</th>
-                    </tr>
-                </thead>
-                <tbody>
-            ''')
+        html.append('<table>')
+        html.append('''
+            <thead>
+                <tr>
+                    <th>Destino</th>
+                    <th>Fechas<br>(Ida &rarr; Vuelta)</th>
+                    <th>Precio Total</th>
+                    <th>Precios<br>(Ida &rarr; Vuelta)</th>
+                    <th>Duración vuelo<br>(Ida &rarr; Vuelta)</th>
+                    <th>Alcachofilla</th>
+                </tr>
+            </thead>
+            <tbody>
+        ''')
 
-            for match in matches:
-                html.append('<tr>')
-                html.append(f'<td>{match["City"]} ({match["Country"]})</td>')
-                html.append(f'<td><strong>{match["Total_Price"]}</strong></td>')
-                html.append(f'<td>{match["Price_Pilar"]}</td>')
-                html.append(f'<td>{match["Travel_Time_Pilar"]}</td>')
-                html.append(f'<td>{match["Price_David"]}</td>')
-                html.append(f'<td>{match["Travel_Time_David"]}</td>')
-                html.append('</tr>')
+        for match in matches:
+            html.append('<tr>')
+            html.append(f'<td>{match["City"]} ({match["Country"]})</td>')
+            html.append(f'<td>{match["Day"][0]}  &rarr; {match["Day"][1]}</td>')
+            html.append(f'<td><strong>{match["Total_Price"]}</strong></td>')
+            html.append(  # Divide cell top-bottom
+                '<td style="padding:6px;">'
+                '<div style="display:flex;flex-direction:column;align-items:center;gap:4px;">'
+                f'<div>{match["Price_David"][0]} &rarr; {match["Price_David"][1]}</div>'
+                f'<div style="border-top:1px solid #ddd;padding-top:4px;">{match["Price_Pilar"][0]} &rarr; {match["Price_Pilar"][1]}</div>'
+                '</div></td>'
+            )
+            html.append(
+                '<td style="padding:6px;">'
+                '<div style="display:flex;flex-direction:column;align-items:center;gap:4px;">'
+                f'<div>{match["Travel_Time_David"][0]} &rarr; {match["Travel_Time_David"][1]}</div>'
+                f'<div style="border-top:1px solid #ddd;padding-top:4px;">{match["Travel_Time_Pilar"][0]} &rarr; {match["Travel_Time_Pilar"][1]}</div>'
+                '</div></td>'
+            )
 
-            html.append('</tbody></table>')
+            html.append(
+                '<td style="padding:6px;">'
+                '<div style="display:flex;flex-direction:column;align-items:center;gap:4px;">'
+                '<div style="color:#888">David</div>'
+                '<div style="border-top:1px solid #ddd;padding-top:4px;color:#888">Piluca</div>'
+                '</div></td>'
+            )
+
+            html.append('</tr>')
+
+        html.append('</tbody></table>')
 
         html.append(f'''
             <div class="footer">
@@ -445,8 +461,5 @@ class FlightMatchReporter:
             </div>
         </div></body></html>
         ''')
-
-        with open("data/flight_match_report.html", "w", encoding="utf-8") as f:
-            f.write("".join(html))
 
         return "".join(html)
