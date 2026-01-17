@@ -45,11 +45,12 @@ class ExplorerConfig:
         self.AIRPORT_DAVID = 'HAM'
         self.AIRPORT_PILAR = 'AGP'
 
-        self.DAYS_DEPARTURE = ["2025-11-07", "2025-11-08", "2025-11-12"]
-        self.DAYS_RETURN = ["2025-11-16", "2025-11-17"]
+        self.DAYS_DEPARTURE = ["2026-03-19", "2026-03-20"]
+        self.DAYS_RETURN = ["2026-03-22", "2026-03-16"]
 
         self.MAX_TRAVEL_HOURS = 6
         self.MAX_PRICE = 300
+        self.COUNTRY_TRIP = False  # If True, return from any city in the country are considered
 
 
 class ReporterConfig:
