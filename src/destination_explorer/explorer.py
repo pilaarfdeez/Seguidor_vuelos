@@ -30,22 +30,42 @@ class Explorer:
         elif matches == 'real':
             matches_df = self.matches.copy()
 
-        matches_dict = []
-        for day in matches_df['Day'].unique():
-            day_matches = matches_df[matches_df['Day'] == day].drop(columns=['Day'])
-
-            # Format flight times as 'Xh Ymin'
-            def format_travel_time(td):
+        # Format flight times as 'Xh Ymin'
+        def format_travel_time(td):
+            if matches == 'potential':
                 total_minutes = pd.to_timedelta(td).total_seconds() // 60
                 hours = int(total_minutes // 60)
                 minutes = int(total_minutes % 60)
                 return f"{hours}h {minutes}min"
-            for col in day_matches.columns:
-                if 'Price' in col:
-                    day_matches[col] = day_matches[col].apply(lambda x: f"{x}€")
-                elif 'Travel_Time' in col:
-                    day_matches[col] = day_matches[col].apply(format_travel_time)
+            
+            elif matches == 'real':
+                formatted_time = []
+                for i in range(2):
+                    total_minutes = pd.to_timedelta(td[i]).total_seconds() // 60
+                    hours = int(total_minutes // 60)
+                    minutes = int(total_minutes % 60)
+                    formatted_time.append(f"{hours}h {minutes}min")
+                return tuple(formatted_time)
+        
+        for col in matches_df.columns:
+            if 'Price' in col:
+                if matches == 'potential' or col == 'Total_Price':
+                    matches_df[col] = matches_df[col].apply(lambda x: f"{x}€")
+                elif matches == 'real':
+                    matches_df[col] = matches_df[col].apply(lambda x: ((f"{x[0]}€", f"{x[1]}€")))
 
+            elif 'Travel_Time' in col:
+                try:
+                    matches_df[col] = matches_df[col].apply(format_travel_time)
+                except TypeError:
+                    logger.warning(f"Skipped travel time formatting!")
+
+        if matches == 'real':
+            return matches_df.to_dict(orient='records')
+        
+        matches_dict = []
+        for day in matches_df['Day'].unique():
+            day_matches = matches_df[matches_df['Day'] == day].drop(columns=['Day'])
             matches_dict.append({
                 'Day': day,
                 'Matches': day_matches.to_dict(orient='records')
@@ -56,7 +76,7 @@ class Explorer:
         if matches in ['potential', 'both']:
             self.potential_matches[0] = self.potential_matches[0].sort_values(by=['Day', 'Total_Price', 'Country', 'City'])
         if matches in ['real', 'both']:
-            self.matches = self.matches.sort_values(by=['Total_Price', 'Day', 'Country', 'City'])
+            self.matches = self.matches.sort_values(by=['Total_Price', 'Day', 'Country', 'City'], ignore_index=True)
 
 
     def process_matches(self, day, country, results_david: pd.DataFrame, results_pilar: pd.DataFrame):
@@ -102,12 +122,16 @@ class Explorer:
         })
 
         double_columns = [c for c in self.match_columns if f'{c}_out' in combinations_df.columns and f'{c}_return' in combinations_df.columns]
+        price_columns = [c for c in double_columns if 'Price' in c]
+        for col in price_columns:
+            combinations_df[f'{col}_out'] = combinations_df[f'{col}_out'].str.replace('€', '').astype('int') 
+            combinations_df[f'{col}_return'] = combinations_df[f'{col}_return'].str.replace('€', '').astype('int') 
         for col in double_columns:
             if col == 'Total_Price':
                 matches_df[col] = (
-                    combinations_df[f'{col}_out']  #.str.replace('€', '').astype('int') 
+                    combinations_df[f'{col}_out']
                     +
-                    combinations_df[f'{col}_return']  #.str.replace('€', '').astype('int')
+                    combinations_df[f'{col}_return']
                 )
                 continue
             matches_df[col] = list(zip(combinations_df[f'{col}_out'], combinations_df[f'{col}_return']))
@@ -119,7 +143,7 @@ class Explorer:
 
 
     def save_matches(self, matches='real'):
-        self.sort_matches()
+        self.sort_matches(matches=matches)
         with open(f"data/{matches}_matches.json", "w+") as file:
             json.dump(self.to_dict(matches=matches), file, indent=4)
 
