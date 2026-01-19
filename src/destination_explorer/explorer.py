@@ -88,7 +88,7 @@ class Explorer:
         match_keys = ['City']
         cross_joined = results_david.merge(results_pilar, on=match_keys, suffixes=('_David', '_Pilar'))
         filter = (
-            (cross_joined['Price_David'] + cross_joined['Price_Pilar']  < 0.6 * self.conf.MAX_PRICE) &
+            (cross_joined['Price_David'] + cross_joined['Price_Pilar']  < 0.75 * self.conf.MAX_PRICE) &
             (cross_joined['Travel_Time_David'] < dt.timedelta(hours=self.conf.MAX_TRAVEL_HOURS)) &
             (cross_joined['Travel_Time_Pilar'] < dt.timedelta(hours=self.conf.MAX_TRAVEL_HOURS))
         )

@@ -36,8 +36,9 @@ for day in conf.DAYS_DEPARTURE:
         ScrapeObjects(results_pilar, conf.ENV)
 
         processed_matches = explorer.process_matches(day, country, results_david.data, results_pilar.data)
-        explorer.potential_matches[0] = pd.concat([explorer.potential_matches[0], processed_matches], axis=0)
-        logger.info(f"--> {len(processed_matches)} potential matches found!")
+        if processed_matches:
+            explorer.potential_matches[0] = pd.concat([explorer.potential_matches[0], processed_matches], axis=0)
+            logger.info(f"--> {len(processed_matches)} potential matches found!")
 
         random_wait(min_sec=0.1, max_sec=1)
 

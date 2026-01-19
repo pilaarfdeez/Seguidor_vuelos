@@ -63,5 +63,5 @@ jobs:
       - name: Commit JSON changes
         uses: EndBug/add-and-commit@v9
         with:
-          add: ./data/potential_destinations.json
+          add: ./data
           message: "Update potential destinations"
