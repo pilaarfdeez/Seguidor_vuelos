@@ -37,7 +37,10 @@ for day in conf.DAYS_DEPARTURE:
 
         processed_matches = explorer.process_matches(day, country, results_david.data, results_pilar.data)
         if processed_matches is not None:
-            explorer.potential_matches[0] = pd.concat([explorer.potential_matches[0], processed_matches], axis=0)
+            if explorer.potential_matches[0].empty:
+                explorer.potential_matches[0] = processed_matches
+            else:
+                explorer.potential_matches[0] = pd.concat([explorer.potential_matches[0], processed_matches], axis=0)
             logger.info(f"--> {len(processed_matches)} potential matches found!")
 
         random_wait(min_sec=0.1, max_sec=0.5)
@@ -66,9 +69,13 @@ for country in explorer.potential_matches[0]['Country'].unique():
             ScrapeObjects(results_pilar, conf.ENV)
 
             processed_matches = explorer.process_matches(day, country, results_david.data, results_pilar.data)
-            explorer.potential_matches[1] = pd.concat([explorer.potential_matches[1], processed_matches], axis=0)
+            if processed_matches is not None:
+                if explorer.potential_matches[1].empty:
+                    explorer.potential_matches[1] = processed_matches
+                else:
+                    explorer.potential_matches[1] = pd.concat([explorer.potential_matches[1], processed_matches], axis=0)
 
-    random_wait(min_sec=2, max_sec=3)
+        random_wait(min_sec=0.1, max_sec=0.5)
 
 explorer.create_combinations()
 
