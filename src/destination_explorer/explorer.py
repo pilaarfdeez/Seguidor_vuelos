@@ -21,7 +21,9 @@ class Explorer:
         with open('data/country_codes.json', "r", encoding="utf-8") as f:
             self.country_to_fb = json.load(f)  # Dictionary mapping country names to Freebase IDs
         with open('data/city_codes.json', "r", encoding="utf-8") as f:
-            self.city_to_fb = json.load(f)  # Dictionary mapping (city, country) tuples to Freebase IDs
+            raw_city_to_fb = json.load(f)  # keys stored as "City||Country" strings
+            # convert string keys back to (city, country) tuples
+            self.city_to_fb = {tuple(k.split("||")): v for k, v in raw_city_to_fb.items()}
         self.missing_ids = []
 
     def to_dict(self, matches='real'):
@@ -179,5 +181,7 @@ class Explorer:
 
         # Sort and export dictionary for future use
         self.city_to_fb = dict(sorted(self.city_to_fb.items(), key=lambda x: (x[0][1], x[0][0])))
+        # convert tuple keys to "City||Country" strings for JSON serialization
+        serializable = {f"{k[0]}||{k[1]}": v for k, v in self.city_to_fb.items()}
         with open("data/city_codes.json", "w+", encoding="utf-8") as f:
-            json.dump(self.city_to_fb, f, indent=4)
+            json.dump(serializable, f, indent=4, ensure_ascii=False)
