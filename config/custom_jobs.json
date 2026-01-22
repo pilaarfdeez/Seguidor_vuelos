@@ -1,15 +1,5 @@
 [
   {
-    "name": "Viajecito para morir de frio desde Pisa",
-    "alias": "PSA_HAM_Feb-Mar",
-    "airports": [["MXP","PSA"], ["HAM", "LBC", "HAJ", "BRE"]],
-    "days_availability": [[3,4,5], [7,8]],
-    "email": ["fjavims89@gmail.com"],
-    "price_threshold": 60,
-    "days_search": ["2026-03-01", "2026-06-30"],
-    "max_trip_duration": 5
-  },
-  {
     "name": "Javi en busca de la Mari",
     "alias": "AGP_PSA_Mar-Jun",
     "airports": [["AGP","GRX"],["PSA"]],
@@ -90,22 +80,12 @@
     "max_trip_duration": 5
   },
   {
-    "name": "Huele a incienso",
-    "alias": "SS_Raquel",
-    "airports": [["MUC","FMM"], ["GRX", "AGP"]],
-    "days_availability": [[4,5,6], [6,7,8,9, 13, 14, 15, 16]],
-    "email": ["raquelrp1426@hotmail.com"],
-    "price_threshold": 220,
-    "days_search": ["2026-03-23", "2026-04-10"],
-    "max_trip_duration": 6
-  },
-  {
     "name": "SS por españita",
     "alias": "SS_David",
     "airports": [["HAM","BRE", "LBC"], ["GRX", "AGP"], "MAD", "BIO"],
     "days_availability": [[3, 4,5,6], [16, 17, 18, 19,20]],
     "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
-    "price_threshold": 270,
+    "price_threshold": 370,
     "days_search": ["2026-03-23", "2026-04-10"],
     "max_trip_duration": 6
   }
