@@ -35,7 +35,7 @@ class BargainFinderConfig:
 
         self.AIRPORTS_PILAR = (['AGP','GRX'], ['HAM','BRE','LBC'])
         self.AIRPORTS_DAVID = (['HAM','BRE','LBC', 'HAJ'], ['AGP','MAD','BIO'])
-        self.DAYS_PILAR = ([5], [7])  # Each of the lists corresponds to each flight of the round trip
+        self.DAYS_PILAR = ([4,5], [7])  # Each of the lists corresponds to each flight of the round trip
         self.DAYS_DAVID = ([3,4,5], [7,8])  # 1 is Monday, 7 is Sunday. Higher numbers correpond to the next week
         
         self.PRICE_THRESHOLD = 150
