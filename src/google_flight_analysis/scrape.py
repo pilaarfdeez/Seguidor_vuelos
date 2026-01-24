@@ -21,6 +21,7 @@ from tqdm import tqdm
 from config.logging import init_logger
 from src.google_flight_analysis.flight import *
 from src.google_flight_analysis.human_simulations import *
+from src.google_flight_analysis.protobuf.protobuf_construc import FlightData, Passengers, TFSData
 
 __all__ = ['Scrape', '_Scrape', 'ScrapeObjects']
 chromedriver_autoinstaller.install() # Check if chromedriver is installed correctly and on path
@@ -452,10 +453,6 @@ class _Scrape:
 
 	def _make_url(self, tfs: bool = False, max_stops: int = 1):
 		'''Make the URL for the query. If tfs is True, use TFSData to create a b64 encoded URL.'''
-		if not self._explore:
-			from src.google_flight_analysis.protobuf.protobuf_construc import FlightData, Passengers, TFSData
-		else:
-			from src.google_flight_analysis.protobuf.protobuf_construc_explore import FlightData, Passengers, TFSData
 
 		urls = []
 		if tfs and len(self._date) == 1:
@@ -470,6 +467,7 @@ class _Scrape:
 				fd.max_stops = max_stops
 
 			filter = TFSData.from_interface(
+				explore_mode=self._explore,
 				flight_data=flight_data, trip='one-way', passengers=Passengers(adults=1), seat='economy'
 			)
 			b64 = filter.as_b64().decode('utf-8')
