@@ -86,7 +86,7 @@ class Explorer:
         # Process common destinations for outbound flights
 
         if results_david.empty or results_pilar.empty:
-            return
+            return None
         
         if 'City' not in results_david.columns:  # Results from "Flights" search mode
             rename_dict = {
