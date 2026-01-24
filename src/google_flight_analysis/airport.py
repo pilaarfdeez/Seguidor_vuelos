@@ -115,7 +115,18 @@ class Airport():
                         wdt:P17 ?country ;
                         wdt:P646 ?freebaseID .
                 
-                VALUES ?cityType {{ wd:Q515 wd:Q15284 wd:Q3957 wd:Q532 wd:Q46831 wd:Q23442 wd:Q486972 wd:Q1549591 wd:Q108178728 }}
+                VALUES ?cityType {{ 
+                    wd:Q515
+                    wd:Q15284 
+                    wd:Q3957 
+                    wd:Q532 
+                    wd:Q46831 
+                    wd:Q23442 
+                    wd:Q486972 
+                    wd:Q1549591 
+                    wd:Q108178728
+                    wd:Q200250
+                }}
                 
                 ?country rdfs:label "{country}"@en .
             }}
