@@ -507,6 +507,8 @@ class _Scrape:
 				return explore_df
 			else:
 				flights = self._clean_results(results, date)
+				if not flights:
+					return -1
 				flights_df = Flight.dataframe(flights)
 				return flights_df
 
