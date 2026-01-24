@@ -47,6 +47,7 @@ for day in conf.DAYS_DEPARTURE:
 
     random_wait(min_sec=10, max_sec=15)
 
+explorer.save_matches(matches='potential')
 explorer.get_freebase_ids()
 
 for country in explorer.potential_matches[0]['Country'].unique():
@@ -79,7 +80,7 @@ for country in explorer.potential_matches[0]['Country'].unique():
 
 explorer.create_combinations()
 
-explorer.save_matches(matches='potential')
+explorer.save_matches(matches='real')
 logger.info('Explorer job terminated successfully!')
 
 logger.info('Sending email...')

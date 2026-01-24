@@ -1,6 +1,7 @@
 import datetime as dt
 import json
 import pandas as pd
+import re
 
 from config.logging import init_logger
 from src.google_flight_analysis.airport import Airport
@@ -86,9 +87,40 @@ class Explorer:
 
         if results_david.empty or results_pilar.empty:
             return
+        
+        if 'City' not in results_david.columns:  # Results from "Flights" search mode
+            rename_dict = {
+                'Num_Stops': 'Stops',
+            }
+            cols_select = ['City', 'Price', 'Travel_Time', 'Num_Stops']
+            def parse_flight_time(time_str):
+                hours = 0
+                minutes = 0
+                if time_str:
+                    match = re.search(r"(?:(\d+)\s*hr)?\s*(?:(\d+)\s*min)?", time_str)
+                    if match:
+                        if match.group(1):
+                            hours = int(match.group(1))
+                        if match.group(2):
+                            minutes = int(match.group(2))
+                    return dt.timedelta(hours=hours, minutes=minutes)
+                else:
+                    return None
+
+            results_david['City'] = results_david['Origin'].apply(airp_helper.city_from_iata)
+            results_pilar['City'] = results_pilar['Origin'].apply(airp_helper.city_from_iata)
+            results_david['Travel_Time'] = results_david['Travel_Time'].apply(parse_flight_time)
+            results_pilar['Travel_Time'] = results_pilar['Travel_Time'].apply(parse_flight_time)
+
+            df_david = results_david[cols_select].rename(columns=rename_dict)
+            df_pilar = results_pilar[cols_select].rename(columns=rename_dict)
+
+        else:  # Results from "Explore" search mode
+            df_david = results_david
+            df_pilar = results_pilar
 
         match_keys = ['City']
-        cross_joined = results_david.merge(results_pilar, on=match_keys, suffixes=('_David', '_Pilar'))
+        cross_joined = df_david.merge(df_pilar, on=match_keys, suffixes=('_David', '_Pilar'))
         filter = (
             (cross_joined['Price_David'] + cross_joined['Price_Pilar']  < 0.75 * self.conf.MAX_PRICE) &
             (cross_joined['Travel_Time_David'] < dt.timedelta(hours=self.conf.MAX_TRAVEL_HOURS)) &
@@ -126,8 +158,8 @@ class Explorer:
         double_columns = [c for c in self.match_columns if f'{c}_out' in combinations_df.columns and f'{c}_return' in combinations_df.columns]
         price_columns = [c for c in double_columns if 'Price' in c]
         for col in price_columns:
-            combinations_df[f'{col}_out'] = combinations_df[f'{col}_out'].str.replace('€', '').astype('int') 
-            combinations_df[f'{col}_return'] = combinations_df[f'{col}_return'].str.replace('€', '').astype('int') 
+            combinations_df[f'{col}_out'] = combinations_df[f'{col}_out']  #.str.replace('€', '').astype('int') 
+            combinations_df[f'{col}_return'] = combinations_df[f'{col}_return']  #.str.replace('€', '').astype('int') 
         for col in double_columns:
             if col == 'Total_Price':
                 matches_df[col] = (
@@ -185,3 +217,6 @@ class Explorer:
         serializable = {f"{k[0]}||{k[1]}": v for k, v in self.city_to_fb.items()}
         with open("data/city_codes.json", "w+", encoding="utf-8") as f:
             json.dump(serializable, f, indent=4, ensure_ascii=False)
+
+        logger.info("Successfully saved updated city_codes database.")
+        logger.info(f"Freebase ID could not be determined for following cities: {[city[0] for city in self.missing_ids]}")
