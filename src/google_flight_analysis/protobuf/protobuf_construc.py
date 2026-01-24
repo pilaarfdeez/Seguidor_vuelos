@@ -1,6 +1,7 @@
 import base64
 import src.google_flight_analysis.protobuf.schema_pb2 as PB
 from typing import Any, List, Optional, TYPE_CHECKING, Literal
+import re
 
 if TYPE_CHECKING:
     PB: Any
@@ -41,9 +42,23 @@ class FlightData:
         for airp in self.from_airport:
             airport = data.from_flight.add()
             airport.airport = airp
+            # Set code_type: 1 if airp code is a three-letter [A-Z] string, else 4
+            if re.fullmatch(r"[A-Z]{3}", airp):
+                code_type = 1
+            else:
+                code_type = 2  # Supposing it's a city
+            airport.TYPE = code_type
+
         for airp in self.to_airport:
             airport = data.to_flight.add()
             airport.airport = airp
+            # Set code_type: 1 if airp code is a three-letter [A-Z] string, else 4
+            if re.fullmatch(r"[A-Z]{3}", airp):
+                code_type = 1
+            else:
+                code_type = 4  # Supposing it's a country
+            airport.TYPE = code_type
+
         if self.max_stops is not None:
             data.max_stops = self.max_stops
 
@@ -66,6 +81,14 @@ class Passengers:
         self.pb = []
         self.pb += [PB.Passenger.ADULT for _ in range(adults)]
 
+        self.passengers = {
+            "unknown": PB.Passenger.UNKNOWN_PASSENGER,
+            "adults": PB.Passenger.ADULT,
+            "children": PB.Passenger.CHILD,
+            "infants_in_seat": PB.Passenger.INFANT_IN_SEAT,
+            "infants_on_lap": PB.Passenger.INFANT_ON_LAP,
+        }["adults"]  # Default to adults
+
     def attach(self, info: PB.Info) -> None:  # type: ignore
         for p in self.pb:
             info.passengers.append(p)
@@ -83,6 +106,7 @@ class TFSData:
     def __init__(
         self,
         *,
+        search_mode: int,  # 2: flights mode, 3: explore mode
         flight_data: List[FlightData],
         seat: PB.Seat,  # type: ignore
         trip: PB.Trip,  # type: ignore
@@ -94,13 +118,22 @@ class TFSData:
         self.trip = trip
         self.passengers = passengers
         self.max_stops = max_stops  # Store max_stops
+        self.search_mode = search_mode
 
     def pb(self) -> PB.Info:  # type: ignore
         info = PB.Info()
         info.seat = self.seat
         info.trip = self.trip
+        info.metadata_1 = 28
+        info.metadata_2 = self.search_mode
+        info.search_mode = 1  # Using specific date search mode
 
-        self.passengers.attach(info)
+        # if self.search_mode == 2:
+        #     self.passengers.attach(info)
+        # else:
+        #     info.passengers = self.passengers.passengers
+        if True:
+            info.passengers = self.passengers.passengers
 
         for fd in self.flight_data:
             fd.attach(info)
@@ -121,6 +154,7 @@ class TFSData:
     @staticmethod
     def from_interface(
         *,
+        explore_mode = bool,
         flight_data: List[FlightData],
         trip: Literal["round-trip", "one-way", "multi-city"],
         passengers: Passengers,
@@ -141,6 +175,7 @@ class TFSData:
             "one-way": PB.Trip.ONE_WAY,
             "multi-city": PB.Trip.MULTI_CITY,
         }[trip]
+
         seat_t = {
             "economy": PB.Seat.ECONOMY,
             "premium-economy": PB.Seat.PREMIUM_ECONOMY,
@@ -148,7 +183,10 @@ class TFSData:
             "first": PB.Seat.FIRST,
         }[seat]
 
+        search_mode = 3 if explore_mode else 2
+
         return TFSData(
+            search_mode=search_mode,
             flight_data=flight_data,
             seat=seat_t,
             trip=trip_t,

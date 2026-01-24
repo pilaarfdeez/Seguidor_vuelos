@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 message Airport {
+  int32 TYPE = 1;
   string airport = 2;
 }
 
@@ -37,6 +38,9 @@ enum Passenger {
 message Info {
   repeated FlightData data = 3;
   Seat seat = 9;
-  repeated Passenger passengers = 8;
+  Passenger passengers = 8;
   Trip trip = 19;
+  int32 metadata_1 = 1;
+  int32 metadata_2 = 2;
+  int32 search_mode = 14;
 }
