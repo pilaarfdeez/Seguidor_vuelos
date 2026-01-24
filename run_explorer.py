@@ -84,4 +84,4 @@ explorer.save_matches(matches='real')
 logger.info('Explorer job terminated successfully!')
 
 logger.info('Sending email...')
-# reporter.send_report()
+reporter.send_report()
