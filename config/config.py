@@ -49,7 +49,7 @@ class ExplorerConfig:
         self.DAYS_RETURN = ["2026-03-22"]
 
         self.MAX_TRAVEL_HOURS = 6
-        self.MAX_PRICE = 300
+        self.MAX_PRICE = 400
         self.COUNTRY_TRIP = False  # If True, return from any city in the country are considered
 
 
