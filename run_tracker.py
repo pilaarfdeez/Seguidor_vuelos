@@ -25,7 +25,7 @@ import datetime as dt
 from config.logging import init_logger
 from config.config import TrackerConfig
 from src.flight_tracker.tracker import Tracker
-from src.flight_tracker.report import TrackerReporter
+from src.report.report import TrackerReporter
 from src.flight_tracker.tracked_flight import TrackedFlight
 from src.google_flight_analysis.scrape import Scrape, ScrapeObjects
 # from src.telegram_bot.send_auto_message import send_auto_message
@@ -62,7 +62,8 @@ for key, flights in tracker.group_flights().items():
     if search_date < today:
         logger.warning(f"Flights {key} are in the past --> removing from tracker")
         for flight in flights:
-            tracker.delete_flight(tracked_flight=flight)
+            tracked_flight = TrackedFlight(flight)
+            tracker.delete_flight(tracked_flight)
         continue
 
     logger.info(f'Checking {len(flights)} tracked flights for {key}')

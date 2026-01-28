@@ -20,7 +20,7 @@ def save_results(flights_df: pd.DataFrame):
   for i in range(len(df)):
       hours = 0
       minutes = 0
-      match = re.search(r"(?:(\d+)\s*hr)?\s*(?:(\d+)\s*min)?", df['Travel Time'].iloc[i])
+      match = re.search(r"(?:(\d+)\s*hr)?\s*(?:(\d+)\s*min)?", df['Travel_Time'].iloc[i])
       if match:
           if match.group(1):
               hours = int(match.group(1))
@@ -31,7 +31,7 @@ def save_results(flights_df: pd.DataFrame):
 
   # Calculate days left until departure
   df['days_left'] = (pd.to_datetime(df.loc[:, 'Departure datetime']) - pd.to_datetime(df.loc[:, 'Search Date'])).dt.days
-  df.drop(columns=['Search Date', 'Travel Time'], inplace=True)
+  df.drop(columns=['Search Date', 'Travel_Time'], inplace=True)
 
   # Rename columns to snake_case
   rename_dict = {
@@ -39,7 +39,7 @@ def save_results(flights_df: pd.DataFrame):
       'Destination': 'destination',
       'Departure datetime': 'departure_datetime',
       'Airline(s)': 'airline',
-      'Num Stops': 'num_stops',
+      'Num_Stops': 'num_stops',
       'Price': 'price_eur',
   }
   df.rename(columns=rename_dict, inplace=True)
