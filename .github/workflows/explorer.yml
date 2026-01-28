@@ -1,7 +1,7 @@
 name: Run Explorer
 
 on:
-  push:
+  # push:
   schedule:
     - cron: "0 18 * * 0" # Run weekly at 18:00 UTC on Sunday
   workflow_dispatch:
