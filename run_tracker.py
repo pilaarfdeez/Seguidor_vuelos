@@ -62,8 +62,7 @@ for key, flights in tracker.group_flights().items():
     if search_date < today:
         logger.warning(f"Flights {key} are in the past --> removing from tracker")
         for flight in flights:
-            tracked_flight = TrackedFlight(flight)
-            tracker.delete_flight(tracked_flight)
+            tracker.delete_flight(tracked_flight=flight)
         continue
 
     logger.info(f'Checking {len(flights)} tracked flights for {key}')
