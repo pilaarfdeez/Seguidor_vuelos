@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import re
 
-from config.logging import init_logger
+from config.setup_logging import init_logger
 from src.google_flight_analysis.airport import Airport
 from src.google_flight_analysis.human_simulations import random_wait
 # from src.destination_explorer.match import Match

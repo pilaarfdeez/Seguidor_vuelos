@@ -9,7 +9,7 @@ from jinja2 import Template
 import json
 import os
 
-from config.logging import init_logger
+from config.setup_logging import init_logger
 from config.config import ReporterConfig
 from src.google_flight_analysis.airport import Airport
 from src.bargain_discovery.discoverer import Discovery

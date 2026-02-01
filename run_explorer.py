@@ -3,7 +3,7 @@ import json
 import pandas as pd
 
 from config.config import ExplorerConfig
-from config.logging import init_logger
+from config.setup_logging import init_logger
 from src.destination_explorer.explorer import Explorer
 # from src.destination_explorer.match import Match
 from src.google_flight_analysis.human_simulations import *

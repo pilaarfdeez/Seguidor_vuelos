@@ -18,7 +18,7 @@ import pandas as pd
 import re
 from tqdm import tqdm
 
-from config.logging import init_logger
+from config.setup_logging import init_logger
 from src.google_flight_analysis.analysis import save_results
 from src.google_flight_analysis.flight import *
 from src.google_flight_analysis.human_simulations import *

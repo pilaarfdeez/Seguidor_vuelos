@@ -2,7 +2,7 @@ from itertools import groupby
 import json
 import pandas as pd
 
-from config.logging import init_logger
+from config.setup_logging import init_logger
 from src.google_flight_analysis.flight import Flight
 from src.flight_tracker.tracked_flight import TrackedFlight
 

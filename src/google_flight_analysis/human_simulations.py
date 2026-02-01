@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
-from config.logging import init_logger
+from config.setup_logging import init_logger
 
 logger = init_logger(__name__)
 USER_AGENTS = [

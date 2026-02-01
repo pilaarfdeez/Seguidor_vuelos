@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-from config.logging import init_logger
+from config.setup_logging import init_logger
 
 logger = init_logger(__name__)
 

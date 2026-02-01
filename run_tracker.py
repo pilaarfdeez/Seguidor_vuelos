@@ -22,7 +22,7 @@ Modules Used:
 
 import datetime as dt
 
-from config.logging import init_logger
+from config.setup_logging import init_logger
 from config.config import TrackerConfig
 from src.flight_tracker.tracker import Tracker
 from src.report.report import TrackerReporter

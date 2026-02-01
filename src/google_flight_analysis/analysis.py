@@ -4,7 +4,7 @@ import pandas as pd
 import re
 import datetime as dt
 
-from config.logging import init_logger
+from config.setup_logging import init_logger
 
 logger = init_logger(__name__)
 

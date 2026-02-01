@@ -22,7 +22,7 @@ import json
 import pandas as pd
 
 from config.config import BargainFinderConfig
-from config.logging import init_logger
+from config.setup_logging import init_logger
 from src.bargain_discovery.discoverer import Discovery
 from src.bargain_discovery.bargain import Bargain
 from src.google_flight_analysis.human_simulations import *
