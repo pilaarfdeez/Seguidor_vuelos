@@ -88,7 +88,6 @@ tracker.save_flights()
 logger.info('Tracker jobs terminated successfully!')
 
 logger.info('Sending email...')
-logger.error('Test error log message')
 updated_flights = tracker.new_prices()
 reporter.send_report(updated_flights, conf.ENV)
 
