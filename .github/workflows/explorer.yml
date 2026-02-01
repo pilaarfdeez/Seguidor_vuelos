@@ -55,6 +55,7 @@ jobs:
           python run_explorer.py
         env:
           ENV: production
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           GMAIL_LOGIN: ${{ secrets.GMAIL_LOGIN }}
           GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
           GMAIL_TO: ${{ secrets.GMAIL_TO }}

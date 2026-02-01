@@ -72,7 +72,7 @@ jobs:
         env:
           ENV: production
           USER_ID: ${{ secrets.USER_ID }}
-          TOKEN_ID: ${{ secrets.TOKEN_ID }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           GMAIL_LOGIN: ${{ secrets.GMAIL_LOGIN }}
           GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
           GMAIL_TO: ${{ secrets.GMAIL_TO }}
