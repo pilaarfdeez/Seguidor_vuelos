@@ -521,14 +521,18 @@ class _Scrape:
 	def _clean_results(self, result, date):
 		res2 = [x.encode("ascii", "ignore").decode().strip() for x in result]
 
+		if any("No results returned" in term for term in res2):
+			logger.error(f"No results returned for query {self._date}: {self._origin} --> {self._dest}")
+			return None
+
 		try:
 			start = res2.index("Sorted by top flights") + 1
 		except ValueError:
 			try:
 				start = res2.index("Checking prices from multiple sources...") + 1
 			except ValueError:
-				logger.error(f'Error parsing flight results of query {self}')
-				logger.error(f"Result: {res2}")
+				logger.error(f'Error parsing flight results of query {self._date}: {self._origin} --> {self._dest}')
+				logger.info(f"Query result: {res2}")
 				return None
 		
 		if "Trains to considerTo arrive closer to your destination" in res2:
@@ -621,7 +625,7 @@ class _Scrape:
 				})
 
 			except Exception as e:
-				print(f"Error parsing an entry: {e}")
+				logger.error(f"Error parsing an exploration entry: {e}")
 				continue
 
 		explore_df = pd.DataFrame(data)
