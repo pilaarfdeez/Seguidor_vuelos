@@ -28,6 +28,8 @@ from src.bargain_discovery.bargain import Bargain
 from src.google_flight_analysis.human_simulations import *
 from src.google_flight_analysis.scrape import *
 from src.report.report import CustomBargainReporter
+from src.telegram_bot.utils import report_warnings
+
 
 conf = BargainFinderConfig()
 logger = init_logger(__name__)
@@ -113,5 +115,4 @@ for job in custom_jobs:
     random_wait(min_sec=1, max_sec=5)
 
 logger.info('All custom jobs terminated successfully!')
-
-    
+report_warnings(job = "Discovery Custom")

@@ -1,10 +1,12 @@
 import asyncio
 from functools import wraps
-import logging
+import logging, logging.handlers
+import os
 import sys
 from telegram import Update, Bot
 from telegram.ext import ContextTypes
 
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 LIST_OF_ADMINS = [1042856343]
 
 
@@ -50,6 +52,37 @@ def handle_error(func):
 async def send_server_up(bot: Bot):
     for admin in LIST_OF_ADMINS:
         await bot.send_message(chat_id=admin, text="Server is up and running!")
+
+
+def report_warnings(job: str):
+    bot = Bot(token=BOT_TOKEN)
+
+    async def send(warnings: list):
+        if not warnings:
+            for admin in LIST_OF_ADMINS:
+                await bot.send_message(chat_id=admin, text=f"✅ {job} Job completed with no errors.")
+        else:
+            for admin in LIST_OF_ADMINS:
+                await bot.send_message(chat_id=admin, text=f"⚠️ {job} Job Errors ({len(warnings)}):")
+            for warn in warnings:
+                for admin in LIST_OF_ADMINS:
+                    await bot.send_message(chat_id=admin, text=warn)
+
+
+    root = logging.getLogger()
+    buffer_handler = next((h for h in root.handlers if isinstance(h, logging.handlers.MemoryHandler)), None)
+
+    warnings = []
+
+    # inspect buffered LogRecord objects
+    if buffer_handler:
+        for rec in buffer_handler.buffer:
+            if rec.funcName != "<module>":
+                warnings.append(f"({rec.module} -> {rec.funcName}) {rec.message}")
+            else:
+                warnings.append(f"({rec.module}) {rec.message}")
+
+        asyncio.run(send(warnings))
 
 
 def restricted(func):

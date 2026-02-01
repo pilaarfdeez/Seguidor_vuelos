@@ -9,6 +9,8 @@ from src.destination_explorer.explorer import Explorer
 from src.google_flight_analysis.human_simulations import *
 from src.google_flight_analysis.scrape import *
 from src.report.report import FlightMatchReporter
+from src.telegram_bot.utils import report_warnings
+
 
 conf = ExplorerConfig()
 explorer = Explorer(conf)
@@ -85,3 +87,5 @@ logger.info('Explorer job terminated successfully!')
 
 logger.info('Sending email...')
 reporter.send_report()
+
+report_warnings(job = "Explorer")

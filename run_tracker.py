@@ -28,7 +28,7 @@ from src.flight_tracker.tracker import Tracker
 from src.report.report import TrackerReporter
 from src.flight_tracker.tracked_flight import TrackedFlight
 from src.google_flight_analysis.scrape import Scrape, ScrapeObjects
-# from src.telegram_bot.send_auto_message import send_auto_message
+from src.telegram_bot.utils import report_warnings
 
 conf = TrackerConfig()
 logger = init_logger(__name__)
@@ -88,7 +88,8 @@ tracker.save_flights()
 logger.info('Tracker jobs terminated successfully!')
 
 logger.info('Sending email...')
+logger.error('Test error log message')
 updated_flights = tracker.new_prices()
 reporter.send_report(updated_flights, conf.ENV)
-file_path = 'data/tracked_flights.json'
-# send_auto_message(file_path)
+
+report_warnings(job = "Tracker")

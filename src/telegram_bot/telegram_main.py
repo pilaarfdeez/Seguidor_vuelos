@@ -1,5 +1,4 @@
 import os
-from telegram import Bot
 from telegram.ext import (
     ApplicationBuilder,
     CommandHandler,

@@ -29,6 +29,7 @@ from src.bargain_discovery.bargain import Bargain
 from src.google_flight_analysis.human_simulations import *
 from src.google_flight_analysis.scrape import *
 from src.report.report import BargainReporter
+from src.telegram_bot.utils import report_warnings
 
 conf = BargainFinderConfig()
 discovery = Discovery()
@@ -106,3 +107,5 @@ logger.info('Discovery jobs terminated successfully!')
 
 logger.info('Sending email...')
 reporter.send_report()
+
+report_warnings(job = "Discovery")
