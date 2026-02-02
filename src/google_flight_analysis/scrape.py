@@ -522,7 +522,7 @@ class _Scrape:
 		res2 = [x.encode("ascii", "ignore").decode().strip() for x in result]
 
 		if any("No results returned" in term for term in res2):
-			logger.error(f"No results returned for query {self._date}: {self._origin} --> {self._dest}")
+			logger.error(f"No results returned for query {self._date[0]}: {self._origin} --> {self._dest}")
 			return None
 
 		try:

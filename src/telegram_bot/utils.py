@@ -55,9 +55,9 @@ async def send_server_up(bot: Bot):
 
 
 def report_warnings(job: str):
-    bot = Bot(token=BOT_TOKEN)
 
     async def send(warnings: list):
+        bot = Bot(token=BOT_TOKEN)
         if not warnings:
             for admin in LIST_OF_ADMINS:
                 await bot.send_message(chat_id=admin, text=f"✅ {job} Job completed with no errors.")
@@ -81,6 +81,8 @@ def report_warnings(job: str):
                 warnings.append(f"({rec.module} -> {rec.funcName}) {rec.message}")
             else:
                 warnings.append(f"({rec.module}) {rec.message}")
+
+        print(f"Warnings: {warnings}")
 
         asyncio.run(send(warnings))
 
