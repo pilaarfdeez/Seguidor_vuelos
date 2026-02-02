@@ -2,6 +2,9 @@ from src.google_flight_analysis.scrape import *
 from src.telegram_bot.utils import report_warnings
 
 from config.setup_logging import init_logger
+from config.config import TrackerConfig
+
+conf = TrackerConfig()
 logger = init_logger(__name__)
 
 
@@ -9,7 +12,7 @@ result = Scrape(['AGP'], ["LBC"], '2026-11-16') # obtain our scrape object, repr
 
 print(result) # get unqueried str representation
 
-ScrapeObjects(result, "local", headless=False) # runs selenium through ChromeDriver, modifies results in-place
+ScrapeObjects(result, conf.ENV, headless=True) # runs selenium through ChromeDriver, modifies results in-place
 print(result.data) # returns pandas DF
 print(result) # get queried representation of result
 
