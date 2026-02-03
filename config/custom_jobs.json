@@ -1,15 +1,5 @@
 [
   {
-    "name": "Javi en busca de la Mari",
-    "alias": "AGP_PSA_Mar-Jun",
-    "airports": [["AGP","GRX"],["PSA"]],
-    "days_availability": [[4,5], [7,8]],
-    "email": ["fjavims89@gmail.com"],
-    "price_threshold": 100,
-    "days_search": ["2026-02-01", "2026-06-30"],
-    "max_trip_duration": 5
-  },
-  {
     "name": "Vuelos a Indianápolis",
     "alias": "Indianapolis_Marina",
     "airports": [["MAD"], ["IND"]],
@@ -21,6 +11,16 @@
     "price_threshold": 900,
     "days_search": ["2026-06-15", "2026-06-16"],
     "max_trip_duration": 16
+  },
+  {
+    "name": "Javi en busca de la Mari",
+    "alias": "AGP_PSA_Mar-Jun",
+    "airports": [["AGP","GRX"],["PSA"]],
+    "days_availability": [[4,5], [7,8]],
+    "email": ["fjavims89@gmail.com"],
+    "price_threshold": 100,
+    "days_search": ["2026-02-01", "2026-06-30"],
+    "max_trip_duration": 5
   },
   {
     "name": "Cumplecito",
