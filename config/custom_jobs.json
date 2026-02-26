@@ -38,8 +38,18 @@
     "airports": [["GRX","AGP"], ["BCN"]],
     "days_availability": [[5], [7]],
     "email": ["victoriapilar2001@gmail.com"],
-    "price_threshold": 90,
+    "price_threshold": 80,
     "days_search": ["2026-04-01", "2026-07-01"],
+    "max_trip_duration": 5
+  },
+  {
+    "name": "Viaje a IBZ (ver a pauli jj)",
+    "alias": "AGP_IBZ",
+    "airports": [["GRX","AGP"], ["IBZ"]],
+    "days_availability": [[5], [7]],
+    "email": ["victoriapilar2001@gmail.com"],
+    "price_threshold": 90,
+    "days_search": ["2026-05-01", "2026-07-01"],
     "max_trip_duration": 5
   }
 ]
