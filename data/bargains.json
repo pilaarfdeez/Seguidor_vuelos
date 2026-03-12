@@ -32,13 +32,13 @@
                     "0"
                 ],
                 "price": [
-                    "33",
-                    "39"
+                    "25",
+                    "46"
                 ],
                 "job": "David",
                 "new": false,
                 "price_change": 1,
-                "total_price": "72"
+                "total_price": "71"
             },
             {
                 "date": [
@@ -70,51 +70,13 @@
                     "0"
                 ],
                 "price": [
-                    "33",
-                    "60"
+                    "25",
+                    "51"
                 ],
                 "job": "David",
                 "new": false,
                 "price_change": 1,
-                "total_price": "93"
-            },
-            {
-                "date": [
-                    "2026-04-24",
-                    "2026-04-26"
-                ],
-                "origin": [
-                    "HAJ",
-                    "AGP"
-                ],
-                "destination": [
-                    "AGP",
-                    "LBC"
-                ],
-                "time": [
-                    "05:05",
-                    "05:50"
-                ],
-                "travel_time": [
-                    "3 hr 15 min",
-                    "3 hr 25 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "93",
-                    "39"
-                ],
-                "job": "David",
-                "new": false,
-                "price_change": 1,
-                "total_price": "132"
+                "total_price": "76"
             },
             {
                 "date": [
@@ -146,55 +108,126 @@
                     "1"
                 ],
                 "price": [
-                    "33",
-                    "114"
+                    "25",
+                    "110"
+                ],
+                "job": "David",
+                "new": false,
+                "price_change": 1,
+                "total_price": "135"
+            },
+            {
+                "date": [
+                    "2026-04-23",
+                    "2026-04-27"
+                ],
+                "origin": [
+                    "LBC",
+                    "BIO"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "19:15",
+                    "06:45"
+                ],
+                "travel_time": [
+                    "3 hr 30 min",
+                    "4 hr 30 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "KLM"
+                ],
+                "stops": [
+                    "0",
+                    "1"
+                ],
+                "price": [
+                    "25",
+                    "113"
                 ],
                 "job": "David",
                 "new": true,
                 "price_change": 0,
-                "total_price": "147"
-            }
-        ]
-    },
-    {
-        "week": "2026-04-27 to 2026-05-03",
-        "combinations": [
+                "total_price": "138"
+            },
             {
                 "date": [
-                    "2026-04-30",
-                    "2026-05-03"
+                    "2026-04-23",
+                    "2026-04-27"
                 ],
                 "origin": [
-                    "AGP",
-                    "LBC"
-                ],
-                "destination": [
-                    "HAM",
+                    "LBC",
                     "AGP"
                 ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
                 "time": [
-                    "18:55",
-                    "09:40"
+                    "19:15",
+                    "18:55"
                 ],
                 "travel_time": [
-                    "3 hr 15 min",
-                    "3 hr 30 min"
+                    "3 hr 30 min",
+                    "3 hr 15 min"
                 ],
                 "airline": [
-                    "Eurowings",
-                    "Ryanair"
+                    "Ryanair",
+                    "Eurowings"
                 ],
                 "stops": [
                     "0",
                     "0"
                 ],
                 "price": [
-                    "87",
-                    "62"
+                    "25",
+                    "124"
                 ],
-                "job": "Pilar",
-                "new": false,
-                "price_change": 2,
+                "job": "David",
+                "new": true,
+                "price_change": 0,
+                "total_price": "149"
+            },
+            {
+                "date": [
+                    "2026-04-23",
+                    "2026-04-27"
+                ],
+                "origin": [
+                    "LBC",
+                    "BIO"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "19:15",
+                    "16:10"
+                ],
+                "travel_time": [
+                    "3 hr 30 min",
+                    "4 hr 50 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Vueling"
+                ],
+                "stops": [
+                    "0",
+                    "1"
+                ],
+                "price": [
+                    "25",
+                    "124"
+                ],
+                "job": "David",
+                "new": true,
+                "price_change": 0,
                 "total_price": "149"
             }
         ]
@@ -205,44 +238,6 @@
             {
                 "date": [
                     "2026-05-06",
-                    "2026-05-11"
-                ],
-                "origin": [
-                    "HAJ",
-                    "BIO"
-                ],
-                "destination": [
-                    "AGP",
-                    "HAM"
-                ],
-                "time": [
-                    "05:35",
-                    "13:15"
-                ],
-                "travel_time": [
-                    "3 hr 15 min",
-                    "2 hr 25 min"
-                ],
-                "airline": [
-                    "Eurowings",
-                    "Eurowings"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "77",
-                    "32"
-                ],
-                "job": "David",
-                "new": false,
-                "price_change": 0,
-                "total_price": "109"
-            },
-            {
-                "date": [
-                    "2026-05-06",
                     "2026-05-10"
                 ],
                 "origin": [
@@ -271,50 +266,12 @@
                 ],
                 "price": [
                     "77",
-                    "37"
+                    "39"
                 ],
                 "job": "David",
                 "new": false,
-                "price_change": 1,
-                "total_price": "114"
-            },
-            {
-                "date": [
-                    "2026-05-06",
-                    "2026-05-11"
-                ],
-                "origin": [
-                    "HAM",
-                    "BIO"
-                ],
-                "destination": [
-                    "MAD",
-                    "HAM"
-                ],
-                "time": [
-                    "14:50",
-                    "13:15"
-                ],
-                "travel_time": [
-                    "4 hr 45 min",
-                    "2 hr 25 min"
-                ],
-                "airline": [
-                    "KLM",
-                    "Eurowings"
-                ],
-                "stops": [
-                    "1",
-                    "0"
-                ],
-                "price": [
-                    "110",
-                    "32"
-                ],
-                "job": "David",
-                "new": false,
-                "price_change": 0,
-                "total_price": "142"
+                "price_change": 2,
+                "total_price": "116"
             },
             {
                 "date": [
@@ -326,33 +283,33 @@
                     "BIO"
                 ],
                 "destination": [
-                    "MAD",
+                    "AGP",
                     "HAM"
                 ],
                 "time": [
-                    "18:15",
+                    "05:35",
                     "13:15"
                 ],
                 "travel_time": [
-                    "5 hr 10 min",
+                    "3 hr 15 min",
                     "2 hr 25 min"
                 ],
                 "airline": [
-                    "KLM",
+                    "Eurowings",
                     "Eurowings"
                 ],
                 "stops": [
-                    "1",
+                    "0",
                     "0"
                 ],
                 "price": [
-                    "113",
-                    "32"
+                    "77",
+                    "60"
                 ],
                 "job": "David",
                 "new": false,
-                "price_change": 0,
-                "total_price": "145"
+                "price_change": 2,
+                "total_price": "137"
             },
             {
                 "date": [
@@ -385,50 +342,12 @@
                 ],
                 "price": [
                     "110",
-                    "37"
+                    "39"
                 ],
                 "job": "David",
                 "new": false,
-                "price_change": 1,
-                "total_price": "147"
-            },
-            {
-                "date": [
-                    "2026-05-06",
-                    "2026-05-10"
-                ],
-                "origin": [
-                    "HAJ",
-                    "AGP"
-                ],
-                "destination": [
-                    "MAD",
-                    "LBC"
-                ],
-                "time": [
-                    "18:15",
-                    "05:50"
-                ],
-                "travel_time": [
-                    "5 hr 10 min",
-                    "3 hr 25 min"
-                ],
-                "airline": [
-                    "KLM",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "1",
-                    "0"
-                ],
-                "price": [
-                    "113",
-                    "37"
-                ],
-                "job": "David",
-                "new": true,
-                "price_change": 0,
-                "total_price": "150"
+                "price_change": 2,
+                "total_price": "149"
             }
         ]
     },
@@ -465,13 +384,13 @@
                     "0"
                 ],
                 "price": [
-                    "71",
+                    "73",
                     "77"
                 ],
                 "job": "David",
                 "new": false,
-                "price_change": 0,
-                "total_price": "148"
+                "price_change": 2,
+                "total_price": "150"
             }
         ]
     },
@@ -508,13 +427,51 @@
                     "0"
                 ],
                 "price": [
-                    "57",
-                    "87"
+                    "53",
+                    "92"
                 ],
                 "job": "David",
                 "new": false,
                 "price_change": 2,
-                "total_price": "144"
+                "total_price": "145"
+            },
+            {
+                "date": [
+                    "2026-06-04",
+                    "2026-06-07"
+                ],
+                "origin": [
+                    "AGP",
+                    "LBC"
+                ],
+                "destination": [
+                    "LBC",
+                    "AGP"
+                ],
+                "time": [
+                    "15:25",
+                    "09:40"
+                ],
+                "travel_time": [
+                    "3 hr 25 min",
+                    "3 hr 30 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "82",
+                    "67"
+                ],
+                "job": "Pilar",
+                "new": true,
+                "price_change": 0,
+                "total_price": "149"
             }
         ]
     },
@@ -551,13 +508,13 @@
                     "0"
                 ],
                 "price": [
-                    "53",
-                    "62"
+                    "41",
+                    "61"
                 ],
                 "job": "David",
                 "new": false,
                 "price_change": 1,
-                "total_price": "115"
+                "total_price": "102"
             },
             {
                 "date": [
@@ -590,12 +547,12 @@
                 ],
                 "price": [
                     "70",
-                    "62"
+                    "61"
                 ],
                 "job": "David",
                 "new": false,
                 "price_change": 1,
-                "total_price": "132"
+                "total_price": "131"
             },
             {
                 "date": [
@@ -628,12 +585,50 @@
                 ],
                 "price": [
                     "87",
-                    "62"
+                    "61"
+                ],
+                "job": "David",
+                "new": false,
+                "price_change": 1,
+                "total_price": "148"
+            },
+            {
+                "date": [
+                    "2026-06-11",
+                    "2026-06-15"
+                ],
+                "origin": [
+                    "LBC",
+                    "MAD"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAM"
+                ],
+                "time": [
+                    "19:15",
+                    "19:50"
+                ],
+                "travel_time": [
+                    "3 hr 30 min",
+                    "2 hr 55 min"
+                ],
+                "airline": [
+                    "Ryanair",
+                    "Iberia"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "41",
+                    "109"
                 ],
                 "job": "David",
                 "new": true,
                 "price_change": 0,
-                "total_price": "149"
+                "total_price": "150"
             }
         ]
     },
@@ -671,12 +666,12 @@
                 ],
                 "price": [
                     "53",
-                    "71"
+                    "72"
                 ],
                 "job": "David",
                 "new": false,
                 "price_change": 2,
-                "total_price": "124"
+                "total_price": "125"
             },
             {
                 "date": [
@@ -709,12 +704,12 @@
                 ],
                 "price": [
                     "62",
-                    "71"
+                    "72"
                 ],
                 "job": "David",
                 "new": false,
                 "price_change": 2,
-                "total_price": "133"
+                "total_price": "134"
             },
             {
                 "date": [
@@ -747,12 +742,12 @@
                 ],
                 "price": [
                     "62",
-                    "71"
+                    "72"
                 ],
                 "job": "David",
                 "new": false,
                 "price_change": 2,
-                "total_price": "133"
+                "total_price": "134"
             },
             {
                 "date": [
@@ -828,12 +823,12 @@
                 ],
                 "price": [
                     "44",
-                    "63"
+                    "61"
                 ],
                 "job": "David",
                 "new": false,
                 "price_change": 1,
-                "total_price": "107"
+                "total_price": "105"
             },
             {
                 "date": [
@@ -866,12 +861,12 @@
                 ],
                 "price": [
                     "60",
-                    "63"
+                    "61"
                 ],
                 "job": "David",
                 "new": false,
                 "price_change": 1,
-                "total_price": "123"
+                "total_price": "121"
             },
             {
                 "date": [
@@ -904,12 +899,12 @@
                 ],
                 "price": [
                     "70",
-                    "63"
+                    "61"
                 ],
                 "job": "David",
                 "new": false,
                 "price_change": 1,
-                "total_price": "133"
+                "total_price": "131"
             },
             {
                 "date": [
@@ -963,44 +958,6 @@
                     "LBC"
                 ],
                 "time": [
-                    "06:50",
-                    "05:50"
-                ],
-                "travel_time": [
-                    "3 hr",
-                    "3 hr 25 min"
-                ],
-                "airline": [
-                    "Iberia",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "87",
-                    "63"
-                ],
-                "job": "David",
-                "new": true,
-                "price_change": 0,
-                "total_price": "150"
-            },
-            {
-                "date": [
-                    "2026-06-24",
-                    "2026-06-28"
-                ],
-                "origin": [
-                    "HAM",
-                    "AGP"
-                ],
-                "destination": [
-                    "MAD",
-                    "LBC"
-                ],
-                "time": [
                     "15:50",
                     "05:50"
                 ],
@@ -1018,12 +975,50 @@
                 ],
                 "price": [
                     "87",
-                    "63"
+                    "61"
                 ],
                 "job": "David",
-                "new": true,
-                "price_change": 0,
-                "total_price": "150"
+                "new": false,
+                "price_change": 1,
+                "total_price": "148"
+            },
+            {
+                "date": [
+                    "2026-06-24",
+                    "2026-06-28"
+                ],
+                "origin": [
+                    "HAM",
+                    "AGP"
+                ],
+                "destination": [
+                    "MAD",
+                    "LBC"
+                ],
+                "time": [
+                    "06:50",
+                    "05:50"
+                ],
+                "travel_time": [
+                    "3 hr",
+                    "3 hr 25 min"
+                ],
+                "airline": [
+                    "Iberia",
+                    "Ryanair"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "87",
+                    "61"
+                ],
+                "job": "David",
+                "new": false,
+                "price_change": 1,
+                "total_price": "148"
             },
             {
                 "date": [
@@ -1056,12 +1051,12 @@
                 ],
                 "price": [
                     "87",
-                    "63"
+                    "61"
                 ],
                 "job": "David",
-                "new": true,
-                "price_change": 0,
-                "total_price": "150"
+                "new": false,
+                "price_change": 1,
+                "total_price": "148"
             }
         ]
     }
