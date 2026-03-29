@@ -46,8 +46,8 @@ class ExplorerConfig:
         self.AIRPORT_DAVID = 'HAM'
         self.AIRPORT_PILAR = 'AGP'
 
-        self.DAYS_DEPARTURE = ["2026-05-01", "2026-05-03"]
-        self.DAYS_RETURN = ["2026-03-22"]
+        self.DAYS_DEPARTURE = ["2026-06-18", "2026-06-19"]
+        self.DAYS_RETURN = ["2026-06-21"]
 
         self.MAX_TRAVEL_HOURS = 6
         self.MAX_PRICE = 200
