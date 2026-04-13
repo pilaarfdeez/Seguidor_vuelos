@@ -13,6 +13,19 @@
     "max_trip_duration": 18
   },
   {
+    "name": "Tokio con Charles",
+    "alias": "Tokio_Charles",
+    "airports": [["FRA"], ["HND", "NRT"]],
+    "days_availability": [
+      [2,3,4,5,6], 
+      [11,12,13,14,15,16,17]
+    ],
+    "email": ["davidmayoral1505@gmail.com"],
+    "price_threshold": 700,
+    "days_search": ["2026-06-16", "2026-06-17"],
+    "max_trip_duration": 40
+  },
+  {
     "name": "Javi en busca de la Mari",
     "alias": "AGP_PSA_Mar-Jun",
     "airports": [["AGP","GRX"],["PSA"]],
