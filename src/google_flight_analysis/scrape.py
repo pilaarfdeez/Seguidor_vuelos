@@ -452,7 +452,7 @@ class _Scrape:
 			
 
 
-	def _make_url(self, tfs: bool = False, max_stops: int = 1):
+	def _make_url(self, tfs: bool = False, max_stops: int = 2):
 		'''Make the URL for the query. If tfs is True, use TFSData to create a b64 encoded URL.'''
 
 		urls = []
