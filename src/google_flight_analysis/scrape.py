@@ -650,7 +650,7 @@ class _Scrape:
 				reject_button.click()
 		
 		except Exception as e:
-			logger.warning('Could not find reject button while handling cookies: ', e)
+			logger.warning('Could not find reject button while handling cookies')
 			logger.info('(Text node definition probably outdated)')
 
 		# try:
