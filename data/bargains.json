@@ -4,6 +4,44 @@
         "combinations": [
             {
                 "date": [
+                    "2026-06-17",
+                    "2026-06-22"
+                ],
+                "origin": [
+                    "HAJ",
+                    "AGP"
+                ],
+                "destination": [
+                    "AGP",
+                    "HAJ"
+                ],
+                "time": [
+                    "05:35",
+                    "19:15"
+                ],
+                "travel_time": [
+                    "3 hr 15 min",
+                    "3 hr 10 min"
+                ],
+                "airline": [
+                    "Eurowings",
+                    "Eurowings"
+                ],
+                "stops": [
+                    "0",
+                    "0"
+                ],
+                "price": [
+                    "30",
+                    "115"
+                ],
+                "job": "David",
+                "new": true,
+                "price_change": 0,
+                "total_price": "145"
+            },
+            {
+                "date": [
                     "2026-06-18",
                     "2026-06-21"
                 ],
@@ -32,51 +70,13 @@
                     "0"
                 ],
                 "price": [
-                    "77",
-                    "65"
+                    "97",
+                    "45"
                 ],
                 "job": "Pilar",
                 "new": false,
-                "price_change": 2,
+                "price_change": 0,
                 "total_price": "142"
-            },
-            {
-                "date": [
-                    "2026-06-18",
-                    "2026-06-21"
-                ],
-                "origin": [
-                    "AGP",
-                    "LBC"
-                ],
-                "destination": [
-                    "LBC",
-                    "AGP"
-                ],
-                "time": [
-                    "15:25",
-                    "09:40"
-                ],
-                "travel_time": [
-                    "3 hr 25 min",
-                    "3 hr 30 min"
-                ],
-                "airline": [
-                    "Ryanair",
-                    "Ryanair"
-                ],
-                "stops": [
-                    "0",
-                    "0"
-                ],
-                "price": [
-                    "77",
-                    "66"
-                ],
-                "job": "Pilar",
-                "new": false,
-                "price_change": 2,
-                "total_price": "143"
             }
         ]
     },
@@ -114,12 +114,12 @@
                 ],
                 "price": [
                     "30",
-                    "87"
+                    "84"
                 ],
                 "job": "David",
                 "new": false,
                 "price_change": 1,
-                "total_price": "117"
+                "total_price": "114"
             },
             {
                 "date": [
@@ -152,12 +152,12 @@
                 ],
                 "price": [
                     "45",
-                    "87"
+                    "84"
                 ],
                 "job": "David",
-                "new": true,
-                "price_change": 0,
-                "total_price": "132"
+                "new": false,
+                "price_change": 1,
+                "total_price": "129"
             },
             {
                 "date": [
@@ -189,13 +189,13 @@
                     "0"
                 ],
                 "price": [
-                    "57",
-                    "87"
+                    "59",
+                    "84"
                 ],
                 "job": "David",
-                "new": true,
-                "price_change": 0,
-                "total_price": "144"
+                "new": false,
+                "price_change": 1,
+                "total_price": "143"
             }
         ]
     },
@@ -232,13 +232,13 @@
                     "0"
                 ],
                 "price": [
-                    "90",
+                    "99",
                     "30"
                 ],
                 "job": "David",
                 "new": false,
                 "price_change": 2,
-                "total_price": "120"
+                "total_price": "129"
             }
         ]
     },
@@ -276,12 +276,12 @@
                 ],
                 "price": [
                     "47",
-                    "72"
+                    "71"
                 ],
                 "job": "David",
                 "new": false,
-                "price_change": 2,
-                "total_price": "119"
+                "price_change": 1,
+                "total_price": "118"
             },
             {
                 "date": [
@@ -314,12 +314,12 @@
                 ],
                 "price": [
                     "49",
-                    "72"
+                    "71"
                 ],
                 "job": "David",
                 "new": false,
-                "price_change": 2,
-                "total_price": "121"
+                "price_change": 1,
+                "total_price": "120"
             },
             {
                 "date": [
@@ -352,12 +352,12 @@
                 ],
                 "price": [
                     "65",
-                    "72"
+                    "71"
                 ],
                 "job": "David",
                 "new": false,
-                "price_change": 2,
-                "total_price": "137"
+                "price_change": 1,
+                "total_price": "136"
             },
             {
                 "date": [
@@ -390,12 +390,12 @@
                 ],
                 "price": [
                     "65",
-                    "72"
+                    "71"
                 ],
                 "job": "David",
                 "new": false,
-                "price_change": 2,
-                "total_price": "137"
+                "price_change": 1,
+                "total_price": "136"
             },
             {
                 "date": [
@@ -428,12 +428,12 @@
                 ],
                 "price": [
                     "65",
-                    "72"
+                    "71"
                 ],
                 "job": "David",
                 "new": false,
-                "price_change": 2,
-                "total_price": "137"
+                "price_change": 1,
+                "total_price": "136"
             },
             {
                 "date": [
@@ -469,7 +469,7 @@
                     "95"
                 ],
                 "job": "David",
-                "new": true,
+                "new": false,
                 "price_change": 0,
                 "total_price": "142"
             },
@@ -507,7 +507,7 @@
                     "95"
                 ],
                 "job": "David",
-                "new": true,
+                "new": false,
                 "price_change": 0,
                 "total_price": "144"
             },
@@ -541,13 +541,13 @@
                     "0"
                 ],
                 "price": [
-                    "67",
+                    "69",
                     "61"
                 ],
                 "job": "Pilar",
                 "new": false,
-                "price_change": 1,
-                "total_price": "128"
+                "price_change": 2,
+                "total_price": "130"
             }
         ]
     }
