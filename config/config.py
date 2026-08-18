@@ -15,16 +15,19 @@ class TrackerConfig:
         self.ENV = env
 
         self.FLIGHTS_TO_TRACK = [
-            {'origin': 'AGP', 'destination': 'CGN', 'date': '2026-07-02', 'time': '21:20'},
-            {'origin': 'CGN', 'destination': 'AGP', 'date': '2026-07-05', 'time': '18:25'},
-            {'origin': 'FRA', 'destination': 'NRT', 'date': '2026-06-18', 'time': '14:05'},
-            {'origin': 'FRA', 'destination': 'NRT', 'date': '2026-06-16', 'time': '14:05'},
-            {'origin': 'HND', 'destination': 'FRA', 'date': '2026-06-27', 'time': '16:00'},
-            {'origin': 'HND', 'destination': 'FRA', 'date': '2026-06-28', 'time': '14:00'},
-            {'origin': 'HND', 'destination': 'FRA', 'date': '2026-06-28', 'time': '16:00'},
-            {'origin': 'HND', 'destination': 'FRA', 'date': '2026-06-29', 'time': '16:00'},
-            {'origin': 'HND', 'destination': 'FRA', 'date': '2026-06-30', 'time': '16:00'},
-            {'origin': 'HND', 'destination': 'FRA', 'date': '2026-07-03', 'time': '15:40'}
+            {'origin': 'TFS', 'destination': 'MAD', 'date': '2026-09-28', 'time': '02:45'},
+            {'origin': 'MAD', 'destination': 'AUH', 'date': '2026-09-28', 'time': '10:45'},
+            {'origin': 'AUH', 'destination': 'DPS', 'date': '2026-09-28', 'time': '21:50'},
+            {'origin': 'DPS', 'destination': 'AUH', 'date': '2026-11-24', 'time': '01:30'},
+            {'origin': 'AUH', 'destination': 'MAD', 'date': '2026-11-24', 'time': '14:05'},
+            {'origin': 'DPS', 'destination': 'AUH', 'date': '2026-11-23', 'time': '18:45'},
+            {'origin': 'AUH', 'destination': 'MAD', 'date': '2026-11-23', 'time': '02:25'},
+            {'origin': 'DPS', 'destination': 'AUH', 'date': '2026-11-11', 'time': '18:45'},
+            {'origin': 'AUH', 'destination': 'MAD', 'date': '2026-11-11', 'time': '02:25'},
+            {'origin': 'DPS', 'destination': 'AUH', 'date': '2026-11-12', 'time': '01:30'},
+            {'origin': 'AUH', 'destination': 'MAD', 'date': '2026-11-12', 'time': '14:05'},
+            {'origin': 'MAD', 'destination': 'TFS', 'date': '2026-11-12', 'time': '23:35'}
+            
             # {'origin': '', 'destination': '', 'date': 'YYYY-MM-DD', 'time': ''},
         ]
 
