@@ -6,7 +6,7 @@
     "days_availability": [[4,5], [8,9]],
     "email": ["juanchoalerta2001@gmail.com", "davidmayoral1505@gmail.com"],
     "price_threshold": 220,
-    "days_search": ["2026-11-05", "2026-11-06"],
+    "days_search": ["2026-11-03", "2026-11-11"],
     "max_trip_duration": 5
   },
   {
@@ -28,5 +28,35 @@
     "price_threshold": 1400,
     "days_search": ["2026-09-28", "2026-09-29"],
     "max_trip_duration": 27
+  },
+  {
+    "name": "A Lisboa desde austria",
+    "alias": "LSB_VIE",
+    "airports": [["VIE", "LNZ", "MUC"],["LIS"]],
+    "days_availability": [[4,5], [7,8]],
+    "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
+    "price_threshold": 200,
+    "days_search": ["2026-10-01", "2027-01-31"],
+    "max_trip_duration": 7
+  },
+  {
+    "name": "A Lisboa desde munich",
+    "alias": "LSB_MUC",
+    "airports": [["MUC", "FMM", "NUE"],["LIS"]],
+    "days_availability": [[4,5], [7,8]],
+    "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
+    "price_threshold": 200,
+    "days_search": ["2026-10-01", "2027-01-31"],
+    "max_trip_duration": 7
+  },
+  {
+    "name": "Vuelta a casa por navidad",
+    "alias": "VIE_AGP",
+    "airports": [["VIE", "MUC"],["AGP", "GRX"]],
+    "days_availability": [[1,2,3,4,5,6,7,8,9,10], [23,24,25,26,27,28]],
+    "email": ["victoriapilar2001@gmail.com"],
+    "price_threshold": 300,
+    "days_search": ["2026-12-14", "2027-01-10"],
+    "max_trip_duration": 7
   }
 ]
