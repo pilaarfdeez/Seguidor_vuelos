@@ -15,18 +15,9 @@ class TrackerConfig:
         self.ENV = env
 
         self.FLIGHTS_TO_TRACK = [
-            {'origin': 'TFS', 'destination': 'MAD', 'date': '2026-09-28', 'time': '02:45'},
-            {'origin': 'MAD', 'destination': 'AUH', 'date': '2026-09-28', 'time': '10:45'},
-            {'origin': 'AUH', 'destination': 'DPS', 'date': '2026-09-28', 'time': '21:50'},
-            {'origin': 'DPS', 'destination': 'AUH', 'date': '2026-11-24', 'time': '01:30'},
-            {'origin': 'AUH', 'destination': 'MAD', 'date': '2026-11-24', 'time': '14:05'},
-            {'origin': 'DPS', 'destination': 'AUH', 'date': '2026-11-23', 'time': '18:45'},
-            {'origin': 'AUH', 'destination': 'MAD', 'date': '2026-11-23', 'time': '02:25'},
-            {'origin': 'DPS', 'destination': 'AUH', 'date': '2026-11-11', 'time': '18:45'},
-            {'origin': 'AUH', 'destination': 'MAD', 'date': '2026-11-11', 'time': '02:25'},
-            {'origin': 'DPS', 'destination': 'AUH', 'date': '2026-11-12', 'time': '01:30'},
-            {'origin': 'AUH', 'destination': 'MAD', 'date': '2026-11-12', 'time': '14:05'},
-            {'origin': 'MAD', 'destination': 'TFS', 'date': '2026-11-12', 'time': '23:35'}
+            {'origin': 'AGP', 'destination': 'VIE', 'date': '2026-09-29', 'time': '08:25'},
+            {'origin': 'AGP', 'destination': 'VIE', 'date': '2026-10-01', 'time': '07:20'},
+            {'origin': 'AGP', 'destination': 'VIE', 'date': '2026-09-27', 'time': '07:10'}
             
             # {'origin': '', 'destination': '', 'date': 'YYYY-MM-DD', 'time': ''},
         ]
