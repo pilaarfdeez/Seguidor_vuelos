@@ -17,7 +17,13 @@ class TrackerConfig:
         self.FLIGHTS_TO_TRACK = [
             {'origin': 'AGP', 'destination': 'VIE', 'date': '2026-09-29', 'time': '08:25'},
             {'origin': 'AGP', 'destination': 'VIE', 'date': '2026-10-01', 'time': '07:20'},
-            {'origin': 'AGP', 'destination': 'VIE', 'date': '2026-09-27', 'time': '07:10'}
+            {'origin': 'AGP', 'destination': 'VIE', 'date': '2026-09-27', 'time': '07:10'},
+            {'origin': 'VIE', 'destination': 'AGP', 'date': '2026-12-23', 'time': '06:20'},
+            {'origin': 'VIE', 'destination': 'AGP', 'date': '2026-12-22', 'time': '10:20'},
+            {'origin': 'AGP', 'destination': 'VIE', 'date': '2027-01-06', 'time': '10:20'},
+            {'origin': 'AGP', 'destination': 'VIE', 'date': '2027-01-05', 'time': '06:40'},
+            {'origin': 'AGP', 'destination': 'VIE', 'date': '2027-01-05', 'time': '09:15'},
+            {'origin': 'AGP', 'destination': 'VIE', 'date': '2027-01-07', 'time': '12:00'}
             
             # {'origin': '', 'destination': '', 'date': 'YYYY-MM-DD', 'time': ''},
         ]
