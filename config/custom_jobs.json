@@ -58,5 +58,25 @@
     "price_threshold": 300,
     "days_search": ["2026-12-14", "2027-01-10"],
     "max_trip_duration": 7
+  },
+  {
+    "name": "Las niñas vienen a Linz",
+    "alias": "Ninas_Linz",
+    "airports": [["AGP", "GRX"],["VIE", "MUC"]],
+    "days_availability": [[4,5], [7,8]],
+    "email": ["victoriapilar2001@gmail.com"],
+    "price_threshold": 200,
+    "days_search": ["2026-10-01", "2027-01-31"],
+    "max_trip_duration": 7
+  },
+  {
+    "name": "Javi a Munich",
+    "alias": "Javi_MUN",
+    "airports": [["AGP", "GRX"],["FMM", "MUC", "NUE"]],
+    "days_availability": [[4,5], [7,8]],
+    "email": ["fjavims89@gmail.com"],
+    "price_threshold": 200,
+    "days_search": ["2026-11-01", "2027-01-01"],
+    "max_trip_duration": 7
   }
 ]
