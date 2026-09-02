@@ -53,19 +53,19 @@
     "name": "Vuelta a casa por navidad",
     "alias": "VIE_AGP",
     "airports": [["VIE", "MUC"],["AGP", "GRX"]],
-    "days_availability": [[1,2,3,4,5,6,7,8,9,10], [23,24,25,26,27,28]],
+    "days_availability": [[1,2,3,4,5,6,7,8,9,10], [21,22,23,24,25,26]],
     "email": ["victoriapilar2001@gmail.com"],
     "price_threshold": 300,
-    "days_search": ["2026-12-14", "2026-12-31"],
+    "days_search": ["2026-12-19", "2026-12-31"],
     "max_trip_duration": 7
   },
   {
     "name": "Las niñas vienen a Linz",
     "alias": "Ninas_Linz",
-    "airports": [["AGP", "GRX"],["VIE", "MUC"]],
+    "airports": [["AGP", "GRX"],["VIE"]],
     "days_availability": [[4,5], [7,8]],
     "email": ["victoriapilar2001@gmail.com"],
-    "price_threshold": 200,
+    "price_threshold": 100,
     "days_search": ["2026-10-01", "2026-12-31"],
     "max_trip_duration": 7
   },
