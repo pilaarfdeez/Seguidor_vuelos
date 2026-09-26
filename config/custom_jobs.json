@@ -23,7 +23,7 @@
     "name": "Vuelta a casa por navidad",
     "alias": "VIE_AGP",
     "airports": [["VIE", "MUC"],["AGP", "GRX"]],
-    "days_availability": [[1,2,3], [19,20,21]],
+    "days_availability": [[1,2,3], [15,16,17]],
     "email": ["victoriapilar2001@gmail.com"],
     "price_threshold": 300,
     "days_search": ["2026-12-21", "2026-12-31"],
@@ -40,13 +40,33 @@
     "max_trip_duration": 7
   },
   {
-    "name": "Javi a Munich",
-    "alias": "Javi_MUN",
-    "airports": [["AGP", "GRX"],["FMM", "MUC", "NUE"]],
-    "days_availability": [[4,5], [7,8]],
-    "email": ["fjavims89@gmail.com"],
+    "name": "Carmen a Linz",
+    "alias": "Carmen_LIN",
+    "airports": [["TFS"],["VIE", "MUC"]],
+    "days_availability": [[4,5], [7]],
+    "email": ["victoriapilar2001@gmail.com", "mcramirodri@gmail.com"],
     "price_threshold": 200,
-    "days_search": ["2026-10-01", "2026-12-31"],
+    "days_search": ["2026-12-7", "2026-12-14"],
+    "max_trip_duration": 7
+  },
+  {
+    "name": "Viaje aniversario!!!! (a Sofía)",
+    "alias": "Ani_SOF",
+    "airports": [["VIE", "MUC"], ["SOF"]],
+    "days_availability": [[4,5], [7,8]],
+    "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
+    "price_threshold": 200,
+    "days_search": ["2026-11-9", "2026-11-14"],
+    "max_trip_duration": 7
+  },
+  {
+    "name": "Viaje aniversario!!!! (a Estambul)",
+    "alias": "Ani_IST",
+    "airports": [["VIE", "MUC"], ["IST"]],
+    "days_availability": [[4,5], [7,8]],
+    "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
+    "price_threshold": 200,
+    "days_search": ["2026-11-9", "2026-11-14"],
     "max_trip_duration": 7
   }
 ]
