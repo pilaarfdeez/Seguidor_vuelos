@@ -23,7 +23,7 @@
     "name": "Vuelta a casa por navidad",
     "alias": "VIE_AGP",
     "airports": [["VIE", "MUC"],["AGP", "GRX"]],
-    "days_availability": [[1,2,3], [15,16,17]],
+    "days_availability": [[1,2,3], [13,14,15]],
     "email": ["victoriapilar2001@gmail.com"],
     "price_threshold": 300,
     "days_search": ["2026-12-21", "2026-12-31"],
@@ -56,7 +56,7 @@
     "days_availability": [[4,5], [7,8]],
     "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
     "price_threshold": 200,
-    "days_search": ["2026-11-9", "2026-11-14"],
+    "days_search": ["2026-11-9", "2026-11-16"],
     "max_trip_duration": 7
   },
   {
@@ -66,7 +66,7 @@
     "days_availability": [[4,5], [7,8]],
     "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
     "price_threshold": 200,
-    "days_search": ["2026-11-9", "2026-11-14"],
+    "days_search": ["2026-11-9", "2026-11-16"],
     "max_trip_duration": 7
   },
   {
@@ -76,7 +76,27 @@
     "days_availability": [[4,5], [7,8]],
     "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
     "price_threshold": 200,
-    "days_search": ["2026-11-9", "2026-11-14"],
+    "days_search": ["2026-11-9", "2026-11-16"],
+    "max_trip_duration": 7
+  },
+  {
+    "name": "Viaje aniversario!!!! (a Estambul)",
+    "alias": "Ani_IST",
+    "airports": [["VIE", "MUC"], ["IST", "SAW"]],
+    "days_availability": [[4,5], [7,8]],
+    "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
+    "price_threshold": 200,
+    "days_search": ["2026-11-9", "2026-11-16"],
+    "max_trip_duration": 7
+  },
+  {
+    "name": "Viaje aniversario!!!! (a Dubrovnik)",
+    "alias": "Ani_DBV",
+    "airports": [["VIE", "MUC"], ["DBV"]],
+    "days_availability": [[4,5], [7,8]],
+    "email": ["victoriapilar2001@gmail.com", "davidmayoral1505@gmail.com"],
+    "price_threshold": 200,
+    "days_search": ["2026-11-9", "2026-11-16"],
     "max_trip_duration": 7
   }
 ]
