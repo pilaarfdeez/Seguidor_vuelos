@@ -36,7 +36,7 @@
     "days_availability": [[4,5], [7,8]],
     "email": ["victoriapilar2001@gmail.com"],
     "price_threshold": 100,
-    "days_search": ["2026-10-01", "2026-12-31"],
+    "days_search": ["2026-11-15", "2026-12-31"],
     "max_trip_duration": 7
   },
   {
@@ -47,6 +47,26 @@
     "email": ["victoriapilar2001@gmail.com", "mcramirodri@gmail.com"],
     "price_threshold": 200,
     "days_search": ["2026-12-07", "2026-12-14"],
+    "max_trip_duration": 7
+  },
+  {
+    "name": "Visitilla a Carmen",
+    "alias": "Carmen_TFS_LINZ",
+    "airports": [["VIE", "MUC"], ["TFS"]],
+    "days_availability": [[4,5], [7]],
+    "email": ["victoriapilar2001@gmail.com"],
+    "price_threshold": 200,
+    "days_search": ["2026-11-15", "2026-12-25"],
+    "max_trip_duration": 7
+  },
+  {
+    "name": "Visitilla a Carmen",
+    "alias": "Carmen_TFS_AGP",
+    "airports": [["GRX", "AGP"], ["TFS"]],
+    "days_availability": [[4,5], [7]],
+    "email": ["victoriapilar2001@gmail.com"],
+    "price_threshold": 150,
+    "days_search": ["2027-02-01", "2027-07-31"],
     "max_trip_duration": 7
   }
 ]
